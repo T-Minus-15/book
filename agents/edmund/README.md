@@ -206,11 +206,17 @@ DOCKER_REGISTRY_PASSWORD   # Docker registry password
 # Install dependencies
 pip install -r requirements.txt
 
-# Set environment variables
-export AZURE_OPENAI_ENDPOINT="your-endpoint"
-export AZURE_OPENAI_API_KEY="your-key"
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your actual API keys and configuration
 
-# Run local tests
+# Run configuration tests
+python test_config.py
+
+# Run interactive AI tests
+python test_edmund_local.py
+
+# Run comprehensive tests
 pytest tests/ -v
 ```
 

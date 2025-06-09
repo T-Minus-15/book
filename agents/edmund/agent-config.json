@@ -8,8 +8,8 @@
   },
   "model": {
     "provider": "azure-openai",
-    "modelName": "gpt-4-turbo",
-    "version": "2024-04-09",
+    "modelName": "gpt-4o",
+    "version": "2024-12-01-preview",
     "temperature": 0.1,
     "maxTokens": 4096,
     "topP": 0.95,
@@ -81,7 +81,7 @@
   "deployment": {
     "environment": "development",
     "region": "eastus",
-    "resourceGroup": "tminus15-dev-rg",
+    "resourceGroup": "copilot-edmund",
     "scalingPolicy": "standard",
     "healthCheck": {
       "enabled": true,

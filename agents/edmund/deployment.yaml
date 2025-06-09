@@ -1,8 +1,8 @@
-apiVersion: ai.azure.com/v1
-kind: Agent
+apiVersion: v1
+kind: Deployment
 metadata:
   name: edmund-engineer
-  namespace: tminus15-agents
+  namespace: default
   labels:
     app: edmund
     role: engineer
@@ -22,9 +22,9 @@ spec:
   
   model:
     provider: "azure-openai"
-    deployment: "gpt-4-turbo"
+    deployment: "gpt-4o"
     endpoint: "${AZURE_OPENAI_ENDPOINT}"
-    apiVersion: "2024-04-09"
+    apiVersion: "2024-12-01-preview"
     authentication:
       type: "managed-identity"
       clientId: "${AZURE_CLIENT_ID}"
@@ -171,7 +171,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: edmund-service
-  namespace: tminus15-agents
+  namespace: default
   labels:
     app: edmund
     role: engineer
@@ -189,9 +189,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: edmund-config
-  namespace: tminus15-agents
+  namespace: default
 data:
   agent-config.json: |
-    $(cat agent-config.json)
+    # agent-config.json content will be injected during deployment
   knowledge-sources.json: |
-    $(cat knowledge-sources.json)
+    # knowledge-sources.json content will be injected during deployment
