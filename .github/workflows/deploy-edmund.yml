@@ -1,4 +1,4 @@
-name: Deploy Edmund Agent to Azure AI Foundry
+name: Deploy Edmund Agent
 
 on:
   push:
