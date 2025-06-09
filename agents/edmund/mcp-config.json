@@ -1,0 +1,372 @@
+{
+  "mcpConfiguration": {
+    "version": "1.0.0",
+    "agent": "edmund",
+    "description": "MCP server configuration for Edmund (the Engineer) - T-Minus-15 AI Agent",
+    "enabled": false,
+    "note": "MCP integrations are configured but disabled by default. Enable when MCP servers are ready for deployment."
+  },
+  "servers": [
+    {
+      "id": "azure-devops-connector",
+      "name": "Azure DevOps MCP Server",
+      "description": "Integrates with Azure DevOps for project management, work items, and pipeline management",
+      "enabled": false,
+      "version": "1.0.0",
+      "connection": {
+        "type": "http",
+        "url": "${AZURE_DEVOPS_MCP_SERVER_URL}",
+        "authentication": {
+          "type": "bearer_token",
+          "token": "${AZURE_DEVOPS_PAT}"
+        }
+      },
+      "capabilities": [
+        "work_items.read",
+        "work_items.create",
+        "work_items.update",
+        "pipelines.read",
+        "pipelines.trigger",
+        "repositories.read",
+        "pull_requests.read",
+        "pull_requests.create",
+        "builds.read",
+        "releases.read"
+      ],
+      "configuration": {
+        "organization": "${AZURE_DEVOPS_ORGANIZATION}",
+        "project": "${AZURE_DEVOPS_PROJECT}",
+        "defaultAreaPath": "\\T-Minus-15",
+        "defaultIteration": "current",
+        "retryAttempts": 3,
+        "timeoutSeconds": 30
+      },
+      "tools": [
+        {
+          "name": "create_work_item",
+          "description": "Create a new work item in Azure DevOps",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "workItemType": {"type": "string", "enum": ["Epic", "Feature", "User Story", "Task", "Bug"]},
+              "title": {"type": "string"},
+              "description": {"type": "string"},
+              "assignedTo": {"type": "string"},
+              "priority": {"type": "integer", "minimum": 1, "maximum": 4},
+              "tags": {"type": "array", "items": {"type": "string"}}
+            },
+            "required": ["workItemType", "title"]
+          }
+        },
+        {
+          "name": "query_work_items",
+          "description": "Query work items using WIQL (Work Item Query Language)",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "wiql": {"type": "string"},
+              "maxResults": {"type": "integer", "default": 50}
+            },
+            "required": ["wiql"]
+          }
+        },
+        {
+          "name": "trigger_pipeline",
+          "description": "Trigger a build or release pipeline",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "pipelineId": {"type": "integer"},
+              "branch": {"type": "string", "default": "main"},
+              "parameters": {"type": "object"}
+            },
+            "required": ["pipelineId"]
+          }
+        }
+      ],
+      "errorHandling": {
+        "retryOnFailure": true,
+        "maxRetries": 3,
+        "backoffStrategy": "exponential"
+      }
+    },
+    {
+      "id": "github-connector",
+      "name": "GitHub MCP Server",
+      "description": "Integrates with GitHub for repository management, issues, pull requests, and actions",
+      "enabled": false,
+      "version": "1.0.0",
+      "connection": {
+        "type": "http",
+        "url": "${GITHUB_MCP_SERVER_URL}",
+        "authentication": {
+          "type": "token",
+          "token": "${GITHUB_TOKEN}"
+        }
+      },
+      "capabilities": [
+        "repositories.read",
+        "repositories.write",
+        "issues.read",
+        "issues.create",
+        "issues.update",
+        "pull_requests.read",
+        "pull_requests.create",
+        "pull_requests.review",
+        "actions.read",
+        "actions.trigger",
+        "contents.read",
+        "contents.write"
+      ],
+      "configuration": {
+        "defaultOwner": "bengweeks",
+        "defaultRepo": "T-Minus-15",
+        "baseUrl": "https://api.github.com",
+        "retryAttempts": 3,
+        "timeoutSeconds": 30
+      },
+      "tools": [
+        {
+          "name": "create_issue",
+          "description": "Create a new GitHub issue",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "owner": {"type": "string"},
+              "repo": {"type": "string"},
+              "title": {"type": "string"},
+              "body": {"type": "string"},
+              "labels": {"type": "array", "items": {"type": "string"}},
+              "assignees": {"type": "array", "items": {"type": "string"}},
+              "milestone": {"type": "integer"}
+            },
+            "required": ["title"]
+          }
+        },
+        {
+          "name": "create_pull_request",
+          "description": "Create a new pull request",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "owner": {"type": "string"},
+              "repo": {"type": "string"},
+              "title": {"type": "string"},
+              "head": {"type": "string"},
+              "base": {"type": "string", "default": "main"},
+              "body": {"type": "string"},
+              "draft": {"type": "boolean", "default": false}
+            },
+            "required": ["title", "head"]
+          }
+        },
+        {
+          "name": "trigger_workflow",
+          "description": "Trigger a GitHub Actions workflow",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "owner": {"type": "string"},
+              "repo": {"type": "string"},
+              "workflowId": {"type": "string"},
+              "ref": {"type": "string", "default": "main"},
+              "inputs": {"type": "object"}
+            },
+            "required": ["workflowId"]
+          }
+        },
+        {
+          "name": "get_file_content",
+          "description": "Get the content of a file from the repository",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "owner": {"type": "string"},
+              "repo": {"type": "string"},
+              "path": {"type": "string"},
+              "ref": {"type": "string", "default": "main"}
+            },
+            "required": ["path"]
+          }
+        }
+      ],
+      "errorHandling": {
+        "retryOnFailure": true,
+        "maxRetries": 3,
+        "backoffStrategy": "exponential"
+      }
+    },
+    {
+      "id": "docker-registry-connector",
+      "name": "Docker Registry MCP Server",
+      "description": "Integrates with Docker registries for container image management",
+      "enabled": false,
+      "version": "1.0.0",
+      "connection": {
+        "type": "http",
+        "url": "${DOCKER_REGISTRY_MCP_SERVER_URL}",
+        "authentication": {
+          "type": "basic_auth",
+          "username": "${DOCKER_REGISTRY_USERNAME}",
+          "password": "${DOCKER_REGISTRY_PASSWORD}"
+        }
+      },
+      "configuration": {
+        "defaultRegistry": "tminus15.azurecr.io",
+        "defaultNamespace": "agents",
+        "retryAttempts": 3,
+        "timeoutSeconds": 60
+      },
+      "tools": [
+        {
+          "name": "list_images",
+          "description": "List available container images",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "registry": {"type": "string"},
+              "namespace": {"type": "string"},
+              "filter": {"type": "string"}
+            }
+          }
+        },
+        {
+          "name": "get_image_tags",
+          "description": "Get available tags for a container image",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "registry": {"type": "string"},
+              "namespace": {"type": "string"},
+              "image": {"type": "string"}
+            },
+            "required": ["image"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "kubernetes-connector",
+      "name": "Kubernetes MCP Server",
+      "description": "Integrates with Kubernetes clusters for deployment and resource management",
+      "enabled": false,
+      "version": "1.0.0",
+      "connection": {
+        "type": "kubernetes",
+        "kubeconfig": "${KUBECONFIG_PATH}",
+        "namespace": "tminus15-agents"
+      },
+      "configuration": {
+        "defaultNamespace": "tminus15-agents",
+        "retryAttempts": 3,
+        "timeoutSeconds": 30
+      },
+      "tools": [
+        {
+          "name": "get_pods",
+          "description": "List pods in the namespace",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "namespace": {"type": "string"},
+              "labelSelector": {"type": "string"}
+            }
+          }
+        },
+        {
+          "name": "get_deployments",
+          "description": "List deployments in the namespace",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "namespace": {"type": "string"},
+              "labelSelector": {"type": "string"}
+            }
+          }
+        },
+        {
+          "name": "scale_deployment",
+          "description": "Scale a deployment to the specified number of replicas",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "namespace": {"type": "string"},
+              "deploymentName": {"type": "string"},
+              "replicas": {"type": "integer", "minimum": 0}
+            },
+            "required": ["deploymentName", "replicas"]
+          }
+        }
+      ]
+    }
+  ],
+  "security": {
+    "tokenEncryption": {
+      "enabled": true,
+      "algorithm": "AES-256-GCM",
+      "keySource": "azure-keyvault"
+    },
+    "allowedOrigins": [
+      "https://edmund-dev.tminus15.azure.com",
+      "https://edmund-staging.tminus15.azure.com",
+      "https://edmund-prod.tminus15.azure.com"
+    ],
+    "rateLimiting": {
+      "enabled": true,
+      "requestsPerMinute": 100,
+      "requestsPerHour": 1000
+    }
+  },
+  "monitoring": {
+    "metricsEnabled": true,
+    "loggingEnabled": true,
+    "healthChecks": {
+      "interval": "30s",
+      "timeout": "10s",
+      "retries": 3
+    },
+    "alerting": {
+      "enabled": true,
+      "channels": ["teams", "email"],
+      "thresholds": {
+        "errorRate": 0.05,
+        "responseTime": "5s"
+      }
+    }
+  },
+  "deployment": {
+    "environment": "development",
+    "autoRestart": true,
+    "gracefulShutdown": true,
+    "shutdownTimeout": "30s"
+  },
+  "future_integrations": {
+    "note": "Placeholder configurations for future MCP server integrations",
+    "planned_servers": [
+      {
+        "id": "slack-connector",
+        "name": "Slack MCP Server",
+        "description": "Integration with Slack for team communication and notifications",
+        "priority": "medium"
+      },
+      {
+        "id": "jira-connector", 
+        "name": "Jira MCP Server",
+        "description": "Integration with Jira for issue tracking and project management",
+        "priority": "low"
+      },
+      {
+        "id": "confluence-connector",
+        "name": "Confluence MCP Server", 
+        "description": "Integration with Confluence for documentation management",
+        "priority": "low"
+      },
+      {
+        "id": "azure-monitor-connector",
+        "name": "Azure Monitor MCP Server",
+        "description": "Integration with Azure Monitor for application insights and metrics",
+        "priority": "high"
+      }
+    ]
+  }
+}

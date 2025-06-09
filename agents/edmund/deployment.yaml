@@ -1,0 +1,197 @@
+apiVersion: ai.azure.com/v1
+kind: Agent
+metadata:
+  name: edmund-engineer
+  namespace: tminus15-agents
+  labels:
+    app: edmund
+    role: engineer
+    methodology: tminus15
+    version: "1.0.0"
+  annotations:
+    description: "AI Engineer specialized in development tasks and T-Minus-15 methodology"
+    documentation: "https://github.com/bengweeks/T-Minus-15/blob/main/agents/edmund/README.md"
+spec:
+  agent:
+    displayName: "Edmund (the Engineer)"
+    description: "AI Engineer specialized in development tasks and T-Minus-15 methodology"
+    version: "1.0.0"
+    configurationSource:
+      type: "file"
+      path: "./agent-config.json"
+  
+  model:
+    provider: "azure-openai"
+    deployment: "gpt-4-turbo"
+    endpoint: "${AZURE_OPENAI_ENDPOINT}"
+    apiVersion: "2024-04-09"
+    authentication:
+      type: "managed-identity"
+      clientId: "${AZURE_CLIENT_ID}"
+  
+  knowledgeBase:
+    sources:
+      - type: "github"
+        repository: "https://github.com/bengweeks/T-Minus-15"
+        branch: "main"
+        refreshInterval: "24h"
+        indexingMode: "full"
+      - type: "documentation"
+        url: "https://docs.microsoft.com/en-us/azure/ai-foundry/"
+        refreshInterval: "168h" # weekly
+        indexingMode: "selective"
+    
+    indexing:
+      enabled: true
+      searchMode: "hybrid"
+      embeddingModel: "text-embedding-ada-002"
+      chunkSize: 1000
+      chunkOverlap: 200
+  
+  capabilities:
+    codeInterpreter:
+      enabled: true
+      languages: ["python", "javascript", "typescript", "bash", "yaml", "json"]
+      timeout: "300s"
+    
+    webSearch:
+      enabled: true
+      allowedDomains:
+        - "docs.microsoft.com"
+        - "github.com"
+        - "stackoverflow.com"
+        - "azure.microsoft.com"
+    
+    fileProcessing:
+      enabled: true
+      maxFileSize: "10MB"
+      allowedTypes: [".py", ".js", ".ts", ".json", ".yaml", ".yml", ".md", ".txt", ".sh"]
+  
+  security:
+    contentFiltering:
+      enabled: true
+      level: "strict"
+    
+    sensitiveDataDetection:
+      enabled: true
+      categories: ["api-keys", "passwords", "connection-strings", "secrets"]
+    
+    rateLimiting:
+      requestsPerMinute: 60
+      requestsPerHour: 1000
+      requestsPerDay: 10000
+  
+  scaling:
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilization: 70
+    targetMemoryUtilization: 80
+  
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "2000m"
+      memory: "4Gi"
+  
+  monitoring:
+    telemetry:
+      enabled: true
+      exporters: ["azure-monitor", "application-insights"]
+    
+    healthCheck:
+      enabled: true
+      path: "/health"
+      interval: "30s"
+      timeout: "10s"
+      failureThreshold: 3
+    
+    metrics:
+      enabled: true
+      include:
+        - "response_time"
+        - "token_usage"
+        - "user_satisfaction"
+        - "error_rate"
+        - "knowledge_retrieval_accuracy"
+  
+  networking:
+    ingress:
+      enabled: true
+      className: "azure-application-gateway"
+      annotations:
+        kubernetes.io/ingress.class: "azure/application-gateway"
+        appgw.ingress.kubernetes.io/ssl-redirect: "true"
+      hosts:
+        - host: "edmund-dev.tminus15.azure.com"
+          paths:
+            - path: "/"
+              pathType: "Prefix"
+      tls:
+        - secretName: "edmund-tls"
+          hosts:
+            - "edmund-dev.tminus15.azure.com"
+  
+  environment:
+    variables:
+      - name: "DEPLOYMENT_ENVIRONMENT"
+        value: "development"
+      - name: "LOG_LEVEL"
+        value: "info"
+      - name: "TMINUS15_REPO_URL"
+        value: "https://github.com/bengweeks/T-Minus-15"
+      - name: "AGENT_VERSION"
+        value: "1.0.0"
+    
+    secrets:
+      - name: "azure-openai-credentials"
+        keys:
+          - "api-key"
+          - "endpoint"
+      - name: "github-access-token"
+        keys:
+          - "token"
+  
+  persistence:
+    conversations:
+      enabled: true
+      storageClass: "azure-files"
+      size: "10Gi"
+      retentionDays: 30
+    
+    knowledgeCache:
+      enabled: true
+      storageClass: "azure-files"
+      size: "50Gi"
+      retentionDays: 90
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: edmund-service
+  namespace: tminus15-agents
+  labels:
+    app: edmund
+    role: engineer
+spec:
+  selector:
+    app: edmund
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: edmund-config
+  namespace: tminus15-agents
+data:
+  agent-config.json: |
+    $(cat agent-config.json)
+  knowledge-sources.json: |
+    $(cat knowledge-sources.json)
