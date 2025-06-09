@@ -86,7 +86,7 @@ jobs:
     
     - name: Set up Azure CLI extensions
       run: |
-        az extension add --name cognitiveservices --yes
+        az extension add -n ml --yes
         az version
     
     - name: Verify Azure subscription and resource group
@@ -104,16 +104,26 @@ jobs:
       run: |
         echo "Setting up AI Foundry project..."
         
-        # Check if AI Foundry resource exists
+        # Try cognitive services approach first
         if ! az cognitiveservices account show --name $AI_FOUNDRY_PROJECT --resource-group $AZURE_RESOURCE_GROUP >/dev/null 2>&1; then
-          echo "Creating new AI Foundry resource..."
-          az cognitiveservices account create \
+          echo "Creating AI Foundry resource using cognitive services..."
+          if ! az cognitiveservices account create \
             --name $AI_FOUNDRY_PROJECT \
             --resource-group $AZURE_RESOURCE_GROUP \
             --location $AZURE_LOCATION \
             --kind AIServices \
             --sku S0 \
-            --custom-domain $AI_FOUNDRY_PROJECT
+            --custom-domain $AI_FOUNDRY_PROJECT; then
+            
+            echo "Cognitive services approach failed, trying ML workspace..."
+            # Fallback to ML workspace approach
+            az ml workspace create \
+              --name $AI_FOUNDRY_PROJECT \
+              --resource-group $AZURE_RESOURCE_GROUP \
+              --location $AZURE_LOCATION \
+              --display-name "Edmund T-Minus-15 Agent Project" \
+              --description "AI Foundry project for Edmund, the Engineering Agent from T-Minus-15 methodology"
+          fi
         else
           echo "AI Foundry resource already exists"
         fi
@@ -122,11 +132,17 @@ jobs:
       run: |
         echo "Configuring AI Foundry connection..."
         
-        # Get AI Foundry endpoint
+        # Try to get endpoint from cognitive services first
         AI_FOUNDRY_ENDPOINT=$(az cognitiveservices account show \
           --name $AI_FOUNDRY_PROJECT \
           --resource-group $AZURE_RESOURCE_GROUP \
-          --query "properties.endpoint" -o tsv)
+          --query "properties.endpoint" -o tsv 2>/dev/null || echo "")
+        
+        if [ -z "$AI_FOUNDRY_ENDPOINT" ]; then
+          echo "Cognitive services endpoint not found, trying ML workspace..."
+          # Fallback: construct endpoint from ML workspace
+          AI_FOUNDRY_ENDPOINT="https://$AI_FOUNDRY_PROJECT.api.azureml.ms"
+        fi
         
         echo "AI Foundry endpoint: $AI_FOUNDRY_ENDPOINT"
         echo "AI_FOUNDRY_ENDPOINT=$AI_FOUNDRY_ENDPOINT" >> $GITHUB_ENV
