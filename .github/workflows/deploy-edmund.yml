@@ -146,7 +146,7 @@ jobs:
   "name": "edmund-engineer",
   "description": "AI Engineer specialized in development tasks and T-Minus-15 methodology",
   "instructions": "$(cat agent-config.json | jq -r '.instructions.systemPrompt' | sed 's/"/\\"/g' | tr '\n' ' ')",
-  "model": "${{ env.AZURE_OPENAI_DEPLOYMENT_NAME }}",
+  "model": "$AZURE_OPENAI_DEPLOYMENT_NAME",
   "tools": [
     {
       "type": "code_interpreter"
