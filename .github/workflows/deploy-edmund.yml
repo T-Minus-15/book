@@ -17,6 +17,9 @@ env:
   AZURE_LOCATION: eastus
   AGENT_NAME: edmund-engineer
   AI_FOUNDRY_PROJECT: edmund-tminus15-project
+  AZURE_OPENAI_ENDPOINT: "https://copilot-edmund.openai.azure.com/"
+  AZURE_OPENAI_API_VERSION: "2024-12-01-preview"
+  AZURE_OPENAI_DEPLOYMENT_NAME: "gpt-4o"
 
 jobs:
   validate:
@@ -134,33 +137,49 @@ jobs:
         
         echo "Agent configuration prepared for deployment"
         
-        # Deploy using Azure ML/AI Foundry APIs
-        echo "Deploying agent to AI Foundry..."
+        # Deploy using Azure OpenAI integration (skip model deployment as it already exists)
+        echo "Configuring Edmund agent with existing Azure OpenAI deployment..."
         
-        # Create or update the agent deployment
-        az ml online-deployment create \
-          --file ai-foundry-deployment.yaml \
+        # Create endpoint first
+        az ml online-endpoint create \
+          --name $AGENT_NAME-endpoint \
           --resource-group $AZURE_RESOURCE_GROUP \
           --workspace-name $AI_FOUNDRY_PROJECT \
-          --set name=$AGENT_NAME-$(date +%Y%m%d-%H%M%S) \
-          --set endpoint_name=$AGENT_NAME-endpoint || {
-            echo "Direct deployment failed, trying alternative approach..."
-            
-            # Alternative: Create endpoint first, then deployment
-            az ml online-endpoint create \
-              --name $AGENT_NAME-endpoint \
-              --resource-group $AZURE_RESOURCE_GROUP \
-              --workspace-name $AI_FOUNDRY_PROJECT \
-              --auth-mode key || echo "Endpoint may already exist"
-            
-            # Then create deployment
-            az ml online-deployment create \
-              --file ai-foundry-deployment.yaml \
-              --endpoint-name $AGENT_NAME-endpoint \
-              --resource-group $AZURE_RESOURCE_GROUP \
-              --workspace-name $AI_FOUNDRY_PROJECT \
-              --set name=$AGENT_NAME-$(date +%Y%m%d-%H%M%S)
-          }
+          --auth-mode key || echo "Endpoint may already exist"
+        
+        # Create a simple deployment configuration without model path
+        cat > simple-deployment.yaml << EOF
+name: $AGENT_NAME-$(date +%Y%m%d-%H%M%S)
+endpoint_name: $AGENT_NAME-endpoint
+code_configuration:
+  code: .
+  scoring_script: scoring.py
+environment:
+  conda_file: conda.yaml
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
+instance_type: Standard_DS3_v2
+instance_count: 1
+app_insights_enabled: true
+request_settings:
+  request_timeout_ms: 90000
+  max_concurrent_requests_per_instance: 1
+  max_queue_wait_ms: 500
+environment_variables:
+  AZURE_OPENAI_ENDPOINT: "${{ env.AZURE_OPENAI_ENDPOINT }}"
+  AZURE_OPENAI_API_KEY: \${{ secrets.AZURE_OPENAI_API_KEY }}
+  AZURE_OPENAI_API_VERSION: "${{ env.AZURE_OPENAI_API_VERSION }}"
+  AZURE_OPENAI_DEPLOYMENT_NAME: "${{ env.AZURE_OPENAI_DEPLOYMENT_NAME }}"
+  AGENT_CONFIG_PATH: "./agent-config.json"
+  LOG_LEVEL: "INFO"
+  DEPLOYMENT_ENVIRONMENT: "production"
+EOF
+        
+        # Deploy using the simplified configuration
+        az ml online-deployment create \
+          --file simple-deployment.yaml \
+          --endpoint-name $AGENT_NAME-endpoint \
+          --resource-group $AZURE_RESOURCE_GROUP \
+          --workspace-name $AI_FOUNDRY_PROJECT
     
     - name: Test deployment
       run: |
