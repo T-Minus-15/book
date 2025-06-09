@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate
     if: github.ref == 'refs/heads/main'
-    environment: development
+    environment: DEMO
     
     steps:
     - uses: actions/checkout@v4
