@@ -4,6 +4,8 @@ on:
   workflow_dispatch:  # Manual triggering
   push:
     branches: [ main ]  # Automatic triggering on push to main branch
+    paths-ignore:
+      - 'agents/**'
 
 # Set permissions for the workflow
 permissions:
