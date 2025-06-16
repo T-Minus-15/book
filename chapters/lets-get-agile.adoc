@@ -117,6 +117,107 @@ Instead, you've got business and technical people collaborating daily on the sam
 
 For more details on SAFe®, check out www.scaledagile.com – but remember, like any powerful framework, it's not magic. It requires discipline, commitment, and strong leadership to make it work.
 
+=== Breaking Down Epics: The Art of Feature Decomposition
+
+Here's where the rubber meets the road. You've got this massive Epic like "Mars colonization infrastructure" - now what? The trick is breaking it down into Features that your team can actually deliver in 3-5 sprints, with 5-10 Features per sprint.
+
+Think of Features as your building blocks. Each one should deliver standalone value while contributing to the bigger Epic. For our Mars example:
+
+**Epic**: Mars Colonization Infrastructure  
+**Features** (sized for sprint delivery):
+- Life Support Environmental Controls
+- Habitat Power Generation System  
+- Water Recycling and Purification
+- Emergency Medical Bay Setup
+- Communication Array Installation
+- Food Production Greenhouse
+- Waste Management System
+- Atmospheric Pressure Regulation
+
+Notice how each Feature could be demoed at the end of a sprint. "Look, we've got the greenhouse working and producing food!" That's tangible progress stakeholders can see and understand.
+
+The key is finding that sweet spot - big enough to deliver meaningful value, small enough to fit in your sprint capacity. If you're struggling to break down an Epic, ask yourself: "What's the smallest thing we could build that would make someone's life better?"
+
+For detailed Epic planning guidance and metadata templates, see <<Epic metadata>> in the appendices.
+
+=== Tracing Value: From Epic to Delivery
+
+Every Epic should tie back to real business value as outlined in your Lean Business Case. This isn't just paperwork - it's your North Star that prevents feature creep and keeps everyone focused on what actually matters.
+
+**Value Tracing Example**:
+**Epic**: Mars Colonization Infrastructure  
+**Business Value**: Enable sustainable human presence on Mars (ROI: $50B over 10 years)  
+**Feature**: Life Support Environmental Controls  
+**Feature Value**: Reduce life support failures by 95% (Cost avoidance: $5M per avoided incident)  
+**Story**: Automated temperature regulation  
+**Story Value**: Eliminate 200+ manual temperature adjustments per day (Labor savings: 4 hours/day)
+
+This traceability helps you make tough decisions. When you're running out of time or budget, you can clearly see which Features deliver the most value and which can be deferred.
+
+**Value Delivery Checkpoints**:
+- Every Epic must have quantified business value in the Lean Business Case
+- Every Feature must trace to Epic value and show measurable outcomes  
+- Every Story must contribute to Feature success metrics
+- Review value delivery at the end of each sprint - are we on track?
+
+If you can't articulate the value of what you're building, stop building it. Your time is too valuable to waste on features nobody needs.
+
+=== Enabler Features: The Foundation for Success
+
+Not every Feature delivers direct user value. Enabler Features build the technical foundation that makes user-facing Features possible. In T-Minus-15, we recognize these essential building blocks:
+
+**Solution Design**: Architecture blueprints and system integration plans
+- "Design microservices architecture for Mars communication systems"
+- "Define data flow between habitat monitoring sensors"
+
+**Data Model**: Database schemas and data structure definitions  
+- "Create environmental sensor data model"
+- "Design crew scheduling and rotation database"
+
+**ALM Pipeline**: Automated deployment and testing infrastructure
+- "Build CI/CD pipeline for Mars rover software updates"
+- "Implement automated testing for life support systems"
+
+**Infrastructure**: Platform and environment setup
+- "Deploy Kubernetes cluster for Mars base operations"
+- "Configure monitoring and alerting for critical systems"
+
+**Compliance**: Security, regulatory, and governance requirements
+- "Implement NASA safety protocol compliance checks"
+- "Add audit logging for all critical system operations"
+
+Enabler Features should be sized just like user-facing Features - deliverable within your sprint capacity. The key difference is their acceptance criteria focus on technical capabilities rather than user outcomes.
+
+**Example Enabler Feature**: "Solution Design for Life Support Integration"
+- Acceptance Criteria: "Given the architectural design is complete, when reviewed by the technical team, then all integration points are clearly defined and feasible within current technology constraints."
+
+For detailed Feature planning templates, see <<Feature metadata>> in the appendices.
+
+=== Non-Functional Requirements: From Epic to Story
+
+NFRs aren't afterthoughts - they're critical constraints that flow down through your entire work hierarchy. Here's how to manage them effectively:
+
+**Epic Level NFRs**: Broad system constraints
+- "Mars communication system must have 99.9% uptime"
+- "Life support systems must respond within 50ms"
+- "All habitat data must be encrypted in transit and at rest"
+
+**Feature Level NFRs**: Specific performance targets  
+- "Environmental control Feature must process 1000 sensor readings/second"
+- "Emergency alert Feature must notify all crew within 5 seconds"
+
+**Story Level NFRs**: Implementation details
+- "Temperature regulation Story must complete adjustment within 10 minutes"
+- "Diagnostic Story must load sensor data in under 2 seconds"
+
+The key is ensuring consistency without over-engineering. Epic-level NFRs set the boundaries, Feature-level NFRs define the targets, and Story-level NFRs specify the implementation requirements.
+
+**NFR Validation**:
+- Include NFR testing in your Definition of Done
+- Monitor NFR compliance in production
+- Review NFR achievement during retrospectives
+- Adjust NFRs based on real-world performance data
+
 === Scrum
 
 Getting back to the team again. Agile software development methodology covers a range of specific practices such as Kanban, Extreme Programming, Lean software development and Scrum for example.
@@ -214,6 +315,46 @@ image::images/estimating.png[float=center,align=center]
 
 From the above, in summary the total effort is approximately twice the engineering effort we put in the Story Points. This is useful for calculating the total effort for Features and capacity of Sprints. As a general rule for example, you can see that for every 4 Engineers, on average you're going to need 1 Test Pilot.
 
+=== User Stories: The T-Minus-15 Format
+
+User Stories are the detailed specifications that drive your Features. In T-Minus-15, we use a specific format that keeps everyone aligned on what we're building and why:
+
+**Format**: As a [persona], I want [goal], so that [benefit]
+
+**Example for Mars Mission Feature "Life Support Environmental Controls":**
+
+*Story 1*: As a Mars habitat resident, I want automated temperature regulation, so that I can maintain optimal living conditions without manual intervention.
+
+*Story 2*: As a mission commander, I want real-time environmental alerts, so that I can respond immediately to life-threatening atmospheric changes.
+
+*Story 3*: As a maintenance engineer, I want environmental system diagnostics, so that I can prevent failures before they become critical.
+
+Notice how each Story focuses on a specific user need within the broader Feature. The "so that" clause is crucial - it forces you to articulate the actual value being delivered.
+
+=== Acceptance Criteria: Using Gherkin Format
+
+For each User Story, define clear acceptance criteria using Gherkin format. This creates a shared understanding between business stakeholders and technical teams:
+
+**Gherkin Format**:
+```
+Given [initial context]
+When [event occurs]  
+Then [expected outcome]
+```
+
+**Example for Story 1 above:**
+```
+Given the habitat temperature is outside optimal range (18-24°C)
+When the environmental system detects the variance
+Then the system automatically adjusts heating/cooling
+And the temperature returns to optimal range within 10 minutes
+And the adjustment is logged in the system
+```
+
+This format eliminates ambiguity. Everyone knows exactly what "done" looks like before development begins.
+
+For complete User Story examples and metadata templates, see <<User Story metadata>> in the appendices.
+
 === Kanban boards
 
 We use Kanban boards to track progress of Stories, Features and Epics. A Kanban board is simply a visual representation to view the progress of items with columns relating to the progression of states and items related as cards on that board.
@@ -244,15 +385,34 @@ All items in the product backlog have various states associated with them to tra
 
 // CREATE TABLE
 
-=== Definition of done
+=== Definition of Done: Your Quality Standards
 
 As your team update the states of work items on a Kanban board, it's important to agree with what we mean by “done”. By specifying what we call a “Definition of Done” for each column in the Kanban board it is clear for all the team as to what the acceptance of the item being complete is.
 
-// CREATE TABLE
+Definition of Done creates clear quality gates for each work item type. Here are the enhanced standards for Epic, Feature, and Story completion:
 
-In the T-Minus-15 methodology we declare the Definition of Done for Stories as follows:
+**Epic Definition of Done**:
+- All Features delivered and deployed to production
+- Business value metrics achieved (as defined in Lean Business Case)
+- Success criteria met and validated by stakeholders
+- Lessons learned documented for future Epics
+- Post-implementation review completed
 
-// CREATE TABLE
+**Feature Definition of Done**:
+- All User Stories completed and tested
+- Feature acceptance criteria met and validated
+- Integration testing completed with other Features
+- Feature deployed to production and monitored
+- User documentation updated
+
+**Story Definition of Done**:
+- Code developed and peer reviewed
+- Unit tests written and passing
+- Gherkin acceptance criteria validated through testing
+- Story deployed to production (where applicable)
+- No known defects remaining
+
+This layered approach ensures quality is built in at every level, not just checked at the end.
 
 === WIP limits
 
