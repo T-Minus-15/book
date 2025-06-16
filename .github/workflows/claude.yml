@@ -48,6 +48,12 @@ jobs:
             - Exclude large binary files, images, and generated content
             - Follow the project's CLAUDE.md guidelines
             - Keep responses concise and focused
+            
+            IMPORTANT: If you encounter a "couldn't find remote ref" error, 
+            this likely means the PR is from a fork. In your comment, explain:
+            "This PR appears to be from a fork. Claude Code currently only works 
+            with PRs from branches in the main repository for security reasons. 
+            Please ask a maintainer to review this PR manually."
           
           # Limit resource-intensive operations
           allowed_tools: "Read,Edit,Write,Glob,Grep"
