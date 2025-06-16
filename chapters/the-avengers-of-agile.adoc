@@ -101,17 +101,26 @@ In our team, we recognize others’ help and success by awarding karma points to
 
 We review these karma points every week in our team meeting to celebrate successes and recognize contributions. This system has helped us build a culture of collaboration and support that has made us more productive and effective.
 
-=== Team Variety - Your Competitive Edge
+=== Hiring for Aptitude - Get the Best Person for the Job
 
-Here's the thing about diversity – it's not just a nice-to-have checkbox for HR. It's your competitive advantage disguised as doing the right thing.
+Here's the thing about hiring – it's not rocket science. You want the best person for the job, period. Not the person who ticks the most boxes on some checklist, not the person who looks good on paper, but the person who can actually deliver.
 
-When you're building your squad, don't just hire five versions of yourself. That's a recipe for groupthink and missed opportunities. You want different backgrounds, experiences, and perspectives bouncing around your team meetings. The quiet analyst from a completely different industry might spot the flaw in your architecture that the seasoned engineers missed.
+The problem is that most hiring processes are broken. They're filled with unconscious bias, groupthink, and shortcuts that lead you to hire people who interview well but can't do the work. If you want to build your Avengers team, you need to get serious about identifying actual ability.
 
-Think about diversity broadly – not just demographics, but cognitive diversity too. You need introverts and extroverts, detail-oriented people and big-picture thinkers, risk-takers and cautious voices. Mix up technical backgrounds, industry experience, and problem-solving approaches.
+**Focus on what matters:**
 
-Create an environment where everyone feels comfortable speaking up. That means shutting down interruptions, rotating who runs meetings, and actively asking for input from quieter team members. If your retrospectives only hear from the same three people every sprint, you're leaving insights on the table.
+* **Technical aptitude**: Can they solve problems? Not just regurgitate frameworks they've memorized, but actually think through complex challenges and come up with solutions.
+* **Learning ability**: Technology changes fast. The specific tools they know today matter less than their ability to pick up new ones tomorrow.
+* **Cultural fit**: Do they share your team values? Can they collaborate effectively? Will they thrive in your environment, or will they be miserable and make everyone else miserable too?
+* **Communication skills**: If they can't explain their thinking or work with others, their technical brilliance is worthless in a team setting.
 
-Remember: diverse teams don't just perform better by accident – they challenge assumptions, spot blind spots, and come up with solutions none of you would have thought of alone.
+**Avoid the hiring traps:**
+
+Don't hire someone just because they're available, or because they went to the right school, or because they've worked at impressive companies. None of that tells you if they can do *this* job with *this* team.
+
+Use practical assessments. Give them real problems to solve. Pair program with them. See how they think, not just what they know. The 20-questions exercise mentioned in the "Recruit the best" section isn't just fun – it reveals problem-solving approach and how they handle pressure.
+
+Most importantly, involve your team in the hiring process. The people who will work with this person every day should have a say in whether they're a good fit. Trust their instincts – they know better than HR what it takes to succeed on your team.
 
 === Continuous Learning - Stay Sharp or Get Left Behind
 
