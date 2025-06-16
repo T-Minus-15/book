@@ -40,8 +40,6 @@ role:
   small-list:
     font_size: 8
     line_height: 1.2
-  xsmall-table:
-    font_size: 7
 
 table:
   width: 100%
@@ -51,3 +49,10 @@ table:
     font_style: bold
   body:
     font_size: 10
+  role:
+    xsmall-table:
+      font_size: 7
+      head:
+        font_size: 7
+      body:
+        font_size: 7
