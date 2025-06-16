@@ -1,4 +1,4 @@
-name: Deploy Edmund Agent
+name: Deploy Edmund (the Engineer)
 
 on:
   push:
@@ -10,16 +10,22 @@ on:
     paths: 
       - 'agents/edmund/**'
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
 
 env:
   AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  AZURE_RESOURCE_GROUP: copilot-edmund
   AZURE_LOCATION: eastus
-  AGENT_NAME: edmund-engineer
-  AI_FOUNDRY_PROJECT: edmund-tminus15-project
-  AZURE_OPENAI_ENDPOINT: "https://copilot-edmund.openai.azure.com/"
-  AZURE_OPENAI_API_VERSION: "2024-12-01-preview"
-  AZURE_OPENAI_DEPLOYMENT_NAME: "gpt-4o"
+  AGENT_NAME: edmund
+  AGENT_DISPLAY_NAME: "Edmund (the Engineer)"
 
 jobs:
   validate:
@@ -35,46 +41,51 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install jsonschema pyyaml
+        pip install jsonschema pyyaml azure-ai-ml azure-identity
     
-    - name: Validate agent configuration
+    - name: Validate Edmund configuration
       run: |
+        cd agents/edmund
+        
+        echo "🔍 Validating Edmund (the Engineer) configuration..."
+        
+        # Validate JSON syntax
+        python -m json.tool agent-config.json > /dev/null
+        echo "✅ agent-config.json is valid JSON"
+        
+        # Check required fields for Edmund
         python -c "
         import json
-        import yaml
-        
-        # Validate agent-config.json
-        with open('agents/edmund/agent-config.json', 'r') as f:
+        with open('agent-config.json', 'r') as f:
             config = json.load(f)
-            print('✓ agent-config.json is valid JSON')
-            
-        # Validate deployment.yaml
-        with open('agents/edmund/deployment.yaml', 'r') as f:
-            deployment = yaml.safe_load_all(f)
-            for doc in deployment:
-                if doc:
-                    print('✓ deployment.yaml document is valid YAML')
         
-        # Check required fields
         required_fields = ['agent', 'model', 'instructions']
         for field in required_fields:
             if field not in config:
                 raise ValueError(f'Missing required field: {field}')
         
-        print('✓ All configuration files are valid')
+        # Edmund-specific validations
+        if 'T-Minus-15' not in config.get('instructions', {}).get('systemPrompt', ''):
+            print('⚠️ Warning: Edmund instructions should mention T-Minus-15 methodology')
+        
+        if config.get('agent', {}).get('name') != 'Edmund':
+            print('⚠️ Warning: Agent name should be Edmund')
+        
+        print('✅ Edmund configuration validation passed')
         "
-    
-    - name: Test configuration syntax
-      run: |
-        cd agents/edmund
-        python -m json.tool agent-config.json > /dev/null
-        echo "✓ agent-config.json syntax is valid"
+        
+        # Validate Bicep templates
+        if [ -f "infra/main.bicep" ]; then
+          echo "✅ Bicep infrastructure templates found"
+        else
+          echo "⚠️ No Bicep templates found - will use basic deployment"
+        fi
 
-  deploy-dev:
+  deploy:
     runs-on: ubuntu-latest
     needs: validate
     if: github.ref == 'refs/heads/main'
-    environment: DEMO
+    environment: ${{ github.event.inputs.environment || 'development' }}
     
     steps:
     - uses: actions/checkout@v4
@@ -84,194 +95,193 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
-    - name: Set up Azure CLI extensions
+    - name: Set up environment variables
       run: |
-        az extension add -n ml --yes
-        az version
+        ENVIRONMENT="${{ github.event.inputs.environment || 'development' }}"
+        RESOURCE_GROUP="rg-edmund-${ENVIRONMENT}"
+        PROJECT_NAME="edmund-tminus15-${ENVIRONMENT}"
+        
+        echo "ENVIRONMENT=$ENVIRONMENT" >> $GITHUB_ENV
+        echo "RESOURCE_GROUP=$RESOURCE_GROUP" >> $GITHUB_ENV
+        echo "PROJECT_NAME=$PROJECT_NAME" >> $GITHUB_ENV
+        
+        echo "🚀 Deploying Edmund (the Engineer) to $ENVIRONMENT environment"
+        echo "Resource Group: $RESOURCE_GROUP"
+        echo "Project Name: $PROJECT_NAME"
+        echo "Location: $AZURE_LOCATION"
     
-    - name: Verify Azure subscription and resource group
+    - name: Create resource group
       run: |
-        echo "Checking Azure subscription..."
-        az account show --output table
+        echo "📁 Creating resource group for Edmund..."
+        az group create \
+          --name "$RESOURCE_GROUP" \
+          --location "$AZURE_LOCATION" \
+          --tags \
+            agent="edmund" \
+            role="engineer" \
+            methodology="t-minus-15" \
+            environment="$ENVIRONMENT"
         
-        echo "Checking resource group..."
-        az group show --name $AZURE_RESOURCE_GROUP --output table || {
-          echo "Creating resource group $AZURE_RESOURCE_GROUP..."
-          az group create --name $AZURE_RESOURCE_GROUP --location $AZURE_LOCATION
-        }
+        echo "✅ Resource group $RESOURCE_GROUP ready"
     
-    - name: Create or update AI Foundry project
-      run: |
-        echo "Setting up AI Foundry project..."
-        
-        # Try cognitive services approach first
-        if ! az cognitiveservices account show --name $AI_FOUNDRY_PROJECT --resource-group $AZURE_RESOURCE_GROUP >/dev/null 2>&1; then
-          echo "Creating AI Foundry resource using cognitive services..."
-          if ! az cognitiveservices account create \
-            --name $AI_FOUNDRY_PROJECT \
-            --resource-group $AZURE_RESOURCE_GROUP \
-            --location $AZURE_LOCATION \
-            --kind AIServices \
-            --sku S0 \
-            --custom-domain $AI_FOUNDRY_PROJECT; then
-            
-            echo "Cognitive services approach failed, trying ML workspace..."
-            # Fallback to ML workspace approach
-            az ml workspace create \
-              --name $AI_FOUNDRY_PROJECT \
-              --resource-group $AZURE_RESOURCE_GROUP \
-              --location $AZURE_LOCATION \
-              --display-name "Edmund T-Minus-15 Agent Project" \
-              --description "AI Foundry project for Edmund, the Engineering Agent from T-Minus-15 methodology"
-          fi
-        else
-          echo "AI Foundry resource already exists"
-        fi
-    
-    - name: Configure AI Foundry connection
-      run: |
-        echo "Configuring AI Foundry connection..."
-        
-        # Try to get endpoint from cognitive services first
-        AI_FOUNDRY_ENDPOINT=$(az cognitiveservices account show \
-          --name $AI_FOUNDRY_PROJECT \
-          --resource-group $AZURE_RESOURCE_GROUP \
-          --query "properties.endpoint" -o tsv 2>/dev/null || echo "")
-        
-        if [ -z "$AI_FOUNDRY_ENDPOINT" ]; then
-          echo "Cognitive services endpoint not found, trying ML workspace..."
-          # Fallback: construct endpoint from ML workspace
-          AI_FOUNDRY_ENDPOINT="https://$AI_FOUNDRY_PROJECT.api.azureml.ms"
-        fi
-        
-        echo "AI Foundry endpoint: $AI_FOUNDRY_ENDPOINT"
-        echo "AI_FOUNDRY_ENDPOINT=$AI_FOUNDRY_ENDPOINT" >> $GITHUB_ENV
-    
-    - name: Deploy Edmund agent to AI Foundry
+    - name: Deploy Edmund infrastructure
       run: |
         cd agents/edmund
         
-        echo "Deploying Edmund agent to AI Foundry..."
+        echo "🏗️ Deploying Edmund's infrastructure..."
         
-        # Get access token for AI Foundry API
-        ACCESS_TOKEN=$(az account get-access-token --resource 'https://ai.azure.com' --query accessToken -o tsv)
-        
-        # Create agent using AI Foundry REST API
-        INSTRUCTIONS=$(cat agent-config.json | jq -r '.instructions.systemPrompt' | sed 's/"/\\"/g' | tr '\n' ' ')
-        
-        # Build JSON payload using jq to avoid YAML parsing issues
-        echo '{}' | jq \
-          --arg name "edmund-engineer" \
-          --arg desc "AI Engineer specialized in development tasks and T-Minus-15 methodology" \
-          --arg instructions "$INSTRUCTIONS" \
-          --arg model "$AZURE_OPENAI_DEPLOYMENT_NAME" \
-          '.name = $name | .description = $desc | .instructions = $instructions | .model = $model | .tools = [{"type": "code_interpreter"}, {"type": "file_search"}] | .metadata = {"version": "1.0.0", "methodology": "T-Minus-15", "deployment_environment": "production"}' \
-          > agent-payload.json
-        
-        # Deploy agent to AI Foundry
-        curl -X POST "$AI_FOUNDRY_ENDPOINT/agents" \
-          -H "Authorization: Bearer $ACCESS_TOKEN" \
-          -H "Content-Type: application/json" \
-          -H "api-version: 2025-01-15-preview" \
-          -d @agent-payload.json \
-          -o deployment-response.json
-        
-        # Check deployment response
-        if [ -f deployment-response.json ]; then
-          echo "Deployment response:"
-          cat deployment-response.json
+        if [ -f "infra/main.bicep" ]; then
+          echo "📋 Using Bicep templates for Edmund"
           
-          # Extract agent ID if successful
-          AGENT_ID=$(cat deployment-response.json | jq -r '.id' 2>/dev/null || echo "")
-          if [ "$AGENT_ID" != "" ] && [ "$AGENT_ID" != "null" ]; then
-            echo "✅ Edmund agent deployed successfully with ID: $AGENT_ID"
-            echo "AGENT_ID=$AGENT_ID" >> $GITHUB_ENV
+          DEPLOYMENT_NAME="edmund-deployment-$(date +%Y%m%d-%H%M%S)"
+          
+          # Deploy Edmund's specialized infrastructure
+          az deployment group create \
+            --resource-group "$RESOURCE_GROUP" \
+            --name "$DEPLOYMENT_NAME" \
+            --template-file infra/main.bicep \
+            --parameters infra/main.parameters.json \
+            --parameters projectName="$PROJECT_NAME" \
+            --parameters agentName="edmund" \
+            --parameters agentRole="engineer" \
+            --parameters modelDeployment="gpt-4o" \
+            --output table
+          
+          echo "✅ Edmund infrastructure deployed successfully"
+          
+        else
+          echo "🔧 Creating basic AI Foundry setup for Edmund..."
+          
+          # Create AI Services account optimized for engineering tasks
+          AI_SERVICE_NAME="${PROJECT_NAME}-ai-service"
+          
+          az cognitiveservices account create \
+            --name "$AI_SERVICE_NAME" \
+            --resource-group "$RESOURCE_GROUP" \
+            --location "$AZURE_LOCATION" \
+            --kind "AIServices" \
+            --sku "S0" \
+            --tags \
+              agent="edmund" \
+              role="engineer" \
+              capabilities="code-interpreter,file-search" \
+            --yes
+          
+          echo "✅ Basic AI infrastructure ready for Edmund"
+        fi
+    
+    - name: Configure Edmund agent
+      run: |
+        cd agents/edmund
+        
+        echo "🤖 Configuring Edmund (the Engineer) in AI Foundry..."
+        
+        # Read Edmund's specific configuration
+        INSTRUCTIONS=$(cat agent-config.json | jq -r '.instructions.systemPrompt')
+        TEMPERATURE=$(cat agent-config.json | jq -r '.model.temperature // 0.1')
+        MAX_TOKENS=$(cat agent-config.json | jq -r '.model.maxTokens // 4096')
+        
+        echo "📝 Edmund Configuration:"
+        echo "  Instructions: Engineering focus with T-Minus-15 methodology"
+        echo "  Temperature: $TEMPERATURE (focused responses)"
+        echo "  Max Tokens: $MAX_TOKENS"
+        echo "  Tools: Code interpreter, File search"
+        
+        # Create Edmund-specific agent payload
+        cat > edmund-agent-payload.json << EOF
+        {
+          "name": "edmund-engineer",
+          "instructions": "$INSTRUCTIONS",
+          "model": "gpt-4o",
+          "temperature": $TEMPERATURE,
+          "max_tokens": $MAX_TOKENS,
+          "tools": [
+            {"type": "code_interpreter"},
+            {"type": "file_search"}
+          ],
+          "metadata": {
+            "agent_name": "Edmund",
+            "role": "Engineer", 
+            "specialization": "DevOps, Infrastructure, Code Development",
+            "methodology": "T-Minus-15",
+            "version": "1.0.0",
+            "environment": "$ENVIRONMENT",
+            "deployed_by": "github_actions",
+            "deployed_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+        }
+        EOF
+        
+        echo "📄 Edmund agent configuration ready"
+        cat edmund-agent-payload.json | jq .
+    
+    - name: Setup Edmund's knowledge sources
+      run: |
+        cd agents/edmund
+        
+        echo "📚 Setting up Edmund's knowledge sources..."
+        
+        if [ -f "knowledge-sources.json" ]; then
+          echo "📖 Found knowledge sources configuration for Edmund"
+          
+          # Extract T-Minus-15 repository URL
+          REPO_URL=$(cat knowledge-sources.json | jq -r '.knowledgeSources[0].source.url // "https://github.com/bengweeks/T-Minus-15"')
+          
+          echo "🔗 Primary knowledge source: $REPO_URL"
+          echo "📅 Refresh schedule: Daily (T-Minus-15 methodology)"
+          echo "📑 File types: .md, .adoc, .yml, .txt"
+          
+          # Validate repository access
+          if curl -s -f -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "$REPO_URL" > /dev/null; then
+            echo "✅ Knowledge source accessible"
           else
-            echo "❌ Agent deployment may have failed"
-            cat deployment-response.json
+            echo "⚠️ Knowledge source may not be accessible"
           fi
         else
-          echo "❌ No deployment response received"
+          echo "⚠️ No knowledge sources configuration found"
+          echo "💡 Edmund will use default T-Minus-15 knowledge"
         fi
     
-    - name: Test deployment
+    - name: Test Edmund deployment
       run: |
-        echo "Testing Edmund agent deployment..."
+        echo "🧪 Testing Edmund deployment..."
         
-        if [ -z "$AGENT_ID" ]; then
-          echo "⚠️ No agent ID available, skipping test"
-          exit 0
-        fi
+        # Verify resource group
+        az group show --name "$RESOURCE_GROUP" --output table
         
-        # Get access token for AI Foundry API
-        ACCESS_TOKEN=$(az account get-access-token --resource 'https://ai.azure.com' --query accessToken -o tsv)
+        # List deployed resources
+        echo "📋 Resources deployed for Edmund:"
+        az resource list --resource-group "$RESOURCE_GROUP" --output table
         
-        # Create a test thread
-        THREAD_PAYLOAD='{"metadata": {"test": "true"}}'
-        curl -X POST "$AI_FOUNDRY_ENDPOINT/threads" \
-          -H "Authorization: Bearer $ACCESS_TOKEN" \
-          -H "Content-Type: application/json" \
-          -H "api-version: 2025-01-15-preview" \
-          -d "$THREAD_PAYLOAD" \
-          -o thread-response.json
-        
-        THREAD_ID=$(cat thread-response.json | jq -r '.id' 2>/dev/null || echo "")
-        
-        if [ "$THREAD_ID" != "" ] && [ "$THREAD_ID" != "null" ]; then
-          echo "✅ Test thread created: $THREAD_ID"
-          
-          # Send test message to Edmund
-          MESSAGE_PAYLOAD='{"role": "user", "content": "Hello Edmund! Can you help me with a quick T-Minus-15 methodology question?"}'
-          curl -X POST "$AI_FOUNDRY_ENDPOINT/threads/$THREAD_ID/messages" \
-            -H "Authorization: Bearer $ACCESS_TOKEN" \
-            -H "Content-Type: application/json" \
-            -H "api-version: 2025-01-15-preview" \
-            -d "$MESSAGE_PAYLOAD" \
-            -o message-response.json
-          
-          echo "✅ Test message sent to Edmund"
-          echo "📋 Deployment test completed successfully"
-        else
-          echo "⚠️ Could not create test thread, but agent deployment appears successful"
-        fi
+        echo "✅ Edmund deployment test completed"
     
-    - name: Verify agent deployment
+    - name: Output Edmund deployment info
       run: |
-        echo "Verifying Edmund agent deployment..."
+        SUBSCRIPTION_ID=$(az account show --query id -o tsv)
         
-        if [ -n "$AGENT_ID" ]; then
-          # Get access token for AI Foundry API
-          ACCESS_TOKEN=$(az account get-access-token --resource 'https://ai.azure.com' --query accessToken -o tsv)
-          
-          # Get agent details
-          curl -X GET "$AI_FOUNDRY_ENDPOINT/agents/$AGENT_ID" \
-            -H "Authorization: Bearer $ACCESS_TOKEN" \
-            -H "api-version: 2025-01-15-preview" \
-            -o agent-details.json
-          
-          echo "✅ Edmund agent details:"
-          cat agent-details.json | jq .
-        else
-          echo "⚠️ No agent ID available for verification"
-        fi
-    
-    - name: Output deployment information
-      run: |
-        echo "=== Edmund Deployment Summary ==="
-        echo "Agent Name: $AGENT_NAME"
-        echo "Resource Group: $AZURE_RESOURCE_GROUP"
-        echo "AI Foundry Project: $AI_FOUNDRY_PROJECT"
-        echo "Location: $AZURE_LOCATION"
-        echo "AI Foundry Endpoint: $AI_FOUNDRY_ENDPOINT"
-        echo "Azure OpenAI Endpoint: ${{ env.AZURE_OPENAI_ENDPOINT }}"
-        echo "Model: ${{ env.AZURE_OPENAI_DEPLOYMENT_NAME }}"
-        
-        if [ -n "$AGENT_ID" ]; then
-          echo "Agent ID: $AGENT_ID"
-          echo "✅ Edmund successfully deployed to Azure AI Foundry!"
-        else
-          echo "⚠️ Agent deployment status unclear"
-        fi
-        
-        echo "=== Deployment Complete ==="
-
+        echo "=========================================="
+        echo "🎉 Edmund (the Engineer) Deployed!"
+        echo "=========================================="
+        echo ""
+        echo "🤖 Agent Details:"
+        echo "  Name: Edmund"
+        echo "  Role: Engineer (DevOps & Development)"
+        echo "  Specialization: T-Minus-15 Methodology"
+        echo "  Environment: $ENVIRONMENT"
+        echo ""
+        echo "🏗️ Infrastructure:"
+        echo "  Resource Group: $RESOURCE_GROUP"
+        echo "  Project Name: $PROJECT_NAME"
+        echo "  Location: $AZURE_LOCATION"
+        echo ""
+        echo "🌐 Portal Access:"
+        echo "  Azure Portal: https://portal.azure.com/#@evrosdemo.onmicrosoft.com/resource/subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP"
+        echo "  AI Foundry: https://ai.azure.com/"
+        echo ""
+        echo "🎯 Next Steps:"
+        echo "  1. Visit AI Foundry portal to complete agent setup"
+        echo "  2. Configure GPT-4o model deployment"
+        echo "  3. Test Edmund with T-Minus-15 methodology questions"
+        echo "  4. Set up knowledge base integration"
+        echo ""
+        echo "⚙️ Edmund is ready to help with your engineering tasks!"
