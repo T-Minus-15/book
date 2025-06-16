@@ -21,59 +21,9 @@ For more information, please see:
 
 [VSTS – The Road to Continuous Delivery with Visual Studio Team Services](https://msdn.microsoft.com/magazine/mt814804.aspx)
 
-=== Pick a Branching Strategy That Won't Make Your Team Miserable
+=== Version Control: Your Foundation for Success
 
-Version control isn't optional in 2025. It's as fundamental as electricity to your development workflow. But simply having Git isn't enough - how you use it can either supercharge your team or create endless headaches.
-
-With modern distributed teams, cloud-based source control like GitHub or Azure DevOps isn't just convenient - it's essential. And let's be real: Git won over the version control wars years ago. If you're still using TFVC or SVN, it's time to move on. Git is the lingua franca of modern development, and your developers already know it.
-
-But here's where teams really get tripped up: choosing a branching strategy.
-
-=== GitFlow vs. Release Flow: A Tale of Two Strategies
-
-Let me save you months of pain: **GitFlow is needlessly complex for most teams**.
-
-GitFlow was designed for managing multiple versions of software simultaneously and has branches for everything - development, features, releases, hotfixes, you name it. Each branch has a specific purpose that maps to an environment.
-
-// INSERT
-Figure 20. GitFlow uses the principle of branches matching environments (for dev, QA and production for example)
-
-Sounds organized, right? But here's what actually happens with GitFlow:
-
-* Your developers constantly ask "Wait, do I branch from develop or master for this feature?"
-* Merge conflicts become epic battles that waste entire afternoons
-* Your CI/CD pipelines turn into spaghetti trying to handle all these branch types
-* You spend more time managing git than actually writing code
-
-After watching countless teams struggle with GitFlow, we strongly advocate for **Release Flow** - the same approach Microsoft uses internally for major products like Azure DevOps.
-
-Release Flow is refreshingly straightforward: everybody works off the main branch. For new work, create a short-lived topic branch, do your thing, and merge it back to main via pull request. When you're ready to release, create a release branch that captures that point in time. Need a hotfix? Make it on main and cherry-pick it to the affected release branch.
-
-You can read more about Release Flow and the VSTS team here:
-
-[Release Flow: How we do branching on the VSTS team](https://devblogs.microsoft.com/devops/release-flow-how-we-do-branching-on-the-vsts-team/)
-
-[Release Flow](https://docs.microsoft.com/en-us/azure/devops/learn/devops-at-microsoft/release-flow)
-
-=== Topic Branches: Keep 'Em Short and Sweet
-
-Topic branches are where the real work happens in Release Flow. Here's how it works:
-
-. Developer pulls latest main branch
-. Creates a new topic branch for their specific task
-. Makes their changes and runs local tests
-. Opens a pull request when ready for team review
-
-The beauty of topic branches is they're focused on one thing - a specific feature, bug fix, or enhancement. They're not environment-specific like in GitFlow. This makes them easy to understand: "This branch adds payment processing" or "This branch fixes the login bug."
-
-Crucial point: keep these branches **short-lived**. Aim for hours or days, not weeks. Long-lived branches are like leftovers in your fridge - they get stinky fast and nobody wants to deal with them. The longer a branch lives, the more it diverges from main, and the more painful the eventual merge becomes.
-
-When submitting a pull request, follow the "pride principle" - only submit code you'd be proud to show off. Before bothering others with a review, ask yourself: "Does this work as expected? Is it well-tested? Would I be happy inheriting this code?"
-
-// INSERT 
-Figure 21. Overview of the Release Flow branching methodology where we work on topics from the master branch. When releases are made a separate branch is created in case hot fixes are needed for production.
-
-// INSERT <insert image of rocket branching and merging>
+Version control isn't optional in 2025. It's as fundamental as electricity to your development workflow. With modern distributed teams, cloud-based source control like GitHub or Azure DevOps isn't just convenient - it's essential. And let's be real: Git won over the version control wars years ago. If you're still using TFVC or SVN, it's time to move on. Git is the lingua franca of modern development, and your developers already know it.
 
 === Lock Down Your Repo with Sensible Policies
 
