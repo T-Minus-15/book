@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: t-minus-15-agents
+metadata:
+  template: t-minus-15-agents@0.0.1-beta
+services:
+  api:
+    project: .
+    language: python
+    host: aca
+hooks:
+  postprovision:
+    shell: sh
+    run: |
+      echo "Setting up AI Foundry project..."
+      az extension add --name ai-examples --upgrade
+      echo "AI Foundry project configuration complete"

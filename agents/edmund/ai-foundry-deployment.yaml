@@ -1,11 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: edmund-deployment
 endpoint_name: edmund-endpoint
-model: 
-  # For AI Foundry, we'll use a custom model or Azure OpenAI integration
-  name: gpt-4o
-  version: "2024-12-01-preview"
-  path: azureml://registries/azureml/models/gpt-4o/versions/1
+# No model path needed - we'll use Azure OpenAI connection directly
 code_configuration:
   code: .
   scoring_script: scoring.py
@@ -20,10 +16,11 @@ request_settings:
   max_concurrent_requests_per_instance: 1
   max_queue_wait_ms: 500
 environment_variables:
-  AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+  AZURE_OPENAI_ENDPOINT: "https://copilot-edmund.openai.azure.com/"
   AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY}
   AZURE_OPENAI_API_VERSION: "2024-12-01-preview"
+  AZURE_OPENAI_DEPLOYMENT_NAME: "gpt-4o"
   AGENT_CONFIG_PATH: "./agent-config.json"
   KNOWLEDGE_SOURCES_PATH: "./knowledge-sources.json"
   LOG_LEVEL: "INFO"
-  DEPLOYMENT_ENVIRONMENT: "development"
+  DEPLOYMENT_ENVIRONMENT: "production"

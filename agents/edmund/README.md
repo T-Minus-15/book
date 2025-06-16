@@ -7,16 +7,32 @@ Edmund is an AI agent specialized in development tasks and deeply versed in the 
 ### Prerequisites
 - Azure subscription with AI Foundry access
 - Azure CLI installed and configured
-- GitHub repository access
-- Required secrets configured in GitHub repository
+- Linux/Unix environment (tested on Ubuntu)
+
+### Install Azure CLI (One-time Setup)
+```bash
+# Install Azure CLI from Microsoft's repository
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+# Verify installation
+az --version
+
+# Login to Azure
+az login
+```
 
 ### Deploy Edmund
 ```bash
-# Trigger deployment via GitHub Actions
-gh workflow run deploy-edmund.yml
+# Deploy Edmund via GitHub Actions (recommended)
+gh workflow run deploy-agents.yml -f agent_name=edmund -f environment=development
 
-# Or deploy to specific environment
-gh workflow run deploy-edmund.yml -f environment=development
+# Deploy all T-Minus-15 agents
+gh workflow run deploy-agents.yml -f agent_name=all -f environment=development
+
+# Auto-deployment: Push changes to agents/edmund/ to trigger deployment
+git add agents/edmund/
+git commit -m "Update Edmund configuration"
+git push origin main
 ```
 
 ## 📁 Directory Structure
@@ -26,8 +42,13 @@ gh workflow run deploy-edmund.yml -f environment=development
 ├── edmund.md                    # Agent personality, role, and capabilities
 ├── agent-config.json           # Azure AI Foundry agent configuration
 ├── knowledge-sources.json      # Knowledge base configuration
-├── deployment.yaml             # Kubernetes deployment manifest
+├── infra/                      # Bicep infrastructure templates
+│   ├── main.bicep              # Main infrastructure template
+│   ├── main.parameters.json    # Deployment parameters
+│   └── modules/                # Infrastructure modules
+├── test_azure_deployment.py    # Deployment verification script
 ├── requirements.txt            # Python dependencies
+├── azure.yaml                  # Azure Developer CLI configuration
 ├── mcp-config.json             # MCP server configurations (future)
 └── README.md                   # This documentation
 ```

@@ -1,0 +1,350 @@
+name: Deploy Shared T-Minus-15 Infrastructure
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'book.adoc'
+      - 'chapters/**'
+      - 'appendices/**'
+      - 'themes/**'
+      - '.github/workflows/deploy-shared-infrastructure.yml'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+      force_rebuild:
+        description: 'Force rebuild of knowledge base'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  # Azure Configuration - Labs Demo Subscription
+  AZURE_SUBSCRIPTION_ID: "7620f9be-bf91-4297-ada2-659d2695b3a1"
+  AZURE_TENANT_ID: "19ced85d-73f5-4193-8797-9fdce478db64"
+  AZURE_LOCATION: "eastus"
+  
+  # Shared Infrastructure Configuration
+  SHARED_RESOURCE_GROUP: "rg-tminus15-shared"
+  AI_FOUNDRY_HUB: "tminus15-hub"
+  AI_FOUNDRY_PROJECT: "tminus15-agents-project"
+  SHARED_STORAGE: "tminus15storage"
+  SHARED_KEYVAULT: "tminus15-keyvault"
+
+jobs:
+  build-knowledge-base:
+    runs-on: ubuntu-latest
+    outputs:
+      pdf-artifact: ${{ steps.build-pdf.outputs.artifact-name }}
+      pdf-size: ${{ steps.build-pdf.outputs.pdf-size }}
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up AsciiDoc environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y asciidoctor
+        sudo gem install asciidoctor-pdf
+        asciidoctor --version
+        asciidoctor-pdf --version
+    
+    - name: Build T-Minus-15 PDF knowledge source
+      id: build-pdf
+      run: |
+        echo "📚 Building T-Minus-15 methodology PDF knowledge source..."
+        
+        # Create knowledge artifacts directory
+        mkdir -p knowledge-artifacts
+        
+        # Build the PDF that will serve as shared knowledge base
+        asciidoctor-pdf \
+          -a pdf-theme=tminus15-theme.yml \
+          -a pdf-themesdir=themes \
+          book.adoc \
+          -o knowledge-artifacts/tminus15-methodology.pdf \
+          --trace -v
+        
+        if [ -f "knowledge-artifacts/tminus15-methodology.pdf" ]; then
+          PDF_SIZE=$(du -h knowledge-artifacts/tminus15-methodology.pdf | cut -f1)
+          echo "✅ T-Minus-15 PDF knowledge source created (Size: $PDF_SIZE)"
+          
+          echo "artifact-name=tminus15-knowledge-$(date +%Y%m%d-%H%M%S)" >> $GITHUB_OUTPUT
+          echo "pdf-size=$PDF_SIZE" >> $GITHUB_OUTPUT
+          
+          # Create metadata file
+          cat > knowledge-artifacts/metadata.json << EOF
+          {
+            "title": "T-Minus-15: Secrets of an Elite DevOps Team",
+            "built_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "version": "$(git rev-parse --short HEAD)",
+            "size": "$PDF_SIZE",
+            "purpose": "Shared knowledge base for all T-Minus-15 agents",
+            "agents": ["edmund", "danny", "ollie", "pepper", "poppy", "teddy"]
+          }
+          EOF
+          
+          echo "📄 Knowledge base metadata:"
+          cat knowledge-artifacts/metadata.json | jq .
+        else
+          echo "❌ Failed to create PDF knowledge source"
+          exit 1
+        fi
+    
+    - name: Upload knowledge artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ steps.build-pdf.outputs.artifact-name }}
+        path: knowledge-artifacts/
+        retention-days: 30
+
+  deploy-shared-infrastructure:
+    runs-on: ubuntu-latest
+    needs: build-knowledge-base
+    if: github.ref == 'refs/heads/main'
+    environment: ${{ github.event.inputs.environment || 'development' }}
+    outputs:
+      ai-foundry-project: ${{ steps.deploy-infra.outputs.ai-foundry-project }}
+      resource-group: ${{ steps.deploy-infra.outputs.resource-group }}
+      knowledge-uploaded: ${{ steps.upload-knowledge.outputs.knowledge-uploaded }}
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download knowledge artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: ${{ needs.build-knowledge-base.outputs.pdf-artifact }}
+        path: knowledge-artifacts/
+    
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: Set up environment variables
+      run: |
+        ENVIRONMENT="${{ github.event.inputs.environment || 'development' }}"
+        
+        # Append environment suffix for non-production
+        if [ "$ENVIRONMENT" != "production" ]; then
+          RESOURCE_GROUP="${{ env.SHARED_RESOURCE_GROUP }}-${ENVIRONMENT}"
+          AI_FOUNDRY_HUB="${{ env.AI_FOUNDRY_HUB }}-${ENVIRONMENT}"
+          AI_FOUNDRY_PROJECT="${{ env.AI_FOUNDRY_PROJECT }}-${ENVIRONMENT}"
+          SHARED_STORAGE="${{ env.SHARED_STORAGE }}${ENVIRONMENT}"
+          SHARED_KEYVAULT="${{ env.SHARED_KEYVAULT }}-${ENVIRONMENT}"
+        else
+          RESOURCE_GROUP="${{ env.SHARED_RESOURCE_GROUP }}"
+          AI_FOUNDRY_HUB="${{ env.AI_FOUNDRY_HUB }}"
+          AI_FOUNDRY_PROJECT="${{ env.AI_FOUNDRY_PROJECT }}"
+          SHARED_STORAGE="${{ env.SHARED_STORAGE }}"
+          SHARED_KEYVAULT="${{ env.SHARED_KEYVAULT }}"
+        fi
+        
+        echo "ENVIRONMENT=$ENVIRONMENT" >> $GITHUB_ENV
+        echo "RESOURCE_GROUP=$RESOURCE_GROUP" >> $GITHUB_ENV
+        echo "AI_FOUNDRY_HUB=$AI_FOUNDRY_HUB" >> $GITHUB_ENV
+        echo "AI_FOUNDRY_PROJECT=$AI_FOUNDRY_PROJECT" >> $GITHUB_ENV
+        echo "SHARED_STORAGE=$SHARED_STORAGE" >> $GITHUB_ENV
+        echo "SHARED_KEYVAULT=$SHARED_KEYVAULT" >> $GITHUB_ENV
+        
+        echo "🏗️ Deploying T-Minus-15 Shared Infrastructure"
+        echo "Environment: $ENVIRONMENT"
+        echo "Resource Group: $RESOURCE_GROUP"
+        echo "AI Foundry Hub: $AI_FOUNDRY_HUB"
+        echo "AI Foundry Project: $AI_FOUNDRY_PROJECT"
+    
+    - name: Create shared resource group
+      run: |
+        echo "📁 Creating shared resource group..."
+        
+        az group create \
+          --name "$RESOURCE_GROUP" \
+          --location "${{ env.AZURE_LOCATION }}" \
+          --tags \
+            project="t-minus-15" \
+            purpose="shared-infrastructure" \
+            environment="$ENVIRONMENT" \
+            methodology="agile-devops"
+        
+        echo "✅ Shared resource group $RESOURCE_GROUP ready"
+    
+    - name: Deploy shared infrastructure
+      id: deploy-infra
+      run: |
+        echo "🏗️ Deploying shared T-Minus-15 infrastructure..."
+        
+        # 1. Create shared storage account
+        echo "💾 Creating shared storage account..."
+        if ! az storage account show --name "$SHARED_STORAGE" --resource-group "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          az storage account create \
+            --name "$SHARED_STORAGE" \
+            --resource-group "$RESOURCE_GROUP" \
+            --location "${{ env.AZURE_LOCATION }}" \
+            --sku "Standard_LRS" \
+            --kind "StorageV2" \
+            --tags \
+              purpose="shared-knowledge-storage" \
+              environment="$ENVIRONMENT"
+        fi
+        
+        # 2. Create shared Key Vault
+        echo "🔐 Creating shared Key Vault..."
+        if ! az keyvault show --name "$SHARED_KEYVAULT" >/dev/null 2>&1; then
+          az keyvault create \
+            --name "$SHARED_KEYVAULT" \
+            --resource-group "$RESOURCE_GROUP" \
+            --location "${{ env.AZURE_LOCATION }}" \
+            --tags \
+              purpose="shared-secrets" \
+              environment="$ENVIRONMENT"
+        fi
+        
+        # 3. Create AI Services (Hub)
+        echo "🧠 Creating AI Foundry Hub..."
+        AI_SERVICE_NAME="${AI_FOUNDRY_HUB}-ai-service"
+        if ! az cognitiveservices account show --name "$AI_SERVICE_NAME" --resource-group "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          az cognitiveservices account create \
+            --name "$AI_SERVICE_NAME" \
+            --resource-group "$RESOURCE_GROUP" \
+            --location "${{ env.AZURE_LOCATION }}" \
+            --kind "AIServices" \
+            --sku "S0" \
+            --tags \
+              purpose="ai-foundry-hub" \
+              environment="$ENVIRONMENT" \
+            --yes
+        fi
+        
+        # 4. Create AI Foundry Project (Workspace)
+        echo "🏭 Creating AI Foundry Project..."
+        if ! az ml workspace show --name "$AI_FOUNDRY_PROJECT" --resource-group "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          az ml workspace create \
+            --name "$AI_FOUNDRY_PROJECT" \
+            --resource-group "$RESOURCE_GROUP" \
+            --location "${{ env.AZURE_LOCATION }}" \
+            --display-name "T-Minus-15 Agents Project ($ENVIRONMENT)" \
+            --description "Unified AI Foundry project for all T-Minus-15 methodology agents (Edmund, Danny, Ollie, Pepper, Poppy, Teddy)"
+        fi
+        
+        echo "✅ Shared infrastructure deployment completed"
+        echo "ai-foundry-project=$AI_FOUNDRY_PROJECT" >> $GITHUB_OUTPUT
+        echo "resource-group=$RESOURCE_GROUP" >> $GITHUB_OUTPUT
+    
+    - name: Upload knowledge base to shared storage
+      id: upload-knowledge
+      run: |
+        echo "📚 Uploading T-Minus-15 knowledge base to shared storage..."
+        
+        # Get storage account key
+        STORAGE_KEY=$(az storage account keys list \
+          --account-name "$SHARED_STORAGE" \
+          --resource-group "$RESOURCE_GROUP" \
+          --query "[0].value" -o tsv)
+        
+        # Create knowledge container
+        az storage container create \
+          --name "knowledge-base" \
+          --account-name "$SHARED_STORAGE" \
+          --account-key "$STORAGE_KEY" \
+          --public-access off
+        
+        # Upload PDF knowledge source
+        if [ -f "knowledge-artifacts/tminus15-methodology.pdf" ]; then
+          az storage blob upload \
+            --file "knowledge-artifacts/tminus15-methodology.pdf" \
+            --name "tminus15-methodology-$(date +%Y%m%d).pdf" \
+            --container-name "knowledge-base" \
+            --account-name "$SHARED_STORAGE" \
+            --account-key "$STORAGE_KEY" \
+            --overwrite
+          
+          # Upload metadata
+          az storage blob upload \
+            --file "knowledge-artifacts/metadata.json" \
+            --name "tminus15-methodology-$(date +%Y%m%d)-metadata.json" \
+            --container-name "knowledge-base" \
+            --account-name "$SHARED_STORAGE" \
+            --account-key "$STORAGE_KEY" \
+            --overwrite
+          
+          echo "✅ Knowledge base uploaded to shared storage"
+          echo "knowledge-uploaded=true" >> $GITHUB_OUTPUT
+        else
+          echo "❌ Knowledge base file not found"
+          echo "knowledge-uploaded=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Configure shared model deployments
+      run: |
+        echo "🧠 Configuring shared model deployments..."
+        
+        # This would configure shared model deployments for all agents
+        # GPT-4o, GPT-4o-mini, DALL-E 3, text-embedding-3-large
+        
+        echo "📋 Models to be deployed:"
+        echo "  - GPT-4o (Edmund, Danny, Pepper)"
+        echo "  - GPT-4o-mini (Ollie, Poppy, Teddy)"
+        echo "  - DALL-E 3 (Danny)"
+        echo "  - text-embedding-3-large (All agents)"
+        
+        echo "💡 Model deployments will be configured by individual agent workflows"
+    
+    - name: Output shared infrastructure info
+      run: |
+        SUBSCRIPTION_ID=$(az account show --query id -o tsv)
+        
+        echo "=========================================="
+        echo "🏗️ T-Minus-15 Shared Infrastructure Deployed"
+        echo "=========================================="
+        echo ""
+        echo "🏢 Shared Resources:"
+        echo "  Resource Group: $RESOURCE_GROUP"
+        echo "  AI Foundry Hub: $AI_FOUNDRY_HUB"
+        echo "  AI Foundry Project: $AI_FOUNDRY_PROJECT"
+        echo "  Shared Storage: $SHARED_STORAGE"
+        echo "  Key Vault: $SHARED_KEYVAULT"
+        echo "  Environment: $ENVIRONMENT"
+        echo ""
+        echo "📚 Knowledge Base:"
+        echo "  T-Minus-15 PDF: Uploaded to shared storage"
+        echo "  Size: ${{ needs.build-knowledge-base.outputs.pdf-size }}"
+        echo "  Available to all agents: Edmund, Danny, Ollie, Pepper, Poppy, Teddy"
+        echo ""
+        echo "🌐 Portal Access:"
+        echo "  Azure Portal: https://portal.azure.com/#@evrosdemo.onmicrosoft.com/resource/subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP"
+        echo "  AI Foundry: https://ai.azure.com/"
+        echo ""
+        echo "🎯 Next Steps:"
+        echo "  1. Deploy individual agents using their specific workflows"
+        echo "  2. Configure agent-specific model deployments"
+        echo "  3. Set up AutoGen multi-agent conversations"
+        echo ""
+        echo "✅ Shared infrastructure ready for agent deployments!"
+
+  notify-completion:
+    runs-on: ubuntu-latest
+    needs: [build-knowledge-base, deploy-shared-infrastructure]
+    if: always()
+    steps:
+    - name: Deployment Summary
+      run: |
+        echo "🎯 T-Minus-15 Shared Infrastructure Deployment Summary"
+        echo "=================================================="
+        echo ""
+        echo "Knowledge Base Build: ${{ needs.build-knowledge-base.result }}"
+        echo "Infrastructure Deploy: ${{ needs.deploy-shared-infrastructure.result }}"
+        echo ""
+        if [ "${{ needs.deploy-shared-infrastructure.result }}" = "success" ]; then
+          echo "✅ Shared infrastructure is ready!"
+          echo "🚀 Individual agents can now be deployed to: ${{ needs.deploy-shared-infrastructure.outputs.ai-foundry-project }}"
+        else
+          echo "❌ Shared infrastructure deployment failed"
+        fi

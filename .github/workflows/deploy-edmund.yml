@@ -22,10 +22,21 @@ on:
           - production
 
 env:
-  AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  AZURE_LOCATION: eastus
-  AGENT_NAME: edmund
+  # Azure Configuration
+  AZURE_SUBSCRIPTION_ID: "7620f9be-bf91-4297-ada2-659d2695b3a1"
+  AZURE_TENANT_ID: "19ced85d-73f5-4193-8797-9fdce478db64"
+  AZURE_LOCATION: "eastus"
+  
+  # Shared Infrastructure (from shared workflow)
+  SHARED_RESOURCE_GROUP: "rg-tminus15-shared"
+  AI_FOUNDRY_PROJECT: "tminus15-agents-project"
+  
+  # Edmund-specific configuration
+  AGENT_NAME: "edmund"
   AGENT_DISPLAY_NAME: "Edmund (the Engineer)"
+  MODEL_DEPLOYMENT: "gpt-4o"
+  MODEL_TEMPERATURE: "0.1"
+  MODEL_MAX_TOKENS: "4096"
 
 jobs:
   validate:
@@ -98,31 +109,47 @@ jobs:
     - name: Set up environment variables
       run: |
         ENVIRONMENT="${{ github.event.inputs.environment || 'development' }}"
-        RESOURCE_GROUP="rg-edmund-${ENVIRONMENT}"
-        PROJECT_NAME="edmund-tminus15-${ENVIRONMENT}"
+        
+        # Use shared infrastructure with environment suffix
+        if [ "$ENVIRONMENT" != "production" ]; then
+          RESOURCE_GROUP="${{ env.SHARED_RESOURCE_GROUP }}-${ENVIRONMENT}"
+          AI_FOUNDRY_PROJECT="${{ env.AI_FOUNDRY_PROJECT }}-${ENVIRONMENT}"
+        else
+          RESOURCE_GROUP="${{ env.SHARED_RESOURCE_GROUP }}"
+          AI_FOUNDRY_PROJECT="${{ env.AI_FOUNDRY_PROJECT }}"
+        fi
         
         echo "ENVIRONMENT=$ENVIRONMENT" >> $GITHUB_ENV
         echo "RESOURCE_GROUP=$RESOURCE_GROUP" >> $GITHUB_ENV
-        echo "PROJECT_NAME=$PROJECT_NAME" >> $GITHUB_ENV
+        echo "AI_FOUNDRY_PROJECT=$AI_FOUNDRY_PROJECT" >> $GITHUB_ENV
         
         echo "🚀 Deploying Edmund (the Engineer) to $ENVIRONMENT environment"
-        echo "Resource Group: $RESOURCE_GROUP"
-        echo "Project Name: $PROJECT_NAME"
-        echo "Location: $AZURE_LOCATION"
+        echo "Shared Resource Group: $RESOURCE_GROUP"
+        echo "Shared AI Foundry Project: $AI_FOUNDRY_PROJECT"
+        echo "Location: ${{ env.AZURE_LOCATION }}"
     
-    - name: Create resource group
+    - name: Verify shared infrastructure
       run: |
-        echo "📁 Creating resource group for Edmund..."
-        az group create \
-          --name "$RESOURCE_GROUP" \
-          --location "$AZURE_LOCATION" \
-          --tags \
-            agent="edmund" \
-            role="engineer" \
-            methodology="t-minus-15" \
-            environment="$ENVIRONMENT"
+        echo "🔍 Verifying shared infrastructure exists..."
         
-        echo "✅ Resource group $RESOURCE_GROUP ready"
+        # Check if shared resource group exists
+        if ! az group show --name "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          echo "❌ Shared resource group $RESOURCE_GROUP does not exist"
+          echo "💡 Please run the 'Deploy Shared T-Minus-15 Infrastructure' workflow first"
+          echo "   gh workflow run deploy-shared-infrastructure.yml -f environment=$ENVIRONMENT"
+          exit 1
+        fi
+        
+        # Check if AI Foundry project exists
+        if ! az ml workspace show --name "$AI_FOUNDRY_PROJECT" --resource-group "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          echo "❌ Shared AI Foundry project $AI_FOUNDRY_PROJECT does not exist"
+          echo "💡 Please run the 'Deploy Shared T-Minus-15 Infrastructure' workflow first"
+          exit 1
+        fi
+        
+        echo "✅ Shared infrastructure verified"
+        echo "  Resource Group: $RESOURCE_GROUP"
+        echo "  AI Foundry Project: $AI_FOUNDRY_PROJECT"
     
     - name: Deploy Edmund infrastructure
       run: |

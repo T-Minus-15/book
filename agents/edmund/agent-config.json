@@ -81,7 +81,9 @@
   "deployment": {
     "environment": "development",
     "region": "eastus",
-    "resourceGroup": "copilot-edmund",
+    "resourceGroup": "rg-tminus15-agents",
+    "aiFoundryProject": "tminus15-agents-project",
+    "sharedProject": true,
     "scalingPolicy": "standard",
     "healthCheck": {
       "enabled": true,
