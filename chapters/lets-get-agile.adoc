@@ -81,21 +81,27 @@ Let's be real – Agile isn't fairy dust you sprinkle on a project to make it ma
 
 === Agility for the Enterprise
 
-As outlined in 'Thinking of Building a Cloud Operating Model'{empty}footnote:[Thinking of Building a Cloud Operating Model, https://www.amazon.co.uk/Thinking-Building-Microsoft-Operating-Questions/dp/1907453237] from Dan Scarfe et al (I couldn't have said it better myself!):
+So you've got Agile teams humming along nicely – but how do you coordinate dozens of them across an enterprise without creating chaos? That's where things get interesting.
 
-_Having teams operating using an Agile methodology is great, but how does an enterprise facilitate these teams working in this new framework? How can the enterprise manage these teams and ensure that value is being delivered across the organisation and have a high-level overview of what is happening?_
+Think of it like SpaceX launching multiple missions simultaneously. You can't just have each rocket team doing their own thing – they need mission control, shared resources, and coordinated timing. Same principle applies to enterprise Agile.
 
-_This is where the SAFe® is a framework for managing multiple business-focussed streams of work within an enterprise. A kind of backlog of backlogs. It defines these within the context portfolios of epics or major initiatives. An epic might be a new product that you want to launch. It might be a major technology refresh programme you want to undertake. It might be a new market you want to enter. It can be anything._
+Here's where SAFe® (Scaled Agile Framework) comes in handy. Don't let the name scare you – it's basically a backlog of backlogs that helps you manage the big picture while keeping teams autonomous.
 
-_SAFe® provides a mechanism to manage and then prioritize these major initiatives and provide a bridge into both the IT and business teams that might enable this epic to be delivered._
+SAFe® operates on three levels:
 
-_Underneath the portfolio (epic) level is the program level. Epics are just that, epic! Each epic is broken down into a series of features and enablers which are grouped into a program increment, which is a time-bound period where you deliver some form of business value. This value is managed by an agile release train. Within each program increment, you have a number of scrum teams who actually deliver the work. Over, you'll see a diagram showing the high-level view of this process._
+**Portfolio Level** – This is where your major initiatives live. Think new product launches, market entries, or massive technology overhauls. These are your "epics" – the big bets that'll define your company's future.
 
-_The thing that is most interesting about  is its applicability across such a broad range of initiatives you might be running an as organisation. The fact that by using SAFe®, Agile can be applied to far more than just software development. Agile budgeting and planning can now be used to represent and manage the entire innovation pipeline within your organisation._
+**Program Level** – Each epic breaks down into manageable features and enablers. These get grouped into Program Increments (PIs) – time-boxed periods where you deliver real business value. It's like planning a series of SpaceX missions where each one builds toward the Mars colonization goal.
 
-_As an IT organisation, your responsibility becomes standing up, feeding and watering a given number of downstream agile sprint teams. These multi-disciplinary teams will span different technologies. They will have different skillsets. They will do different things. But they will be there, willing and able, to work through the constant stream of requirements. No more functional requirement. No more detailed business cases. No more friction between the business and IT. Peace, and hopefully, harmony._
+**Team Level** – Multiple Scrum teams actually build the stuff. They work within the PI timeline but maintain their sprint autonomy.
 
-_This brief description doesn't begin to do justice to the intricacies, or power, of SAFe®. When you fully understand it and see it in action, you will appreciate its power and how useful it can be. For more information on SAFe®, please see www.scaledagile.com._
+The magic happens when you realize this framework works for way more than just software. Marketing campaigns, business process improvements, manufacturing initiatives – anything that benefits from iterative delivery and cross-functional collaboration.
+
+Your IT organization's job shifts from being the bottleneck to being the enabler. Instead of translating business requirements through layers of documentation, you're standing up multi-disciplinary teams that can tackle whatever comes their way. No more "it's not in scope" conversations. No more month-long requirement gathering sessions.
+
+The result? Teams that can pivot quickly, stakeholders who see progress every few weeks, and way less friction between business and technology folks. Everyone's working toward the same North Star, just like SpaceX teams all know they're ultimately trying to get humans to Mars.
+
+For the full deep-dive on SAFe®, check out www.scaledagile.com – but honestly, start small and scale up as you learn what works for your organization.
 
 === Scrum
 
