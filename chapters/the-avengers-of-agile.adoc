@@ -1,6 +1,8 @@
 == The Avengers of Agile - Assembling a Cross-Functional Squad That Delivers Results
 
-In general, we need to ensure we have coverage of the 5 main stages in delivery (Prep > Design > Engineer > Test > Operate), therefore, the project team should look like the following:
+Picture this: You're launching a mission that needs to succeed. You wouldn't send a single astronaut to Mars, right? You'd assemble the best possible crew, each with specialized skills that complement the others. That's exactly what we're doing here – building your own elite squad of delivery heroes.
+
+We need coverage of the 5 main stages in delivery (Prep > Design > Engineer > Test > Operate), so let's talk about who should be on your team:
 
 *	**Prepper**: This is the analyst who will liaise with the customer, populate the initial product backlog, and ideally be able be able to put together wireframes, information architecture, formulate the backlog in a typical project. They will also be hands on during the project delivery and help ensure the quality of the solution delivered that it matches the requirements.
 *	**Designer**: Dependent on the stage of the project, and type of project, you may need Solution Designers (Architects), UX/UI Designers, Data Designers (Architects/Scientists). It’s quite possible that in a smaller team the Solution Designer also has the skillset to act as the Prepper as well.
@@ -10,9 +12,10 @@ In general, we need to ensure we have coverage of the 5 main stages in delivery 
 In addition, we should also have the following roles that interact with the team:
 
 *	**Planner**: The planner will quite possibly work across a number of different sprint teams. The scrum master should be tracking budgets, timescales and unblock impediments. They also liaise with the product owner.
-*	**Product owner**: This is normally the project stakeholder (client side). They are responsible for prioritizing the work and adding clarity when needed. For more information on this role, see: https://www.scrum.org/resources/what-is-a-product-owner
+*	**Product owner**: This is normally the project stakeholder (client side). They're responsible for prioritizing the work and adding clarity when needed. They have the final say on what's in-scope and out-of-scope, and they provide definitive answers to questions. For more information on this role, see: https://www.scrum.org/resources/what-is-a-product-owner
+*	**Stakeholders**: This group includes your end users, business sponsors, compliance teams, legal teams, and external partners. These are the people who'll actually use what you're building or who have a vested interest in its success. Get their feedback as early as possible – ideally on designs before you write a single line of code! Use UAT sessions, tools like Figma for design feedback, and don't forget to identify all relevant stakeholders for your specific project. At the end of the project, take them out for a celebratory evening – building great relationships is what makes projects truly successful.
 
-For small teams, you may have to have one person covering multiple roles. Just ensure that everyone has clarity of what their role is and areas of responsibility. One of the first roles to go is often the Test pilot. However, if we want to ensure you are delivering quality value to the business, don’t underestimate the importance of thorough testing – engineers are not known for making great testers! If I can’t convince you otherwise, at very least, ensure that you are peer reviewing/testing and not getting engineers to test their own deliverables. Engineers will instinctively only think to test the routines they know they have written the code to handle. Don’t blame them … it’s human nature – just ensure someone else is testing their code!
+For small teams, you might have one person covering multiple roles. Just make sure everyone's clear on what their role is and what they're responsible for. One of the first roles to go is often the Test pilot. However, if we want to ensure you are delivering quality value to the business, don’t underestimate the importance of thorough testing – engineers are not known for making great testers! If I can’t convince you otherwise, at very least, ensure that you are peer reviewing/testing and not getting engineers to test their own deliverables. Engineers will instinctively only think to test the routines they know they have written the code to handle. Don’t blame them … it’s human nature – just ensure someone else is testing their code!
 
 === Team values
 
@@ -67,7 +70,7 @@ To facilitate upskilling the team, it would be good practice to carry out a skil
 
 === Remote working
 
-Many teams now work remotely with geographically dispersed which can be challenging if the team are not collaborating effectively across time zones, cultures, and languages. To build a GREAT team, ensure the following are adopted in addition to the other ways of working identified in the T-MINUS-15 methodology.
+Remote work is the new reality, and frankly, it can be fantastic when done right. But let's be honest – distributed teams can be challenging if you're not collaborating effectively across time zones, cultures, and languages. Here's how to build a GREAT remote team that actually delivers:
 
 **Time zone**s: Get your team working in the same time zone. Best to do this from the start of building your team rather than trying to transition to this. There’s no more of a “blocker” than team members who aren’t available for that ad-hoc call and having to put work items off until the next day.
 
@@ -93,10 +96,10 @@ Then invite your customer to participate within the Team! There is very little r
 
 If you still think you need a collaboration group (team) with the client not involved, then your demonstrating that you quite likely do not believe in what value you can offer to the client. Resolve this first. You should be confident that all in the team can communicate with the client – do not be the bottleneck.
 
-=== Positive Karma
+=== Zapp.ie - Real Micro-Rewards That Matter
 
-Positive karma is a concept that refers to the idea that good deeds and positive actions will bring about good things in return. In the context of team building, positive karma can be thought of as a way to build trust and respect among team members.
+Forget traditional karma points – we're talking about real value here. Zapp.ie lets you send actual Bitcoin micro-payments (called "Zaps") to team members via Lightning Network technology. It's like karma points, but with real money that people can actually use.
 
-In our team, we recognize others’ help and success by awarding karma points to each other. These points can be redeemed for hardware (screens, headsets, etc.) or days off, innovation days working on open source projects, or meals out with colleagues.
+In our team, we recognize others’ help and success by sending Zaps to each other. These Bitcoin micro-payments can be sent to personal wallets or redeemed for rewards through the platform.
 
-We review these karma points every week in our team meeting to celebrate successes and recognize contributions. This system has helped us build a culture of collaboration and support that has made us more productive and effective.
+We review Zaps every week in our team meetings to celebrate successes and recognize contributions. This system creates a culture where helping others has real, tangible value, making teams more collaborative and effective. It's amazing how a small financial incentive can transform team dynamics!
