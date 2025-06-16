@@ -246,7 +246,48 @@ So, next time as a team member you get asked “can you start this” you can sa
 
 So what WIP limits should you actually use? Start simple: 2 features per engineer. For example, if you have two engineers, cap the "Engineering" column at 4 features max. Tools like Azure DevOps make this dead simple to set up on your Kanban boards.
 
-// CREATE TABLE
+.Kanban Board with WIP Limits - 2 Engineers Team Example
+|===
+|New |Prep (2) |Engineering (4) |Testing (2) |Done
+
+|Feature A
+|Feature B ✓
+|Feature C ✓
+|Feature F ✓
+|Feature H ✓
+
+|Feature D
+|Feature E ✓
+|Feature G ✓
+|Feature I ✓
+|Feature J ✓
+
+|Feature K
+|
+|Feature L ✓
+|
+|Feature M ✓
+
+|Feature N
+|
+|Feature O ✓
+|
+|
+
+|...
+|
+|
+|
+|
+
+|===
+
+*WIP Limits shown in parentheses (WIP Limit)*
+
+Notice how:
+- The Engineering column is at capacity (4/4) - no new features can enter until one moves to Testing
+- Testing is also at capacity (2/2) - creates a bottleneck
+- This forces the team to collaborate: engineers must help with testing or code reviews rather than starting new work
 
 "But what happens when our developers finish coding 4 features and the testing column is already maxed out?"
 
