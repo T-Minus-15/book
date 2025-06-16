@@ -1,18 +1,23 @@
 == The Avengers of Agile - Assembling a Cross-Functional Squad That Delivers Results
 
-In general, we need to ensure we have coverage of the 5 main stages in delivery (Prep > Design > Engineer > Test > Operate), therefore, the project team should look like the following:
+Think about it: every great mission needs the right team. Whether it's launching rockets to Mars or delivering software that actually works, you need specialists who know their stuff and can work together like a well-oiled machine.
 
-*	**Prepper**: This is the analyst who will liaise with the customer, populate the initial product backlog, and ideally be able be able to put together wireframes, information architecture, formulate the backlog in a typical project. They will also be hands on during the project delivery and help ensure the quality of the solution delivered that it matches the requirements.
-*	**Designer**: Dependent on the stage of the project, and type of project, you may need Solution Designers (Architects), UX/UI Designers, Data Designers (Architects/Scientists). It’s quite possible that in a smaller team the Solution Designer also has the skillset to act as the Prepper as well.
+Here's the thing - you can't just throw random people together and expect magic. You need coverage across the 5 main stages of delivery: Prep > Design > Engineer > Test > Operate. Each stage needs its champion, and when they work together? That's when the real magic happens.
+
+Your squad should look like this:
+
+*	**Prepper**: This is your customer whisperer - the analyst who'll chat with clients, build out that initial product backlog, and ideally whip up wireframes and information architecture. They're hands-on throughout delivery, making sure what you build actually matches what was asked for.
+*	**Designer**: Depending on what you're building, you might need Solution Designers (Architects), UX/UI Designers, Data Designers (Architects/Scientists). It’s quite possible that in a smaller team the Solution Designer also has the skillset to act as the Prepper as well.
 *	**Engineer**: This person will be responsible for implementing and building the solution according to the product backlog. You will have Dev Engineers (or software engineers) as well as Op Engineers (operations) and Release Engineers, the latter may or may not be fulltime on the project. You could also categorize your engineers as Junior and Senior/Lead. The release engineer is responsible for maintenance of the branches, ensuring successful build and releases and creating release notes.
 *	**Test pilot**: They should be involved throughout the delivery of the project. They put together the test plans from the product backlog and carry out testing (manual and automated if possible) of features as they are delivered. On average you should have at least 1 test pilot full time for every 4 Dev Engineers.
+*	**Stakeholders**: These are your real-world feedback champions - the people who'll actually use what you're building. This includes end users, business sponsors, compliance teams, legal folks, and external partners. Don't wait until the end to involve them! Get their feedback on designs before you write a single line of code. Use tools like Figma where they can leave comments, run UAT sessions, and make them part of the journey. Remember: they're not just observers - they're active participants in making sure you're building the right thing.
 
 In addition, we should also have the following roles that interact with the team:
 
 *	**Planner**: The planner will quite possibly work across a number of different sprint teams. The scrum master should be tracking budgets, timescales and unblock impediments. They also liaise with the product owner.
 *	**Product owner**: This is normally the project stakeholder (client side). They are responsible for prioritizing the work and adding clarity when needed. For more information on this role, see: https://www.scrum.org/resources/what-is-a-product-owner
 
-For small teams, you may have to have one person covering multiple roles. Just ensure that everyone has clarity of what their role is and areas of responsibility. One of the first roles to go is often the Test pilot. However, if we want to ensure you are delivering quality value to the business, don’t underestimate the importance of thorough testing – engineers are not known for making great testers! If I can’t convince you otherwise, at very least, ensure that you are peer reviewing/testing and not getting engineers to test their own deliverables. Engineers will instinctively only think to test the routines they know they have written the code to handle. Don’t blame them … it’s human nature – just ensure someone else is testing their code!
+For small teams, you might have one person covering multiple roles - and that's perfectly fine! Just ensure that everyone has clarity of what their role is and areas of responsibility. One of the first roles to go is often the Test pilot. However, if we want to ensure you are delivering quality value to the business, don’t underestimate the importance of thorough testing – engineers are not known for making great testers! If I can’t convince you otherwise, at very least, ensure that you are peer reviewing/testing and not getting engineers to test their own deliverables. Engineers will instinctively only think to test the routines they know they have written the code to handle. Don’t blame them … it’s human nature – just ensure someone else is testing their code!
 
 === Team values
 
@@ -67,7 +72,7 @@ To facilitate upskilling the team, it would be good practice to carry out a skil
 
 === Remote working
 
-Many teams now work remotely with geographically dispersed which can be challenging if the team are not collaborating effectively across time zones, cultures, and languages. To build a GREAT team, ensure the following are adopted in addition to the other ways of working identified in the T-MINUS-15 methodology.
+Remote work is the new normal, but geographically dispersed teams can be challenging when they're not collaborating effectively across time zones, cultures, and languages. To build a GREAT remote team, you need to be intentional about how you work together. Here's what actually works:
 
 **Time zone**s: Get your team working in the same time zone. Best to do this from the start of building your team rather than trying to transition to this. There’s no more of a “blocker” than team members who aren’t available for that ad-hoc call and having to put work items off until the next day.
 
@@ -93,10 +98,12 @@ Then invite your customer to participate within the Team! There is very little r
 
 If you still think you need a collaboration group (team) with the client not involved, then your demonstrating that you quite likely do not believe in what value you can offer to the client. Resolve this first. You should be confident that all in the team can communicate with the client – do not be the bottleneck.
 
-=== Positive Karma
+=== Recognition That Actually Matters - Enter Zapp.ie
 
-Positive karma is a concept that refers to the idea that good deeds and positive actions will bring about good things in return. In the context of team building, positive karma can be thought of as a way to build trust and respect among team members.
+Here's something cool: what if recognizing great work meant more than just a pat on the back? What if you could send real value to teammates who've helped you out?
 
-In our team, we recognize others’ help and success by awarding karma points to each other. These points can be redeemed for hardware (screens, headsets, etc.) or days off, innovation days working on open source projects, or meals out with colleagues.
+That's where Zapp.ie comes in. Instead of traditional karma points, we send "Zaps" - actual Bitcoin micro-payments using Lightning Network technology. It's like karma, but with real-world value attached.
 
-We review these karma points every week in our team meeting to celebrate successes and recognize contributions. This system has helped us build a culture of collaboration and support that has made us more productive and effective.
+In our team, we recognize others’ help and success by awarding zaps to each other. They can send it to their own wallet or use Zapp.ie's rewards section to convert their zaps into pre-defined team rewards.
+
+We review these zaps every week in our team meeting to celebrate successes and recognize contributions. It's created a culture where helping each other isn't just appreciated - it's rewarded with real value. Plus, who doesn't like getting actual Bitcoin for being awesome at their job?
