@@ -1,4 +1,4 @@
-.== Epic metadata
+== Epic metadata
 
 .Guidance and example Epic metadata (with assistance from ChatGPT)
 [.xsmall-table, width=100%, cols="20%,40%,40%"]
