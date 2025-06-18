@@ -27,201 +27,201 @@ Each meeting includes:
 
 === Daily Stand-Up
 
-**Objective**: To confirm we are on track to deliver the work by the end of the sprint and making daily progress.
+[cols="1,3"]
+|===
+| **Objective** | To confirm we are on track to deliver the work by the end of the sprint and making daily progress.
 
-**Frequency**: Daily (every morning)
+| **Frequency** | Daily (every morning)
 
-**Duration**: 15 minutes
+| **Duration** | 15 minutes
 
-**Attendees**: 
-* Required: All squad members
-* Optional: Relevant stakeholders who can help unblock work (we don't worry if they don't attend every one - the best customers attend these!)
+| **Attendees** | **Required:** All squad members +
+**Optional:** Relevant stakeholders who can help unblock work (we don't worry if they don't attend every one - the best customers attend these!)
 
-**Agenda**:
-
-Review the Sprint board here: [insert link]
+| **Agenda** | Review the Sprint board here: [insert link]
 
 For each attendee (please spend a few minutes prior to the meeting noting down the below):
 
-* What I worked on yesterday (have item numbers to hand)
-* What I intend to work on today (propose item numbers)
-* Any blockers (highlight any items you are blocked on)
+• What I worked on yesterday (have item numbers to hand)
+• What I intend to work on today (propose item numbers)
+• Any blockers (highlight any items you are blocked on)
 
 We have time for 2 minutes per person and can take a follow-up call for specific issues with relevant team members involved as necessary (such as blockers).
 
 And for testing:
 
-* How many bugs are there (ref: BUGCAP)?
-* How many bugs did we close yesterday?
+• How many bugs are there (ref: BUGCAP)?
+• How many bugs did we close yesterday?
 
 Please ensure timesheets are up-to-date prior to the stand-up: [link to timesheets]
+|===
 
 ---
 
 === Weekly Checkpoint
 
-**Objective**: This call is scheduled to review the progress of the project [insert link to Epic]
+[cols="1,3"]
+|===
+| **Objective** | This call is scheduled to review the progress of the project [insert link to Epic]
 
-**Frequency**: Weekly
+| **Frequency** | Weekly
 
-**Duration**: 45 minutes
+| **Duration** | 45 minutes
 
-**Attendees**: 
-* Required: Whole team (they are accountable to show their progress)
-* Required: Stakeholders (budget holder, end users, product owner etc.)
+| **Attendees** | **Required:** Whole team (they are accountable to show their progress) +
+**Required:** Stakeholders (budget holder, end users, product owner etc.)
 
-**Agenda**:
+| **Agenda** | Using our Dashboard, we will cover:
 
-Using our Dashboard, we will cover:
-
-* Burndown
-* Questions (relevant for Stakeholders)
-* Issues (relevant for Stakeholders)
-* Risks (relevant for Stakeholders)
-* Budget
-* Latest Demo (by team members themselves)
-* Q&A
+• Burndown
+• Questions (relevant for Stakeholders)
+• Issues (relevant for Stakeholders)
+• Risks (relevant for Stakeholders)
+• Budget
+• Latest Demo (by team members themselves)
+• Q&A
+|===
 
 ---
 
 === Epic Kickoff (Internal)
 
-**Objective**: To get the squad aligned on scope, priorities, timelines, roles, and potential blockers before customer presentation.
+[cols="1,3"]
+|===
+| **Objective** | To get the squad aligned on scope, priorities, timelines, roles, and potential blockers before customer presentation.
 
-**Frequency**: Day 1 of Epic, first day of first Sprint (internal session)
+| **Frequency** | Day 1 of Epic, first day of first Sprint (internal session)
 
-**Duration**: 1 hour
+| **Duration** | 1 hour
 
-**Attendees**: 
-* Required: Squad members only
+| **Attendees** | **Required:** Squad members only
 
-**Agenda**:
-
-* Review Backlog
-* Review the Delivery Plan
-* Prioritise the backlog and Delivery Plan
-* Participants of the daily stand-ups and Checkpoint meetings
-* Confirm holidays
-* Risks and Issues (and how to mitigate)
-* Constraints (e.g. access)
-* Prepare for customer-facing kickoff
+| **Agenda** | • Review Backlog
+• Review the Delivery Plan
+• Prioritise the backlog and Delivery Plan
+• Participants of the daily stand-ups and Checkpoint meetings
+• Confirm holidays
+• Risks and Issues (and how to mitigate)
+• Constraints (e.g. access)
+• Prepare for customer-facing kickoff
+|===
 
 ---
 
 === Epic Kickoff (Customer-Facing)
 
-**Objective**: To get everyone on the same page regarding scope, priorities, timelines, roles, and potential blockers.
+[cols="1,3"]
+|===
+| **Objective** | To get everyone on the same page regarding scope, priorities, timelines, roles, and potential blockers.
 
-**Frequency**: Day 1 of Epic, first day of first Sprint (customer session)
+| **Frequency** | Day 1 of Epic, first day of first Sprint (customer session)
 
-**Duration**: 1 hour
+| **Duration** | 1 hour
 
-**Attendees**: 
-* Required: Squad members
-* Required: Customer stakeholders (budget holder, product owner, end users)
+| **Attendees** | **Required:** Squad members +
+**Required:** Customer stakeholders (budget holder, product owner, end users)
 
-**Agenda**:
-
-* Review Backlog
-* Review the Delivery Plan
-* Prioritise the backlog and Delivery Plan
-* Participants of the daily stand-ups and Checkpoint meetings
-* Confirm holidays
-* Risks and Issues (and how to mitigate)
-* Constraints (e.g. access)
+| **Agenda** | • Review Backlog
+• Review the Delivery Plan
+• Prioritise the backlog and Delivery Plan
+• Participants of the daily stand-ups and Checkpoint meetings
+• Confirm holidays
+• Risks and Issues (and how to mitigate)
+• Constraints (e.g. access)
+|===
 
 ---
 
 === Sprint Retrospective
 
-**Objective**: To reflect on the recent sprint/project phase, identify what went well, what can be improved, and agree on actionable steps to enhance future performance and collaboration.
+[cols="1,3"]
+|===
+| **Objective** | To reflect on the recent sprint/project phase, identify what went well, what can be improved, and agree on actionable steps to enhance future performance and collaboration.
 
-**Frequency**: After completion of each Sprint
+| **Frequency** | After completion of each Sprint
 
-**Duration**: 1 hour
+| **Duration** | 1 hour
 
-**Attendees**: 
-* Required: Squad members only (no senior management or customers)
-* Note: The planner should feedback to senior management a summary and findings from this (e.g. to practice lead)
+| **Attendees** | **Required:** Squad members only (no senior management or customers) +
+**Note:** The planner should feedback to senior management a summary and findings from this (e.g. to practice lead)
 
-**Agenda**:
-
-* What Went Well
-* What Didn't Go Well
-* Opportunities for Improvement
-* Closing Remarks
+| **Agenda** | • What Went Well
+• What Didn't Go Well
+• Opportunities for Improvement
+• Closing Remarks
+|===
 
 ---
 
 === Mission Control
 
-**Objective**: To ensure project managers and practice lead are aligned on all projects, with visibility of inter-dependencies and overall team progress.
+[cols="1,3"]
+|===
+| **Objective** | To ensure project managers and practice lead are aligned on all projects, with visibility of inter-dependencies and overall team progress.
 
-**Frequency**: Weekly
+| **Frequency** | Weekly
 
-**Duration**: 1 hour
+| **Duration** | 1 hour
 
-**Attendees**: 
-* Required: Planners (Scrum Masters) 
-* Required: Practice Lead
-* Internal team meeting - no customers
+| **Attendees** | **Required:** Planners (Scrum Masters) +
+**Required:** Practice Lead +
+Internal team meeting - no customers
 
-**Agenda**:
+| **Agenda** | Link to the Mission Control dashboard: [insert link]
 
-Link to the Mission Control dashboard: [insert link]
-
-* Delivery Plan
-* Project Status (Schedule / Billing)
-* Resourcing
-* Risks & Issues (and mitigation)
-* KPIs
-* Training
+• Delivery Plan
+• Project Status (Schedule / Billing)
+• Resourcing
+• Risks & Issues (and mitigation)
+• KPIs
+• Training
+|===
 
 ---
 
 === Team Weekly
 
-**Objective**: Round off the week, remind us all we're part of a team.
+[cols="1,3"]
+|===
+| **Objective** | Round off the week, remind us all we're part of a team.
 
-**Frequency**: Weekly (30 minutes on a Friday afternoon)
+| **Frequency** | Weekly (30 minutes on a Friday afternoon)
 
-**Duration**: 30 minutes
+| **Duration** | 30 minutes
 
-**Attendees**: 
-* Required: All squad members from all squads
+| **Attendees** | **Required:** All squad members from all squads
 
-**Agenda**:
-
-* "Top of mind" items
-* Good news
-* Quiz
-* Zapp.ie (recognise success, incentivize and reward)
-* Delivery Plan
+| **Agenda** | • "Top of mind" items
+• Good news
+• Quiz
+• Zapp.ie (recognise success, incentivize and reward)
+• Delivery Plan
 
 And ... wish everyone a great weekend!
+|===
 
 ---
 
 === T-Plus Monthly Support
 
-**Objective**: To ensure the continued success and adoption of the supplied solution(s) and provide visibility into support performance.
+[cols="1,3"]
+|===
+| **Objective** | To ensure the continued success and adoption of the supplied solution(s) and provide visibility into support performance.
 
-**Frequency**: Monthly
+| **Frequency** | Monthly
 
-**Duration**: 1 hour
+| **Duration** | 1 hour
 
-**Attendees**: 
-* Required: Support team members
-* Required: Customer stakeholders (for visibility into ticket resolution, spending, response times)
-* Note: This is a sales opportunity for identifying "Features" they request that would be delivered as part of separate projects
+| **Attendees** | **Required:** Support team members +
+**Required:** Customer stakeholders (for visibility into ticket resolution, spending, response times) +
+**Note:** This is a sales opportunity for identifying "Features" they request that would be delivered as part of separate projects
 
-**Agenda**:
+| **Agenda** | A monthly meeting will be held for the solution to cover aspects such as outlined in the Reports section:
 
-A monthly meeting will be held for the solution to cover aspects such as outlined in the Reports section:
-
-* Support ticket metrics and trends
-* Response time performance
-* Budget utilization review
-* Feature requests and enhancement opportunities
-* Upcoming maintenance windows
-* Customer satisfaction feedback
+• Support ticket metrics and trends
+• Response time performance
+• Budget utilization review
+• Feature requests and enhancement opportunities
+• Upcoming maintenance windows
+• Customer satisfaction feedback
+|===
