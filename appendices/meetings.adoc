@@ -27,7 +27,7 @@ Each meeting includes:
 
 === Daily Stand-Up
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | To confirm we are on track to deliver the work by the end of the sprint and making daily progress.
 
@@ -60,7 +60,7 @@ Please ensure timesheets are up-to-date prior to the stand-up: [link to timeshee
 
 === Weekly Checkpoint
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | This call is scheduled to review the progress of the project [insert link to Epic]
 
@@ -86,7 +86,7 @@ Please ensure timesheets are up-to-date prior to the stand-up: [link to timeshee
 
 === Epic Kickoff (Internal)
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | To get the squad aligned on scope, priorities, timelines, roles, and potential blockers before customer presentation.
 
@@ -110,7 +110,7 @@ Please ensure timesheets are up-to-date prior to the stand-up: [link to timeshee
 
 === Epic Kickoff (Customer-Facing)
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | To get everyone on the same page regarding scope, priorities, timelines, roles, and potential blockers.
 
@@ -134,7 +134,7 @@ Please ensure timesheets are up-to-date prior to the stand-up: [link to timeshee
 
 === Sprint Retrospective
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | To reflect on the recent sprint/project phase, identify what went well, what can be improved, and agree on actionable steps to enhance future performance and collaboration.
 
@@ -155,7 +155,7 @@ Please ensure timesheets are up-to-date prior to the stand-up: [link to timeshee
 
 === Mission Control
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | To ensure project managers and practice lead are aligned on all projects, with visibility of inter-dependencies and overall team progress.
 
@@ -181,7 +181,7 @@ Internal team meeting - no customers
 
 === Team Weekly
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | Round off the week, remind us all we're part of a team.
 
@@ -204,7 +204,7 @@ And ... wish everyone a great weekend!
 
 === T-Plus Monthly Support
 
-[cols="1,3"]
+[cols="<1,<3"]
 |===
 | **Objective** | To ensure the continued success and adoption of the supplied solution(s) and provide visibility into support performance.
 
@@ -224,4 +224,39 @@ And ... wish everyone a great weekend!
 • Feature requests and enhancement opportunities
 • Upcoming maintenance windows
 • Customer satisfaction feedback
+|===
+
+---
+
+=== UAT Sessions
+
+[cols="<1,<3"]
+|===
+| **Objective** | Validate the functionality, usability, and performance of the currently delivered features
+
+| **Prerequisites** | Confirm end users have the required access
+
+| **Frequency** | As needed (typically at end of sprint or major releases)
+
+| **Duration** | 2-3 hours
+
+| **Attendees** | **Required:** Tester, Tech Lead, End Users +
+**Optional:** Development team members for issue resolution
+
+| **Agenda** | Overview of the test strategy (by Tester), including:
+
+• Testing schedule
+• Scope
+
+Demo the solution (Tech Lead)
+
+Testing dashboard (Tester)
+
+How to test (Tester)
+
+How to report a bug (Tester)
+
+Testing (End Users)
+
+_All software has bugs, our objective here is to find them all_
 |===
