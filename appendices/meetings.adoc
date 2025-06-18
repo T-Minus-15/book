@@ -1,37 +1,227 @@
 == Meetings
 
+=== General Meeting Guidelines
+
+==== Core Principles
+
+All meetings follow the principles of **Nemawashi** (consensus building) and require:
+
+* **Cameras On**: All participants must have cameras enabled for every meeting
+* **Online First**: Meetings are conducted online to accommodate our geographically dispersed team
+* **AI Meeting Notes**: Use AI to generate meeting notes rather than spending time writing up afterwards
+* **Real-Time Logging**: Tasks, Questions, Risks, and Issues should be written in the meeting chat DURING the meeting in case what is written is not agreed upon
+* **Immediate Documentation**: Important not to leave documentation until after the meeting - because no-one ever does!
+
+==== Meeting Structure
+
+Each meeting includes:
+
+* **Title**: Clear, descriptive meeting name
+* **Objective**: Purpose and expected outcomes
+* **Frequency**: How often the meeting occurs
+* **Duration**: Time allocation
+* **Attendees**: Required and optional participants
+* **Agenda**: Structured discussion points
+
+---
+
+=== Daily Stand-Up
+
+**Objective**: To confirm we are on track to deliver the work by the end of the sprint and making daily progress.
+
+**Frequency**: Daily (every morning)
+
+**Duration**: 15 minutes
+
+**Attendees**: 
+* Required: All squad members
+* Optional: Relevant stakeholders who can help unblock work (we don't worry if they don't attend every one - the best customers attend these!)
+
+**Agenda**:
+
+Review the Sprint board here: [insert link]
+
+For each attendee (please spend a few minutes prior to the meeting noting down the below):
+
+* What I worked on yesterday (have item numbers to hand)
+* What I intend to work on today (propose item numbers)
+* Any blockers (highlight any items you are blocked on)
+
+We have time for 2 minutes per person and can take a follow-up call for specific issues with relevant team members involved as necessary (such as blockers).
+
+And for testing:
+
+* How many bugs are there (ref: BUGCAP)?
+* How many bugs did we close yesterday?
+
+Please ensure timesheets are up-to-date prior to the stand-up: [link to timesheets]
+
+---
+
+=== Weekly Checkpoint
+
+**Objective**: This call is scheduled to review the progress of the project [insert link to Epic]
+
+**Frequency**: Weekly
+
+**Duration**: 45 minutes
+
+**Attendees**: 
+* Required: Whole team (they are accountable to show their progress)
+* Required: Stakeholders (budget holder, end users, product owner etc.)
+
+**Agenda**:
+
+Using our Dashboard, we will cover:
+
+* Burndown
+* Questions (relevant for Stakeholders)
+* Issues (relevant for Stakeholders)
+* Risks (relevant for Stakeholders)
+* Budget
+* Latest Demo (by team members themselves)
+* Q&A
+
+---
+
+=== Epic Kickoff (Internal)
+
+**Objective**: To get the squad aligned on scope, priorities, timelines, roles, and potential blockers before customer presentation.
+
+**Frequency**: Day 1 of Epic, first day of first Sprint (internal session)
+
+**Duration**: 1 hour
+
+**Attendees**: 
+* Required: Squad members only
+
+**Agenda**:
+
+* Review Backlog
+* Review the Delivery Plan
+* Prioritise the backlog and Delivery Plan
+* Participants of the daily stand-ups and Checkpoint meetings
+* Confirm holidays
+* Risks and Issues (and how to mitigate)
+* Constraints (e.g. access)
+* Prepare for customer-facing kickoff
+
+---
+
+=== Epic Kickoff (Customer-Facing)
+
+**Objective**: To get everyone on the same page regarding scope, priorities, timelines, roles, and potential blockers.
+
+**Frequency**: Day 1 of Epic, first day of first Sprint (customer session)
+
+**Duration**: 1 hour
+
+**Attendees**: 
+* Required: Squad members
+* Required: Customer stakeholders (budget holder, product owner, end users)
+
+**Agenda**:
+
+* Review Backlog
+* Review the Delivery Plan
+* Prioritise the backlog and Delivery Plan
+* Participants of the daily stand-ups and Checkpoint meetings
+* Confirm holidays
+* Risks and Issues (and how to mitigate)
+* Constraints (e.g. access)
+
+---
+
+=== Sprint Retrospective
+
+**Objective**: To reflect on the recent sprint/project phase, identify what went well, what can be improved, and agree on actionable steps to enhance future performance and collaboration.
+
+**Frequency**: After completion of each Sprint
+
+**Duration**: 1 hour
+
+**Attendees**: 
+* Required: Squad members only (no senior management or customers)
+* Note: The planner should feedback to senior management a summary and findings from this (e.g. to practice lead)
+
+**Agenda**:
+
+* What Went Well
+* What Didn't Go Well
+* Opportunities for Improvement
+* Closing Remarks
+
+---
+
 === Mission Control
 
-Objective: 
+**Objective**: To ensure project managers and practice lead are aligned on all projects, with visibility of inter-dependencies and overall team progress.
 
-Frequency: Monthly
+**Frequency**: Weekly
 
-Attendees: Scrum masters, Stakeholders
+**Duration**: 1 hour
 
-Agenda: 
+**Attendees**: 
+* Required: Planners (Scrum Masters) 
+* Required: Practice Lead
+* Internal team meeting - no customers
 
-=== T-Plus Monthly Support Meetings
+**Agenda**:
 
-Objective: To ensure the continued success and adoption of the supplied solution(s)
+Link to the Mission Control dashboard: [insert link]
 
-Frequency: Monthly
+* Delivery Plan
+* Project Status (Schedule / Billing)
+* Resourcing
+* Risks & Issues (and mitigation)
+* KPIs
+* Training
 
-Attendees: Stakeholders
+---
 
-Agenda: A monthly meeting will be held for the solution to cover aspects such as outlined in the Reports section.
+=== Team Weekly
 
-=== Project Closure Meeting
+**Objective**: Round off the week, remind us all we're part of a team.
 
-Objective: To ensure the project is completed according to the client's expectations, get feedback and hand over the project to the Operations team.
+**Frequency**: Weekly (30 minutes on a Friday afternoon)
 
-Frequency: Typically held on the last day of project (final Sprint), and after the solution has been deployment to Production.
+**Duration**: 30 minutes
 
-Attendees: Scrum masters, Operations Manager, Stakeholders
+**Attendees**: 
+* Required: All squad members from all squads
 
-Agenda: 
-  - Provide update on the delivered Features
-  - Budget review
-  - Project archived in Harvest
-  - Client feedback (link to survey) 
-  - Introduce the Operations Manager
-  - Provide summary overview of the support process
+**Agenda**:
+
+* "Top of mind" items
+* Good news
+* Quiz
+* Zapp.ie (recognise success, incentivize and reward)
+* Delivery Plan
+
+And ... wish everyone a great weekend!
+
+---
+
+=== T-Plus Monthly Support
+
+**Objective**: To ensure the continued success and adoption of the supplied solution(s) and provide visibility into support performance.
+
+**Frequency**: Monthly
+
+**Duration**: 1 hour
+
+**Attendees**: 
+* Required: Support team members
+* Required: Customer stakeholders (for visibility into ticket resolution, spending, response times)
+* Note: This is a sales opportunity for identifying "Features" they request that would be delivered as part of separate projects
+
+**Agenda**:
+
+A monthly meeting will be held for the solution to cover aspects such as outlined in the Reports section:
+
+* Support ticket metrics and trends
+* Response time performance
+* Budget utilization review
+* Feature requests and enhancement opportunities
+* Upcoming maintenance windows
+* Customer satisfaction feedback
