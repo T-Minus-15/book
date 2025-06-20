@@ -1,5 +1,6 @@
 = T-Minus-15: Secrets of an Elite DevOps Team
 Ben G. Weeks
+:revnumber: 1.0
 :doctype: book
 :media: prepress
 :front-cover-image: none
