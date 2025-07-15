@@ -68,6 +68,88 @@ This is where our Test Plan acceptance criteria comes into play. No software is 
 
 Because your stakeholders most likely won’t have time to go through all test cases written for your system (well, they’ll tell you that anyway 😉), for use acceptance testing, create a smaller Test Plan that cover a broad range and the important stories that are representative of the overall Feature working well. NB The test cases should be written in a simple way anyway that any team member or stakeholder should be able to follow them.
 
+=== Test Script Best Practices: Your Pre-Commit Safety Net
+
+Before we dive into the advanced testing strategies, let's establish a foundation of solid test script practices that every engineer should follow. These aren't just guidelines for Test Pilots – they're essential practices that help engineers catch issues early and maintain code quality throughout the development process.
+
+Think of test scripts as your first line of defense against bugs. When engineers run these scripts before committing code, they create a safety net that catches issues before they ever reach the testing phase. This "shift left" approach to quality means problems are identified and resolved when they're cheapest and easiest to fix – right at the developer's desk.
+
+==== Keep Scripts Simple and Focused
+
+The best test scripts are elegantly simple. Each script should have one clear purpose: to verify that specific functionality works as expected. Avoid the temptation to create elaborate, all-encompassing scripts that try to test everything at once. Instead, focus on creating focused scripts that confirm core functionality without unnecessary complexity.
+
+Simple scripts are easier to maintain, faster to run, and more reliable. When a script fails, you want to immediately know what broke – not spend time debugging the test itself. Think of it like a doctor's stethoscope: it's a simple tool that provides clear, immediate feedback about what's happening.
+
+==== Use Condition-Based Waits, Not Arbitrary Delays
+
+One of the most common mistakes in test scripts is using arbitrary time delays (like "wait 5 seconds") instead of condition-based waits. These sleeps make scripts slower and less reliable – sometimes 5 seconds isn't enough, sometimes it's far too much.
+
+Instead, use condition-based waits that check for specific states: "wait until the element is visible," "wait until the API returns a response," or "wait until the file exists." This makes your scripts both faster and more reliable, adapting to the actual system performance rather than arbitrary timeouts.
+
+==== Capture Screenshots for Debugging Evidence
+
+Screenshots are your debugging best friend. Configure your test scripts to automatically capture screenshots at key points, especially when something goes wrong. These visual breadcrumbs help you (and your teammates) quickly understand what happened during script execution.
+
+Set up your scripts to save screenshots in a dedicated `/screenshots/` subdirectory, and make sure this directory is excluded from version control using `.gitignore`. Screenshots are valuable for debugging but don't belong in your repository – they're generated artifacts, not source code.
+
+==== Enable Comprehensive Console Logging
+
+Enable verbose console logging in your test scripts. Log what the script is doing, what it's checking, and what it finds. When something goes wrong, these logs become invaluable for troubleshooting. Structure your logs to be clear and searchable:
+
+```
+[INFO] Starting user registration test
+[DEBUG] Navigating to /signup page
+[DEBUG] Filling form with test data
+[INFO] Submitting registration form
+[ERROR] Registration failed: Email already exists
+[DEBUG] Screenshot saved: /screenshots/registration_error_20240315_143022.png
+```
+
+Good logging transforms a mysterious failure into a clear story of what went wrong and where.
+
+==== Organize Scripts in a Centralized Location
+
+Keep all your test scripts in a single, well-organized folder structure. This makes them easy to find, maintain, and run. A typical structure might look like:
+
+```
+/tests/
+  /unit/
+  /integration/
+  /e2e/
+  /scripts/
+    run_all_tests.sh
+    setup_test_environment.sh
+    cleanup_test_data.sh
+  /screenshots/  (in .gitignore)
+```
+
+This organization makes it clear where to find tests, how to run them, and how they relate to each other.
+
+==== Create a Master Script for Easy Execution
+
+Develop a master script that runs all your test scripts in the correct order. This script should handle environment setup, execute all relevant tests, and provide a clear summary of results. Engineers should be able to run a single command like `./run_all_tests.sh` and get comprehensive feedback about the health of their changes.
+
+Your master script should:
+- Set up the test environment
+- Run tests in logical order (unit first, then integration, then end-to-end)
+- Capture and report results clearly
+- Clean up after itself
+- Exit with appropriate status codes for CI/CD integration
+
+==== Minimize Script Maintenance Overhead
+
+Avoid creating an excessive number of scripts that become a maintenance burden. Each script you create is code that needs to be maintained, updated, and debugged. Focus on creating scripts that provide maximum value with minimal maintenance overhead.
+
+Before creating a new script, ask: "Does this provide unique value that isn't covered by existing scripts?" If you can achieve the same coverage by enhancing an existing script, that's often the better choice.
+
+==== Run Scripts Before Every Commit
+
+This is perhaps the most important practice: engineers should run the full test suite before making any commit, and certainly before pushing code. This creates a culture where broken code rarely makes it into the main branch, reducing the debugging burden on Test Pilots and the entire team.
+
+Think of it as professional discipline – like a pilot running through pre-flight checks before takeoff. These scripts are your pre-commit checklist, ensuring that your code is ready for the next phase of the development process.
+
+By following these practices, you create a robust foundation for quality that supports the entire development lifecycle. When engineers consistently use well-designed test scripts, they catch issues early, maintain code quality, and create a smoother experience for everyone downstream in the process.
+
 ===	A/B testing
 
 A/B testing allows you to setup two deployment slots (A and B) in production  where one of those slots is used to deploy a new release to. So you have a hot slot and a staging slot. Using traffic routing, you can then send a percentage of the traffic to the new slot. That way, without affecting all users, you can have a period of testing in production where any new introduced issues should not affect all users.

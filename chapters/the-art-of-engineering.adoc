@@ -67,9 +67,23 @@ Boundary Conditions: Does your logic handle the first, last, or zero items corre
 
 By asking these questions during development, you’ll catch a lot of issues early. It’s much easier to build robustness in from the start than to patch holes later. Plus, your testers will be pleasantly surprised (maybe even a bit bummed, in a good way) when their usual tricks to break the software don’t work because you already thought of them. As a result, the bug count goes down and confidence in the product goes up. A little healthy pessimism goes a long way. Assume the user will find every possible way to misuse your feature – because given enough users, someone inevitably will. This isn’t about distrusting users; it’s about acknowledging that not everyone follows the script in your head. Users will input strange characters, push system limits, and take unplanned paths. Embrace that reality and code defensively. Validate inputs, handle exceptions, and add meaningful error messages for unexpected scenarios. In summary, don’t just code for when everything goes right – code for when things go wrong. By adopting the end user’s (or tester’s) perspective, you’ll build more resilient software. It’s a mindset shift: from “I assume this will be used correctly” to “I assume Murphy’s Law – if it can be used incorrectly, it will, so I’ll prepare for that.” This approach sets the stage perfectly for the next phase in our journey, the Test phase, because you’re effectively doing a mini-test design in your head as you write each piece. It tightens the feedback loop and makes you a sharper, more quality-minded engineer.
 
-=== Collaborate, Don’t Isolate
+=== Test Your Own Work: Professional Discipline
 
-There’s a romantic image of the lone programmer, headphones on, cranking out genius code in isolation. But in a DevOps team (or any modern software team), collaboration beats isolation every time. Software is a team sport. The best engineers know when to reach out, pair up, and share knowledge. In T-Minus-15 we emphasize that no one should be throwing work “over the wall” to the next person – instead, we work together to get it across the finish line. Engineers don’t just chuck code to the Test Pilots and wipe their hands; testers don’t just say “it’s broken” and walk away
+Before we dive into collaboration, let's address a fundamental engineering responsibility: testing your own work before committing and pushing code. This isn't just good practice – it's professional discipline that separates elite engineers from the rest.
+
+Think of it like this: you wouldn't submit a report without proofreading it, and you shouldn't commit code without verifying it works. Running tests before committing is your professional responsibility, not someone else's job to catch your mistakes. It's about taking ownership of quality from the moment you write the first line of code.
+
+This means more than just running a quick manual test. Set up your development environment so you can easily execute the full test suite locally. If your team has automated tests, run them. If there are integration tests, run those too. If there are scripts that verify functionality, use them. Make this a habit – as automatic as saving your work.
+
+When you consistently test your own work, you catch issues early when they're cheapest and easiest to fix. You also build trust with your teammates. When your code consistently works the first time, people know they can rely on your contributions. Conversely, if you're constantly pushing broken code that others have to fix, you erode that trust quickly.
+
+The Test Pilots on your team will appreciate getting code that's already been thoroughly exercised. Instead of spending their time finding basic bugs, they can focus on the complex edge cases and integration scenarios that really matter. This creates a positive feedback loop where everyone can work more efficiently.
+
+Remember: testing your own work isn't about being perfect – it's about being thorough and professional. Bugs will still slip through (they always do), but when you've done your due diligence, you can hand off your work with confidence, knowing you've upheld your end of the quality bargain.
+
+=== Collaborate, Don't Isolate
+
+There's a romantic image of the lone programmer, headphones on, cranking out genius code in isolation. But in a DevOps team (or any modern software team), collaboration beats isolation every time. Software is a team sport. The best engineers know when to reach out, pair up, and share knowledge. In T-Minus-15 we emphasize that no one should be throwing work “over the wall” to the next person – instead, we work together to get it across the finish line. Engineers don’t just chuck code to the Test Pilots and wipe their hands; testers don’t just say “it’s broken” and walk away
 linkedin.com
 . We interact, communicate, and solve problems together. What does collaboration look like in practice during the Engineering phase? It can take many forms, all of them valuable:
 
