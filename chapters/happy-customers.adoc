@@ -31,6 +31,8 @@ Here's what works:
 
 * **Closed feedback loops**: When customers give you feedback, tell them what you did with it. Nothing builds loyalty faster than "You suggested X, so we built it." Even when you can't implement their exact request, explain your reasoning. Customers want to be heard more than they want to get their way every time.
 
+* **Multi-channel communication**: Don't get trapped in email ping-pong when customers aren't responding. If your carefully crafted email goes unanswered, try a different channel. Teams messages often get faster responses than formal emails. WhatsApp or SMS for urgent issues. Phone calls for complex problems that need real-time dialogue. Different customers prefer different communication styles - some love detailed emails, others want quick voice messages. Match your method to your customer's communication preferences, not your own comfort zone.
+
 === Life After Launch: Don't Abandon Your Baby
 
 The "build it and forget it" approach is the fastest way to destroy your customer relationships. Software that doesn't evolve dies rapidly. Here's how to keep your solution thriving after go-live:
