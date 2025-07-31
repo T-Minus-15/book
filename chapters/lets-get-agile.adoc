@@ -251,7 +251,7 @@ Here's your quick reference guide to T-Minus-15 states. We keep it simple in the
 
 Notice how different work items follow different paths? That's intentional. A Feature needs careful preparation and design before engineering begins. An Epic requires validation of the business hypothesis before committing resources. A Bug just needs someone to fix it. The states match the work, not the other way around.
 
-For the full breakdown of what each state means, including entry and exit criteria, see <<appendix-states>>. That's where we spell out exactly what "Design" means for a Feature versus what "Validation" means for an Epic (hint: they're very different beasts).
+For the full breakdown of what each state means, including entry and exit criteria, see <<work-item-state-definitions>>. That's where we spell out exactly what "Design" means for a Feature versus what "Validation" means for an Epic (hint: they're very different beasts).
 
 === Definition of done
 
