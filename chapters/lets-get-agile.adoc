@@ -222,7 +222,7 @@ Who and how do we update items in the backlog? Here are our work items rules:
 
 All items in the product backlog have various states associated with them to track progress on a Kanban board. In the T-Minus-15 methodology we use the following states:
 
-Think of states as your mission control dashboard – they tell you exactly where every piece of work sits on its journey from idea to impact. Without clear states, you're flying blind, and trust me, that's not how successful launches happen.
+Think of states as your mission control dashboard – they tell you exactly where every piece of work sits on its journey from idea to impact. Without clear states, you're flying blind, and that's not how successful launches happen.
 
 States aren't just labels; they're commitments. When something moves from "Design" to "Engineer," everyone knows the mockups are signed off and development can begin. When a risk shifts from "New" to "Active," the team knows it needs immediate attention. This shared understanding eliminates the dreaded "I thought you were handling that" conversations.
 
@@ -237,7 +237,7 @@ Here's your quick reference guide to T-Minus-15 states. We keep it simple in the
 |New → Prep → Design → Engineer → Test → Operate → Closed (or Removed)
 
 |**Epics** (SAFe)
-|New → Validation → Funnel → Proposing → Pending → Schedule → Implementing → Operate → Done (or On-hold/Removed)
+|New → Funnel → Validation → Proposing → Pending → Scheduled → Implementing → Operate → Done (or On-hold/Removed)
 
 |**Tasks/Bugs/Enhancements**
 |New → Active → Resolved → Closed (or Blocked)
@@ -251,11 +251,11 @@ Here's your quick reference guide to T-Minus-15 states. We keep it simple in the
 
 Notice how different work items follow different paths? That's intentional. A Feature needs careful preparation and design before engineering begins. An Epic requires validation of the business hypothesis before committing resources. A Bug just needs someone to fix it. The states match the work, not the other way around.
 
-For the full breakdown of what each state means, including entry and exit criteria, see <<appendix-states>>. That's where we spell out exactly what "Design" means for a Feature versus what "Validation" means for an Epic. Spoiler alert: they're very different beasts.
+For the full breakdown of what each state means, including entry and exit criteria, see <<appendix-states>>. That's where we spell out exactly what "Design" means for a Feature versus what "Validation" means for an Epic (hint: they're very different beasts).
 
 === Definition of done
 
-As your team update the states of work items on a Kanban board, it's important to agree with what we mean by “done”. By specifying what we call a “Definition of Done” for each column in the Kanban board it is clear for all the team as to what the acceptance of the item being complete is.
+As your team updates the states of work items on a Kanban board, it's important to agree on what we mean by "done". By specifying what we call a "Definition of Done" for each column in the Kanban board, it's clear for all the team what the acceptance criteria are for completing each item.
 
 // CREATE TABLE
 

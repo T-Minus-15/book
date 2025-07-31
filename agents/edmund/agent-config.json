@@ -82,7 +82,7 @@
     "environment": "development",
     "region": "eastus",
     "resourceGroup": "rg-tminus15-agents",
-    "aiFoundryProject": "tminus15-agents-project",
+    "aiFoundryProject": "t-minus-15-agents",
     "sharedProject": true,
     "scalingPolicy": "standard",
     "healthCheck": {

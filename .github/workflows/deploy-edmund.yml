@@ -29,7 +29,7 @@ env:
   
   # Shared Infrastructure (from shared workflow)
   SHARED_RESOURCE_GROUP: "rg-tminus15-shared"
-  AI_FOUNDRY_PROJECT: "tminus15-agents-project"
+  AI_FOUNDRY_PROJECT: "t-minus-15-agents"
   
   # Edmund-specific configuration
   AGENT_NAME: "edmund"

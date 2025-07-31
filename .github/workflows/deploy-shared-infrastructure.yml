@@ -35,7 +35,7 @@ env:
   # Shared Infrastructure Configuration
   SHARED_RESOURCE_GROUP: "rg-tminus15-shared"
   AI_FOUNDRY_HUB: "tminus15-hub"
-  AI_FOUNDRY_PROJECT: "tminus15-agents-project"
+  AI_FOUNDRY_PROJECT: "t-minus-15-agents"
   SHARED_STORAGE: "tminus15storage"
   SHARED_KEYVAULT: "tminus15-keyvault"
 
