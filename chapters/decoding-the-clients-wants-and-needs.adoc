@@ -36,7 +36,25 @@ https://www.scaledagileframework.com/enablers/.
 
 In this methodology we recommend treating bugs and improvements and children of a Stories. That is, every bug should be related to a Story as should an Improvement.
 
-“Pruning” the product backlog and keeping it an object of beauty is the reasonability of the team. The backlog gives clarity to the business and the team of the work that needs to be undertaken. You should ensure the product backlog is nicely populated (in terms of metadata for the various items), well structured (not a mess of items at any 1 particular level) and no orphaned items (e.g. bugs  and improvements that don’t belong to Stories).
+"Pruning" the product backlog and keeping it an object of beauty is the reasonability of the team. The backlog gives clarity to the business and the team of the work that needs to be undertaken. You should ensure the product backlog is nicely populated (in terms of metadata for the various items), well structured (not a mess of items at any 1 particular level) and no orphaned items (e.g. bugs  and improvements that don't belong to Stories).
+
+=== Backlog as the Single Source of Truth
+
+Think of your product backlog like Bitcoin's blockchain – it's the immutable, distributed ledger that everyone trusts. Just as Bitcoin eliminates the need for multiple conflicting records by maintaining one authoritative chain, your backlog should be the single source of truth for all project requirements, tasks, issues, and risks.
+
+Here's what this means in practical terms:
+
+*Don't create duplicate lists elsewhere*: Resist the temptation to maintain separate task lists, risk registers, or issue trackers outside your backlog. Every piece of work – whether it's a user story, a bug, a technical debt item, or even a risk mitigation task – should live in your backlog hierarchy. Multiple sources of truth lead to confusion, missed work, and conflicting priorities.
+
+*Reference, don't duplicate*: When communicating via email, Slack, or meetings, reference specific backlog items by their ID or title rather than copying content. For example, instead of writing "We need to fix the login validation issue where users can submit empty passwords," write "We need to address Bug #247: Login validation accepts empty passwords." This keeps everyone pointing to the same source.
+
+*Link everything back*: If you must discuss work items in external communications, always include links back to the authoritative source. An email about Sprint planning should link to the specific user stories being discussed. A risk conversation should reference the actual risk items in your backlog. This ensures that any follow-up discussion, decisions, or changes get captured back in the right place.
+
+*Capture replies and decisions*: When someone responds to your email or makes a decision in a meeting, ensure that information flows back into your backlog. Update the relevant items with new acceptance criteria, resolution notes, or priority changes. Don't let important context get trapped in email threads or meeting notes.
+
+Like Bitcoin's proof-of-work consensus, maintaining backlog integrity requires discipline from the entire team. Everyone must commit to this single source of truth, updating it consistently and avoiding the creation of competing lists. The result? Crystal-clear visibility into what needs to be done, by whom, and why – no conflicts, no confusion, no missed work.
+
+Remember: if it's not in the backlog, it doesn't exist. If it exists in multiple places, you're creating chaos. Keep it simple, keep it singular, keep it authoritative.
 
 === Epics
 
