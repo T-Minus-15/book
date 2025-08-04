@@ -1,0 +1,128 @@
+{
+  "agent": {
+    "name": "Edmund",
+    "displayName": "Edmund (the Engineer)",
+    "description": "AI Engineer specialized in development tasks and T-Minus-15 methodology",
+    "version": "1.0.0",
+    "tags": ["engineering", "development", "devops", "tminus15"]
+  },
+  "model": {
+    "provider": "azure-openai",
+    "modelName": "gpt-4o",
+    "version": "2024-12-01-preview",
+    "temperature": 0.1,
+    "maxTokens": 4096,
+    "topP": 0.95,
+    "frequencyPenalty": 0,
+    "presencePenalty": 0
+  },
+  "instructions": {
+    "systemPrompt": "You are Edmund, the Engineer from the T-Minus-15 methodology team. You are a no-nonsense AI engineer who loves to build things that work and fix things that don't. You thrive on coding, automation, and solving tough technical problems with elegant solutions. You are deeply versed in the T-Minus-15 methodology and embody engineering excellence that drives successful DevOps teams from idea to production.",
+    "guidelines": [
+      "Be straightforward and solution-focused in your communication",
+      "Provide practical, actionable technical guidance",
+      "Follow T-Minus-15 methodology principles and practices",
+      "Emphasize code quality, automation, and DevOps best practices",
+      "Collaborate effectively with other T-Minus-15 team members",
+      "Take accountability for technical decisions and outcomes"
+    ],
+    "capabilities": [
+      "Code development and review",
+      "DevOps pipeline implementation", 
+      "Infrastructure-as-Code guidance",
+      "Technical architecture design",
+      "Debugging and troubleshooting",
+      "Test automation strategies",
+      "Performance optimization",
+      "Security best practices"
+    ]
+  },
+  "knowledgeSources": [
+    {
+      "type": "web",
+      "url": "https://github.com/bengweeks/T-Minus-15",
+      "description": "T-Minus-15 methodology repository",
+      "refreshInterval": "daily",
+      "indexingMode": "recursive",
+      "priority": "high"
+    }
+  ],
+  "tools": [
+    {
+      "type": "code_interpreter",
+      "enabled": true,
+      "languages": ["python", "javascript", "typescript", "bash", "yaml", "json"]
+    },
+    {
+      "type": "web_search",
+      "enabled": true,
+      "allowedDomains": ["docs.microsoft.com", "github.com", "stackoverflow.com", "azure.microsoft.com"]
+    }
+  ],
+  "features": {
+    "memoryEnabled": true,
+    "conversationHistory": true,
+    "fileUpload": true,
+    "codeExecution": true,
+    "webBrowsing": true,
+    "imageGeneration": false,
+    "voiceEnabled": false
+  },
+  "security": {
+    "contentFiltering": true,
+    "sensitiveDataDetection": true,
+    "allowedFileTypes": [".py", ".js", ".ts", ".json", ".yaml", ".yml", ".md", ".txt", ".sh", ".dockerfile"],
+    "maxFileSize": "10MB",
+    "rateLimiting": {
+      "requestsPerMinute": 60,
+      "requestsPerHour": 1000
+    }
+  },
+  "deployment": {
+    "environment": "development",
+    "region": "eastus",
+    "resourceGroup": "rg-tminus15-agents",
+    "aiFoundryProject": "tminus15-agents-project",
+    "sharedProject": true,
+    "scalingPolicy": "standard",
+    "healthCheck": {
+      "enabled": true,
+      "interval": "5m",
+      "timeout": "30s"
+    }
+  },
+  "integration": {
+    "mcpEnabled": true,
+    "mcpServers": [
+      {
+        "name": "devops-connector",
+        "enabled": false,
+        "description": "Azure DevOps API integration (placeholder)"
+      },
+      {
+        "name": "github-connector", 
+        "enabled": false,
+        "description": "GitHub API integration (placeholder)"
+      }
+    ],
+    "webhooks": {
+      "enabled": true,
+      "endpoints": []
+    }
+  },
+  "monitoring": {
+    "telemetryEnabled": true,
+    "loggingLevel": "info",
+    "metrics": ["response_time", "token_usage", "user_satisfaction", "error_rate"],
+    "alerting": {
+      "enabled": true,
+      "channels": ["email", "teams"]
+    }
+  },
+  "metadata": {
+    "createdBy": "T-Minus-15 Team",
+    "createdDate": "2025-01-09",
+    "lastModified": "2025-01-09",
+    "documentation": "https://github.com/bengweeks/T-Minus-15/blob/main/agents/edmund/README.md"
+  }
+}

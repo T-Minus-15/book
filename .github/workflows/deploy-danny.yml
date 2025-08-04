@@ -1,0 +1,255 @@
+name: Deploy Danny (the Designer)
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'agents/danny/**'
+  pull_request:
+    branches: [ main ]
+    paths: 
+      - 'agents/danny/**'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+
+env:
+  # Azure Configuration
+  AZURE_SUBSCRIPTION_ID: "7620f9be-bf91-4297-ada2-659d2695b3a1"
+  AZURE_TENANT_ID: "19ced85d-73f5-4193-8797-9fdce478db64"
+  AZURE_LOCATION: "eastus"
+  
+  # Shared Infrastructure (from shared workflow)
+  SHARED_RESOURCE_GROUP: "rg-tminus15-shared"
+  AI_FOUNDRY_PROJECT: "tminus15-agents-project"
+  
+  # Danny-specific configuration
+  AGENT_NAME: "danny"
+  AGENT_DISPLAY_NAME: "Danny (the Designer)"
+  MODEL_DEPLOYMENT: "gpt-4o"
+  IMAGE_MODEL: "dall-e-3"
+  MODEL_TEMPERATURE: "0.3"
+  MODEL_MAX_TOKENS: "4096"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Validate Danny configuration
+      run: |
+        cd agents/danny
+        
+        echo "🔍 Validating Danny (the Designer) configuration..."
+        
+        # Validate JSON syntax
+        python -m json.tool agent-config.json > /dev/null
+        echo "✅ agent-config.json is valid JSON"
+        
+        # Danny-specific validations
+        python -c "
+        import json
+        with open('agent-config.json', 'r') as f:
+            config = json.load(f)
+        
+        # Check required fields
+        required_fields = ['agent', 'model', 'instructions']
+        for field in required_fields:
+            if field not in config:
+                raise ValueError(f'Missing required field: {field}')
+        
+        # Danny-specific checks
+        if 'design' not in config.get('instructions', {}).get('systemPrompt', '').lower():
+            print('⚠️ Warning: Danny instructions should mention design')
+        
+        if config.get('agent', {}).get('name') != 'Danny':
+            print('⚠️ Warning: Agent name should be Danny')
+        
+        # Check for image generation capability
+        tools = config.get('tools', [])
+        has_image_gen = any(tool.get('type') == 'image_generation' for tool in tools)
+        if not has_image_gen:
+            print('⚠️ Warning: Danny should have image generation capabilities')
+        
+        print('✅ Danny configuration validation passed')
+        "
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    environment: ${{ github.event.inputs.environment || 'development' }}
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: Set up environment variables
+      run: |
+        ENVIRONMENT="${{ github.event.inputs.environment || 'development' }}"
+        
+        # Use shared infrastructure with environment suffix
+        if [ "$ENVIRONMENT" != "production" ]; then
+          RESOURCE_GROUP="${{ env.SHARED_RESOURCE_GROUP }}-${ENVIRONMENT}"
+          AI_FOUNDRY_PROJECT="${{ env.AI_FOUNDRY_PROJECT }}-${ENVIRONMENT}"
+        else
+          RESOURCE_GROUP="${{ env.SHARED_RESOURCE_GROUP }}"
+          AI_FOUNDRY_PROJECT="${{ env.AI_FOUNDRY_PROJECT }}"
+        fi
+        
+        echo "ENVIRONMENT=$ENVIRONMENT" >> $GITHUB_ENV
+        echo "RESOURCE_GROUP=$RESOURCE_GROUP" >> $GITHUB_ENV
+        echo "AI_FOUNDRY_PROJECT=$AI_FOUNDRY_PROJECT" >> $GITHUB_ENV
+        
+        echo "🚀 Deploying Danny (the Designer) to $ENVIRONMENT environment"
+        echo "Shared Resource Group: $RESOURCE_GROUP"
+        echo "Shared AI Foundry Project: $AI_FOUNDRY_PROJECT"
+    
+    - name: Verify shared infrastructure
+      run: |
+        echo "🔍 Verifying shared infrastructure exists..."
+        
+        if ! az group show --name "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          echo "❌ Shared resource group $RESOURCE_GROUP does not exist"
+          echo "💡 Please run: gh workflow run deploy-shared-infrastructure.yml -f environment=$ENVIRONMENT"
+          exit 1
+        fi
+        
+        if ! az ml workspace show --name "$AI_FOUNDRY_PROJECT" --resource-group "$RESOURCE_GROUP" >/dev/null 2>&1; then
+          echo "❌ Shared AI Foundry project $AI_FOUNDRY_PROJECT does not exist"
+          echo "💡 Please run the shared infrastructure workflow first"
+          exit 1
+        fi
+        
+        echo "✅ Shared infrastructure verified"
+    
+    - name: Deploy Danny to shared project
+      run: |
+        cd agents/danny
+        
+        echo "🎨 Deploying Danny (the Designer) to shared AI Foundry project..."
+        
+        # Read Danny's configuration
+        INSTRUCTIONS=$(cat agent-config.json | jq -r '.instructions.systemPrompt')
+        TEMPERATURE=$(cat agent-config.json | jq -r '.model.temperature // 0.3')
+        MAX_TOKENS=$(cat agent-config.json | jq -r '.model.maxTokens // 4096')
+        
+        echo "📝 Danny Configuration:"
+        echo "  Role: UX/UI Designer & Architect"
+        echo "  Primary Model: ${{ env.MODEL_DEPLOYMENT }}"
+        echo "  Image Model: ${{ env.IMAGE_MODEL }}"
+        echo "  Temperature: $TEMPERATURE (creative responses)"
+        echo "  Max Tokens: $MAX_TOKENS"
+        echo "  Tools: Code interpreter, File search, Image generation"
+        
+        # Create Danny-specific agent payload
+        cat > danny-agent-config.json << EOF
+        {
+          "name": "danny-designer",
+          "display_name": "${{ env.AGENT_DISPLAY_NAME }}",
+          "instructions": "$INSTRUCTIONS",
+          "model": "${{ env.MODEL_DEPLOYMENT }}",
+          "temperature": $TEMPERATURE,
+          "max_tokens": $MAX_TOKENS,
+          "tools": [
+            {"type": "code_interpreter"},
+            {"type": "file_search"},
+            {"type": "image_generation", "model": "${{ env.IMAGE_MODEL }}"}
+          ],
+          "capabilities": [
+            "UX/UI design and prototyping",
+            "Design system creation", 
+            "Visual design and branding",
+            "User journey mapping",
+            "Accessibility design",
+            "Frontend design guidance"
+          ],
+          "knowledge_sources": [
+            "tminus15-methodology",
+            "design-systems",
+            "accessibility-guidelines"
+          ],
+          "project": "$AI_FOUNDRY_PROJECT",
+          "resource_group": "$RESOURCE_GROUP",
+          "metadata": {
+            "agent_role": "designer",
+            "specialization": "UX/UI Design, Visual Design, Architecture",
+            "methodology": "T-Minus-15",
+            "environment": "$ENVIRONMENT",
+            "deployed_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+        }
+        EOF
+        
+        echo "📄 Danny agent configuration ready"
+        cat danny-agent-config.json | jq .
+        
+        echo "✅ Danny configured for shared AI Foundry project"
+    
+    - name: Test Danny deployment
+      run: |
+        echo "🧪 Testing Danny deployment..."
+        
+        # Verify shared project access
+        az ml workspace show --name "$AI_FOUNDRY_PROJECT" --resource-group "$RESOURCE_GROUP" --output table
+        
+        echo "✅ Danny deployment test completed"
+    
+    - name: Output Danny deployment info
+      run: |
+        SUBSCRIPTION_ID=$(az account show --query id -o tsv)
+        
+        echo "=========================================="
+        echo "🎨 Danny (the Designer) Deployed!"
+        echo "=========================================="
+        echo ""
+        echo "🤖 Agent Details:"
+        echo "  Name: Danny"
+        echo "  Role: Designer (UX/UI & Architecture)"
+        echo "  Specialization: Visual Design, User Experience"
+        echo "  Environment: $ENVIRONMENT"
+        echo ""
+        echo "🧠 AI Configuration:"
+        echo "  Primary Model: ${{ env.MODEL_DEPLOYMENT }} (creative reasoning)"
+        echo "  Image Model: ${{ env.IMAGE_MODEL }} (design generation)"
+        echo "  Temperature: ${{ env.MODEL_TEMPERATURE }} (creative responses)"
+        echo ""
+        echo "🏗️ Shared Infrastructure:"
+        echo "  Resource Group: $RESOURCE_GROUP"
+        echo "  AI Foundry Project: $AI_FOUNDRY_PROJECT (shared with all agents)"
+        echo ""
+        echo "🌐 Portal Access:"
+        echo "  Azure Portal: https://portal.azure.com/#@evrosdemo.onmicrosoft.com/resource/subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP"
+        echo "  AI Foundry: https://ai.azure.com/"
+        echo ""
+        echo "🎯 Capabilities:"
+        echo "  ✨ UX/UI design and prototyping"
+        echo "  🎨 Visual design and image generation"
+        echo "  📐 Design system creation and maintenance"
+        echo "  ♿ Accessibility and inclusive design"
+        echo "  🗺️ User journey mapping and wireframing"
+        echo ""
+        echo "🤝 Collaboration:"
+        echo "  🔗 Works with Edmund on technical implementation"
+        echo "  📋 Collaborates with Pepper on user requirements"
+        echo "  📊 Coordinates with Poppy on project timelines"
+        echo ""
+        echo "🎨 Danny is ready to create beautiful user experiences!"

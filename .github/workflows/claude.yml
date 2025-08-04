@@ -1,0 +1,60 @@
+name: Claude Code
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  issues:
+    types: [opened, assigned]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  claude:
+    if: |
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
+      (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code
+        id: claude
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          timeout_minutes: 15
+          
+          # Use Claude Sonnet 4 (more resource efficient than Opus)
+          model: "claude-sonnet-4-20250514"
+          
+          # Optimize for T-Minus-15 book repository
+          custom_instructions: |
+            This is the T-Minus-15 book repository. Focus on:
+            - AsciiDoc files (.adoc) for book content
+            - Agent configurations in agents/ directory  
+            - GitHub workflows and deployment scripts
+            - Exclude large binary files, images, and generated content
+            - Follow the project's CLAUDE.md guidelines
+            - Keep responses concise and focused
+            
+            IMPORTANT: If you encounter a "couldn't find remote ref" error, 
+            this likely means the PR is from a fork. In your comment, explain:
+            "This PR appears to be from a fork. Claude Code currently only works 
+            with PRs from branches in the main repository for security reasons. 
+            Please ask a maintainer to review this PR manually."
+          
+          # Limit resource-intensive operations
+          allowed_tools: "Read,Edit,Write,Glob,Grep"
+

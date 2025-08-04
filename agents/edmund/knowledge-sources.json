@@ -1,0 +1,147 @@
+{
+  "knowledgeSources": [
+    {
+      "id": "tminus15-methodology",
+      "name": "T-Minus-15 Methodology Repository",
+      "type": "github_repository",
+      "source": {
+        "url": "https://github.com/bengweeks/T-Minus-15",
+        "branch": "main",
+        "indexingScope": "full_repository"
+      },
+      "configuration": {
+        "refreshInterval": "daily",
+        "refreshTime": "02:00",
+        "timezone": "UTC",
+        "autoUpdate": true,
+        "enableWebhooks": true
+      },
+      "indexing": {
+        "mode": "recursive",
+        "includeFileTypes": [".md", ".adoc", ".yml", ".yaml", ".txt"],
+        "excludePaths": [
+          "/.git",
+          "/node_modules",
+          "/.github",
+          "/cover",
+          "/images"
+        ],
+        "maxFileSize": "5MB",
+        "enableFullTextSearch": true,
+        "enableSemanticSearch": true
+      },
+      "priority": "high",
+      "weight": 1.0,
+      "description": "Primary source for T-Minus-15 methodology, principles, and practices",
+      "tags": ["methodology", "devops", "agile", "engineering"],
+      "lastIndexed": null,
+      "status": "active"
+    },
+    {
+      "id": "azure-ai-foundry-docs",
+      "name": "Azure AI Foundry Documentation",
+      "type": "web_crawler",
+      "source": {
+        "url": "https://docs.microsoft.com/en-us/azure/ai-foundry/",
+        "crawlDepth": 3,
+        "followExternalLinks": false
+      },
+      "configuration": {
+        "refreshInterval": "weekly",
+        "refreshTime": "03:00",
+        "timezone": "UTC",
+        "autoUpdate": true
+      },
+      "indexing": {
+        "mode": "selective",
+        "includePatterns": [
+          "**/agents/**",
+          "**/deployment/**",
+          "**/models/**",
+          "**/best-practices/**"
+        ],
+        "enableFullTextSearch": true,
+        "enableSemanticSearch": true
+      },
+      "priority": "medium",
+      "weight": 0.7,
+      "description": "Azure AI Foundry documentation for agent development and deployment",
+      "tags": ["azure", "ai", "deployment", "documentation"],
+      "lastIndexed": null,
+      "status": "active"
+    },
+    {
+      "id": "devops-best-practices",
+      "name": "DevOps Best Practices",
+      "type": "curated_content",
+      "source": {
+        "urls": [
+          "https://docs.microsoft.com/en-us/azure/devops/",
+          "https://docs.github.com/en/actions",
+          "https://kubernetes.io/docs/",
+          "https://docs.docker.com/"
+        ]
+      },
+      "configuration": {
+        "refreshInterval": "weekly",
+        "refreshTime": "04:00",
+        "timezone": "UTC",
+        "autoUpdate": true
+      },
+      "indexing": {
+        "mode": "selective",
+        "includePatterns": [
+          "**/best-practices/**",
+          "**/tutorials/**",
+          "**/guides/**"
+        ],
+        "enableFullTextSearch": true,
+        "enableSemanticSearch": true
+      },
+      "priority": "low",
+      "weight": 0.5,
+      "description": "Industry best practices for DevOps, CI/CD, and infrastructure",
+      "tags": ["devops", "ci-cd", "kubernetes", "docker"],
+      "lastIndexed": null,
+      "status": "active"
+    }
+  ],
+  "searchConfiguration": {
+    "defaultSearchMode": "hybrid",
+    "semanticSearchEnabled": true,
+    "fullTextSearchEnabled": true,
+    "maxResults": 50,
+    "relevanceThreshold": 0.7,
+    "contextWindowSize": 4000,
+    "sourceAttribution": true
+  },
+  "caching": {
+    "enabled": true,
+    "ttl": "1h",
+    "maxCacheSize": "100MB",
+    "evictionPolicy": "lru"
+  },
+  "monitoring": {
+    "indexingMetrics": true,
+    "searchMetrics": true,
+    "errorTracking": true,
+    "performanceMonitoring": true
+  },
+  "webhooks": {
+    "github": {
+      "enabled": true,
+      "events": ["push", "pull_request"],
+      "triggerReindexing": true
+    }
+  },
+  "fallback": {
+    "enabled": true,
+    "sources": [
+      {
+        "type": "static_knowledge",
+        "description": "Cached T-Minus-15 methodology snapshot",
+        "lastUpdated": "2025-01-09"
+      }
+    ]
+  }
+}

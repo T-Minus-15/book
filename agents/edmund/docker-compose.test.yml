@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  edmund-local:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      # OpenAI Configuration (choose one)
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # OR Azure OpenAI
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      
+      # Local testing configuration
+      - ENVIRONMENT=local
+      - LOG_LEVEL=debug
+      - AGENT_NAME=edmund
+      - TMINUS15_REPO_URL=https://github.com/bengweeks/T-Minus-15
+      
+    volumes:
+      - .:/app/edmund
+      - ./test_results:/app/test_results
+    ports:
+      - "8080:8080"
+    command: python test_edmund_local.py
+    
+  # Mock knowledge source server for testing
+  mock-knowledge-server:
+    image: nginx:alpine
+    ports:
+      - "8081:80"
+    volumes:
+      - ./test_data:/usr/share/nginx/html
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+      
+  # Redis for caching tests (optional)
+  redis-test:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    
+volumes:
+  test_results:
