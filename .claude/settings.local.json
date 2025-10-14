@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/SkytechClouds/Skytech Cloud/Akash Skytech - Documents/KnowAll ai/DevOps Process template/Akash updated field/**)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

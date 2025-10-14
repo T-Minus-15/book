@@ -16,241 +16,850 @@ Install the following extension:
 
 === Epic
 
+==== Epic Pages Overview
+
+The Epic work item type requires multiple pages (tabs) to organize all the required fields. The following pages should be created:
+
+	. Details (default page)
+	. Lean Business Case
+	. Delivery Strategy
+	. Technical Details
+	. Testing
+	. Resourcing
+
+To create a new page, click on the "New page" button in the Layout tab toolbar.
+
+.Epic Pages - Tab Structure
+image::images/epic-pages-tabs.png[Epic pages showing Details, Lean Business Case, Delivery Strategy, Technical Details, Testing, and Resourcing tabs, 800]
+
+==== Epic Details Page Configuration
+
 For the Epic, perform the following steps on the Details page:
 
 	. Edit the Description field,
-		.. Rename the Layout > Label from "Description" to "Objective".
+		.. Rename the Layout > Label from "Description" to "Background".
 		.. Change Options > Required to True.
-	. Create a new field "Technical Solution", with:
-		.. Definition > Name: Technical Solution
+		.. Change Definition > Description from "A description of the work to be done" to "Provide the background and context for this Epic".
+	. Create a new field "Objective", with:
+		.. Definition > Name: Objective
 		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Outline what technologies will be used to deliver the solution.
-		.. Layout > Label: Technical Solution
-		.. Page: Details
-		.. Group (new): Technical Solution
-		.. Column: Left
-	. Create a new field "Licensing, Permissions and Accounts", with:
-		.. Definition > Name: Licensing Accounts
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Provide requirements and guidance around licensing (including costs), service accounts and access/permissions needed.
-		.. Options> Default value: <i>Outline what licenses and permissions the accounts will need to access the system, as well as licensing and permissions for any accounts that we need to deliver the solution.</i>
-		.. Layout > Label: Licensing, Permissions and Accounts
-		.. Layout > Group: Licensing, Permissions and Accounts
+		.. Definition > Description: Provide the objective of this Epic.
+		.. Layout > Label: Objective
+		.. Layout > Group (new): Objective
 		.. Layout > Column: Left
 	. Edit the "Effort" field,
-		. Rename the Layout > Label from "Effort" to "Engineering Effort (Days)"
-		. Change the Definition > Description from "The estimated effort to implemented the epic" to "The estimated engineering effort to implemented the epic"
+		. Rename the Layout > Label from "Effort" to "Strategic Effort (Days)"
+		. Change the Definition > Description from "The estimated effort to implemented the epic" to "The estimated Strategic effort to implemented the epic"
 	. Create a new field "Prep Effort (Days)"
-		.. Definition > Name: Prep Effort
+		.. Definition > Name: PrepEffortDays
 		.. Definition > Type: Decimal
 		.. Definition > Description: The estimated prep effort to implemented the epic
 		.. Layout > Label: Prep Effort (Days)
 		.. Layout > Group: Planning
 	. Create a new field "Design Effort (Days)"
-		.. Definition > Name: Design Effort
+		.. Definition > Name: DesignEffortDays
 		.. Definition > Type: Decimal
 		.. Definition > Description: The estimated design effort to implemented the epic
 		.. Layout > Label: Design Effort (Days)
 		.. Layout > Group: Planning
+	. Create a new field "Engineering Effort (Days)"
+		.. Definition > Name: EngineeringEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: The estimated Engineering effort to implemented the epic
+		.. Layout > Label: Engineering Effort (Days)
+		.. Layout > Group: Planning
 	. Create a new field "Test Effort (Days)"
-		.. Definition > Name: Test Effort
+		.. Definition > Name: TestEffortDays
 		.. Definition > Type: Decimal
 		.. Definition > Description: The estimated test effort to implemented the epic
 		.. Layout > Label: Test Effort (Days)
 		.. Layout > Group: Planning
 	. Create a new field "Planning Effort (Days)"
-		.. Definition > Name: Test Effort
+		.. Definition > Name: PlanningEffortDays
 		.. Definition > Type: Decimal
 		.. Definition > Description: The estimated planning effort to implemented the epic
-		.. Layout > Label: Test Effort (Days)
+		.. Layout > Label: Planning Effort (Days)
 		.. Layout > Group: Planning
 	. Create a new field "Operate Effort (Days)"
-		.. Definition > Name: Operate Effort
+		.. Definition > Name: OperateEffortDays
 		.. Definition > Type: Decimal
 		.. Definition > Description: The estimated operate effort to implemented the epic
 		.. Layout > Label: Operate Effort (Days)
 		.. Layout > Group: Planning
 	. Create a new field "Contingency (%)"
 		.. Definition > Name: Contingency
-		.. Definition > Type: Picklist (integer)
+		.. Definition > Type: Decimal
 		.. Definition > Description: The contingency varies based on clarity and risk associated with the estimated effort for projects.
-	  .. Definition > Picklist items: 30, 25, 20, 15, 10, 5, 0 (add in this order)
 		.. Layout > Label: Contingency (%)
 		.. Layout > Group: Planning
-	. [Optional] Create a PO Status (%)
-	. [Optional] PO Days (excluding contingency and operate)
-	. [Optional] PO Days (including contingency but excluding operate)
-	. [Optional] Order Value (€) (including contingency but excluding operate)
-	. [Optional] Discount Value (€)
+	. Leave the Start Date and Target Date fields as defaults
+	. Create a new field "Epic Size"
+		.. Definition > Name: EpicSize
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate the relative size of this Epic.
+		.. Definition > Picklist items: XS, S, M, L, XL
+		.. Definition > Picklist item descriptions:
+		.. Options > Required: True
+		.. Layout > Label: Epic Size
+		.. Layout > Group: Metadata
+	. Create a new field "Probability of PO"
+		.. Definition > Name: ProbabilityOfPO
+		.. Definition > Type: Decimal
+		.. Definition > Description: Indicate the probability of winning the PO for this Epic.
+		.. Options > Required: True
+		.. Layout > Label: Probability of PO
+		.. Layout > Group: Metadata
+	. Create a new field "Project Number"
+		.. Definition > Name: ProjectNumber
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide the project number associated with this Epic.
+		.. Layout > Label: Project Number
+		.. Layout > Group: Metadata
+	. Create a new field "Order Value Low (£)"
+		.. Definition > Name: OrderValueLow
+		.. Definition > Type: Decimal
+		.. Definition > Description: Provide the low end of the order value range for this Epic.
+		.. Layout > Label: Order Value Low (£)
+		.. Layout > Group: Metadata
+	. Create a new field "Order Value High (£)"
+		.. Definition > Name: OrderValueHigh
+		.. Definition > Type: Decimal
+		.. Definition > Description: Provide the high end of the order value range for this Epic.
+		.. Layout > Label: Order Value High (£)
+		.. Layout > Group: Metadata
 	. Create a new field "Client"
 		.. Definition > Name: Client
 		.. Definition > Type: Text (single line)
 		.. Definition > Description: Provide the client whom we are supplying this solution to.
-		.. Layout > Group: Classification
-	. Create a new field "Project Type"
-		.. Definition > Name: Project Type
+		.. Layout > Label: Client
+		.. Layout > Group: Metadata
+	. Create a new field "Epic Type"
+		.. Definition > Name: Epic Type
 		.. Definition > Type: Picklist (string)
-		.. Definition > Description: Specify the type of project.
-		.. Definition > Picklist items: Workshop, Tender, Project, MSA, Consultancy
+		.. Definition > Description: Specify the type of epic.
+		.. Definition > Picklist items: CISP, Landing Zone, Project, Proto-Sprint
+		.. Options > Required: True
+		.. Options > Default value: Business
+		.. Layout > Label: Epic Type
+		.. Layout > Group: Metadata
+	. Create a new field "Project Number"
+		.. Definition > Name: Project Number
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide the project number associated with this Epic.
+		.. Layout > Label: Project Number
+		.. Layout > Group: Metadata
 	. Create a new field "Proposal/MSA Link"
-		.. Definition > Name: Proposal or MSA Link
+		.. Definition > Name: ProposalorMSALink
 		.. Definition > Type: Text (single line)
 		.. Layout > Label: Proposal/MSA Link
-		.. Layout > Group: Classification
+		.. Layout > Group: Metadata
 	. Create a new field "Scrum Master"
-		.. Definition > Name: Scrum Master
+		.. Definition > Name: ScrumMaster
 		.. Definition > Type: Identity
 		.. Definition > Description: Specific who will be the scrum master
-		.. Layout > Group: Classification
-	. [Optional] Account Manager
-	. [Optional] Customer Success Manager
-	. Create a new field "Product Owner"
-		.. Definition > Name: Product Owner
+		.. Layout > Group: Metadata
+	. Create a new field "Account Manager"
+		.. Definition > Name: AccountManager
+		.. Definition > Type: Identity
+		.. Definition > Description: Specific who will be the account manager
+		.. Layout > Group: Metadata
+	. Create a new field "Date Received"
+		.. Definition > Name: DateReceived
+		.. Definition > Type: DateTime
+		.. Definition > Description: Specify the date this Epic was received.
+		.. Layout > Label: Date Received
+		.. Layout > Group: Metadata	
+	. Create a new field "Product Owner Email"
+		.. Definition > Name: ProductOwnerEmail
 		.. Definition > Type: Text (single line)
 		.. Definition > Description: Specific who will be the product owner
 		.. Layout > Label: Product Owner (Email)
-		.. Layout > Group: Classification
-	. [Optional] Order Number
-	. [Optional] Strategic Theme
+		.. Layout > Group: Metadata
 	. Hide Planning > Priority
 	. Hide Planning > Risk
 	. Hide Planning > Business Value
 	. Hide Planning > Time Criticality
 
-For the Epic, we need to populate a new "Epic Hypothesis" page:
+==== Lean Business Case Page Configuration
 
-	. Create a new page called "Epic Hypothesis".
-	. Create a new field "Value Statement"
-		.. Definition > Name: Value Statement
+For the Epic, we need to populate the "Lean Business Case" page with the following fields:
+
+	. Create a new page called "Lean Business Case".
+	. Create a new field "Epic Description"
+		.. Definition > Name: EpicDescription
 		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Outline the benefits of this Epic
-		.. Layout > Label: Value Statement
-		.. Layout > Group (new): Value Statement
+		.. Definition > Description: Provide a detailed description of this Epic
+		.. Options > Default value: <i>Briefly describe what this Epic is about, the problem it solves, and its business purpose. Provide enough context for stakeholders to understand its relevance and expected value.</i>
+		.. Layout > Label: Epic Description
+		.. Layout > Group (new): Epic Description
 		.. Layout > Column: Left
 	. Create a new field "Business Outcome Hypothesis"
-		.. Definition > Name: Business Outcome Hypothesis
+		.. Definition > Name: BusinessOutcomeHypothesis
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Outline the hypothetical outcome to the business of this Epic
+		.. Options > Default value: <i>Summarize the key measurable results expected from this Epic. Explain how success will be evaluated using clear metrics or outcomes.</i> 
 		.. Layout > Label: Business Outcome Hypothesis
 		.. Layout > Group (new): Business Outcome Hypothesis
 		.. Layout > Column: Left
-	. Create a new field "Non-Functional Requirements (NFRs)"
-		.. Definition > Name: Non Functional Requirements
+	. Create a new field "Leading Indicators"
+		.. Definition > Name: LeadingIndicators
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify the leading indicators that will measure success of this Epic
+		.. Options > Default value: <i>Define tangible measurable indicators to provide leading indicators of the outcomes hypothesis (30 to 200 words); for example, a measurable change in purchaser demographics within 30 days of feature release. Only use percentages if confident!</i>
+		.. Layout > Label: Leading Indicators
+		.. Layout > Group (new): Leading Indicators
+		.. Layout > Column: Left
+	. Create a new field "Non-Functional Requirements"
+		.. Definition > Name: NonFunctionalRequirements
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Outline the NFRs for this Epic
-		.. Layout > Label: Non-Functional Requirements (NFRs)
-		.. Layout > Group (new): Details
+		.. Options > Default value: <i>Detail the system’s operational characteristics such as performance, security, reliability, and usability requirements that the solution must meet, but which do not directly contribute to its primary functionality (30 to 200 words).</i>
+		.. Layout > Label: Non-Functional Requirements
+		.. Layout > Group (new): Non-Functional Requirements
 		.. Layout > Column: Left
-	
-For the Epic, we need to populate a new "Analysis" page:
-
-	. Create a new page called "Epic Hypothesis".
+	. Create a new field "Impacted Products, Programs, and Services"
+		.. Definition > Name: ImpactedProductsProgramsandServices
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Outline the products, programs or services impacted by this Epic
+		.. Options > Default value: <i>Identify solutions, programs, services, etc. that will may be impacted by the delivery of this Epic (30 to 200 words).</i>
+		.. Layout > Label: Impacted Products, Programs, and Services
+		.. Layout > Group (new): Impacted Products, Programs, and Services
+		.. Layout > Column: Left
 	. Create a new field "Users and Markets Affected"
-		.. Definition > Name: Users and Markets Affected
+		.. Definition > Name: UsersandMarketsAffected
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Outline the users and markets affected by this Epic
+		.. Options > Default value: <i>Describe the user community and any markets or departments affected (such as personas in the user stories) by the delivery of this Epic (30 to 200 words).</i>
 		.. Layout > Label: Users and Markets Affected
 		.. Layout > Group (new): Users and Markets Affected
 		.. Layout > Column: Left
-	. Create a new field "Impact Products, Programs and Services"
-		.. Definition > Name: Impact Products Programs and Services
+	. Create a new field "Type of Return"
+		.. Definition > Name: Type of Return
 		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Outline the products, programs or services impacted by this Epic
-		.. Layout > Label: Impact Products, Programs and Services
-		.. Layout > Group (new): Impact Products, Programs and Services
-		.. Layout > Column: Left
-	. Create a new field "Analysis Summary"
-		.. Definition > Name: Analysis Summary
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Provide a summary analysis of the Epic
-		.. Layout > Label: Analysis Summary
-		.. Layout > Group (new): Analysis Summary
-		.. Layout > Column: Left
-	. Create a new field "Return"
-		.. Definition > Name: Return
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Provide a financial (or otherwise) return of the Epic
-		.. Layout > Label: Return
-		.. Layout > Group (new): Return
-		.. Layout > Column: Left
-	. Create a new field "Anticipated Business Impact"
-		.. Definition > Name: Anticipated Business Impact
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Outline the anticipated business impact of this solution
-		.. Layout > Label: Anticipated Business Impact
-		.. Layout > Group (new): Anticipated Business Impact
-		.. Layout > Column: Left
-	
-For the Epic, we need to populate a new "Delivery Strategy" page:
-
-	. Create a new page called "Delivery Strategy".
-	. Create a new field "Sponsors"
-		.. Definition > Name: Sponsors
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Identify who the sponsors are for this Epic
-		.. Definition > Default value: TBC
-		.. Layout > Label: Sponsors
-		.. Layout > Group (new): Sponsors
-		.. Layout > Column: Left
-	. Create a new field "Incremental Implementation Strategy"
-		.. Definition > Name: Incremental Implementation Strategy
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Identify how this Epic will be delivered incrementally
-		.. Definition > Default value: TBC
-		.. Layout > Label: Sponsors
-		.. Layout > Group (new): Sponsors
-		.. Layout > Column: Left
-	. Create a new field "Sequence and Dependencies"
-		.. Definition > Name: Sequence and Dependencies
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Identify the sequence and dependencies for delivering this Epic
-		.. Definition > Default value: TBC
-		.. Layout > Label: Sponsors
-		.. Layout > Group (new): Sponsors
-		.. Layout > Column: Left
-	. Create a new field "Milestones or Checkpoints"
-		.. Definition > Name: Milestones or Checkpoints
-		.. Definition > Type: Text (multiple lines)
-		.. Definition > Description: Identify the milestones or checkpoints for delivering this Epic
-		.. Definition > Default value: TBC
-		.. Layout > Label: Sponsors
-		.. Layout > Group (new): Sponsors
+		.. Definition > Description: Specify the type of return (financial, strategic, etc.) expected from this Epic
+		.. Options > Default value: <i>Outline the return for the business by the delivery of this solution, such as increased revenue, improved productivity, or other benefits, etc. (30 to 200 words).</i>
+		.. Layout > Label: Type of Return
+		.. Layout > Group (new): Type of Return
 		.. Layout > Column: Left
 	. Create a new field "Other Notes and Comments"
-		.. Definition > Name: Milestones or Checkpoints
+		.. Definition > Name: OtherNotesandComments
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Provide any other relevant notes or comments regarding this Epic
-		.. Definition > Default value: TBC
-		.. Layout > Label: Sponsors
-		.. Layout > Group (new): Sponsors
+		.. Options > Default value: <i>Any additional miscellaneous information relevant to LPM.</i>
+		.. Layout > Label: Other Notes and Comments
+		.. Layout > Group (new): Other Notes and Comments
 		.. Layout > Column: Left
+	. Add the existing field "Product Owner"
+		.. Definition > Use an existing field: ProductOwner
+		.. Layout > Label: Product owner
+		.. Layout > Group (new): Approval
+		.. Layout > Column: Right
+	. Create a new field "Budget Holder"
+		.. Definition > Name: BudgetHolder
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Identify who holds the budget for this Epic
+		.. Layout > Label: Budget Holder
+		.. Layout > Group: Approval
+		.. Layout > Column: Right
 	. Create a new field "Go or No-Go"
-		.. Definition > Name: Go or no go
+		.. Definition > Name: GoorNoGo
 		.. Definition > Type: Picklist (string)
-		.. Definition > Picklist items: No-Go, Go
-		.. Definition > Description: Specify if this project is to go ahead, and scheduled in the Epic plan
+		.. Definition > Description: Indicate whether this Epic is a Go or No-Go
+		.. Definition > Picklist items: Go, No-Go, Pending
+		.. Options > Required: True
 		.. Layout > Label: Go or No-Go
-		.. Layout > Group (new): Approval
-		.. Layout > Column: Middle
-	. Create a new field "Approved By"
-		.. Definition > Name: Approved By
-		.. Definition > Type: Identity
-		.. Definition > Picklist items: No-Go, Go
-		.. Definition > Description:  Track who approved the go/no-go state for this Epic
-		.. Layout > Label: Go or No-Go
-		.. Layout > Group (new): Approval
-	. Create a new field "Approved Date"
-		.. Definition > Name: Approved Date
-		.. Definition > Type: Date/Time
-		.. Definition > Picklist items: No-Go, Go
-		.. Definition > Description:  Track the approval date for the go/no-go state for this Epic
-		.. Layout > Label: Go or No-Go
-		.. Layout > Group (new): Approval
-	
-For the Epic, we need to populate a new "Resourcing" page.
+		.. Layout > Group: Approval
+		.. Layout > Column: Right
+	. Add the existing field "Approved By"
+		.. Definition > Use an existing field: Approved By
+		.. Layout > Label: Approved By
+		.. Layout > Group: Approval
+		.. Layout > Column: Right
+	. Add the existing field "Approved Date"
+		.. Definition > Use an existing field: Approved Date
+		.. Layout > Label: Approved Date
+		.. Layout > Group: Approval
+		.. Layout > Column: Right
+	. Create a new field "Order Number"
+		.. Definition > Name: Order Number
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Specify the purchase order or reference number
+		.. Layout > Label: Order Number
+		.. Layout > Group: Approval
+		.. Layout > Column: Right
+	. Create a new field "Key Stakeholders"
+		.. Definition > Name: Key Stakeholders
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify key stakeholders for this Epic
+		.. Layout > Label: Key Stakeholders
+		.. Layout > Group: Approval
+		.. Layout > Column: Right
 
-	*_Instructions to be completed._*
-	
+==== Delivery Strategy Page Configuration
+
+For the Epic, we need to populate the "Delivery Strategy" page:
+
+	. Create a new page called "Delivery Strategy".
+	. Create a new field "Innovation Start-Up"
+		.. Definition > Name: InnovationStartUp
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Indicate whether this Epic is an innovation start-up
+		.. Options > Required: True
+		.. Options > Default value: <i>Hypothesis: We believe that [target user] will [achieve a specific outcome] by [using a particular feature or action], which will be proven by [specific metric or measurement].</i>
+		.. Layout > Label: Innovation Start-Up
+		.. Layout > Group (new): Innovation Start-Up
+		.. Layout > Column: Left
+	. Create a new field "Prerequisites"
+		.. Definition > Name: Prerequisites
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify any prerequisites for delivering this Epic
+		.. Definition > Default value: <i>Outline key setup or conditions required before starting implementation, e.g., environment setup, access, or licenses.</i>
+		.. Layout > Label: Prerequisites
+		.. Layout > Group (new): Prerequisites
+		.. Layout > Column: Left
+	. Create a new field "Incremental Implementation Strategy"
+		.. Definition > Name: IncrementalImplementationStrategy
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify how this Epic will be delivered incrementally
+		.. Definition > Default value: <i>Outline how we will deliver the solution incrementally so that we do not end up with a single big deployment at the end of the project (and then find out we are blocked), e.g. Features will be delivered to Production Feature-by-Feature weekly.</i>
+		.. Layout > Label: Incremental Implementation Strategy
+		.. Layout > Group (new): Incremental Implementation Strategy
+		.. Layout > Column: Left
+	. Create a new field "Sequence and Dependencies"
+		.. Definition > Name: SequenceandDependencies
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify the sequence and dependencies for delivering this Epic
+		.. Definition > Default value: <i>Outline the logic and sequence of work and dependencies. For example, “enabler” features may need to be done before functional feat</i>
+		.. Layout > Label: Sequence and Dependencies
+		.. Layout > Group (new): Sequence and Dependencies
+		.. Layout > Column: Left
+	. Create a new field "Milestones or Checkpoints"
+		.. Definition > Name: MilestonesorCheckpoints
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify the milestones or checkpoints for delivering this Epic
+		.. Definition > Default value: <i>Outline what milestones and checkpoints there will be. E.g. a kick-off meeting, weekly checkpoint meetings to update on progress and demo new functionality.</i>
+		.. Layout > Label: Milestones or Checkpoints
+		.. Layout > Group (new): Milestones or Checkpoints
+		.. Layout > Column: Left
+	. Create a new field "Squad"
+		.. Definition > Name: ProposedSquad
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Identify the squad that will be delivering this Epic
+		.. Layout > Label: Proposed Squad
+		.. Layout > Group: Metadata
+		.. Layout > Column: Right
+	. Create a new field "Project ID"
+		.. Definition > Name: ProjectID
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide the project ID associated with this Epic.
+		.. Layout > Label: Project ID
+		.. Layout > Group: Metadata
+		.. Layout > Column: Right
+
+==== Technical Details Page Configuration
+
+For the Epic, we need to populate the "Technical Details" page with the following fields:
+
+	. Create a new page called "Technical Details".
+	. Create a new field "Technical Solution"
+		.. Definition > Name: TechnicalSolution
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Outline what technologies will be used to deliver the solution.
+		.. Options > Default value: <i>Provide a high-level technical solution design (no more than 100–300 words). This should outline the technologies that will be implemented and any integrations.</i>
+		.. Layout > Label: Technical Solution
+		.. Layout > Group (new): Technical Solution
+		.. Layout > Column: Left
+	. Create a new field "Proposal Link"
+		.. Definition > Name: ProposalLink
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide a link to the proposal document for this Epic.
+		.. Layout > Label: Proposal Link
+		.. Layout > Group (new): Documentation
+		.. Layout > Column: Left
+	. Create a new field "Solution Design Link"
+		.. Definition > Name: SolutionDesignLink
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide a link to the solution design document for this Epic.
+		.. Layout > Label: Solution Design Link
+		.. Layout > Group: Documentation
+		.. Layout > Column: Left
+	. Create a new field "Test Strategy Link"
+		.. Definition > Name: TestStrategyLink
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide a link to the test strategy document for this Epic.
+		.. Layout > Label: Test Strategy Link
+		.. Layout > Group: Documentation
+		.. Layout > Column: Left
+	. Create a new field "Deployment Strategy Link"
+		.. Definition > Name: DeploymentStrategyLink
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide a link to the deployment strategy document for this Epic.
+		.. Layout > Label: Deployment Strategy Link
+		.. Layout > Group: Documentation
+		.. Layout > Column: Left
+	. Create a new field "Runbook Link"
+		.. Definition > Name: RunbookLink
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide a link to the runbook document for this Epic.
+		.. Layout > Label: Runbook Link
+		.. Layout > Group: Documentation
+		.. Layout > Column: Left
+	. Create a new field "Solution Overview Video Link"
+		.. Definition > Name: SolutionOverviewVideoLink
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide a link to the solution overview video for this Epic.
+		.. Layout > Label: Solution Overview Video Link
+		.. Layout > Group: Documentation
+		.. Layout > Column: Left
+	. Create a new field "Release ID"
+		.. Definition > Name: ReleaseID
+		.. Definition > Type: Integer
+		.. Definition > Description: Specify the release ID associated with this Epic.
+		.. Layout > Label: Release ID
+		.. Layout > Group (new): Deployment
+		.. Layout > Column: Left
+	. Create a new field "Stage Name"
+		.. Definition > Name: StageName
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Specify the deployment stage name for this Epic.
+		.. Layout > Label: Stage Name
+		.. Layout > Group: Deployment
+		.. Layout > Column: Left
+	. Create a new field "Licensing"
+		.. Definition > Name: Licensing
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide licensing requirements for this Epic.
+		.. Layout > Label: Licensing
+		.. Layout > Group (new): Licensing
+		.. Layout > Column: Right
+	. Create a new field "Permissions and Accounts"
+		.. Definition > Name: PermissionsandAccounts
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide requirements around permissions and accounts needed for this Epic.
+		.. Layout > Label: Permissions and Accounts
+		.. Layout > Group (new): Permissions and Accounts
+		.. Layout > Column: Right
+	. Add the "Environments" extension field
+		.. Definition > Use extension: Environments
+		.. Layout > Group (new): Environments
+		.. Layout > Column: Right
+	. Add the "Operating Systems" extension field
+		.. Definition > Use extension: Operating Systems
+		.. Layout > Group (new): Devices
+		.. Layout > Column: Right
+	. Create a new field "Hardware"
+		.. Definition > Name: Hardware
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Specify hardware requirements for this Epic.
+		.. Layout > Label: Hardware
+		.. Layout > Group: Devices
+		.. Layout > Column: Right
+	. Add the "Browsers" extension field
+		.. Definition > Use extension: Browsers
+		.. Layout > Group: Devices
+		.. Layout > Column: Right
+	. Create a new field "Other Device Information"
+		.. Definition > Name: OtherDeviceInformation
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Provide any other device-related information for this Epic.
+		.. Layout > Label: Other Device Information
+		.. Layout > Group (new): Other Device Information
+		.. Layout > Column: Right
+
+==== Testing Page Configuration
+
+For the Epic, we need to populate the "Testing" page with the following fields:
+
+	. Create a new page called "Testing".
+	. Create a new field "Testing Overview"
+		.. Definition > Name: TestingOverview
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Provide an overview of the testing approach for this Epic.
+		.. Layout > Label: Testing Overview
+		.. Layout > Group (new): Testing Overview
+		.. Layout > Column: Left
+	. Create a new field "Test Deliverables"
+		.. Definition > Name: TestDeliverables
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify the test deliverables for this Epic.
+		.. Layout > Label: Test Deliverables
+		.. Layout > Group (new): Test Deliverables
+		.. Layout > Column: Left
+	. Create a new field "Test Licensing"
+		.. Definition > Name: TestLicensing
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Provide licensing requirements for testing tools and environments.
+		.. Layout > Label: Test Licensing
+		.. Layout > Group (new): Test Licensing
+		.. Layout > Column: Left
+	. Create a new field "Testing Tools"
+		.. Definition > Name: TestingTools
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify the tools that will be used for testing this Epic.
+		.. Layout > Label: Testing Tools
+		.. Layout > Group (new): Testing Tools
+		.. Layout > Column: Left
+	. Create a new field "Test Accounts"
+		.. Definition > Name: TestAccounts
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Specify the test accounts needed for testing this Epic.
+		.. Layout > Label: Test Accounts
+		.. Layout > Group (new): Test Accounts
+		.. Layout > Column: Left
+	. Create a new field "Client Testers"
+		.. Definition > Name: ClientTesters
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Identify client testers who will be involved in testing this Epic.
+		.. Layout > Label: Client Testers
+		.. Layout > Group (new): Client Testers
+		.. Layout > Column: Left
+	. Create a new field "Chaos Monkey Testing"
+		.. Definition > Name: ChaosMonkeyTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Chaos Monkey testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Chaos Monkey Testing
+		.. Layout > Group (new): Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Requirements Testing"
+		.. Definition > Name: RequirementsTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Requirements testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Requirements Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Design Testing"
+		.. Definition > Name: DesignTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Design testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Design Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Manual Functional Testing"
+		.. Definition > Name: ManualFunctionalTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Manual Functional testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Manual Functional Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Regression Testing"
+		.. Definition > Name: RegressionTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Regression testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Regression Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Security Testing"
+		.. Definition > Name: SecurityTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Security testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Security Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Code Quality Testing"
+		.. Definition > Name: CodeQualityTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Code Quality testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Code Quality Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Automated Functional Testing"
+		.. Definition > Name: AutomatedFunctionalTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Automated Functional testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Automated Functional Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Automated UI Testing"
+		.. Definition > Name: AutomatedUITesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Automated UI testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Automated UI Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Automated Unit Testing"
+		.. Definition > Name: AutomatedUnitTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Automated Unit testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Automated Unit Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Integration Testing"
+		.. Definition > Name: IntegrationTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Integration testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Integration Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Deployment Testing"
+		.. Definition > Name: DeploymentTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Deployment testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Deployment Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Performance Testing"
+		.. Definition > Name: PerformanceTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Performance testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Performance Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Load Testing"
+		.. Definition > Name: LoadTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Load testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Load Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Stress Testing"
+		.. Definition > Name: StressTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Stress testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Stress Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "UI/UX Testing"
+		.. Definition > Name: UIUXTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if UI/UX testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: UI/UX Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "User Acceptance Testing"
+		.. Definition > Name: UserAcceptanceTesting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if User Acceptance testing is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: User Acceptance Testing
+		.. Layout > Group: Testing Scope
+		.. Layout > Column: Middle
+	. Create a new field "Test Design"
+		.. Definition > Name: TestDesign
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Test Design is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Test Design
+		.. Layout > Group (new): Process Scope
+		.. Layout > Column: Right
+	. Create a new field "Test Planning"
+		.. Definition > Name: TestPlanning
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Test Planning is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Test Planning
+		.. Layout > Group: Process Scope
+		.. Layout > Column: Right
+	. Create a new field "Test Execution"
+		.. Definition > Name: TestExecution
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Test Execution is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Test Execution
+		.. Layout > Group: Process Scope
+		.. Layout > Column: Right
+	. Create a new field "Bug and Enhancement Tracking"
+		.. Definition > Name: BugandEnhancementTracking
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if Bug and Enhancement Tracking is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: Bug and Enhancement Tracking
+		.. Layout > Group: Process Scope
+		.. Layout > Column: Right
+	. Create a new field "QA Reporting"
+		.. Definition > Name: QAReporting
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Indicate if QA Reporting is required for this Epic.
+		.. Definition > Picklist items: Yes, No, Limited
+		.. Layout > Label: QA Reporting
+		.. Layout > Group: Process Scope
+		.. Layout > Column: Right
+	. Add the "Environments" extension field
+		.. Definition > Use extension: Environments
+		.. Layout > Group (new): Environments
+		.. Layout > Column: Right
+	. Add the "Operating Systems" extension field
+		.. Definition > Use extension: Operating Systems
+		.. Layout > Group (new): Devices
+		.. Layout > Column: Right
+	. Add the existing field "Hardware"
+		.. Definition > Use an existing field: Hardware
+		.. Layout > Label: Hardware
+		.. Layout > Group: Devices
+		.. Layout > Column: Right
+	. Add the "Browsers" extension field
+		.. Definition > Use extension: Browsers
+		.. Layout > Group: Devices
+		.. Layout > Column: Right
+	. Add the existing field "Other Device Information"
+		.. Definition > Use an existing field: OtherDeviceInformation
+		.. Layout > Label: Other Device Information
+		.. Layout > Group (new): Other Device Information
+		.. Layout > Column: Right
+
+==== Resourcing Page Configuration
+
+For the Epic, we need to populate the "Resourcing" page with the following fields:
+
+	. Create a new page called "Resourcing".
+	. Create a new field "Resource Notes"
+		.. Definition > Name: ResourceNotes
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Provide notes about resourcing for this Epic.
+		.. Layout > Label: Resource Notes
+		.. Layout > Group (new): Resource Notes
+		.. Layout > Column: Left
+	. Create a new field "Prep Actual Effort (Days)"
+		.. Definition > Name: PrepActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual prep effort spent on this Epic.
+		.. Layout > Label: Prep Actual Effort (Days)
+		.. Layout > Group (new): Actual
+		.. Layout > Column: Middle
+	. Create a new field "Design Actual Effort (Days)"
+		.. Definition > Name: DesignActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual design effort spent on this Epic.
+		.. Layout > Label: Design Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Middle
+	. Create a new field "Engineer Actual Effort (Days)"
+		.. Definition > Name: EngineerActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual engineering effort spent on this Epic.
+		.. Layout > Label: Engineer Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Middle
+	. Create a new field "Test Actual Effort (Days)"
+		.. Definition > Name: TestActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual test effort spent on this Epic.
+		.. Layout > Label: Test Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Middle
+	. Create a new field "Planning Actual Effort (Days)"
+		.. Definition > Name: PlanningActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual planning effort spent on this Epic.
+		.. Layout > Label: Planning Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Middle
+	. Create a new field "Operate Actual Effort (Days)"
+		.. Definition > Name: OperateActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual operate effort spent on this Epic.
+		.. Layout > Label: Operate Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Middle
+	. Create a new field "Prep Remaining Effort (Days)"
+		.. Definition > Name: PrepRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining prep effort for this Epic.
+		.. Layout > Label: Prep Remaining Effort (Days)
+		.. Layout > Group (new): Remaining
+		.. Layout > Column: Middle
+	. Create a new field "Design Remaining Effort (Days)"
+		.. Definition > Name: DesignRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining design effort for this Epic.
+		.. Layout > Label: Design Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Middle
+	. Create a new field "Engineer Remaining Effort (Days)"
+		.. Definition > Name: EngineerRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining engineering effort for this Epic.
+		.. Layout > Label: Engineer Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Middle
+	. Create a new field "Test Remaining Effort (Days)"
+		.. Definition > Name: TestRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining test effort for this Epic.
+		.. Layout > Label: Test Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Middle
+	. Create a new field "Planning Remaining Effort (Days)"
+		.. Definition > Name: PlanningRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining planning effort for this Epic.
+		.. Layout > Label: Planning Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Middle
+	. Create a new field "Operate Remaining Effort (Days)"
+		.. Definition > Name: OperateRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining operate effort for this Epic.
+		.. Layout > Label: Operate Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Middle
+	. Create a new field "Strategic Day Rate"
+		.. Definition > Name: StrategicDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the strategic day rate for this Epic.
+		.. Layout > Label: Strategic Day Rate
+		.. Layout > Group (new): Rate
+		.. Layout > Column: Right
+	. Create a new field "Prep Day Rate"
+		.. Definition > Name: PrepDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the prep day rate for this Epic.
+		.. Layout > Label: Prep Day Rate
+		.. Layout > Group: Rate
+		.. Layout > Column: Right
+	. Create a new field "Design Day Rate"
+		.. Definition > Name: DesignDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the design day rate for this Epic.
+		.. Layout > Label: Design Day Rate
+		.. Layout > Group: Rate
+		.. Layout > Column: Right
+	. Create a new field "Engineer Day Rate"
+		.. Definition > Name: EngineerDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the engineer day rate for this Epic.
+		.. Layout > Label: Engineer Day Rate
+		.. Layout > Group: Rate
+		.. Layout > Column: Right
+	. Create a new field "Test Day Rate"
+		.. Definition > Name: TestDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the test day rate for this Epic.
+		.. Layout > Label: Test Day Rate
+		.. Layout > Group: Rate
+		.. Layout > Column: Right
+	. Create a new field "Planning Day Rate"
+		.. Definition > Name: PlanningDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the planning day rate for this Epic.
+		.. Layout > Label: Planning Day Rate
+		.. Layout > Group: Rate
+		.. Layout > Column: Right
+	. Create a new field "Operate Day Rate"
+		.. Definition > Name: OperateDayRate
+		.. Definition > Type: Decimal
+		.. Definition > Description: Specify the operate day rate for this Epic.
+		.. Layout > Label: Operate Day Rate
+		.. Layout > Group: Rate
+		.. Layout > Column: Right
+
+==== Epic States Configuration
+
 For an Epic we need to create the following States (as specified by the SAFe® Framework):
 	
 	. Create a new state of Name: Funnel, State category: Proposed, Color: 1st from bottom grey (1st column)
@@ -265,17 +874,27 @@ For an Epic we need to create the following States (as specified by the SAFe® F
 	. Create a new State of Name: Done, State category: Resolved, Color: Top green (5th column)
 	. Create a new State of Name: Cancelled, State category: Removed, Color: White
 
-For an Epic we need to create the following Rules:
-
-	*_Instructions to be completed_*
+==== Epic Rules Configuration
 	
 === Feature
 
+==== Feature Details Page Configuration
+
 For the Feature, perform the following steps on the Details tab:
 
-	. Add the existing field of "Prep Effort",
-		.. Definition > Use an existing field: Prep Effort
-		.. Layout > Label: Prep Effort (Days)
+	. Add the existing field of "Description",
+		.. Definition > Use an existing field: Description
+		.. Layout > Label: Description
+		.. Layout > Select existing group: Details
+	. Create a new field of "Deliverables"
+		.. Definition > Name: Deliverables
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Specify the key deliverables for this Feature.
+		.. Layout > Label: Deliverables
+		.. Layout > Group (new): Details
+	. Add the existing field of "Strategic Effort Days",
+		.. Definition > Use an existing field: Strategic Effort Days
+		.. Layout > Label: Strategic Effort (Days)
 		.. Layout > Select existing group: Planning
 	. Add the existing field of "Prep Effort",
 		.. Definition > Use an existing field: Prep Effort
@@ -298,6 +917,15 @@ For the Feature, perform the following steps on the Details tab:
 		.. Definition > Use an existing field: Planning Effort
 		.. Layout > Label: Planning Effort (Days)
 		.. Layout > Select existing group: Planning
+	. Create a new field of "Feature Type",
+		.. Definition > Name: FeatureType
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Select the type of Feature.
+		.. Definition > Picklist items: Functional, Non-Functional, R&D / PoC
+		.. Options > Required: True
+		.. Options > Default value: Functional
+		.. Layout > Label: Feature Type
+		.. Layout > Group: Classification
 	. Create a new field of "MoSCoW",
 		.. Definition > Name: MoSCoW
 		.. Definition > Type: Picklist (string)
@@ -314,12 +942,126 @@ For the Feature, perform the following steps on the Details tab:
 		.. Options > Default value: Business
 		.. Layout > Label: MoSCoW
 		.. Layout > Group: Classification
+	. Add the existing field of "Value to business",
+		.. Definition > Use an existing field: Value to business
+		.. Layout > Label: Value to Business
+		.. Layout > Select existing group: VCC
+	. Add the existing field of "Clarity of requirements",
+		.. Definition > Use an existing field: Clarity of requirements
+		.. Layout > Label: Clarity of Requirements
+		.. Layout > Select existing group: VCC
+    . Add the existing field of "Complexity to build",
+		.. Definition > Use an existing field: Complexity to build
+		.. Layout > Label: Complexity to Build
+		.. Layout > Select existing group: VCC
+		
+	. Leave the "Start Date" and "Target Date" fields as-is
+	. Hide "Actual Start" and "Actual End" fields
 	. Hide "Personas affected" extension
 	. Hide "Log time in Harvest" extension
 	. Hide "Priority"
 	. Hide "Risk"
 	. Hide "Business Value"
 	. Hide "Time Criticality"
+
+==== Feature Resource Page Configuration
+
+For the Feature, we need to populate the "Resourcing" page with the following fields:
+
+	. Create a new page called "Resourcing".
+	. Create a new field "Resource Notes"
+		.. Definition > Name: FeatureResourceNotes
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Provide notes about resourcing for this Feature.
+		.. Layout > Label: Resource Notes
+		.. Layout > Group (new): Resource Notes
+		.. Layout > Column: Left
+	. Create a new field "Prep Actual Effort (Days)"
+		.. Definition > Name: FeaturePrepActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual prep effort spent on this Feature.
+		.. Layout > Label: Prep Actual Effort (Days)
+		.. Layout > Group (new): Actual
+		.. Layout > Column: Right
+	. Create a new field "Design Actual Effort (Days)"
+		.. Definition > Name: FeatureDesignActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual design effort spent on this Feature.
+		.. Layout > Label: Design Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Right
+	. Create a new field "Engineer Actual Effort (Days)"
+		.. Definition > Name: FeatureEngineerActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual engineering effort spent on this Feature.
+		.. Layout > Label: Engineer Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Right
+	. Create a new field "Test Actual Effort (Days)"
+		.. Definition > Name: FeatureTestActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual test effort spent on this Feature.
+		.. Layout > Label: Test Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Right
+	. Create a new field "Planning Actual Effort (Days)"
+		.. Definition > Name: FeaturePlanningActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual planning effort spent on this Feature.
+		.. Layout > Label: Planning Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Right
+	. Create a new field "Operate Actual Effort (Days)"
+		.. Definition > Name: FeatureOperateActualEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the actual operate effort spent on this Feature.
+		.. Layout > Label: Operate Actual Effort (Days)
+		.. Layout > Group: Actual
+		.. Layout > Column: Right
+	. Create a new field "Prep Remaining Effort (Days)"
+		.. Definition > Name: FeaturePrepRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining prep effort for this Feature.
+		.. Layout > Label: Prep Remaining Effort (Days)
+		.. Layout > Group (new): Remaining
+		.. Layout > Column: Right
+	. Create a new field "Design Remaining Effort (Days)"
+		.. Definition > Name: FeatureDesignRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining design effort for this Feature.
+		.. Layout > Label: Design Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Right
+	. Create a new field "Engineer Remaining Effort (Days)"
+		.. Definition > Name: FeatureEngineerRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining engineering effort for this Feature.
+		.. Layout > Label: Engineer Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Right
+	. Create a new field "Test Remaining Effort (Days)"
+		.. Definition > Name: FeatureTestRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining test effort for this Feature.
+		.. Layout > Label: Test Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Right
+	. Create a new field "Planning Remaining Effort (Days)"
+		.. Definition > Name: FeaturePlanningRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining planning effort for this Feature.
+		.. Layout > Label: Planning Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Right
+	. Create a new field "Operate Remaining Effort (Days)"
+		.. Definition > Name: FeatureOperateRemainingEffortDays
+		.. Definition > Type: Decimal
+		.. Definition > Description: Track the remaining operate effort for this Feature.
+		.. Layout > Label: Operate Remaining Effort (Days)
+		.. Layout > Group: Remaining
+		.. Layout > Column: Right
+
+==== Feature States Configuration
 
 Create the following states:
 
@@ -329,25 +1071,292 @@ Create the following states:
 	. Create a new state of Name: Test, State category: Proposed, Color: 4th from bottom blue (2nd column)
 	. Create a new state of Name: Operate, State category: Proposed, Color: top green (5th column)
 	
-=== Issues
+=== Bugs
 
-	*_Instructions to be completed_*
+==== Bug Details Page Configuration
 
-Mitigation (existing)
+For the Bug work item type, perform the following steps on the Details tab:
+
+	. Keep the existing "Repro Steps" field visible
+		.. Definition > Use an existing field: Repro Steps
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Repro Steps
+		.. Layout > Group: Repro Steps
+		.. Layout > Column: Left
+	. Keep the existing "System Info" field visible
+		.. Definition > Use an existing field: System Info
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: System Info
+		.. Layout > Group: System Info
+		.. Layout > Column: Left
+	. Create a new field "Resolution"
+		.. Definition > Name: Resolution
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Describe the resolution for this Bug.
+		.. Layout > Label: Resolution
+		.. Layout > Group (new): Resolution
+		.. Layout > Column: Left
+	. Keep "Personas affected" extension visible
+		.. Definition > Use extension: Personas affected
+		.. Layout > Group: Personas affected
+		.. Layout > Column: Left
+	. Create a new field "Resolved Reason"
+		.. Definition > Name: ResolvedReason
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Specify the reason this Bug was resolved.
+		.. Layout > Label: Resolved Reason
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Priority Level"
+		.. Definition > Name: PriorityLevel
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Specify the priority level for this Bug.
+		.. Definition > Picklist items: Low, Medium, High, Critical, Deferred
+		.. Layout > Label: Priority Level
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Severity" field visible
+		.. Definition > Use an existing field: Severity
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Severity
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Activity" field visible
+		.. Definition > Use an existing field: Activity
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Activity
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Found By"
+		.. Definition > Name: FoundBy
+		.. Definition > Type: Identity
+		.. Definition > Description: Identify who found this Bug.
+		.. Layout > Label: Found By
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Target Date"
+		.. Definition > Name: TargetDate
+		.. Definition > Type: DateTime
+		.. Definition > Description: Specify the target date for resolving this Bug.
+		.. Layout > Label: Target Date
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Zendesk Ticket Number"
+		.. Definition > Name: ZendeskTicketNumber
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide the Zendesk ticket number associated with this Bug.
+		.. Layout > Label: Zendesk Ticket Number
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Original Estimate" field visible
+		.. Definition > Use an existing field: Original Estimate
+		.. Definition > Type: Decimal
+		.. Layout > Label: Original Estimate
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the existing "Remaining" field visible
+		.. Definition > Use an existing field: Remaining Work
+		.. Definition > Type: Decimal
+		.. Layout > Label: Remaining
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the existing "Completed" field visible
+		.. Definition > Use an existing field: Completed Work
+		.. Definition > Type: Decimal
+		.. Layout > Label: Completed
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the "Deployment" group visible
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Keep the "Development" group visible
+		.. Layout > Group: Development
+		.. Layout > Column: Right
+	. Keep the "Related Work" group visible
+		.. Layout > Group: Related Work
+		.. Layout > Column: Right
+	. Keep the existing "Found in Build" field visible
+		.. Definition > Use an existing field: Found in Build
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Found in Build
+		.. Layout > Group: System Info
+		.. Layout > Column: Right
+	. Keep the existing "Integrated in Build" field visible
+		.. Definition > Use an existing field: Integrated in Build
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Integrated in Build
+		.. Layout > Group: System Info
+		.. Layout > Column: Right
+	. Add the "Environments" extension field
+		.. Definition > Use extension: Environments
+		.. Layout > Group: System Info
+		.. Layout > Column: Right
 
 === Questions
 
-	*_Instructions to be completed_*
+==== Question Details Page Configuration
+
+For the Question work item type, perform the following steps on the Details tab:
+
+	. Keep the existing "Description" field visible
+		.. Definition > Use an existing field: Description
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Description
+		.. Layout > Group: Description
+		.. Layout > Column: Left
+	. Create a new field "Customer Response"
+		.. Definition > Name: CustomerResponse
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Capture the customer's response to this Question.
+		.. Layout > Label: CustomerResponse
+		.. Layout > Group (new): CustomerResponse
+		.. Layout > Column: Left
+	. Keep "Personas affected" extension visible
+		.. Definition > Use extension: Personas affected
+		.. Layout > Group: Personas affected
+		.. Layout > Column: Middle
+	. Keep the "Deployment" group visible
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Keep the "Development" group visible
+		.. Layout > Group: Development
+		.. Layout > Column: Right
+	. Keep the "Related Work" group visible
+		.. Layout > Group: Related Work
+		.. Layout > Column: Right
 
 === User Story
 
-	*_Instructions to be completed_*
+==== User Story Details Page Configuration
+
+For the User Story, perform the following steps on the Details tab:
+
+	. Keep the existing "Description" field as-is
+		.. Definition > Use an existing field: Description
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Description
+		.. Layout > Group: Description
+		.. Layout > Column: Left
+	. Keep the existing "Acceptance Criteria" field as-is
+		.. Definition > Use an existing field: Acceptance Criteria
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Acceptance Criteria
+		.. Layout > Group: Acceptance Criteria
+		.. Layout > Column: Left
+	. Keep the existing "Story Points" field visible
+		.. Definition > Use an existing field: Story Points
+		.. Definition > Type: Decimal
+		.. Layout > Label: Story Points
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Priority" field visible
+		.. Definition > Use an existing field: Priority
+		.. Definition > Type: Integer
+		.. Layout > Label: Priority
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Risk" field visible
+		.. Definition > Use an existing field: Risk
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Risk
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Value area" field visible
+		.. Definition > Use an existing field: Value area
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Value area
+		.. Layout > Group: Classification
+		.. Layout > Column: Middle
+	. Keep "Personas affected" extension visible
+		.. Definition > Use extension: Personas affected
+		.. Layout > Group: Classification
+		.. Layout > Column: Middle
+	. Keep the "Deployment" group visible
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Keep the "Development" group visible
+		.. Layout > Group: Development
+		.. Layout > Column: Right
+	. Keep the "Related Work" group visible
+		.. Layout > Group: Related Work
+		.. Layout > Column: Right
 
 === Tasks
 
-	. Hide "Priority"
-	. Create a new field of "Activity",
-		.. *_TBC_*
-	. Create a new field of "Resolution",
-		.. Definition > Use an existing field > Field: Resolution
-    .. Layout > Group: Resolution
+==== Task Details Page Configuration
+
+For the Task work item type, perform the following steps on the Details tab:
+
+	. Keep the existing "Description" field visible
+		.. Definition > Use an existing field: Description
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Description
+		.. Layout > Group: Description
+		.. Layout > Column: Left
+	. Create a new field "Resolution"
+		.. Definition > Name: TaskResolution
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Describe the resolution for this Task.
+		.. Layout > Label: Resolution
+		.. Layout > Group (new): Resolution
+		.. Layout > Column: Left
+	. Create a new field "Priority Level"
+		.. Definition > Name: TaskPriorityLevel
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Specify the priority level for this Task.
+		.. Definition > Picklist items: Low, Medium, High, Critical, Deferred
+		.. Layout > Label: Priority Level
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Activity" field visible
+		.. Definition > Use an existing field: Activity
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Activity
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Zendesk Ticket Number"
+		.. Definition > Name: TaskZendeskTicketNumber
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide the Zendesk ticket number associated with this Task.
+		.. Layout > Label: Zendesk Ticket Number
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Original Estimate" field visible
+		.. Definition > Use an existing field: Original Estimate
+		.. Definition > Type: Decimal
+		.. Layout > Label: Original Estimate
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the existing "Remaining" field visible
+		.. Definition > Use an existing field: Remaining Work
+		.. Definition > Type: Decimal
+		.. Layout > Label: Remaining
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the existing "Completed" field visible
+		.. Definition > Use an existing field: Completed Work
+		.. Definition > Type: Decimal
+		.. Layout > Label: Completed
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep a duplicate "Priority" field visible at the bottom of Planning section
+		.. Definition > Use an existing field: Priority
+		.. Definition > Type: Integer
+		.. Layout > Label: Priority
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Integrated in Build" field visible
+		.. Definition > Use an existing field: Integrated in Build
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Integrated in Build
+		.. Layout > Group: Implementation
+		.. Layout > Column: Middle
+	. Keep the "Deployment" group visible
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Keep the "Development" group visible
+		.. Layout > Group: Development
+		.. Layout > Column: Right
+	. Keep the "Related Work" group visible
+		.. Layout > Group: Related Work
+		.. Layout > Column: Right
