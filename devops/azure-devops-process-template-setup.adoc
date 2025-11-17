@@ -29,9 +29,6 @@ The Epic work item type requires multiple pages (tabs) to organize all the requi
 
 To create a new page, click on the "New page" button in the Layout tab toolbar.
 
-.Epic Pages - Tab Structure
-image::images/epic-pages-tabs.png[Epic pages showing Details, Lean Business Case, Delivery Strategy, Technical Details, Testing, and Resourcing tabs, 800]
-
 ==== Epic Details Page Configuration
 
 For the Epic, perform the following steps on the Details page:
@@ -39,7 +36,7 @@ For the Epic, perform the following steps on the Details page:
 	. Edit the Description field,
 		.. Rename the Layout > Label from "Description" to "Background".
 		.. Change Options > Required to True.
-		.. Change Definition > Description from "A description of the work to be done" to "Provide the background and context for this Epic".
+		.. Change Definition > Description for the "Background" field from "A description of the work to be done" to "Provide the background and context for this Epic".
 	. Create a new field "Objective", with:
 		.. Definition > Name: Objective
 		.. Definition > Type: Text (multiple lines)
@@ -142,12 +139,6 @@ For the Epic, perform the following steps on the Details page:
 		.. Options > Default value: Business
 		.. Layout > Label: Epic Type
 		.. Layout > Group: Metadata
-	. Create a new field "Project Number"
-		.. Definition > Name: Project Number
-		.. Definition > Type: Text (single line)
-		.. Definition > Description: Provide the project number associated with this Epic.
-		.. Layout > Label: Project Number
-		.. Layout > Group: Metadata
 	. Create a new field "Proposal/MSA Link"
 		.. Definition > Name: ProposalorMSALink
 		.. Definition > Type: Text (single line)
@@ -249,11 +240,11 @@ For the Epic, we need to populate the "Lean Business Case" page with the followi
 		.. Layout > Label: Other Notes and Comments
 		.. Layout > Group (new): Other Notes and Comments
 		.. Layout > Column: Left
-	. Add the existing field "Product Owner"
-		.. Definition > Use an existing field: ProductOwner
-		.. Layout > Label: Product owner
-		.. Layout > Group (new): Approval
-		.. Layout > Column: Right
+	 Create a new field "Product Owner"
+		.. Definition > Name: ProductOwner
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Identify the Product Owner responsible for this Epic
+		.. Layout > Label: Product Owner
 	. Create a new field "Budget Holder"
 		.. Definition > Name: BudgetHolder
 		.. Definition > Type: Text (single line)
@@ -329,7 +320,7 @@ For the Epic, we need to populate the "Delivery Strategy" page:
 		.. Definition > Name: SequenceandDependencies
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Identify the sequence and dependencies for delivering this Epic
-		.. Definition > Default value: <i>Outline the logic and sequence of work and dependencies. For example, “enabler” features may need to be done before functional feat</i>
+		.. Definition > Default value: <i>Outline the logic and sequence of work and dependencies. For example, “enabler” features may need to be done before functional features</i>
 		.. Layout > Label: Sequence and Dependencies
 		.. Layout > Group (new): Sequence and Dependencies
 		.. Layout > Column: Left
@@ -892,12 +883,12 @@ For the Feature, perform the following steps on the Details tab:
 		.. Definition > Description: Specify the key deliverables for this Feature.
 		.. Layout > Label: Deliverables
 		.. Layout > Group (new): Details
-	. Add the existing field of "Strategic Effort Days",
+	. Add the existing field of "Effort",
 		.. Definition > Use an existing field: Strategic Effort Days
 		.. Layout > Label: Strategic Effort (Days)
 		.. Layout > Select existing group: Planning
 	. Add the existing field of "Prep Effort",
-		.. Definition > Use an existing field: Prep Effort
+		.. Definition > Use an existing field: PrepEffortDays
 		.. Layout > Label: Prep Effort (Days)
 		.. Layout > Select existing group: Planning
 	. Add the existing field of "Design Effort",
@@ -1208,7 +1199,7 @@ For the Question work item type, perform the following steps on the Details tab:
 		.. Definition > Name: CustomerResponse
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Capture the customer's response to this Question.
-		.. Layout > Label: CustomerResponse
+		.. Layout > Label: Customer Response
 		.. Layout > Group (new): CustomerResponse
 		.. Layout > Column: Left
 	. Keep "Personas affected" extension visible
