@@ -1061,9 +1061,9 @@ Create the following states:
 	. Keep "New" (do not hide)
 	. Create a new state of Name: Prep, State category: Proposed, Color: 1st from bottom grey (2nd column)
 	. Create a new state of Name: Design, State category: Proposed, Color: 2nd from bottom blue (2nd column)
-	. Create a new state of Name: Engineer, State category: Proposed, Color: 3rd from bottom blue (2nd column)
-	. Create a new state of Name: Test, State category: Proposed, Color: 4th from bottom blue (2nd column)
-	. Create a new state of Name: Operate, State category: Proposed, Color: top green (5th column)
+	. Create a new state of Name: Engineer, State category: In Progress, Color: 3rd from bottom blue (2nd column)
+	. Create a new state of Name: Test, State category: In Progress, Color: 4th from bottom blue (2nd column)
+	. Create a new state of Name: Operate, State category: Completed, Color: top green (5th column)
 	. Keep "Closed" (do not hide)
 
 === Bugs
