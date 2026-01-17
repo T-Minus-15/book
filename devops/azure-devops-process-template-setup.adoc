@@ -852,7 +852,8 @@ For the Epic, we need to populate the "Resourcing" page with the following field
 ==== Epic States Configuration
 
 For an Epic we need to create the following States (as specified by the SAFe® Framework):
-	
+
+	. Keep "New" (do not hide)
 	. Create a new state of Name: Funnel, State category: Proposed, Color: 1st from bottom grey (1st column)
 	. Create a new State of Name: Reviewing, State category: Proposed, Color: 2nd from bottom grey (1st column)
 	. Create a new State of Name: Analyzing, State category: Proposed, Color: 3rd from bottom grey (1st column)
@@ -864,6 +865,7 @@ For an Epic we need to create the following States (as specified by the SAFe® F
 	. Create a new State of Name: On-hold, State category: In Progress, Color: Top orange (7th column)
 	. Create a new State of Name: Done, State category: Resolved, Color: Top green (5th column)
 	. Create a new State of Name: Cancelled, State category: Removed, Color: White
+	. Keep "Closed" (do not hide)
 
 ==== Epic Rules Configuration
 	
@@ -1056,12 +1058,14 @@ For the Feature, we need to populate the "Resourcing" page with the following fi
 
 Create the following states:
 
+	. Keep "New" (do not hide)
 	. Create a new state of Name: Prep, State category: Proposed, Color: 1st from bottom grey (2nd column)
 	. Create a new state of Name: Design, State category: Proposed, Color: 2nd from bottom blue (2nd column)
 	. Create a new state of Name: Engineer, State category: Proposed, Color: 3rd from bottom blue (2nd column)
 	. Create a new state of Name: Test, State category: Proposed, Color: 4th from bottom blue (2nd column)
 	. Create a new state of Name: Operate, State category: Proposed, Color: top green (5th column)
-	
+	. Keep "Closed" (do not hide)
+
 === Bugs
 
 ==== Bug Details Page Configuration
@@ -1271,6 +1275,18 @@ For the User Story, perform the following steps on the Details tab:
 	. Keep the "Related Work" group visible
 		.. Layout > Group: Related Work
 		.. Layout > Column: Right
+
+==== User Story States Configuration
+
+Create the following states:
+
+	. Keep "New" (do not hide)
+	. Create a new state of Name: Prep, State category: Proposed, Color: 1st from bottom grey (2nd column)
+	. Create a new state of Name: Design, State category: Proposed, Color: 2nd from bottom blue (2nd column)
+	. Create a new state of Name: Engineer, State category: In Progress, Color: 3rd from bottom blue (2nd column)
+	. Create a new state of Name: Test, State category: In Progress, Color: 4th from bottom blue (2nd column)
+	. Create a new state of Name: Operate, State category: Closed, Color: top green (5th column)
+	. Keep "Closed" (do not hide)
 
 === Tasks
 
