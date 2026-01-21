@@ -1,0 +1,59 @@
+== Issue Metadata
+
+.Example Issue metadata (with assistance from ChatGPT)
+[width=80%]
+|===
+2+| ISSUE
+
+2+| *General*
+
+| *Title*
+| Heat shield material supplier bankruptcy
+
+| *State*
+| Active
+
+| *Owner*
+| James Rodriguez
+
+| *Area*
+| SpaceX > Exploration > Mars
+
+| *Iteration*
+| Sprint 4
+
+2+| *Details*
+
+| *Description*
+a|
+
+The primary supplier of specialized heat shield ceramic tiles has filed for bankruptcy, halting all production and deliveries. This has created an immediate supply chain disruption affecting the Mars mission spacecraft assembly schedule. The heat shield is a critical safety component required for atmospheric entry.
+
+| *Mitigation*
+a|
+
+To reduce the likelihood and impact of this issue:
+
+- Identify and evaluate three alternative suppliers
+- Expedite qualification testing for new materials
+- Negotiate accelerated delivery schedules with top candidate
+- Assess feasibility of acquiring supplier's tooling and IP
+- Update project timeline to reflect realistic delivery dates
+
+2+| *Planning*
+
+| *Stack Rank*
+| 1.0
+
+| *Priority*
+| 1
+
+2+| *Deployment*
+
+| *Deployment*
+| (Links to deployment work items)
+
+| *Related Work*
+| (Links to related work items)
+
+|===

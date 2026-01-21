@@ -1187,6 +1187,116 @@ For the Bug work item type, perform the following steps on the Details tab:
 		.. Layout > Group: System Info
 		.. Layout > Column: Right
 
+=== Risk
+
+==== Risk Details Page Configuration
+
+For the Risk work item, perform the following steps on the Details page:
+
+Left column:
+
+	. Ensure "Description" field exists,
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Description
+		.. Layout > Column: Left
+	. Create a new field "Mitigation",
+		.. Definition > Name: Mitigation
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Steps to reduce the likelihood or impact of this risk
+		.. Layout > Label: Mitigation
+		.. Layout > Column: Left
+
+Middle column (Planning section):
+
+	. Add the existing field "Stack Rank",
+		.. Definition > Type: Decimal
+		.. Layout > Label: Stack Rank
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Add the existing field "Priority",
+		.. Definition > Type: Integer
+		.. Layout > Label: Priority
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+
+Right column (Deployment section):
+
+	. Create a new group "Deployment",
+		.. Layout > Column: Right
+	. Add the existing field "Deployment",
+		.. Definition > Type: Links
+		.. Layout > Label: Deployment
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Add the existing field "Related Work",
+		.. Definition > Type: Links
+		.. Layout > Label: Related Work
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+
+==== Risk States Configuration
+
+For a Risk we need to create the following States:
+
+	. Keep "New" State category: Proposed
+	. Create a new State of Name: Active, State category: In Progress, Color: 2nd from bottom blue (2nd column)
+	. Create a new State of Name: Closed, State category: Completed, Color: Top green (5th column)
+
+=== Issue
+
+==== Issue Details Page Configuration
+
+For the Issue work item, perform the following steps on the Details page:
+
+Left column:
+
+	. Ensure "Description" field exists,
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Description
+		.. Layout > Column: Left
+	. Create a new field "Mitigation",
+		.. Definition > Name: Mitigation
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Steps to reduce the likelihood or impact of this issue
+		.. Layout > Label: Mitigation
+		.. Layout > Column: Left
+
+Middle column (Planning section):
+
+	. Add the existing field "Stack Rank",
+		.. Definition > Type: Decimal
+		.. Layout > Label: Stack Rank
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Add the existing field "Priority",
+		.. Definition > Type: Integer
+		.. Layout > Label: Priority
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+
+Right column (Deployment section):
+
+	. Create a new group "Deployment",
+		.. Layout > Column: Right
+	. Add the existing field "Deployment",
+		.. Definition > Type: Links
+		.. Layout > Label: Deployment
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Add the existing field "Related Work",
+		.. Definition > Type: Links
+		.. Layout > Label: Related Work
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+
+==== Issue States Configuration
+
+For an Issue we need to create the following States:
+
+	. Keep "New" State category: Proposed
+	. Create a new State of Name: Active, State category: In Progress, Color: 2nd from bottom blue (2nd column)
+	. Create a new State of Name: Closed, State category: Completed, Color: Top green (5th column)
+
 === Questions
 
 ==== Question Details Page Configuration
