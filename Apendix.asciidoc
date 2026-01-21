@@ -1,0 +1,198 @@
+== 1. Description and Purpose
+ 
+*Description:* 
+This project is designed to automate key processes and provide real-time reporting for enhanced business decision-making. Its main features include automation, integration with existing databases, and user-friendly interfaces.
+ 
+*Objectives:*
+- Automate business processes
+- Integrate with databases
+- Provide real-time reporting
+ 
+*Main Goal:* 
+Optimize processes and reduce processing time, ensure data quality, and create a user-friendly interface for employees.
+ 
+== 2. Access and Authentication
+ 
+*Access List:*
+
+- *Administrative Access:* Permissions required for administrative tasks
+
+- *Power Platform URL:* https://make.powerapps.com/...
+
+- *Database (DB):* Type of database used (Dataverse, SQL Server, SharePoint) and access details
+
+ 
+*Access Process:*
+
+- *MFA (Multi-Factor Authentication):* Setup details, including configured mobile numbers
+
+- *Access Request:* Instructions for requesting system access
+
+ 
+*Sharing Access:*
+
+- *How to Share Access:* Guidelines for granting Power Platform application access
+
+- *Access Level Selection:* Instructions on determining appropriate access levels (e.g., owner, editor, viewer)
+
+- *Post-Access Actions:* Verification steps for proper configuration
+
+- *Using Azure Active Directory (AAD) Groups:* AAD group usage for access management, with a list of groups and their purposes
+
+- *Group Management:* How to add or remove users from AAD groups
+
+ 
+*Roles for Software Use:*
+
+- *Roles:* List of project roles (e.g., Administrator, Developer, User)
+
+- *Role Assignment:* Description of permissions for each role and modification instructions
+
+ 
+*Contact Person:* Responsible team or individual for access-related issues
+
+ 
+== 3. Links to Applications and Portals
+ 
+*Key Links:*
+
+- Power Apps: URLs to Power Apps applications
+
+- Power Automate: Links to Power Automate flows
+
+- Power BI: URLs to Power BI reports (if applicable)
+
+- Power Pages: URLs to Power Pages portals (if applicable)
+
+- SharePoint Site: URLs to SharePoint sites (if applicable)
+
+ 
+*Related Apps:* Applications or services integrated with the project (e.g., DocuSign)
+
+ 
+== 4. Developer and Owner Information
+ 
+*Lead Developers:* Contact details of developers or teams
+
+*Knowledge Owners:* Individuals with specialized knowledge about the project
+
+ 
+*Developer Location:*
+
+- *Work Outside Ireland:* Whether developers from outside Ireland are allowed to work on the project
+
+- *Use of VDI Machines:* VDI machine requirements for security or access compliance
+
+ 
+== 5. Export and Deployment
+ 
+*Export Process:*
+
+- *TEST Environment:* Export instructions for the test environment
+
+- *UAT Environment:* Deployment instructions for the User Acceptance Testing (UAT) environment
+
+- *PROD Environment:* Production deployment process
+
+ 
+*Export Method:* CI/CD pipeline or manual export
+
+ 
+*Pipelines:*
+
+- *Links:* URLs to key CI/CD pipelines
+
+- *Access:* List of pipeline users and Approvers
+
+- *Repository Connection:* Details for repository connection (GitHub, Azure DevOps) and link
+
+- *Replace Files:* Information on configuration replacement files
+
+ 
+== 6. Client-Side Access
+ 
+*Procedure:* Steps to obtain access to client environments
+
+*Client Contacts:* Contact details of client representatives
+
+*Account Requirements:* Access specifics (passwords, privileges)
+
+ 
+== 7. Key Challenges
+ 
+*Known Issues:*
+[cols="1,1,1,1", options="header"]
+|===
+| Issue | Description | Possible Causes | Resolution/Recommendations
+| Example Issue | Explanation of issue | Possible causes for issue | Suggested resolution steps
+|===
+ 
+*Power Platform Limitations:* Important limitations and ways to overcome them
+ 
+*Tips:* Advice on avoiding common mistakes
+ 
+*Post-PROD Changes:*
+
+- *Solution Layers Application:* Changes needed post-deployment (connection updates, reference adjustments)
+
+- *Visual Explanations:* Include screenshots for process illustration
+ 
+== 8. Database Information
+ 
+*DB Type:* Description of the database used (Dataverse, SQL, SharePoint)
+
+*Connection Details:* Instructions for database connection
+
+*Architecture:* Key tables and relationships within the database
+
+*Contacts:* Database access contact details
+
+ 
+== 9. Related Applications
+ 
+*Integrations:* List of integrated apps
+
+*Interaction:* Description of app interactions
+
+ 
+== 10. Contact Information
+ 
+*Primary Contacts:* Contact details of responsible individuals
+
+*Escalation:* Instructions for issue escalation
+
+*Backup Contacts:* Additional contact details
+
+ 
+== 11. Additional Information
+ 
+*Resources:* Links to official documentation, handover videos, and internal guides
+
+*Tools:* List of useful utilities and scripts
+
+ 
+== 12. License Management
+ 
+*License Requirements:* List of required licenses for Power Platform components
+
+*License Monitoring:* Steps for monitoring license status and user management
+
+*License Administrator Contact:* Contact for license-related issues
+
+ 
+== 13. Security and Privacy Information
+ 
+*Security Policies:* Description of security policies (e.g., data protection, encryption)
+
+*Handling Sensitive Data:* Instructions for managing sensitive data
+
+*Security Updates:* Instructions for staying informed about Power Platform security updates
+
+ 
+== 14. Testing and Validation
+ 
+**Testing Plan:** Testing instructions post-change, including app functionality, flows, and integrations
+
+**Test Scenarios:** Key test scenarios for proper operation
+
+**Post-Deployment Checks:** Checklist of essential tests after deployment to a new environment 
