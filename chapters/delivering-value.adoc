@@ -35,8 +35,8 @@ Let me save you months of pain: **GitFlow is needlessly complex for most teams**
 
 GitFlow was designed for managing multiple versions of software simultaneously and has branches for everything - development, features, releases, hotfixes, you name it. Each branch has a specific purpose that maps to an environment.
 
-// INSERT
-Figure 20. GitFlow uses the principle of branches matching environments (for dev, QA and production for example)
+.GitFlow uses the principle of branches matching environments (for dev, QA and production for example)
+image::images/git-flow.png[float=center,align=center]
 
 Sounds organized, right? But here's what actually happens with GitFlow:
 
@@ -70,10 +70,8 @@ Crucial point: keep these branches **short-lived**. Aim for hours or days, not w
 
 When submitting a pull request, follow the "pride principle" - only submit code you'd be proud to show off. Before bothering others with a review, ask yourself: "Does this work as expected? Is it well-tested? Would I be happy inheriting this code?"
 
-// INSERT 
-Figure 21. Overview of the Release Flow branching methodology where we work on topics from the master branch. When releases are made a separate branch is created in case hot fixes are needed for production.
-
-// INSERT <insert image of rocket branching and merging>
+.Overview of the Release Flow branching methodology where we work on topics from the master branch. When releases are made a separate branch is created in case hot fixes are needed for production.
+image::images/release-pipelines.png[float=center,align=center]
 
 === Lock Down Your Repo with Sensible Policies
 
@@ -206,8 +204,27 @@ Don't waste this opportunity with technical jargon or vague statements like "fix
 * Keep it skimmable with bullet points and bold highlights
 * Link to documentation or tutorials for complex features
 
-<INSERT>
-Table 7. Example release note showing Features deployed to a Tesla Model X.
+.Example release note showing Features deployed to a Tesla Model X
+|===
+|Feature|Description|Impact
+
+|Auto-Pilot Enhanced Navigation
+|Navigate on Autopilot now suggests lane changes to optimize route and avoid slow traffic
+|Reduces travel time by up to 15% on highway trips
+
+|Climate Pre-conditioning
+|Cabin can now pre-heat or pre-cool automatically based on your calendar schedule
+|Improved comfort and battery efficiency for daily commutes
+
+|Supercharger Route Planning
+|Trip planner now displays real-time availability at destination Superchargers
+|Eliminates charging anxiety and reduces wait times
+
+|Sentry Mode Mobile Alerts
+|Receive instant notifications when Sentry Mode detects suspicious activity
+|Enhanced vehicle security with immediate awareness of potential threats
+
+|===
 
 === The Anti-Dramatic Launch: Boring is Beautiful
 

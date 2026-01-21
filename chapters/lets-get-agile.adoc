@@ -218,7 +218,23 @@ From the above, in summary the total effort is approximately twice the engineeri
 
 We use Kanban boards to track progress of Stories, Features and Epics. A Kanban board is simply a visual representation to view the progress of items with columns relating to the progression of states and items related as cards on that board.
 
-// INSERT
+.Example Kanban Board Layout
+|===
+|New|Ready|In Progress|Testing|Done
+
+|User Story #123: Login Feature
+|User Story #124: Dashboard Widget
+|User Story #125: Payment Gateway
+|User Story #126: Email Notifications
+|User Story #127: User Profile
+
+|Feature: Mobile App
+|Bug #45: Loading Issue
+|Feature: Reports Module
+|Bug #46: Form Validation
+|Enhancement: UI Polish
+
+|===
 
 Stories in particular also have a 'Definition of done' for each column that we will look at in section
 
@@ -242,17 +258,86 @@ Who and how do we update items in the backlog? Here are our work items rules:
 
 All items in the product backlog have various states associated with them to track progress on a Kanban board. In the T-Minus-15 methodology we use the following states:
 
-// CREATE TABLE
+.Work Item States in T-Minus-15
+|===
+|State|Description|When to Use
+
+|New
+|Item has been identified but not yet analyzed or prioritized
+|Initial capture of requirements, bugs, or ideas
+
+|Ready
+|Item is well-defined with acceptance criteria and ready for development
+|After analysis and grooming, before sprint planning
+
+|In Progress
+|Item is actively being worked on by team members
+|During active development, design, or testing work
+
+|Testing
+|Item has been completed by the developer and is ready for validation
+|When code is complete and needs quality assurance
+
+|Done
+|Item meets all acceptance criteria and definition of done
+|When all work is complete and ready for release
+
+|Closed
+|Item has been deployed to production and verified working
+|After successful deployment and user acceptance
+
+|===
 
 === Definition of done
 
 As your team update the states of work items on a Kanban board, it's important to agree with what we mean by “done”. By specifying what we call a “Definition of Done” for each column in the Kanban board it is clear for all the team as to what the acceptance of the item being complete is.
 
-// CREATE TABLE
+.General Definition of Done by Kanban Column
+|===
+|Column|Definition of Done
+
+|New
+|Requirement captured with basic description
+
+|Ready
+|Requirements defined, acceptance criteria documented, estimates provided
+
+|In Progress
+|Work assigned to team member, progress tracking initiated
+
+|Testing
+|Development complete, deployed to test environment, ready for validation
+
+|Done
+|All acceptance criteria met, tested, and approved for release
+
+|===
 
 In the T-Minus-15 methodology we declare the Definition of Done for Stories as follows:
 
-// CREATE TABLE
+.Definition of Done for User Stories
+|===
+|Criteria|Description
+
+|Acceptance Criteria Met
+|All specified acceptance criteria have been implemented and verified
+
+|Code Reviewed
+|At least one team member has reviewed the code changes
+
+|Tests Written & Passing
+|Unit tests written for new functionality, all automated tests passing
+
+|Documentation Updated
+|Relevant documentation updated to reflect changes
+
+|Deployed to Test Environment
+|Changes successfully deployed to test environment without issues
+
+|Stakeholder Approval
+|Product Owner or stakeholder has reviewed and approved the functionality
+
+|===
 
 === WIP limits
 
@@ -266,7 +351,29 @@ So, next time as a team member you get asked “can you start this” you can sa
 
 So what WIP limits should you actually use? Start simple: 2 features per engineer. For example, if you have two engineers, cap the "Engineering" column at 4 features max. Tools like Azure DevOps make this dead simple to set up on your Kanban boards.
 
-// CREATE TABLE
+.Recommended WIP Limits by Team Size
+|===
+|Team Size|Ready|In Progress|Testing|Review
+
+|Small Team (3-5)
+|6 items
+|4 items
+|3 items
+|2 items
+
+|Medium Team (6-8)
+|10 items
+|6 items
+|4 items
+|3 items
+
+|Large Team (9+)
+|15 items
+|8 items
+|6 items
+|4 items
+
+|===
 
 "But what happens when our developers finish coding 4 features and the testing column is already maxed out?"
 
