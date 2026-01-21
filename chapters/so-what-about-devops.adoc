@@ -7,7 +7,7 @@ With fear of jumping on a using a portmanteau trend (a shortening a number of wo
 Whilst Agile is intended to close the gap between the customers (business) and the development team, DevOps aims to close the gap between the development team and operations that typically operate in siloes. You can therefore see how utilising both can bring about operational effectiveness of the idea to value for the business. And likewise to Agile, DevOps also requires a cultural change within the enterprise.
 
 .Here we can see a nice summary of where Agile (Scrum) and DevOps operate. Thanks to my son Isaac for his representation of business, developers and IT operators! :-)
-image::images/agile-vs-devops.png[float=center,align=center]
+image::images/agile-vs-devops.png[align=center]
 
 === DevOps Principles
 
@@ -27,7 +27,7 @@ DevOps has the following 7 key principles{empty}footnote:[7 Key Principles for a
 DevOps has the principle of continuous improvement, and as such has a continuous lifecycle as follows:
 
 .The familiar DevOps lifecycle of Prep > Design > Engineer > Test > Operate.
-image::images/infinity-lifecycle-book.png[float=center,align=center]
+image::images/infinity-lifecycle-book.png[align=center]
 
 It should be noted that these individual activities can be carried out within a sprint focused on that activity, as well as during other sprints. The naming convention of these activities has an associated role (see the A-Team). In addition, we have lifecycles for all our work items, whether they are the Epic itself, or its’ Capabilities, Features, Tasks, Improvements or Bugs.
 
@@ -50,7 +50,7 @@ While we’re on the subject of design. Be cautious getting all your screens wir
 With regards to the artefacts that come out of the design stage,  try and keep them nicely coupled to the Features and User Stories. Putting these assets into a tool such as InVision is not only a great way for developers to grab CSS and HTML code from the designs, but it’s also possible to put “notes” on the screens that link to the relevant User Story. For example, you may have a “Delete” button next to a record in the wireframes that has a note to the User Story “I need to be able to delete a record”. Likewise, the User Story can have a link back to the relevant wireframe in InVision.
 
 .Make sure your wireframes are linked to your user stories (for example, if you're using Microsoft DevOps, link directly from the design tool such as InVision to the Story in Microsoft DevOps)
-image::images/designs.png[float=center,align=center]
+image::images/designs.png[align=center]
 
 Remember though, “working software over comprehensive documentation” from our Agile Manifesto, so don’t go to unnecessary levels of documentation that won’t be read anyway – you’ve worked with software developers right?! For example, don’t spend weeks creating mock-ups for each and every page if they are going to be time consuming, but instead create wireframes of the various pages (to save time) and instead create a set of brand guidelines to follow. That way if the design styles need to be changed, we don’t need to retrospectively go back and amend everything. Likewise, our designs and actual delivery won’t get out of sync and cause confusion about what should actual be delivered.
 

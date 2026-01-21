@@ -9,7 +9,7 @@ Survival today requires speed and adaptability. Your competitors are already mov
 Here's the cold, hard truth: the corporate graveyard is filling up fast. According to Yale professor Richard Foster, S&P500 company lifespans have crashed from 67 years in the 1920s to just 15 years today{empty}footnote:[Creative Destruction Whips through Corporate America, https://engageinnovate.files.wordpress.com/2012/03/creative-destruction-whips-through-corporate-america_final2012.pdf]. That's right – the S&P500 replaces a company every two weeks. If you're comfortable with your current pace, congratulations on your upcoming obsolescence. If you're a hungry newcomer, there's never been a better time to take someone's lunch.
 
 .Creative Destruction Whips through Corporate America
-image::images/average-company-lifespan.png[float=center,align=center,link=https://engageinnovate.files.wordpress.com/2012/03/creative-destruction-whips-through-corporate-america_final2012.pdf]
+image::images/average-company-lifespan.png[align=center,link=https://engageinnovate.files.wordpress.com/2012/03/creative-destruction-whips-through-corporate-america_final2012.pdf]
 
 === Overview of Agile
 
@@ -123,7 +123,7 @@ Getting back to the team again. Agile software development methodology covers a 
 Scrum gives some additional practices to our Agile method ideally suited to software development teams of around 5 to 10 team members utilizing practices such as sprints and daily stand-ups (or daily scrums). It uses iterative sprints of 2 to 4-weeks where a team takes a set of requirements (the sprint backlog taken from a larger product backlog).
 
 .An overview of Scrum
-image::images/scrum.png[float=center,align=center]
+image::images/scrum.png[align=center]
 
 === Kanban vs Scrum
 
@@ -154,7 +154,7 @@ Yes, you still need a high-level roadmap – stakeholders crave it and it helps 
 Smart teams separate their technical release dates from their marketing announcements. Release to production when the feature is solid, then announce it publicly after you've confirmed everything works in the real world. That gap might be days or weeks – but that buffer can save your reputation when surprises pop up (and they will).
 
 .A simple Gantt Chart of the Epic MVP release. Note that the delivery plan doesn't need to get much more detailed than this.
-image::images/gantt-chart.png[float=center,align=center]
+image::images/gantt-chart.png[align=center]
 
 As an aside, in line with SAFe® you may also have an Innovation & Planning (IP) sprint. This sprint _acts as an estimating buffer for meeting PI Objectives and provides dedicated time for innovation, continuing education, PI Planning, and Inspect and Adapt (I&A) events_{empty}footnote:[Innovation & Planning Iteration, https://www.scaledagileframework.com/innovation-and-planning-iteration/]. For more information on IP sprints, see https://www.scaledagileframework.com/innovation-and-planning-iteration/.
 
@@ -163,7 +163,7 @@ As an aside, in line with SAFe® you may also have an Innovation & Planning (IP)
 The Sprint Burndown Chart gives the team a quick graphical representation of the remaining work left in that sprint. It shows us in a view if the team are on track to deliver the promised functionality by the end of the sprint. The ideal burn down diagonal is shown in white and the actual remaining effort (typically shown in hours) in the green bars.
 
 .Representation of the sprint burndown chart.
-image::images/burndown-chart.png[float=center,align=center]
+image::images/burndown-chart.png[align=center]
 
 What does the burndown chart above tell us? Well, it looks like the team had a little bit of a slow start, then picked up speed and got ahead of schedule. They then hit some blockers by the looks of it and started to slip behind schedule, but managed to pick it up with a good effort at the end and completed the sprint. 
 
@@ -210,7 +210,7 @@ Project issues need urgency and ownership. Always assign someone responsible for
 To calculate the total story points that can be carried out in a sprint, we have to appreciate that the engineering time is not the only time required to size a user story! Use the following formula to calculate the total effort for a Story:
 
 .This is a general formula for calculating the total effort involved for a Story.
-image::images/estimating.png[float=center,align=center]
+image::images/estimating.png[align=center]
 
 From the above, in summary the total effort is approximately twice the engineering effort we put in the Story Points. This is useful for calculating the total effort for Features and capacity of Sprints. As a general rule for example, you can see that for every 4 Engineers, on average you're going to need 1 Test Pilot.
 
