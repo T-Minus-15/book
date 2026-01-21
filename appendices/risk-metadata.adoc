@@ -1,0 +1,59 @@
+== Risk Metadata
+
+.Example Risk metadata (with assistance from ChatGPT)
+[width=80%]
+|===
+2+| RISK
+
+2+| *General*
+
+| *Title*
+| Launch window weather uncertainty
+
+| *State*
+| Active
+
+| *Owner*
+| Sarah Chen
+
+| *Area*
+| SpaceX > Exploration > Mars
+
+| *Iteration*
+| Sprint 6
+
+2+| *Details*
+
+| *Description*
+a|
+
+Unpredictable weather patterns at the launch site could force postponement of the Mars mission launch. The launch window to Mars occurs approximately every 26 months when Earth and Mars are optimally aligned. Missing the planned launch window would result in significant delays and cost overruns.
+
+| *Mitigation*
+a|
+
+To reduce the likelihood and impact of this risk:
+
+- Identify and prepare two backup launch sites with different weather patterns
+- Build 5-day buffer into launch schedule
+- Develop rapid rocket transport capability between sites
+- Monitor long-range weather forecasts 30 days in advance
+- Create contingency budget for extended launch operations
+
+2+| *Planning*
+
+| *Stack Rank*
+| 1.0
+
+| *Priority*
+| 1
+
+2+| *Deployment*
+
+| *Deployment*
+| (Links to deployment work items)
+
+| *Related Work*
+| (Links to related work items)
+
+|===
