@@ -1187,6 +1187,145 @@ For the Bug work item type, perform the following steps on the Details tab:
 		.. Layout > Group: System Info
 		.. Layout > Column: Right
 
+==== Bug States Configuration
+
+For a Bug we need to create the following States:
+
+	. Keep "New" State category: Proposed
+	. Create a new State of Name: Active, State category: In Progress, Color: 2nd from bottom blue (2nd column)
+	. Create a new State of Name: Resolved, State category: In Progress, Color: 3rd from bottom blue (2nd column)
+	. Create a new State of Name: Closed, State category: Completed, Color: Top green (5th column)
+
+=== Enhancement
+
+==== Enhancement Details Page Configuration
+
+For the Enhancement work item type, perform the following steps on the Details tab:
+
+	. Keep the existing "Repro Steps" field visible
+		.. Definition > Use an existing field: Repro Steps
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: Repro Steps
+		.. Layout > Group: Repro Steps
+		.. Layout > Column: Left
+	. Keep the existing "System Info" field visible
+		.. Definition > Use an existing field: System Info
+		.. Definition > Type: Text (multiple lines)
+		.. Layout > Label: System Info
+		.. Layout > Group: System Info
+		.. Layout > Column: Left
+	. Create a new field "Resolution"
+		.. Definition > Name: Resolution
+		.. Definition > Type: Text (multiple lines)
+		.. Definition > Description: Describe the resolution for this Enhancement.
+		.. Layout > Label: Resolution
+		.. Layout > Group (new): Resolution
+		.. Layout > Column: Left
+	. Keep "Personas affected" extension visible
+		.. Definition > Use extension: Personas affected
+		.. Layout > Group: Personas affected
+		.. Layout > Column: Left
+	. Create a new field "Resolved Reason"
+		.. Definition > Name: ResolvedReason
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Specify the reason this Enhancement was resolved.
+		.. Layout > Label: Resolved Reason
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Priority Level"
+		.. Definition > Name: PriorityLevel
+		.. Definition > Type: Picklist (string)
+		.. Definition > Description: Specify the priority level for this Enhancement.
+		.. Definition > Picklist items: Low, Medium, High, Critical, Deferred
+		.. Layout > Label: Priority Level
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Severity" field visible
+		.. Definition > Use an existing field: Severity
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Severity
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Activity" field visible
+		.. Definition > Use an existing field: Activity
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Activity
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Found By"
+		.. Definition > Name: FoundBy
+		.. Definition > Type: Identity
+		.. Definition > Description: Identify who found this Enhancement.
+		.. Layout > Label: Found By
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Target Date"
+		.. Definition > Name: TargetDate
+		.. Definition > Type: DateTime
+		.. Definition > Description: Specify the target date for resolving this Enhancement.
+		.. Layout > Label: Target Date
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Create a new field "Zendesk Ticket Number"
+		.. Definition > Name: ZendeskTicketNumber
+		.. Definition > Type: Text (single line)
+		.. Definition > Description: Provide the Zendesk ticket number associated with this Enhancement.
+		.. Layout > Label: Zendesk Ticket Number
+		.. Layout > Group: Planning
+		.. Layout > Column: Middle
+	. Keep the existing "Original Estimate" field visible
+		.. Definition > Use an existing field: Original Estimate
+		.. Definition > Type: Decimal
+		.. Layout > Label: Original Estimate
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the existing "Remaining" field visible
+		.. Definition > Use an existing field: Remaining Work
+		.. Definition > Type: Decimal
+		.. Layout > Label: Remaining
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the existing "Completed" field visible
+		.. Definition > Use an existing field: Completed Work
+		.. Definition > Type: Decimal
+		.. Layout > Label: Completed
+		.. Layout > Group: Effort (Hours)
+		.. Layout > Column: Middle
+	. Keep the "Deployment" group visible
+		.. Layout > Group: Deployment
+		.. Layout > Column: Right
+	. Keep the "Development" group visible
+		.. Layout > Group: Development
+		.. Layout > Column: Right
+	. Keep the "Related Work" group visible
+		.. Layout > Group: Related Work
+		.. Layout > Column: Right
+	. Keep the existing "Found in Build" field visible
+		.. Definition > Use an existing field: Found in Build
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Found in Build
+		.. Layout > Group: System Info
+		.. Layout > Column: Right
+	. Keep the existing "Integrated in Build" field visible
+		.. Definition > Use an existing field: Integrated in Build
+		.. Definition > Type: Text (single line)
+		.. Layout > Label: Integrated in Build
+		.. Layout > Group: System Info
+		.. Layout > Column: Right
+	. Add the "Environments" extension field
+		.. Definition > Use extension: Environments
+		.. Layout > Group: System Info
+		.. Layout > Column: Right
+
+==== Enhancement States Configuration
+
+For an Enhancement we need to create the following States:
+
+	. Keep "New" State category: Proposed
+	. Create a new State of Name: Active, State category: In Progress, Color: 2nd from bottom blue (2nd column)
+	. Create a new State of Name: Resolved, State category: In Progress, Color: 3rd from bottom blue (2nd column)
+	. Create a new State of Name: Closed, State category: Completed, Color: Top green (5th column)
+
 === Risk
 
 ==== Risk Details Page Configuration
