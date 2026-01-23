@@ -58,4 +58,7 @@ include::appendices/bugs-and-enhancements-metadata.adoc[]
 [appendix]
 include::appendices/meetings.adoc[]
 
+[appendix]
+include::appendices/appendix-states.adoc[]
+
 include::thanks.adoc[]

@@ -1,0 +1,377 @@
+== Work Item State Definitions
+
+Every work item in your backlog follows a journey – from the initial spark of an idea to its final destination in production. But not all journeys are the same. A Feature needs careful preparation and design before engineering begins. An Epic requires validation of business hypotheses before committing resources. A Bug just needs someone to fix it.
+
+This appendix provides the detailed state definitions for each work item type. Think of these as the flight manual for your team's workflow. Each state has clear entry criteria (what must be true before entering), a definition of done (what must be complete before leaving), and who's responsible for the work.
+
+Use these definitions to eliminate ambiguity in your process. When everyone knows exactly what "Design" means for a Feature versus what "Validation" means for an Epic, your team can focus on doing the work instead of debating what the work means.
+
+=== Feature States
+
+Features are the building blocks of your product – significant pieces of functionality that deliver value to users. They require careful orchestration across multiple disciplines.
+
+.Feature State Definitions
+[width="100%", cols="15%,25%,25%,25%,10%", options="header"]
+|===
+|State |Description |Entry Criteria |Definition of Done |Responsible
+
+|*New*
+|Initial state when a Feature is created. The idea exists but hasn't been prioritised or refined.
+|• Feature request submitted
+• Basic title and description provided
+|• Product Owner has reviewed
+• Priority assigned
+• Initial sizing complete
+|Product Owner
+
+|*Prep*
+|Feature is being prepared for design. Requirements are being gathered and refined.
+|• Feature prioritised for upcoming work
+• Product Owner assigned
+• Initial acceptance criteria drafted
+|• User stories created and linked
+• Success metrics defined
+• Dependencies identified
+• Technical constraints documented
+|Product Owner + Business Analyst
+
+|*Design*
+|UI/UX design work is in progress. Visual and interaction design being created.
+|• All user stories finalised
+• Design brief created
+• Technical constraints understood
+|• Mockups/wireframes complete
+• Design reviewed with stakeholders
+• Design approved by Product Owner
+• Handoff to engineering complete
+|Designer + Product Owner
+
+|*Engineer*
+|Development work is in progress. Code is being written and unit tested.
+|• Design approved
+• Technical design reviewed
+• Development environment ready
+• Dependencies available
+|• All code complete
+• Unit tests passing
+• Code reviewed and merged
+• Feature branch integrated
+• Ready for system testing
+|Engineers
+
+|*Test*
+|Quality assurance is verifying the feature works as designed.
+|• Code complete in test environment
+• Test cases prepared
+• Test data available
+|• All test cases executed
+• No critical bugs remain
+• Acceptance criteria verified
+• Performance validated
+• Ready for production
+|QA Team
+
+|*Operate*
+|Feature is live in production and being monitored.
+|• Passed all testing
+• Deployment plan executed
+• Monitoring configured
+• Runbook updated
+|• Running stable in production
+• Success metrics being tracked
+• No critical issues
+• Handoff to support complete
+|Operations Team
+
+|*Closed*
+|Feature development is complete and has been in production successfully.
+|• Feature stable in production
+• Success metrics achieved
+• No outstanding issues
+|• Retrospective completed
+• Documentation finalised
+• Knowledge transferred
+|Product Owner
+
+|*Removed*
+|Feature was cancelled or deprioritised and won't be built.
+|• Decision made to not proceed
+• Rationale documented
+|• Stakeholders notified
+• Related work items updated
+• Lessons learned captured
+|Product Owner
+|===
+
+=== Epic States (SAFe)
+
+Epics represent major initiatives that span multiple teams and iterations. They follow a more elaborate workflow that includes validation of business hypotheses before significant investment.
+
+.Epic State Definitions
+[width="100%", cols="15%,25%,25%,25%,10%", options="header"]
+|===
+|State |Description |Entry Criteria |Definition of Done |Responsible
+
+|*New*
+|Initial state for a newly created Epic. The business opportunity has been identified.
+|• Epic idea submitted
+• Business case outlined
+• Sponsor identified
+|• Initial review complete
+• Rough sizing estimated
+• Strategic alignment confirmed
+|Epic Owner
+
+|*Funnel*
+|Epic is in the portfolio funnel for future consideration. Not yet prioritised.
+|• Business case documented
+• High-level requirements captured
+• Potential value estimated
+|• Portfolio review complete
+• Preliminary ROI calculated
+• Go/no-go decision made
+|Portfolio Manager
+
+|*Validation*
+|Lean startup validation phase. Testing business hypotheses before full investment.
+|• Hypotheses clearly defined
+• Validation approach approved
+• Budget allocated for experiments
+|• All hypotheses tested
+• Results analysed and documented
+• Pivot or persevere decision made
+• Stakeholders aligned on next steps
+|Epic Owner + Lean Team
+
+|*Proposing*
+|Creating detailed business case and implementation plan for approval.
+|• Validation results positive
+• Implementation approach defined
+• Resource requirements estimated
+|• Full business case complete
+• Architecture review done
+• Risk assessment complete
+• Funding proposal ready
+|Epic Owner + Architects
+
+|*Pending*
+|Approved but waiting for capacity or dependencies before scheduling.
+|• Business case approved
+• Funding secured
+• Priority confirmed
+|• Dependencies resolved
+• Teams identified and ready
+• Start date confirmed
+|Portfolio Manager
+
+|*Scheduled*
+|Epic is scheduled for implementation in specific Programme Increments.
+|• PI planning complete
+• Features defined and estimated
+• Teams committed
+|• Ready to begin first Feature
+• Success criteria finalised
+• Reporting structure in place
+|Release Train Engineer
+
+|*Implementing*
+|Active development is underway across one or more teams.
+|• First Feature started
+• Teams mobilised
+• Tracking mechanisms active
+|• All Features complete
+• Acceptance criteria met
+• Ready for production release
+|Epic Owner + Teams
+
+|*Operate*
+|Epic is live in production and being monitored for success.
+|• All Features deployed
+• Monitoring active
+• Support processes ready
+|• Success metrics achieved
+• Stable in production
+• Benefits being realised
+|Operations + Epic Owner
+
+|*Done*
+|Epic is complete and has delivered its intended value.
+|• Success criteria met
+• Benefits realised
+• Stable operation confirmed
+|• Retrospective completed
+• Benefits report published
+• Celebrations complete!
+|Epic Owner
+
+|*On-hold*
+|Epic is temporarily paused due to changing priorities or blockers.
+|• Pause decision documented
+• Team members reassigned
+• Work preserved
+|• Restart criteria defined
+• Knowledge preserved
+• Stakeholders informed
+|Portfolio Manager
+
+|*Removed*
+|Epic was cancelled and will not be completed.
+|• Cancellation decision made
+• Rationale documented
+|• Work archived
+• Lessons learned captured
+• Resources released
+|Portfolio Manager
+|===
+
+=== Task, Bug, and Enhancement States
+
+These work items follow a simpler workflow focused on execution rather than discovery.
+
+.Task/Bug/Enhancement State Definitions
+[width="100%", cols="15%,25%,25%,25%,10%", options="header"]
+|===
+|State |Description |Entry Criteria |Definition of Done |Responsible
+
+|*New*
+|Work item has been created but not yet started.
+|• Work item logged
+• Description provided
+• Type identified
+|• Triaged and prioritised
+• Assigned to team member
+• Effort estimated
+|Team Lead
+
+|*Active*
+|Work is in progress.
+|• Assigned to team member
+• Work started
+• No blocking issues
+|• Work complete
+• Testing done (if applicable)
+• Ready for review
+|Assigned Team Member
+
+|*Blocked*
+|Work cannot proceed due to dependencies or issues.
+|• Blocking issue identified
+• Cannot proceed without resolution
+|• Blocker removed
+• Work can resume
+• Path forward clear
+|Team Lead + Assigned Member
+
+|*Resolved*
+|Work is complete and ready for verification.
+|• Implementation complete
+• Local testing passed
+• Code reviewed (if applicable)
+|• Verified in target environment
+• Acceptance criteria met
+• No rework needed
+|Reviewer/Tester
+
+|*Closed*
+|Work item is complete and verified.
+|• Solution verified
+• No outstanding issues
+• Stakeholder satisfied
+|• Documentation updated
+• Knowledge shared
+• Archived appropriately
+|Team Lead
+|===
+
+=== Risk and Issue States
+
+Risks and Issues require active management to prevent project derailment.
+
+.Risk/Issue State Definitions
+[width="100%", cols="15%,25%,25%,25%,10%", options="header"]
+|===
+|State |Description |Entry Criteria |Definition of Done |Responsible
+
+|*New*
+|Risk or Issue has been identified and logged.
+|• Risk/Issue identified
+• Initial assessment complete
+• Owner assigned
+|• Impact assessed
+• Mitigation approach defined
+• Monitoring plan in place
+|Risk Owner
+
+|*Active*
+|Risk/Issue is being actively managed and monitored.
+|• Mitigation plan approved
+• Resources allocated
+• Actions underway
+|• Risk reduced to acceptable level
+OR
+• Issue resolved
+• No further action needed
+|Risk Owner
+
+|*Closed*
+|Risk/Issue is no longer a concern.
+|• Risk didn't materialise
+OR
+• Issue fully resolved
+• No residual impact
+|• Lessons learned documented
+• Preventive measures identified
+• Knowledge base updated
+|Risk Owner
+|===
+
+=== Question States
+
+Questions help teams clarify requirements and remove ambiguity.
+
+.Question State Definitions
+[width="100%", cols="15%,25%,25%,25%,10%", options="header"]
+|===
+|State |Description |Entry Criteria |Definition of Done |Responsible
+
+|*New*
+|Question has been asked but not yet answered.
+|• Question logged
+• Context provided
+• Answerer identified
+|• Appropriate expert assigned
+• Response timeframe set
+• Urgency assessed
+|Assigned Expert
+
+|*Active*
+|Question is being researched or discussed.
+|• Expert engaged
+• Research underway
+• Clarifications sought
+|• Answer provided
+• Questioner satisfied
+• Follow-ups addressed
+|Assigned Expert
+
+|*Closed*
+|Question has been answered satisfactorily.
+|• Answer accepted
+• No further clarification needed
+|• Answer documented
+• Searchable for future
+• Related items updated
+|Questioner
+|===
+
+=== Using These Definitions
+
+These state definitions aren't just documentation – they're tools for eliminating waste and confusion in your process. Here's how to put them to work:
+
+1. **During Planning**: Use entry criteria to ensure work is ready before committing to it
+2. **During Standups**: Reference the Definition of Done to assess true progress
+3. **During Retrospectives**: Identify where work gets stuck between states
+4. **For New Team Members**: Provide clear expectations for each type of work
+5. **For Metrics**: Measure cycle time between states to find bottlenecks
+
+Remember: states should enable flow, not create bureaucracy. If a state isn't adding value, question whether you need it. The goal is clarity and momentum, not process for process's sake.
