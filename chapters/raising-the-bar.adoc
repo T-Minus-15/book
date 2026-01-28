@@ -1,22 +1,52 @@
-== TEST: Raising the Bar - The Pursuit of Quality in Agile Projects
+= Raising the Bar: The Pursuit of Quality in Agile Projects
 
-We want to ensure that what we deliver to our customers is something we can be proud of, it's not just good - it's awesome! We therefore need to ensure that each-and-every Story is cross-referenced and checked with 1 or more test cases.
+We want to ensure that what we deliver to our customers is something we can be proud of, it's not just good - it's awesome!
 
-Additionally, if we want to ensure we are delivering high-quality high-value (HQHV) we need to ensure we are performing testing earlier (a “Shift Left” of testing) rather than leaving it to the last step before deployment. For this reason, the Test Pilot is an integral member of the team who will be writing test cases when the first line of code is being written.
+Quality Assurance (QA) is more than just identifying bugs; it's about ensuring the product meets the client's needs. In the lifecycle of a software project, QA must play a role from the earliest stages through to post-launch.
 
-=== The importance of acceptance criteria
+== Shift-Left Testing: Early Integration of QA
 
-In order to ensure that each and every Story can be validated, a User Story should have an acceptance criteria to make it super clear to the developer what the business are accepting, and how the Test Pilot will be testing your solution. Let’s get the “story” straight before we start with delivering value as to what everybody’s expectations are. An example acceptance criteria for bug resolution could be:
+We begin with the concept of *Shift-Left Testing* — a proactive approach that incorporates testing at the earliest stages of the software development lifecycle. This approach aligns with modern Agile practices, promoting continuous collaboration between developers, testers, and stakeholders. Testing isn't something that waits until development is complete; instead, it begins with requirement gathering, where both functional and non-functional criteria are defined clearly.
+
+For this reason, the Test Pilot is an integral member of the team who will be writing test cases when the first line of code is being written.
+
+== The importance of acceptance criteria
+
+In order to ensure that each and every Story can be validated, a User Story should have acceptance criteria to make it super clear to the developer what the business is accepting, and how the Test Pilot will be testing your solution. Let’s get the “story” straight before we start with delivering value as to what everybody’s expectations are. An example acceptance criteria for bug resolution could be:
 
 *	100% of major and critical bugs will be resolved
 *	50% of minor bugs will be resolved
 *	Cosmetic issues will be fixed on a best endeavour basis
 
-=== Test Plans, Suites & Cases
+== Test Strategy
 
-A test plan is a group of test cases. We recommend a Test Plan is made up from a number of Test Suites (one for each Feature). You then create a test case per user story.
+In any successful software project, a well-planned testing strategy is key. We define testing not only by deadlines and requirements but by *acceptance criteria* agreed upon with stakeholders. It’s critical to create clear, *SMART acceptance criteria*—Specific, Measurable, Achievable, Relevant, and Time-bound—to ensure shared expectations across teams. This allows us to have precise testing and reduces ambiguity in what is deemed 'done.'
 
-A test case is the steps that validate a user story. Each step should have an expected result. A tester can thus validate the test case step by step, and create a bug at the designated step that caused the failure. Along with a screenshot (always include a screenshot and any other relevant information), this should give developers the resources necessary to troubleshoot the majority of issues.
+== Test Plans, Suites & Cases
+
+A test plan is a collection of test cases. We recommend a Test Plan to be made up of a number of Test Suites (each contains a group of Test Cases related to 1 Feature). We therefore need to ensure that each-and-every Story is therefore cross-referenced and checked with 1 or more test cases.
+
+A test case is the steps that validate and verify the quality of a product within the user story. Each step should have a defined expected result. A tester can thus validate the test case step by step, and create a bug or enhancement at the designated step that caused the failure. Along with a screenshot (always include a screenshot and any other relevant information), logs, and used test data, this should give developers the resources necessary to troubleshoot the majority of issues.
+
+== Managing Test Data
+
+Real-world data plays a crucial role in testing. It is vital to prepare and manage realistic and comprehensive *test data* sets to simulate production scenarios. Ensure that data covers all edge cases, security aspects, and performance metrics so that the final product behaves reliably in a real-world context.
+
+== Continuous Feedback and Improvement
+
+Effective *defect management* and continuous feedback loops between QA and development teams ensure that issues are addressed promptly. So keep in mind that a streamlined process for tracking defects, setting priorities, and reporting results is vital. Regular reviews of key metrics such as defect density and mean time to resolution (MTTR) are really nice tools for assessing the health of the project and making informed decisions for continuous improvement.
+
+== AI in QA
+
+As QA continues to evolve, *AI and machine learning* are becoming key players in advancing the field. From automating test case generation to predictive analytics for identifying high-risk areas in code, AI can augment traditional QA practices. Exploring these technologies will help future-proof testing processes and drive even more robust software quality.
+
+== Automated testing tools using
+
+To speed up the repeatable nature of testing to help improve the cadence of release, where possible we should leverage the use of automated test tools such as Playwright or Selenium Web Driver.
+
+== Types of Testing
+
+Testing is a critical aspect of ensuring software quality and stability. Different types of testing approaches help cover various aspects of a system, ensuring that it meets the needs of users and stakeholders. The following are some of the key types of testing used in modern software development:
 
 === Feautures vs Bugs vs Enhancements
 
@@ -32,19 +62,35 @@ This classification ensures we’re fixing what’s broken, refining what’s wo
 
 === Static code analysis
 
-Static code analysis is where the code of a solution is analysed without it having to be build and executed. It ensures that the code adheres to industry and team standards. Performing static code analysis can:
+Static code analysis is where the code of a solution is analyzed without it having to be built and executed. It ensures that the code adheres to industry and team standards. Performing static code analysis can:
 
 *	Improve the ability for developers to understand each other’s code
 *	Reduce the time needed for a peer review
 *	Catch issues that may not otherwise be caught
 
-=== Automated UI testing
+===	A/B testing
 
-To speed up the repeatable nature of testing to help improve the cadence of release, where possible we should leverage the use of automated test tools such as Selenium Web Driver .
+A/B testing allows you to set up two deployment slots (A and B) in production where one of those slots is used to deploy a new release to. So you have a hot slot and a staging slot. Using traffic routing, you can then send a percentage of the traffic to the new slot. That way, without affecting all users, you can have a period of testing in production where any new introduced issues should not affect all users.
+
+A/B testing also allows high performance sites to always be available with zero warm up time needed. You deploy to the staging slot, start the slot running, and once running, swap this slot to be the production slot.
+
+You can also look at implementing an intelligent solution that will analyse the logs and dynamically amend the routing rules to pass users to the new code on confirmation that there are no detrimental issues affecting performance or correct behaviour. Or, alternatively, fall back to the old code if an issue is detected.
+
+=== CI/CD Pipelines
+
+Automation is crucial to maintaining a high level of efficiency and quality in fast-moving projects. Incorporating automated tests into CI/CD pipelines enables early bug detection and helps validate every code change. These tests should span from unit tests to integration and regression tests, ensuring that new updates don't break existing functionality.
+
+=== Exploratory and Context-Driven Testing
+
+Beyond automation, exploratory testing is invaluable for identifying edge cases and unexpected behavior. Testers use their knowledge of the system to explore and test functionality in unscripted ways, often revealing bugs that standard scripted tests may miss. Coupled with context-driven testing, this approach allows testers to adapt based on the specific requirements and nuances of each project, making the testing process more flexible and responsive.
+
+=== Chaos Monkey Testing
+
+From our practice, we also found Chaos Monkey testing to be quite effective for some of the projects (mostly the ones that are large-scale, distributed systems). The idea behind this concept basically is to resilience testing strategy where failures are intentionally introduced to systems in production environments. The main idea is to ensure that systems can recover from unexpected disruptions, such as server crashes or network outages. Performing such an activity identifies weaknesses in infrastructure before they cause real-world problems and helps teams gain confidence in their systems' ability to handle failures in production.
 
 === Security assessment & compliance
 
-Consider security during the security and compliance using automated tools such as Microsoft Security Code Analysis , Secure DevOps Kit for Azure  and SME reviews. Best to find out early with regards to security issues prior to hitting production!
+Focus on security and compliance by utilizing automated tools such as Microsoft Security Code Analysis, Secure DevOps Kit for Azure and SME reviews. Best to find out early with regards to security issues prior to hitting production!
 
 Ensure that you are utilizing all the applicable security options available to you in the cloud hosting environment. For example, ensure you have policies set, firewalls configured, threat protection, encryption, monitoring, auditing and security event management.
 
@@ -62,16 +108,30 @@ Typically you would carry out performance testing in the Test (QA) environment. 
 
 === User acceptance testing
 
-User acceptance testing is where the client tests your solution to confirm the delivery meets their needs.
+User acceptance testing is where the client tests your solution to confirm the delivery meets their needs. Engaging the client in interactive demos and regular feedback loops throughout the UAT process helps ensure their needs are met before the software is finalized. In general, we don't expect to be able to test all the Features in week 1 of the Sprint, but get the Features through week by week. By having 3 sessions in a Sprint, we have 3 opportunities to get to production rather than only 1.
 
-This is where our Test Plan acceptance criteria comes into play. No software is completely bug free so set expectations. If you have structured your post-launch support arrangement correctly they will be happy that any small work items can still get resolved under the support arrangement. They’re not just going to be stuck with any remaining issues!
+This is also where our Test Plan acceptance criteria come into play. No software is completely bug free so set expectations. If you have structured your post-launch support arrangement correctly they will be happy that any small work items can still get resolved under the support arrangement. They’re not just going to be stuck with any remaining issues!
 
 Because your stakeholders most likely won’t have time to go through all test cases written for your system (well, they’ll tell you that anyway 😉), for use acceptance testing, create a smaller Test Plan that cover a broad range and the important stories that are representative of the overall Feature working well. NB The test cases should be written in a simple way anyway that any team member or stakeholder should be able to follow them.
 
-===	A/B testing
+=== Test Case Guide
 
-A/B testing allows you to setup two deployment slots (A and B) in production  where one of those slots is used to deploy a new release to. So you have a hot slot and a staging slot. Using traffic routing, you can then send a percentage of the traffic to the new slot. That way, without affecting all users, you can have a period of testing in production where any new introduced issues should not affect all users.
+Test cases are fundamental in validating that software works as expected. Each test case must be concise and clear, with defined inputs, expected outcomes, and conditions for execution.
 
-A/B testing also allows high performance sites to always be available with zero warm up time needed. You deploy to the staging slot, start the slot running, and once running, swap this slot to be the production slot.
+==== Key Components of a Test Case
 
-You can also look at implementing an intelligent solution that will analyse the logs and dynamically amend the routing rules to pass users to the new code on confirmation that there are no detrimental issues affecting performance or correct behaviour. Or, alternatively, fall back to the old code if an issue is detected.
+*	Test Case ID: Unique identifier (e.g., TC001).
+*	Test Title/Objective – A brief description of what is being tested
+*	Preconditions: Setup requirements before running the test (if applicable)
+*   Test Steps: Sequential steps to execute the test
+*   Expected Result: The outcome expected after each test execution and each specific step if needed
+*   Links: to the requirements, user stories, features, designs
+*   Attachments: any useful attachments, such as designs or references
+
+Test cases should be organized and linked to specific requirements, user stories, or features to ensure coverage. This helps trace testing efforts directly to development progress, ensuring alignment between the test cases and the software functionalities.
+
+A few more hints to create a high quality test suite:
+
+*	Requirement Coverage: Ensure each test case is linked to a functional requirement.
+*	Modular Approach: Break test cases into small, manageable tests for specific components.
+*	Prioritize Testing: Prioritize based on risk and importance to the user.

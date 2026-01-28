@@ -1,0 +1,43 @@
+== Test Cases Examples
+
+Here you could find the ideal Test Cases examples:
+
+=== Test Case 1: User Login Functionality
+* Test Case ID: TC001
+* Summary: Verify that a user can log in with valid credentials.
+* Preconditions: User is registered with the system as normal user.
+* Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid username.
+  3. Enter valid password.
+  4. Click on the "Login" button.
+* Test Data:
+  - Username: `User123`
+  - Password: `Passw0rd!`
+* Expected Result: The user is successfully logged in and being redirected to the dashboard.
+
+=== Test Case 2: Invalid Password Handling
+* Test Case ID: TC002
+* Summary: Verify that a user receives an error message for incorrect passwords.
+* Preconditions: User is registered with the system as normal user.
+* Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid username.
+  3. Enter invalid password.
+  4. Click on the "Login" button.
+* Test Data:
+  - Username: `User123`
+  - Password: `WrongPass`
+* Expected Result: The user sees an error message: "Invalid credentials."
+
+=== Test Case 3: Boundary Value Testing for Text Field
+* Test Case ID: TC003
+* Summary: Verify the input limit for the username field (1–50 characters).
+* Preconditions: Application form is accessible.
+* Test Steps:
+  1. Navigate to the registration form.
+  2. Enter a username with 51 characters.
+  3. Submit the form.
+* Test Data:
+  - Username: `A long string of 51 characters`.
+* Expected Result: The user sees a message: "Username must not exceed 50 characters."
