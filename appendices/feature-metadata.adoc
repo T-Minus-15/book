@@ -1,5 +1,11 @@
 == Feature metadata
 
+=== The Rule of Quarters
+
+When estimating a functional Feature, start with the Engineering effort. As a provisional baseline, allow one quarter of that effort for each of Prep, Design, Test and Plan. For example, 20 days of Engineering gives 5 days for each of the other four disciplines.
+
+The Rule of Quarters is a starting point for planning, not a replacement for the team's judgement. Review and adjust each estimate as the Feature becomes better understood. It does not apply to Enabler Features, which should be estimated role by role according to the work involved.
+
 .Example Feature metadata (with assistance from ChatGPT)
 [.xsmall-table, width=100%, cols="20%,40%,40%"]
 |===
