@@ -1,3 +1,8 @@
+// Image paths are relative to book.adoc. On GitHub this file renders on its own, so look one folder up.
+ifdef::env-github[]
+:imagesdir: ..
+endif::[]
+
 == So what about DevOps?
 
 With fear of jumping on a using a portmanteau trend (a shortening a number of words and linking them together such as done with DevOps, SecOps, DevSecOps, NetOps, NetSecOps, DBAOps, WinOps, and DataOps etc.) let’s cover what the principles of DevOps are (we’ll then leave it at the discretion of the reader if further analysis of these terms is required). According to Wikipedia, DevOps is a set of software development practices that combines software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.footnote:[DevOps, https://en.wikipedia.org/wiki/DevOps] 

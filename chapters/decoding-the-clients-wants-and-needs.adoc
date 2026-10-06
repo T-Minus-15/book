@@ -1,3 +1,8 @@
+// Image paths are relative to book.adoc. On GitHub this file renders on its own, so look one folder up.
+ifdef::env-github[]
+:imagesdir: ..
+endif::[]
+
 == PREP: Decoding the client's wants and needs
 
 OK, first up, let's dive into the importance of getting a handle on what the client (whether internal or external) is expecting to be delivered as part of a project. If you don't understand the requirements, you're setting yourself up for a bumpy ride - so we best get this right!
