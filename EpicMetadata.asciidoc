@@ -1,0 +1,297 @@
+== Epic metadata
+
+.Example Epic metadata (with assistance from ChatGPT)
+[width=80%]
+|===
+3+| EPIC
+
+3+| *General*
+
+| *Title*
+| Mars Mission (MVP)
+| Guidance Column
+
+| *State*
+| Review analysis
+| 
+
+| *Epic type*
+| Rocketry
+| 
+
+| *Owner*
+| Elon Musk
+| 
+
+| *Area*
+| SpaceX > Exploration > Mars
+| 
+
+| *Start date*
+| 01/01/2040
+| 
+
+| *Target end date*
+| 12/12/2045
+| 
+
+| Description
+a| 
+
+To create a minimum viable product (MVP) for its mission to Mars, SpaceX will adopt the following approach:
+
+- Define Must-Have Requirements: SpaceX would define the minimum requirements for a rocket to reach Mars, based on factors such as payload capacity, reliability, and cost.
+- Prototype Development: SpaceX would design and build a prototype rocket, incorporating the Must-Have requirements defined in step 1.
+- Testing: The prototype would be tested in various stages, starting with ground tests and culminating in a test flight to Mars.
+- Iteration: Based on the results of the testing phase, SpaceX would make iterative improvements to the design and technology of the rocket, until it is able to successfully reach Mars.
+- Launch: After successful testing and verification, the MVP rocket would be launched on its mission to Mars.
+
+This approach allows SpaceX to develop and launch its MVP rocket to Mars in a fast and cost-effective manner, while also providing opportunities to iteratively improve its capabilities over time. The focus is on delivering a basic functional product that can demonstrate the viability of the mission, with opportunities for further refinement and improvement as the market and technical environment evolve.
+
+| An elevator pitch (value statement) that describes the Epic in a clear and concise way (30 to 200 words). Use the following format:
+FOR ...
+WHO ...
+THE ...
+IS A ...
+THAT ....
+UNLIKE ...
+OUR SOLUTION ...
+
+3+| *Epic hypothesis*
+
+| *Value statement*
+a| SpaceX going to Mars can offer multiple benefits, such as:
+
+- Advance human exploration and understanding of the Red Planet.
+- Establish a self-sustaining city on Mars, providing backup plan for humanity in case of catastrophic events on Earth.
+- Develop new technologies and innovations that can also benefit life on Earth.
+- Inspire future generations to pursue careers in STEM fields and space exploration.
+
+| Hypothesis: We believe that [target user] will [achieve a specific outcome] by [using a particular feature or action], which will be proven by [specific metric or measurement].
+| *Business outcome hypothesis*
+a|
+
+The business outcome hypothesis for SpaceX getting a rocket to Mars is to:
+
+- Establish a profitable interplanetary transportation system for cargo and eventually human passengers.
+- Create new opportunities for commercial activities and resource exploitation on Mars.
+- Establish SpaceX as a leader in space exploration and a dominant player in the emerging space industry.
+- Generate long-term revenue streams through contracts with governments and private entities for Mars missions and services.
+
+| Describe how the success of the epic will be measured (30 to 200 words): for example, 50% increase in shoppers under 25; Availability increases from 95% to 99.7%, etc. Only use percentages if we have the data to actual define these with confidence.
+
+| *Background*
+a|
+| Give relevant background information on the company, their systems, to give context to what this Epic relates to (50-200 Words). This should give good context to the delivery team as well as executive sponsors that will go into the Proposal.
+
+| *Objective*
+a|
+| Give a concise statement that captures the primary goal or outcome you want to achieve with this Epic (50-200 words). This should give a clear reason why this solution is needed for both the delivery team and the executive sponsors.
+
+| *Prerequisites*
+a| 
+| Outline any prerequisites we need from the customer in order to deliver this Epic. For example, access to their systems, availability of key stakeholders, and alike.
+
+| *Non-Functional Requirements (NFRs)*
+a| 
+
+- Safety: Ensure the safety of the spacecraft and its crew during the mission.
+- Reliability: Ensure the system's ability to perform its intended functions under specified conditions.
+- Availability: Ensure the system is accessible and functional for its intended purpose at all times.
+- Maintainability: Ensure the ability to quickly and easily repair or replace parts as needed.
+- Scalability: Ensure the system can accommodate future growth and expansion.
+- Performance: Ensure the spacecraft can meet the required speed and maneuvering needs for a successful Mars mission.
+- Interoperability: Ensure compatibility and integration with other systems and technologies.
+- Cost-effectiveness: Ensure the project is completed within budget and generates a return on investment.
+
+| Detail the system's operational characteristics such as performance, security, reliability, and usability requirements that the solution must meet, but which do not directly contribute to its primary functionality (30 to 200 words).
+
+| *Leading Indicators*
+a|
+| Define tangible measurable indicators to provide leading indicators of the outcomes hypothesis (30 to 200 words): for example, a measurable change in purchaser demographics within 30 days of feature release. Only use percentages if confident!
+
+3+| *Analysis*
+
+| *Users and market affected*
+a| 
+
+Users:
+
+- Astronauts and crew members traveling to and residing on Mars.
+- Mission control teams and ground support personnel.
+- Future Mars settlers and colonists.
+
+Markets:
+
+- Aerospace and space exploration industries.
+- Government agencies and international space agencies.
+- Commercial entities seeking opportunities for resource extraction and exploitation on Mars.
+- Scientific and research communities studying Mars and interplanetary exploration.
+- Educational institutions and students interested in space science and technology.
+- Space tourism and recreational industries.
+
+| Describe the user community and any markets or departments affected (such as personas in the user stories) by the delivery of this Epic (30 to 200 words).
+| *Impact products, programs and services*
+a| 
+
+Products:
+
+- Interplanetary spacecraft and vehicles.
+- Advanced propulsion systems.
+- Life support systems and habitats for Mars.
+
+Programs:
+
+- Mars mission programs for cargo and crew transportation.
+- Research and development programs for Mars technologies and innovations.
+- Collaborative programs with government and private entities for Mars exploration and commercial activities.
+
+Services:
+
+- Launch and transportation services for cargo and crew to and from Mars.
+- Logistics and support services for Mars missions and settlements.
+- Maintenance and repair services for spacecraft and habitats on Mars.
+- Scientific and technical consulting services for Mars exploration and commercial activities.
+
+| Identify solutions, programs, services, etc. that will may be impacted by the delivery of this Epic (30 to 200 words).
+| *Analysis summary*
+a|
+
+SpaceX's goal to send a rocket to Mars is an ambitious project that requires innovative technologies and systems. It offers benefits such as a profitable interplanetary transportation system, new commercial opportunities on Mars, establishing SpaceX as a leader in space exploration, and generating long-term revenue. The mission faces challenges such as meeting safety, reliability, and cost requirements. It will impact multiple stakeholders, including astronauts, government agencies, and commercial entities. Impact products, programs, and services, such as spacecraft, propulsion systems, and launch services, will be crucial to the success of the mission.
+
+| 
+| *Return*
+a|
+
+The return on investment of SpaceX getting a rocket to Mars is difficult to predict with certainty, however, some estimates indicate that the global space industry could be worth more than $1 trillion by 2040. According to recent projections, Mars-related activities, including resource extraction and tourism, could represent a significant portion of this market.
+
+It's worth noting that the return on investment for interplanetary missions is typically longer-term and may take several years or even decades to fully materialize. Therefore, a well-planned and executed Mars mission can provide a significant return on investment for SpaceX in the long term.
+
+| Outline the return for the business by the delivery of this solution, such as increased revenue, improved productivity, or other benefits, etc. (30 to 200 words)
+| *Anticipated business impact*
+a| 
+
+The anticipated business impact of SpaceX getting a rocket to Mars could include:
+
+- Increased revenue & profits for SpaceX through contracts and resource extraction.
+- Boost to SpaceX's reputation as a leader in space exploration.
+- New commercial opportunities on Mars, such as space tourism & resource extraction.
+- Advancements in space technology & infrastructure, driving economic growth & innovation.
+- Increased public interest & investment in space exploration.
+
+> Note: Actual impact will depend on success of mission, demand for interplanetary services, and ability to monetize investments.
+
+| *Technical Solution*
+a| 
+| Provide a high-level technical solution design (no more than 100-300 words). This should outline the technologies that will be implemented and any integrations.
+
+| *Licensing*
+a| 
+| Outline what licenses (including costs) are needed for the solution. This should be called out to ensure the customer is aware of any licensing requirements that are needed from their end.
+
+| 
+3+| *Delivery Strategy*
+
+| *Funnel entry date*
+| 01/01/2020
+|
+
+| *In/out-house*
+| In-house
+|
+
+| *Sponsors*
+a| 
+
+The project sponsors/stakeholders in a SpaceX mission to Mars could include:
+
+- SpaceX itself, as the lead company and primary beneficiary of the mission.
+- Government agencies, such as NASA or other international space organizations, which may provide funding, resources, and expertise.
+- Private companies, such as aerospace and space exploration companies, resource extraction and exploitation companies, and technology companies, which may provide funding or collaborate on specific aspects of the mission.
+- Research institutions and universities, which may contribute scientific knowledge and technology development to the mission.
+- Space tourism companies and individuals, which may provide funding or collaborate on developing tourist-related infrastructure on Mars.
+- Astronauts and other personnel involved in the mission, who will play a crucial role in its success.
+
+It's worth noting that the project sponsors/stakeholders for a Mars mission could change over time as the mission evolves, and new opportunities and challenges emerge. Effective stakeholder management will be critical to the success of the mission, as it will ensure that all stakeholders are aligned on goals, objectives, and expectations.
+
+|
+| *Incremental implementation strategy*
+a|
+
+The incremental implementation strategy for SpaceX getting a rocket to Mars:
+
+- R&D to design and validate rocket and technology.
+- Prototype and testing to ensure reliability and cost-effectiveness.
+- Launch preparation with regulatory approval, site testing and personnel training.
+- Launch and initial operations, landing and setting up infrastructure.
+- Expansion and commercialization through resource extraction and space tourism.
+- Continual improvement through feedback and lessons learned.
+
+Fail fast approach: By rapidly prototyping and iteratively improving the rocket design, SpaceX can identify and address potential issues early on and minimize the risk of a costly failure later in the process. This approach allows SpaceX to make adjustments and improvements quickly, reducing the overall cost and time required to achieve a successful mission to Mars.
+
+| Outline how we will deliver the solution incrementally so that we do not end up with a single big deployment at the end of the project (and then find out we are blocked), e.g Features will be delivered to Production Feature-by-Feature weekly.
+| *Sequence and dependencies*
+a| 
+
+The sequence and dependencies of SpaceX's mission to Mars:
+
+1. R&D - Design and validate rocket, tech, dependent on funding, personnel and resources.
+1. Prototype and Testing - Build prototypes, optimize design, dependent on R&D and access to facilities and personnel.
+1. Launch Preparation - Obtain approval, prepare site and train personnel, dependent on prototype testing.
+1. Launch and Initial Ops - Launch and land on Mars, set up infrastructure, dependent on launch preparation.
+1. Expansion and Commercialization - Explore new opportunities, build and expand on Mars, dependent on initial ops.
+1. Continual Improvement - Monitor and optimize performance, continually improve technology and infrastructure, dependent on expansion.
+
+| Outline the logic and sequence of work and dependencies. For example, "enabler" features may need to be done before functional features.
+| *Milestones or checkpoints*
+a| 
+
+Checkpoints for SpaceX's mission to Mars:
+
+1. Completion of R&D phase
+1. Successful Prototype Testing
+1. Regulatory Approval
+1. Launch Site Preparation
+1. Launch of Rocket
+1. Establishment of Initial Ops
+1. First Commercial Activity
+1. Expansion of Operations
+1. Optimization of Performance
+1. Continual Improvement
+
+|Outline what milestones and checkpoints there will be. E.g. a kick-off meeting, weekly checkpoint meetings to update on progress and demo new functionality.
+
+| *Permissions and Accounts*
+a| 
+| Outline what permissions and accounts will be need to access the system, such as accounts to deploy the solution, or testing.
+
+| *Other notes and comments*
+a| 
+
+In addition, the following should be taken into consideration for the mission to Mars. They can help to ensure that the project is well-prepared to address the various challenges and opportunities that may arise, and that it remains focused on its goals and objectives.
+
+- Technical Challenges: The development of a reliable and cost-effective rocket for deep space missions poses significant technical challenges.
+- Funding and Resource Constraints: The project requires significant funding and resources, and may be subject to constraints such as budget and staffing limitations.
+- Regulatory Environment: The project may be subject to a complex and evolving regulatory environment, including national and international regulations governing space activities.
+- Market Demand: The demand for commercial space activities, such as resource extraction or space tourism, is largely untested and may be subject to change.
+- Competition: There may be significant competition from other private and public entities seeking to develop capabilities for deep space missions.
+- Mission Goals: The mission goals and objectives should be clearly defined and aligned with the overall vision and strategy of SpaceX.
+- Risk Management: The project should include a robust risk management plan to address potential challenges and minimize the impact of setbacks.
+- Collaboration and Partnerships: The project may benefit from collaboration and partnerships with other organizations, such as universities, research institutions, and other companies, to leverage their expertise and resources.
+
+| Any additional miscellaneous Information relevant to LPM
+3+| *Approval*
+
+| *Go or no-go*
+| Go
+|
+
+| *Approved by*
+| Elon Musk
+|
+
+| *Approved date*
+| 1st January 2025
+|
+
+|===
