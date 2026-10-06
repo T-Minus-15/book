@@ -1,3 +1,8 @@
+// Image paths are relative to book.adoc. On GitHub this file renders on its own, so look one folder up.
+ifdef::env-github[]
+:imagesdir: ..
+endif::[]
+
 == Let's get Agile!
 
 === Why do we need to be Agile?
