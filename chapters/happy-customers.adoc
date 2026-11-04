@@ -15,7 +15,7 @@ Start by treating customers as co-creators, not just consumers. Bring them into 
 
 Customer trust builds gradually but breaks instantly. Every interaction, every release, every support ticket is either depositing into or withdrawing from your trust bank. A single terrible experience can erase months of good ones. The strongest customer relationships survive mistakes because you've built enough trust to buy you time to fix things.
 
-This isn't fluffy, feel-good advice. It's hardened business wisdom backed by data. Companies that excel at customer experience outperform their competitors in revenue growth by 4-8% according to Forrester Research. Want sustainable growth? Put customer delight at the center of everything.
+This isn't fluffy, feel-good advice. It's hardened business wisdom backed by data. Companies that excel at customer experience outperform their competitors in revenue growth by 4-8% according to Forrester Research. Want sustainable growth? Put customer delight at the centre of everything.
 
 === Get Feedback That Actually Matters
 
@@ -25,7 +25,7 @@ Here's what works:
 
 * **In-app feedback tools**: Place simple feedback mechanisms where users actually experience problems. The classic NPS question ("How likely are you to recommend...") barely scratches the surface. Add targeted microsurveys at key moments - "How easy was it to complete this task?" after specific workflows gives you actionable data.
 
-* **Regular user interviews**: Talk to 3-5 actual users every sprint. Not stakeholders, not product owners - real end users. Schedule 30-minute video calls and watch them use your product. Don't ask what features they want; observe where they struggle. One hour of watching beats 20 hours of speculation about user behavior.
+* **Regular user interviews**: Talk to 3-5 actual users every sprint. Not stakeholders, not product owners - real end users. Schedule 30-minute video calls and watch them use your product. Don't ask what features they want; observe where they struggle. One hour of watching beats 20 hours of speculation about user behaviour.
 
 * **Telemetry that tells stories**: Track not just page views but completion rates of key user journeys. Where do users abandon processes? Which features gather dust? Let data highlight the difference between what users say they want and what they actually use.
 
@@ -42,7 +42,7 @@ The "build it and forget it" approach is the fastest way to destroy your custome
 
 The T-Minus-15 approach to post-launch support is simple: create a lean process for addressing small changes quickly, reserve formal change control for significant modifications, and maintain a continuous improvement mindset.
 
-If you're on the client side, push for this model - you'll get far more responsive service. If you're on the delivery side, offer it proactively - you'll earn long-term loyalty when clients see you're focused on solving their problems, not maximizing billable hours fighting over scope.
+If you're on the client side, push for this model - you'll get far more responsive service. If you're on the delivery side, offer it proactively - you'll earn long-term loyalty when clients see you're focused on solving their problems, not maximising billable hours fighting over scope.
 
 **Keep the band together when possible**. The team that built the solution should ideally maintain it. They know where the bodies are buried, understand the design decisions, and don't need months to get up to speed. This continuity pays massive dividends in responsiveness and quality.
 

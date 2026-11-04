@@ -1,4 +1,4 @@
-== TEST: Raising the Bar - The Pursuit of Quality in Agile Projects
+== TEST: Raising the Bar - The Pursuit of Quality
 
 We want to ensure that what we deliver to our customers is something we can be proud of, it's not just good - it's awesome! We therefore need to ensure that each-and-every Story is cross-referenced and checked with 1 or more test cases.
 
@@ -26,9 +26,30 @@ A Bug is any defect that causes a User Story to fail its acceptance criteria. Th
 
 An Enhancement is an improvement request that does not block the acceptance of a User Story. Think usability tweaks, minor performance improvements, or visual polish — the stuff that makes good software feel great. If implementing an enhancement takes more than 4 hours, it should be treated as a Feature instead - scoped and planned as such.
 
-A Feature is a new capability — a set of User Stories that introduces fresh functionality or a significant change to existing behavior. Features are the strategic layer: they expand the product’s scope and value. They are planned during sprint planning and oftenrequire coordinated sedign, development, and QA. Any request that breaks new ground - technically or funcionally - is a feature.
+A Feature is a new capability — a set of User Stories that introduces fresh functionality or a significant change to existing behaviour. Features are the strategic layer: they expand the product’s scope and value. They are planned during sprint planning and often require coordinated design, development, and QA. Any request that breaks new ground - technically or functionally - is a feature.
 
 This classification ensures we’re fixing what’s broken, refining what’s working, and delivering what’s next — all without losing sight of why we're building in the first place.
+
+[[bug-cap]]
+=== The Bug Cap
+
+Here's a trap we've all fallen into. The sprint's going well, features are flying out the door, and the bug list is quietly creeping up in the background. "We'll sort those later," we tell ourselves. Then later arrives, and it's a mountain. The whole crew downs tools for a "stabilisation sprint" (or three), morale nosedives, and stakeholders want to know why the shiny new features have stopped coming.
+
+Microsoft learned this the hard way. Its own teams – including the crew behind Azure DevOps (back then, Visual Studio Online){empty}footnote:[Steve Denning, "Microsoft's 16 Keys To Being Agile At Scale", Forbes, 29 October 2015, https://www.forbes.com/sites/stevedenning/2015/10/29/microsofts-sixteen-keys-to-becoming-agile-at-scale/] – used to let bugs pile up until code complete, then spend weeks digging out. They called it a roller coaster of bugs, and it hammered both morale and productivity. Their fix was beautifully simple: the *bug cap*{empty}footnote:[How Microsoft plans with DevOps, https://learn.microsoft.com/en-us/devops/plan/how-microsoft-plans-devops].
+
+[.text-center]
+*Number of engineers × 5 = bug cap*
+
+So a squad of four engineers has a bug cap of 20. If the bug count is over the cap at the end of a sprint, *new feature work stops*. Everyone fixes bugs until the count is back under the cap. No debate, no "just one more feature" – it's a rule agreed before the countdown, not a judgement call made under pressure.
+
+Why does it work? Because it makes paying down bug debt a little-and-often habit rather than a once-a-quarter crisis. It also puts a number on quality that everyone can see. That's why the stand-up asks "How many bugs are there?" every day (see the <<meetings,meetings appendix>>) – the Test Pilot keeps the crew honest, and nobody gets surprised.
+
+A few tips from the launchpad:
+
+* *Count what matters* – open Bugs only (things that fail acceptance criteria), not Enhancements. Polish requests shouldn't stop the line.
+* *Agree the multiplier up front* – Five per engineer is Microsoft's current number; back in 2015 the Visual Studio Online crew ran with four, so even Mission Control has tuned it. A brand-new product might start tighter; a legacy system you've just inherited might need a glide path down to it. Pick a number, write it down and stick to it.
+* *Make it visible* – Put the bug count and the cap on the team dashboard. A line on a chart does more than a stern email ever will.
+* *Let agents help* – AI agents are great at triaging, reproducing and drafting fixes for the backlog of small bugs, so hitting the cap doesn't have to mean a lost sprint.
 
 === Static code analysis
 
@@ -46,9 +67,9 @@ To speed up the repeatable nature of testing to help improve the cadence of rele
 
 Consider security during the security and compliance using automated tools such as Microsoft Security Code Analysis , Secure DevOps Kit for Azure  and SME reviews. Best to find out early with regards to security issues prior to hitting production!
 
-Ensure that you are utilizing all the applicable security options available to you in the cloud hosting environment. For example, ensure you have policies set, firewalls configured, threat protection, encryption, monitoring, auditing and security event management.
+Ensure that you are utilising all the applicable security options available to you in the cloud hosting environment. For example, ensure you have policies set, firewalls configured, threat protection, encryption, monitoring, auditing and security event management.
 
-You can utilize more than a single security step in your release pipeline to ensure better coverage.
+You can utilise more than a single security step in your release pipeline to ensure better coverage.
 
 === Performance testing
 

@@ -12,7 +12,7 @@ T-Minus-15 is your team's playbook, and it nests perfectly within the larger SAF
 
 This isn't some academic exercise – I've battle-tested and refined this approach over 20 years in the trenches. From government agencies like Suffolk Constabulary to global behemoths like IBM and the UN, from scrappy startups to established players like Nissan and Grant Thornton – this process has delivered when it counts.
 
-Why "T-Minus-15"? Think rocket launches. Not one big, terrifying launch that might explode, but a series of controlled, predictable launches at the end of each sprint. Real rocket scientists use "L-Minus" for launch countdowns, but "T-Minus" is more familiar to most of us. The "15" represents our sweet spot for sprint length: 15 working days. Boom – T-Minus-15.
+Why "T-Minus-15"? Think rocket launches. Not one big, terrifying launch that might explode, but a series of controlled, predictable launches at the end of each sprint. Real rocket scientists use "L-Minus" for launch countdowns, but "T-Minus" is more familiar to most of us. The "15" is the countdown itself: fifteen steps from the pad to lift-off, three calls in each of Plan, Prep, Design, Engineer and Test. (We used to say it was a 15-working-day sprint, but delivery has got a lot quicker since then.) Boom – T-Minus-15.
 
 We don't just talk about this stuff – we live it daily on our own projects. Having a crystal-clear process means new team members get up to speed fast, veterans stay aligned, and clients understand exactly what we need from them. Because yes, your clients are team members too, and they've got jobs to do (you'll see).
 

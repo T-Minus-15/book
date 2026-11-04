@@ -1,0 +1,332 @@
+// Image paths are relative to book.adoc. On GitHub this file renders on its own, so look one folder up.
+ifdef::env-github[]
+:imagesdir: ..
+endif::[]
+
+== ASSEMBLE: The Avengers of Agile
+
+Every launch starts with a crew. Before a single line of code gets written, you need to assemble a cross-functional squad – humans and AI agents alike – and hand them a shared flight manual. That manual is built on Agile and DevOps, so this chapter starts with the foundations (why Agile, Scrum, Kanban and DevOps), then turns to the crew itself: the roles, values and skills that make a team elite. In T-Minus-15 we put two stages in front of the familiar Prep > Design > Engineer > Test > Operate loop: ASSEMBLE (once, when the crew forms – this chapter) and PLAN (before every sprint – the next one).
+
+=== Why do we need to be Agile?
+
+Let's face it – every company is a software company now{empty}footnote:[Microsoft CEO Satya Nadella on fuelling 'tech intensity' in the UK, https://news.microsoft.com/en-gb/2018/11/07/microsoft-ceo-satya-nadella-on-fuelling-tech-intensity-in-the-uk/]. Just check out who's running the show: Microsoft, Apple, Amazon, and Google top the market cap charts{empty}footnote:[List of public corporations by market capitalization, https://en.wikipedia.org/wiki/List_of_public_corporations_by_market_capitalization#2019]. But slapping "digital transformation" on a PowerPoint doesn't cut it – just ask GE, Intel, P&G, and HP who dumped truckloads of cash into IT with nothing to show for it.
+
+Survival today requires speed and adaptability. Your competitors are already moving faster than you, whether they're industry giants or the startup that didn't even exist last year. Airbnb, Lyft, Tesla – they're eating established players for breakfast not because they have better funding, but because they ship faster.
+
+Here's the cold, hard truth: the corporate graveyard is filling up fast. According to Yale professor Richard Foster, S&P500 company lifespans have crashed from 67 years in the 1920s to just 15 years today{empty}footnote:[Creative Destruction Whips through Corporate America, https://engageinnovate.files.wordpress.com/2012/03/creative-destruction-whips-through-corporate-america_final2012.pdf]. That's right – the S&P500 replaces a company every two weeks. If you're comfortable with your current pace, congratulations on your upcoming obsolescence. If you're a hungry newcomer, there's never been a better time to take someone's lunch.
+
+.Creative Destruction Whips through Corporate America
+image::images/average-company-lifespan.png[float=center,align=center,link=https://engageinnovate.files.wordpress.com/2012/03/creative-destruction-whips-through-corporate-america_final2012.pdf]
+
+=== Overview of Agile
+
+Forget everything you know about traditional software projects where you plan for six months, build for a year, then pray it works. Agile flips that on its head. It's about business and tech folks collaborating daily to evolve software that actually solves real problems.
+
+Don't waste time drafting perfect blueprints for a building that might need to be a boat by the time you're done. Instead, build something small that works now. Get it in front of real users. Learn from their feedback. Repeat. Those early deliverables aren't just checkboxes – they create clarity for everyone about what really matters and what doesn't.
+
+=== The Agile Manifesto
+
+The Agile Manifesto isn't just some dusty document – it's the battle cry that changed how we build software. At its core, it's about delivering value early and often. Not next year. Not next quarter. Now.
+
+Break work into short sprints and ship something meaningful at the end of each one. Each sprint gives your customers a chance to say "That's not quite what I meant" before you've gone too far down the wrong path. Trust me – they will say that, and it's much better to hear it after two weeks than after two years.
+
+Stop separating "business people" and "tech people" – they need to be in the same room, solving problems together. Give your team the tools, trust, and environment they need to make smart decisions. Then get out of their way.
+
+Meet for 15 minutes every day, standing up (yes, actually standing if you have a physical place of work – it keeps things brief). This isn't a status update for managers; it's team coordination. Each person answers three quick questions: What did I finish yesterday? What am I tackling today? What's blocking me? If someone's stuck, the team jumps in to help after the meeting – not during it.
+
+Your roadmap lives in the product backlog – a prioritised list of Features (what users actually need, not what IT thinks they want). Before each sprint, grab the highest-priority Features your team can realistically finish. And when the sprint ends, sit down for a 30-minute retrospective where you ask: What went well? What didn't? What will we change next time? Then actually make those changes.
+
+The Agile Manifesto{empty}footnote:[Manifesto for Agile Software Development, http://agilemanifesto.org/] declares following values: 
+
+[.small-list]
+--
+. Individuals and Interactions over processes and tools
+. Working Software over comprehensive documentation
+. Customer Collaboration over contract negotiation
+. Responding to Change over following a plan
+--
+
+The Agile Manifesto Principles{empty}footnote:[Agile Manifesto Principles, http://agilemanifesto.org/principles.html] these values are built on are:
+
+[.small-list]
+--
+. Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+. Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
+. Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
+. Business people and developers must work together daily throughout the project.
+. Build projects around motivated individuals. 
+. Give them the environment and support they need, and trust them to get the job done.
+. The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
+. Working software is the primary measure of progress.
+. Agile processes promote sustainable development. 
+. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+. Continuous attention to technical excellence and good design enhances agility.
+. Simplicity--the art of maximising the amount of work not done--is essential.
+. The best architectures, requirements, and designs emerge from self-organising teams.
+. At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behaviour accordingly.
+--
+
+However, within a larger Enterprise SAFe® believes that “best architectures, requirements, and designs” do not necessarily  emerge from self-organising teams in contrast to the Agile principles. For an Enterprise, you need to have a common design principle across all teams and that is why this function is therefore proposed to be driven from outside of the team by Enterprise, Solution, and System Architects/Engineers.
+
+=== The Pro's and Con's of Agile
+
+Let's be real – Agile isn't fairy dust you sprinkle on a project to make it magically successful. It has trade-offs, and in some cases (like building nuclear reactors or medical devices), you might want something more rigidly defined. Here's the unvarnished truth:
+
+.The No-BS Guide to Agile Trade-offs
+|===
+|What You Gain|What You Give Up
+
+| Skip the 3-month design phase and start building immediately. Change direction when needed without massive rewrites.
+| You won't have a 200-page spec document. Some stakeholders get nervous without this security blanket.
+
+| Get working software in front of users in weeks, not years. See their reactions and pivot before you've sunk too much cost.
+| The first version won't match the picture in everyone's head. Some folks will panic when reality meets expectations.
+
+| Find and fix bugs continuously while the code is fresh in developers' minds.
+| Perfect, bug-free software is a myth anyway, but Agile makes this more visible. Get comfortable with continuous improvement.
+|===
+
+=== Agility for the Enterprise
+
+So you've got a few Agile teams humming along nicely. Great! But what happens when you've got 50 teams across different departments, all working on their own priorities? It's like having multiple SpaceX launch pads where each team thinks their mission is the most important. Without coordination, you end up with expensive collisions and missed opportunities.
+
+This is where SAFe® (Scaled Agile Framework) comes to the rescue. Think of it as Mission Control for your entire enterprise – a way to orchestrate multiple teams without killing their agility.
+
+**The Portfolio Level: Your Mission Planning**
+
+At the top, you've got your portfolio of epics. These are your big, ambitious missions – like "land humans on Mars" or "launch a satellite constellation." In business terms, this might be "enter the Chinese market" or "build our next-generation platform."
+
+Each epic is massive enough that it needs multiple teams working together over several months. You can't just hand this to one scrum team and say "go for it." It's too big, too complex, and touches too many parts of the organisation.
+
+**The Program Level: Your Launch Sequences**
+
+Each epic gets broken down into features and enablers that fit into program increments – think of these as your coordinated launch sequences. Just like SpaceX doesn't launch 20 rockets randomly, you don't release features randomly. Everything is synchronised for maximum impact.
+
+Program increments typically run 8-12 weeks with multiple teams working in parallel. At the end, you've delivered real business value – not just a collection of random features that may or may not work together.
+
+The magic happens through something called an Agile Release Train. This is your coordinated team of teams, all working toward the same program objectives. They plan together, integrate together, and demo their results together. No more silos.
+
+**The Team Level: Your Ground Crews**
+
+At the bottom, you've still got your scrum teams doing what they do best – delivering working software in short sprints. But now they're not flying blind. They know how their work fits into the bigger mission, and they're coordinating with other teams who are building complementary pieces.
+
+**Beyond Software Development**
+
+Here's what's really powerful about SAFe® – it's not just for software teams. You can use this same approach for marketing campaigns, business process improvements, or any complex initiative that requires multiple departments working together.
+
+Suddenly, your entire innovation pipeline – from idea to delivery – operates with the same rhythm and transparency. Finance knows when to expect returns. Marketing knows when features will be ready. Operations knows when to scale up infrastructure.
+
+**The End of Business vs. IT Wars**
+
+When done right, SAFe® eliminates the traditional friction between business and IT. Business folks aren't writing detailed requirements documents that are obsolete before the ink dries. IT isn't building features that miss the mark because they misunderstood the need.
+
+Instead, you've got business and technical people collaborating daily on the same program increment goals. Everyone's aligned, everyone's accountable, and everyone's working toward the same launch date.
+
+For more details on SAFe®, check out www.scaledagile.com – but remember, like any powerful framework, it's not magic. It requires discipline, commitment, and strong leadership to make it work.
+
+=== Scrum
+
+Getting back to the team again. Agile software development methodology covers a range of specific practices such as Kanban, Extreme Programming, Lean software development and Scrum for example.
+Scrum gives some additional practices to our Agile method ideally suited to software development teams of around 5 to 10 team members utilising practices such as sprints and daily stand-ups (or daily scrums). It uses iterative sprints of 2 to 4-weeks where a team takes a set of requirements (the sprint backlog taken from a larger product backlog).
+
+.An overview of Scrum
+image::images/scrum.png[float=center,align=center]
+
+=== Kanban vs Scrum
+
+Whilst Scrum is organised into Sprints of a few weeks, Kanban is more about seeing progression in work done. We use Kanban to see progression of Stories, Features and Epics. With Kanban, the  focus is more on the flow of workload. Some projects are better suited to Kanban if they are very iterative. For example, quite often Power BI projects I have worked on have better suited Kanban where there is a lot of back and forth with a stakeholder on getting a report “just right” with change being the word, and it's therefore not always possible to organise a “sprints” worth of requirements because of the nature of the work. In addition, this work is often carried out by a single person and doesn't warrant the overhead of the various scrum roles.
+
+Alternatively, if you want that member to be part of a team (perhaps delivering a different Feature or set of Stories to the rest of the team, but working in the same sprint) you could define a rather loose Story of “I want a certain report” with tasks underneath that move across more like a Kanban board. Our daily stand-up boards are essentially Kanban boards after all, just we have Stories.
+
+Although the majority of the methodology is geared towards Scrum, consider that there may be instances where just running Kanban could be better suited for some workloads.
+
+=== So what about DevOps?
+
+With fear of jumping on a using a portmanteau trend (a shortening a number of words and linking them together such as done with DevOps, SecOps, DevSecOps, NetOps, NetSecOps, DBAOps, WinOps, and DataOps etc.) let’s cover what the principles of DevOps are (we’ll then leave it at the discretion of the reader if further analysis of these terms is required). According to Wikipedia, DevOps is a set of software development practices that combines software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.footnote:[DevOps, https://en.wikipedia.org/wiki/DevOps] 
+
+=== Agile vs DevOps
+
+Whilst Agile is intended to close the gap between the customers (business) and the development team, DevOps aims to close the gap between the development team and operations that typically operate in siloes. You can therefore see how utilising both can bring about operational effectiveness of the idea to value for the business. And likewise to Agile, DevOps also requires a cultural change within the enterprise.
+
+.Here we can see a nice summary of where Agile (Scrum) and DevOps operate. Thanks to my son Isaac for his representation of business, developers and IT operators! :-)
+image::images/agile-vs-devops.png[float=center,align=center]
+
+=== DevOps Principles
+
+DevOps has the following 7 key principles{empty}footnote:[7 Key Principles for a Successful DevOps Culture, https://www.cmswire.com/information-management/7-key-principles-for-a-successful-devops-culture/] to follow:
+
+[.small-list]
+--
+. Foster a collaborative environment
+. Impose end-to-end responsibility
+. Encourage continuous improvement
+. Automate (almost) everything
+. Focus on the customers’ needs
+. Embrace failure, and learn from it
+. Unite teams – and expertise
+--
+
+DevOps has the principle of continuous improvement, and as such has a continuous lifecycle as follows:
+
+.The DevOps loop at the heart of the countdown: Prep > Design > Engineer > Test > Operate (ASSEMBLE and PLAN sit in front of it).
+image::images/infinity-lifecycle-book.png[float=center,align=center]
+
+It should be noted that these individual activities can be carried out within a sprint focused on that activity, as well as during other sprints. The naming convention of these activities has an associated role (see the A-Team). In addition, we have lifecycles for all our work items, whether they are the Epic itself, or its’ Capabilities, Features, Tasks, Improvements or Bugs.
+
+=== DevOps: Prep
+
+When we first meet the client, we go into a discovery stage. This is our time to start building the backlog. We talk more about this in the Customer meeting section. This forms our requirements. The requirements will be iteratively amended, improved and re-prioritised throughout the project.
+
+Generally work items in this stage are the responsibility of the prepper (an analyst) to further define. We may have Features in this stage that have been loosely declared as being desirable, and it is the analysts job to put some meet on the bones and create child user stories (and maybe some tasks) to these Features.
+
+During this stage we are generally working in our requirements capturing tool (such as Microsoft DevOps) and will form the majority of the workload in the early Sprints (or before the Sprints).
+
+=== DevOps: Design
+
+Once we have client approval, items can move into the design stage. The design includes activities such as adding further clarity to the backlog, creating information architecture and wireframes, as well as graphic designs.
+
+Work items in this stage are generally the responsibility of the Technical Designer and/or UX/UI Designer. In this stage we might create wireframes, data dictionaries, workflows, taxonomy and technical design documentation (remember we try and keep documentation down so ideally no big lengthy technical design documents!). As we’ll talk about later, an important aspect of this methodology is that the “Test Pilots” (QA) are involved early on and during this stage they can be starting to create the Test Cases for the Epic.
+
+While we’re on the subject of design. Be cautious getting all your screens wireframed up and then each individually designed. My suggestion is to spend the time on creating wireframes yes, but create a common design language document rather than try and then “colour in” each and every screen. When changes come, and they will come, you will be in a losing battle to keep the development, graphic designs, and wireframes all in sync.
+
+With regards to the artefacts that come out of the design stage,  try and keep them nicely coupled to the Features and User Stories. Putting these assets into a tool such as InVision is not only a great way for developers to grab CSS and HTML code from the designs, but it’s also possible to put “notes” on the screens that link to the relevant User Story. For example, you may have a “Delete” button next to a record in the wireframes that has a note to the User Story “I need to be able to delete a record”. Likewise, the User Story can have a link back to the relevant wireframe in InVision.
+
+.Make sure your wireframes are linked to your user stories (for example, if you're using Microsoft DevOps, link directly from the design tool such as InVision to the Story in Microsoft DevOps)
+image::images/designs.png[float=center,align=center]
+
+Remember though, “working software over comprehensive documentation” from our Agile Manifesto, so don’t go to unnecessary levels of documentation that won’t be read anyway – you’ve worked with software developers right?! For example, don’t spend weeks creating mock-ups for each and every page if they are going to be time consuming, but instead create wireframes of the various pages (to save time) and instead create a set of brand guidelines to follow. That way if the design styles need to be changed, we don’t need to retrospectively go back and amend everything. Likewise, our designs and actual delivery won’t get out of sync and cause confusion about what should actual be delivered.
+
+During this stage we are generally working in our requirements capturing tool (Microsoft DevOps) and our design tool (such as InVision) and will be the majority of the work involved in Sprint 0 (zero).
+
+=== DevOps: Engineer
+
+OK, we’re getting to the fun stuff. This is where actual development (engineering of both architectural and software parts) of the solution is carried out. By this stage there should be sufficient clarity in the backlog items to commence development. User Stories will have acceptance criteria populated, sub-tasks created and alike – we’re ready to rock!
+
+Following the principles of “infrastructure-as-code” we’re building not just the software solution but a “coded” environment. That is, even the infrastructure is written down in the form of templates and put into source control (the server configuration, or even better, the platform service definitions). These templates will follow the application lifecycle management that code follows – no fiddling with settings for this and that in production environments in other words! Hands-off our production environments cowboys! We’ll talk more about this in section 11.3 Infrastructure-as-code.
+
+Work items in this stage are generally the responsibility of the Development Engineer and Operations Engineer.
+
+=== DevOps: Test
+
+OK, we’ve engineered the solution. It’s ready to deploy to production right? Not so fast cowboy! One of our values is to deliver high-quality high-value (HQHV), so we need to ensure we are indeed doing this - not just quantity of lines of code.
+
+During this stage the solution is deployed to the Test environment (QA) with a release note sent to the Test Pilot. This lets them know the Features, User Stories, Bug fixes and Improvements that are included in this release. As a team you can determine at which point you want to release to Test, but don’t leave it to the last Friday in the Sprint! For example, you may decide the pipeline should release to Test every Tuesday and Thursday (or just “on demand”).
+
+From the deployment to Test, the Test Pilot will identify Bugs and Improvements to improve the stability and quality of the solution being delivered. We’ll talk about the <<bug-cap,Bug Cap>> in the TEST chapter, which is a way to ensure that this stage doesn’t become overloaded with an insurmountable quantity of bugs to fix.
+
+During a project of over 3 or 4 engineering sprints, you may want a dedicated Test sprint to improve the stability of the solution. SAFe® has the concept of IP sprints (Innovation and Planning{empty}footnote:[Innovation and Planning Sprints, https://www.scaledagileframework.com/innovation-and-planning-iteration/]) that follow a similar principle of allow the team to carry out improvements, training, and a general buffer for the project.
+
+=== DevOps: Operate
+
+Following the principles of SAFe®, we make deployments to production “on demand”. We want to deploy to production little-and-often rather than “big bang” launches. This reduces the stress on the team on doing deployments because they are used to doing them frequently with each deployment being less of a code change. In addition, you can implement A-B deployments such as using deployment slots in Azure to allow for gradual rollouts of changes.
+
+Whilst making deployments is great, think about the adoption of the value you are delivering to the business as well. Do they know what has been deployed? Using Release Notes that includes details on Features, Bug fixes and Improvements, in your release pipeline is a great way to ensure the business are aware of the great value your team are delivering. Do the business need training? Is there a communication strategy to inform the wider audience of changes? Are we learning from the deployment feeding back into our continuous improvement?
+
+
+=== Assembling a Cross-Functional Squad That Delivers Results
+
+Principles are all well and good, but principles don't ship software – people (and their AI sidekicks) do. Time to assemble the crew.
+
+In general, we need to ensure we have coverage of every stage of the countdown (Plan > Prep > Design > Engineer > Test > Operate), therefore, the project team should look like the following:
+
+*	**Planner**: The planner will quite possibly work across a number of different sprint teams. The scrum master should be tracking budgets, timescales and unblock impediments. They also liaise with the product owner.
+*	**Prepper**: This is the analyst who will liaise with the customer, populate the initial product backlog, and ideally be able be able to put together wireframes, information architecture, formulate the backlog in a typical project. They will also be hands on during the project delivery and help ensure the quality of the solution delivered that it matches the requirements.
+*	**Designer**: Dependent on the stage of the project, and type of project, you may need Solution Designers (Architects), UX/UI Designers, Data Designers (Architects/Scientists). It’s quite possible that in a smaller team the Solution Designer also has the skillset to act as the Prepper as well.
+*	**Engineer**: This person will be responsible for implementing and building the solution according to the product backlog. You will have Dev Engineers (or software engineers) as well as Op Engineers (operations) and Release Engineers, the latter may or may not be fulltime on the project. You could also categorise your engineers as Junior and Senior/Lead. The release engineer is responsible for maintenance of the branches, ensuring successful build and releases and creating release notes.
+*	**Test pilot**: They should be involved throughout the delivery of the project. They put together the test plans from the product backlog and carry out testing (manual and automated if possible) of features as they are delivered. On average you should have at least 1 test pilot full time for every 4 Dev Engineers.
+
+In addition, we should also have the following role that interacts with the team:
+
+*	**Product owner**: This is normally the project stakeholder (client side). They are responsible for prioritising the work and adding clarity when needed. For more information on this role, see: https://www.scrum.org/resources/what-is-a-product-owner
+
+For small teams, you may have to have one person covering multiple roles. Just ensure that everyone has clarity of what their role is and areas of responsibility. One of the first roles to go is often the Test pilot. However, if we want to ensure you are delivering quality value to the business, don’t underestimate the importance of thorough testing – engineers are not known for making great testers! If I can’t convince you otherwise, at very least, ensure that you are peer reviewing/testing and not getting engineers to test their own deliverables. Engineers will instinctively only think to test the routines they know they have written the code to handle. Don’t blame them … it’s human nature – just ensure someone else is testing their code!
+
+=== Team values
+
+The T-Minus-15 methodology encourages the following values within a team:
+
+// Review these - e.g. our values in Karma
+
+- *We are passionate*: We care about the work we do, love what we do. we should be passionate about the work that we are responsible for.
+- *We are creative*: We build things, tangible things, and make things happen as well as having an entrepreneurial mindset.
+- *We are free*: We think outside the box; we are independent of others when needed.
+- *We are agile*: We are ready for changes and adapt to the task at hand.
+- *We are accountable*: We take ownership of things rather than leaving to others.
+- *We are knowledgeable*: We are expert in our chosen fields that others come to for guidance and leadership.
+- *We are transparent*: We share knowledge openly with others.
+- *We are together*: We collaborate and work as one, part of the machine, each playing our role.
+- *We are doers*: We are focused, productive and get things done thoroughly to high standard.
+- *We are strong*: We have the strength of character to overcome adversity for ourselves and our team. 
+
+
+Engineers, don’t just “throw” functionality over the fence to the Test Pilot(s). Test Pilots, don’t just feedback “it’s broken” without giving clarity to what exactly went wrong with clear steps to reproduce and perhaps even doing some research into what might have caused the failure. Preppers, make sure you have a nicely organised backlog with clear requirements and acceptance criteria. Scrum masters, don’t just play the “management” role with a pointy stick to make your team work faster - get involved into resolving blocking points and reducing unnecessary workload for the team. Product owners, turn-up to meetings, help clarify your needs, help prioritise workload and don’t just say “I MUST HAVE everything”.
+
+As a manager, try to think creatively about how to instil these values in your team. Lead by example and demonstrate these values personally: Be transparent with your team and the customer, be accountable, recognise success in your team and award accordingly (Amazon vouchers, words of recognition and encouragement, bonuses, whatever works for your team), get stuck in and be part of solving problems, and ultimately, ensure the team are delivering high quality value to the business!
+
+[[recruit-the-best]]
+=== Recruit the best
+
+When recruiting for this A-Team with shared values, remember there is a tide of technology and best practices, so look for place an importance of aptitude to learn rather over skills that can be learnt. But know where your team has a skills deficit and recruit to improve this where possible. You will need to determine:
+
+*	Do they have aptitude to learn new skills?
+*	Do they bring skills we need to the team?
+*	Do they share our values?
+*	What are they going to need to learn?
+*	Will they fit well into the team?
+*	Does the role match what they are looking for?
+*	Can they hit the floor running (once they’ve read this book of course!)
+*	Are they better than me in a certain area? *
+
+* This was something I always look for when recruiting, I personally enjoy working with people where I learn something from rather than feel threatened that they are better than me at something.
+
+> Aptitude over knowledge
+
+During the interview process, utilise strategies that look for aptitude over skills. For example, you can implement online aptitude tests or play 20 questions during the interview process.
+
+To play “20 questions”, let them know you will be choosing an object on a your phone that they will hold up to their head and they will need to guess the object. They can ask you any question that you can answer “yes”, “no” or “maybe” to try and work out what it is. Rather than 20 questions, they actually get 5-minutes. Let them know even the interviewers will be having a go (it’s only fair if you make them sit there with a phone to their forehead!).
+
+Although unusual in an interview setting - it’s a great way to see how they react to unusual situations. It’s also very applicable to a good developer that needs to be able to narrow down the range of possible causes for a bug, or an analyst that is trying to work out exactly what requirements a customer has.
+
+[[skills-for-the-team]]
+=== Skills for the Team
+
+Although some scrum teams aspire to have all team members be able to pick-up and task (whether that be development, testing or operational tasks), we still believe there is value is the team having specialities and experience in particular areas. Having said that, there some benefit in having a team with a T-shaped skill cross-section. That is, where there is depth in an area with the ability to collaborate across disciplines with team members who have deep knowledge in another area other than their own.
+
+To facilitate upskilling the team, it would be good practice to carry out a skills assessment and from this look to implement a training program.
+
+=== Remote working
+
+Many teams now work remotely with geographically dispersed which can be challenging if the team are not collaborating effectively across time zones, cultures, and languages. To build a GREAT team, ensure the following are adopted in addition to the other ways of working identified in the T-MINUS-15 methodology.
+
+**Time zone**s: Get your team working in the same time zone. Best to do this from the start of building your team rather than trying to transition to this. There’s no more of a “blocker” than team members who aren’t available for that ad-hoc call and having to put work items off until the next day.
+
+**Daily stand-up attendance**: Don’t try to split the daily stand-up for members of the team in different time zones. Keep to one daily stand-up and insist on everyone attending. Referring to the working hours above, ensure that it is near the start of everyone’s day.
+
+**Full-time staff**: Always opt for full-time staff rather than multiple part time staff when possible. For the reasons above, you want people to be available for those ad hoc calls.
+
+**Video conferencing**: When having conferences, make use of video and good software. We use Microsoft Teams which is great for conferencing with the ability to create specific Team areas to store documentation and links relevant to that project. You can also setup conference calls with video and recording capabilities. But there are plenty of alternatives out there as well such as Slack.
+
+**English**: If you’re reading this, I’m going to assume that the language of your business is English. Therefore, even if you team members first language isn’t English, all company meetings should be help in English – you’ll be impressed by how quickly their English improves with team members where English is not their first language.
+
+**Geographical location**: In today’s age, with a “all companies being a software company” and the tools available to us, it’s certainly possible for all staff members to work from home. However, there is still a valid argument for your A-Team to be located in a common location. My preference would be a location that offers good value for money, but also where you can hop on a plane and be sat next to them after a few hours flight. This also has the benefit of a similar time zone that is only a few hours different for everyone working in the same time zone as mentioned above. Certainly, if they at least work in the same city and can meet up several times per week this has benefits of improved collaboration.
+
+**Ad-hoc conferencin**g (and innovation hour): If team members are on the same project, then encourage just opening ad-hoc conferencing where they can keep the line open and re-create that “same office” feel. This helps team bonding, improves members English if not their first language. I’ve worked on projects where we kept this open all day, cracked on some tunes, had small talk and ultimately very effective in getting things done.
+
+**Meet-ups**: Ensure that the remote team are meeting up at least yearly as budget allows. Again, this facilitates team bonding. 
+
+=== The Power of Collaboration
+
+Leverage collaboration tools that integrate with your toolchain. For Microsoft DevOps, the natural choice would be Microsoft Teams.
+
+Then invite your customer to participate within the Team! There is very little reason to need a private team chat for a project that a client is not privy too (Microsoft Teams now allows for private channels).
+
+If you still think you need a collaboration group (team) with the client not involved, then your demonstrating that you quite likely do not believe in what value you can offer to the client. Resolve this first. You should be confident that all in the team can communicate with the client – do not be the bottleneck.
+
+=== Positive Karma
+
+Positive karma is a concept that refers to the idea that good deeds and positive actions will bring about good things in return. In the context of team building, positive karma can be thought of as a way to build trust and respect among team members.
+
+In our team, we recognise others’ help and success by awarding karma points to each other. These points can be redeemed for hardware (screens, headsets, etc.) or days off, innovation days working on open source projects, or meals out with colleagues.
+
+We review these karma points every week in our team meeting to celebrate successes and recognise contributions. This system has helped us build a culture of collaboration and support that has made us more productive and effective.
+

@@ -22,11 +22,9 @@ include::sponsors.adoc[]
 :sectnums:
 include::chapters/buckle-up.adoc[]
 
-include::chapters/lets-get-agile.adoc[]
+include::chapters/assemble.adoc[]
 
-include::chapters/so-what-about-devops.adoc[]
-
-include::chapters/the-avengers-of-agile.adoc[]
+include::chapters/plan.adoc[]
 
 include::chapters/decoding-the-clients-wants-and-needs.adoc[]
 

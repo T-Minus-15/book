@@ -17,14 +17,15 @@ It's important to ensure we're all on the same page to:
 
 === Getting the lowdown
 
-In order to understand the clients requirements fully, don't be afraid to ask the client for more information. It's always better to clarify requirements upfront than to assume and risk making a mistake. The ability to keep asking questions until you fully understand the requirement is an important skill (and something we talk about later in hiring team members).
+In order to understand the clients requirements fully, don't be afraid to ask the client for more information. It's always better to clarify requirements upfront than to assume and risk making a mistake. The ability to keep asking questions until you fully understand the requirement is an important skill (and something we looked for back in <<recruit-the-best>>).
 
 In order to keep on track with (sometimes changing) client requirements, it's important to work as a team with the client (stakeholders). They are an important member of the team and help ensure everyone is on the same page. This can include regular check-ins and status updates to ensure that requirements are being met and everyone is aligned.
 
-Build a backlog: A backlog is a prioritized list of requirements that should always reflect your current understanding of what the client wants. It's important to keep the backlog up-to-date, so everyone involved has access to the same information. We cover more about backlogs later in the book.
+Build a backlog: A backlog is a prioritised list of requirements that should always reflect your current understanding of what the client wants. It's important to keep the backlog up-to-date, so everyone involved has access to the same information. We cover more about backlogs later in the book.
 
 Get visual: If possible (and applicable) create UX/UI wireframes and walk-throughs from which revisions of requirements can be given. The more senior the stakeholder - the more they like a pretty picture! However, using UX/UI tools is a great way to iterate quickly before even writing a line of code.
 
+[[the-product-backlog]]
 === The Product Backlog
 
 The Product Backlog is our single list of requirements for the business. It is a hierarchical list of Epics, Features, Tasks, Bugs and Improvements.
@@ -32,7 +33,7 @@ The Product Backlog is our single list of requirements for the business. It is a
 .Hierarchical structure of our product backlog. NB Risks and issues are held separately outside the hierarchy, but everything else should have a parent/child relationship.
 image::images/product-backlog.png[float=center,align=center]
 
-These items can be prioritized into an order of delivery where the User Stories and above should only be updated with the consent of the Product Owner. The Scrum team will use the currency of Story Points to estimate the workload for items. We’ll cover Story Points later, but in essence they are a unit of prescribed varying sizes (a modified Fibonacci sequence) to help the team estimate work sizes. These estimates also help the Product Owner prioritize work items.
+These items can be prioritised into an order of delivery where the User Stories and above should only be updated with the consent of the Product Owner. The Scrum team will use the currency of Story Points to estimate the workload for items. We covered Story Points back in PLAN (see <<story-point-estimation>>), but in essence they are a unit of prescribed varying sizes (a modified Fibonacci sequence) to help the team estimate work sizes. These estimates also help the Product Owner prioritise work items.
 
 We also have the concept of “Enablers” for Epics, Features and Stories. Enablers are way of putting architectural, infrastructure, code refactoring, research, prototyping, compliance, and other work that users may regard as “invisible” but are important in delivering HVHQ solutions. To read more about enablers with regards to SAFe® please see:
 
@@ -96,7 +97,7 @@ While we make the conceptual distinction between bugs and enhancements, we shoul
 
 ==== Severity Classification
 
-Bugs are classified by severity to help with prioritization:
+Bugs are classified by severity to help with prioritisation:
 
 * *Critical*: Prevents the core functionality of the product from working. These must be fixed immediately.
 * *Major*: Significantly impacts user experience but doesn't prevent core functionality. These should be fixed before release.
@@ -131,7 +132,7 @@ To see the Bug and Enhancement metadata please see Appendix.
 
 Personas are a powerful tool in understanding client requirements. While traditionally defined as fictional characters representing user groups, we have a strong preference for basing our personas on real people whenever possible.
 
-A persona represents the client's target audience and helps you understand their needs, goals, and motivations. By understanding who the product is for, you can better grasp which requirements are most important and prioritize accordingly. Creating personas allows you to empathize with users and design solutions that truly meet their needs.
+A persona represents the client's target audience and helps you understand their needs, goals, and motivations. By understanding who the product is for, you can better grasp which requirements are most important and prioritise accordingly. Creating personas allows you to empathise with users and design solutions that truly meet their needs.
 
 By interviewing actual users, we gain invaluable insights into:
 
@@ -149,13 +150,13 @@ _NB There must be a direct correlation between personas and user stories._
 
 === So, what does the client want?
 
-We can categorize client requirements into these broad areas:
+We can categorise client requirements into these broad areas:
 
 - *Business goals*: Understanding the client's business goals, objectives, and processes is critical to delivering a product that meets their needs. This can include understanding their target audience, their pain points, and what they hope to achieve with the product.
-- *Features*: These are the specific functions (or group of requirements) that the product should do. It's important to prioritize these features.
+- *Features*: These are the specific functions (or group of requirements) that the product should do. It's important to prioritise these features.
 - *Non-functional requirements*: This includes requirements like performance, scalability, and security, which define the overall quality of the product.
 
-Enter MoSCoW: MoSCoW is a prioritization technique that categorizes requirements as Must Have, Should Have, Could Have, and Won't Have. This helps to prioritize what's most important to the client and focus on delivering the most essential requirements first. The MoSCoW method ensures that you focus on delivering what's most important to the client, so you can keep them happy and deliver a product that meets their needs.
+Enter MoSCoW: MoSCoW is a prioritisation technique that categorises requirements as Must Have, Should Have, Could Have, and Won't Have. This helps to prioritise what's most important to the client and focus on delivering the most essential requirements first. The MoSCoW method ensures that you focus on delivering what's most important to the client, so you can keep them happy and deliver a product that meets their needs.
 
-In conclusion, understanding client requirements is critical to delivering a successful project. By asking questions, working as a team, building a backlog, using MoSCoW to prioritize, and being aware of the different types of requirements, you can ensure that you deliver a product that meets the client's expectations and exceeds their needs. Remember, happy clients lead to more business and a better reputation, so make sure you understand their requirements and prioritize them accordingly.
+In conclusion, understanding client requirements is critical to delivering a successful project. By asking questions, working as a team, building a backlog, using MoSCoW to prioritise, and being aware of the different types of requirements, you can ensure that you deliver a product that meets the client's expectations and exceeds their needs. Remember, happy clients lead to more business and a better reputation, so make sure you understand their requirements and prioritise them accordingly.
 

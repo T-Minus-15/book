@@ -53,6 +53,6 @@ Carbon dioxide removal issue detected in the life support system due to failure 
 
 | Resolution
 |
-| Adjusting the scrubber's settings to optimize its performance
+| Adjusting the scrubber's settings to optimise its performance
 
 |===

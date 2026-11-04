@@ -1,0 +1,171 @@
+// Image paths are relative to book.adoc. On GitHub this file renders on its own, so look one folder up.
+ifdef::env-github[]
+:imagesdir: ..
+endif::[]
+
+== PLAN: Plotting the Course
+
+The crew is assembled and strapped in. Now, before every sprint, Mission Control runs the same three countdown calls. *Target*: agree the sprint goal – the one thing this launch has to achieve. *Size*: estimate the work against the crew's actual capacity (not the capacity you wish you had). *Schedule*: commit to what genuinely fits inside this launch window, and park the rest for the next one. This chapter covers the tools for making those calls – sprints, estimation, boards and WIP limits – and for watching the gauges once the engines are lit: burndowns, risks and issues. Target lives in Sprints, Size in Story point estimation, and Schedule in the roadmap, Kanban boards and WIP limits.
+
+NOTE: This chapter uses the backlog vocabulary – Epics, Features, Stories and Story Points. New to it? Skim <<the-product-backlog>> in PREP and come back.
+
+=== Sprints
+
+Sprints are your rhythm. They create focus, urgency, and most importantly, a finish line. Every sprint tracks measurable progress through Stories, Tasks, Improvements, and Bugs.
+
+We group sprints into four distinct flavors. Don't get too rigid about these categories – they're guidelines, not handcuffs:
+
+**Prep & Design Sprint** (aka Sprint 0) – This is where you build your launchpad. Capture requirements, sketch wireframes, draft technical designs, and nail down your visual identity. Don't skip this! Teams that dive straight into coding without this foundation end up rebuilding everything twice.
+
+**Engineering Sprints** – These are your bread and butter. Most of your sprints will be here, focusing on building actual working software. Set clear goals for each sprint that deliver tangible value, not just "we worked on the database."
+
+**Testing Sprints** – Every 3-4 engineering sprints, dedicate a sprint to intensive quality work. Wait, aren't we testing all along? Absolutely! But these special sprints let you tackle technical debt, shore up your test automation, and fix those edge cases everyone's been avoiding.
+
+**Operational Sprint** – This is your countdown to liftoff. Documentation, training materials, final performance tweaks – everything needed to go live with confidence happens here. For larger projects, you might have several of these as you release incremental value.
+
+So how long should a sprint be? Here's a confession: we used to say 15 working days was the sweet spot, and plenty of people assumed that's where the name came from. Not any more. Projects keep getting shorter – a crew with AI agents alongside can do in days what used to take weeks – and there's nothing magic about three weeks. The 15 in T-Minus-15 is the countdown itself: fifteen calls from the pad to lift-off. Three for Plan (Target, Size, Schedule), three for Prep (Gather, Define, Prioritise), three for Design (Sketch, Map, Architect), three for Engineer (Build, Review, Merge) and three for Test (Verify, Harden, Accept) – then T-0, and the engines light. Make your sprint as long as your crew needs to work through all fifteen calls without cutting corners, whether that's a fortnight or a few days, and keep it steady so the team builds momentum without burning out.
+
+Yes, you still need a high-level roadmap – stakeholders crave it and it helps align everyone. Create a simple Gantt chart showing your sprint sequence with key milestones like "UAT 1", "UAT 2", "Public Release." But here's the key: ditch the massive "BIG BANG LAUNCH DAY" mentality. Instead, plan for incremental releases where you get real value into production early and often.
+
+Smart teams separate their technical release dates from their marketing announcements. Release to production when the feature is solid, then announce it publicly after you've confirmed everything works in the real world. That gap might be days or weeks – but that buffer can save your reputation when surprises pop up (and they will).
+
+.A simple Gantt Chart of the Epic MVP release. Note that the delivery plan doesn't need to get much more detailed than this.
+image::images/gantt-chart.png[float=center,align=center]
+
+As an aside, in line with SAFe® you may also have an Innovation & Planning (IP) sprint. This sprint _acts as an estimating buffer for meeting PI Objectives and provides dedicated time for innovation, continuing education, PI Planning, and Inspect and Adapt (I&A) events_{empty}footnote:[Innovation & Planning Iteration, https://www.scaledagileframework.com/innovation-and-planning-iteration/]. For more information on IP sprints, see https://www.scaledagileframework.com/innovation-and-planning-iteration/.
+
+=== The Sprint Burndown
+
+The Sprint Burndown Chart gives the team a quick graphical representation of the remaining work left in that sprint. It shows us in a view if the team are on track to deliver the promised functionality by the end of the sprint. The ideal burn down diagonal is shown in white and the actual remaining effort (typically shown in hours) in the green bars.
+
+.Representation of the sprint burndown chart.
+image::images/burndown-chart.png[float=center,align=center]
+
+What does the burndown chart above tell us? Well, it looks like the team had a little bit of a slow start, then picked up speed and got ahead of schedule. They then hit some blockers by the looks of it and started to slip behind schedule, but managed to pick it up with a good effort at the end and completed the sprint. 
+
+If a team is evidently not on track to deliver the effort estimated by the end of the sprint, the scrum master must approach the product owner to discuss the options available, namely:
+
+. To descope functionality (Stories) from this sprint, or,
+. To extend the sprint to allow for time to complete the work.
+
+This can be a difficult conversion and one of the sought after skills of a scrum master to tackle this event head-on. The scrum master (and team) needs to address this head on weekly in the checkpoint meeting (rather than leaving it to the end of the project!). This is the primary reason why the weekly checkpoint meeting is indeed weekly (and not just at the end/start of sprints).
+
+=== Risks & Issues
+
+We track risks and issues throughout the project lifecycle. The Planner typically takes ownership of tracking these items, updating the team during daily stand-ups until they are closed. 
+
+Only risks and issues with significant impact or those requiring stakeholder intervention should be raised during the weekly T-Minus-15 Checkpoint meeting. We shouldn't burden stakeholders with routine problems the team can handle internally. This focused approach ensures stakeholders can concentrate on strategic matters while the team maintains ownership of tactical challenges.
+
+This filtering process ensures that stakeholder time is respected while still providing them with the information they need to make important decisions or remove obstacles beyond the team's control.
+
+Let's take a closer look at the difference between risks and issues.
+
+==== What is a risk?
+
+A risk is something that has the potential to occur with negative consequences. Remember, we can't mitigate risks until we identify them first! Keep your ears open in meetings - that's where risks often surface.
+
+For each risk, we need to consider three things: potential impact, likelihood of occurrence, and most importantly, steps we can take to mitigate it. I've seen cases where risks were identified but no mitigation was performed, and sure enough, the risk turned into an actual issue.
+
+An example: _"During our SpaceX launch planning, the team mentioned potential fuel line leaks in cold weather conditions."_ Once identified, we developed our mitigation: _"We added extra thermal inspections 24 hours before launch and trained a rapid response team specifically for fuel emergencies."_
+
+This simple approach - identify then mitigate - saved SpaceX from potential launch delays and millions in repair costs. The key was catching it early in those team discussions!
+
+==== What is an issue?
+
+An issue is something that has already occurred - it's a project-level problem, not a technical bug in the code. Think of it as a risk that became reality or a significant project obstacle. While bugs affect functionality, issues impact timelines, resources, and overall project delivery.
+
+For these project issues, we focus on two key aspects: impact assessment (how does this affect our timeline and deliverables?) and mitigation (what steps will get us back on track?).
+
+An example: _"During the SpaceX Starship project, a key supplier went bankrupt, leaving us without critical components."_ This is a project issue, not a technical bug. Our response: _"We immediately assessed inventory, identified alternative suppliers, expedited new contracts, and adjusted the project timeline to accommodate the 3-week delay."_
+
+Project issues need urgency and ownership. Always assign someone responsible for resolving each issue, set clear deadlines, and follow up consistently. The longer an issue remains unresolved, the more impact it typically has on your project timeline and budget.
+
+[[story-point-estimation]]
+=== Story point estimation
+
+// This needs updating
+
+Story Points are the team's sizing currency: a modified Fibonacci scale (1, 2, 3, 5, 8, 13) for relative effort. PREP explains how they attach to Stories.
+
+To calculate the total story points that can be carried out in a sprint, we have to appreciate that the engineering time is not the only time required to size a user story! Use the following formula to calculate the total effort for a Story:
+
+.This is a general formula for calculating the total effort involved for a Story.
+image::images/estimating.png[float=center,align=center]
+
+From the above, in summary the total effort is approximately twice the engineering effort we put in the Story Points. This is useful for calculating the total effort for Features and capacity of Sprints. As a general rule for example, you can see that for every 4 Engineers, on average you're going to need 1 Test Pilot.
+
+=== Kanban boards
+
+We use Kanban boards to track progress of Stories, Features and Epics. A Kanban board is simply a visual representation to view the progress of items with columns relating to the progression of states and items related as cards on that board.
+
+// INSERT
+
+Stories in particular also have a 'Definition of done' for each column that we will look at in <<definition-of-done>>.
+
+=== Rules
+
+Who and how do we update items in the backlog? Here are our work items rules:
+
+[.small-list]
+--
+. Only the Epic Owner can update an Epic.
+. Only the Business Owner can update a Feature.
+. Only the Prepper and Scrum Master can update User Stories.
+. The scrum master is responsible for closing a Story.
+. There should be no time remaining for Closed items children.
+. All members of the A-Team should have specific tasks in the sprint.
+. Stories can only be set to "Done" when they meet their definition of done for the relevant statuses.
+. The Test Pilot and Tech Lead is responsible for confirming a release is ready for Production.
+--
+
+=== States
+
+All items in the product backlog have various states associated with them to track progress on a Kanban board. In the T-Minus-15 methodology we use the following states:
+
+// CREATE TABLE
+
+[[definition-of-done]]
+=== Definition of done
+
+As your team update the states of work items on a Kanban board, it's important to agree with what we mean by “done”. By specifying what we call a “Definition of Done” for each column in the Kanban board it is clear for all the team as to what the acceptance of the item being complete is.
+
+// CREATE TABLE
+
+In the T-Minus-15 methodology we declare the Definition of Done for Stories as follows:
+
+// CREATE TABLE
+
+=== WIP limits
+
+Work-In-Progress (WIP) limits are used to impose limitations on the number of items that can be moved into active progress. Therefore, items must be moved out of the active state before the next item can be brought in.
+
+WIP limits are important to ensure that the team do not undertake hundreds of items to work on (because you have to say “yes” right?!), but actually complete only a rather small fraction of these. Much better to release a smaller amount of high-quality high-value (HQHV) than a large amount of low-quality. Working on too many items simultaneously will mean the team are not focused on ensuring each work item is high value.
+
+In actual fact, having a WIP limit enables you to deliver things quicker. Think of juggling. I can juggle 1 to 3 balls pretty well and quickly. If I were to try to juggle 4 or 5 balls, I wouldn't be very effective at juggling because I would actually spend most of my time picking the balls up rather than juggling!
+
+So, next time as a team member you get asked “can you start this” you can say “I would love to, but I've hit my WIP limit, so will prioritise that next” (something along those lines!).
+
+So what WIP limits should you actually use? Start simple: 2 features per engineer. For example, if you have two engineers, cap the "Engineering" column at 4 features max. Tools like Azure DevOps make this dead simple to set up on your Kanban boards.
+
+// CREATE TABLE
+
+"But what happens when our developers finish coding 4 features and the testing column is already maxed out?"
+
+That's exactly the point! Now your developers have three options, all better than starting something new:
+
+. Pair up with a tester to help clear the bottleneck
+. Do peer code reviews to improve quality
+. Tackle tech debt or automated tests
+
+This is where T-shaped skills (which we covered back in <<skills-for-the-team>>) really shine. When everyone has at least basic competency in adjacent skills, the team can flex to where the work is piling up.
+
+The payoff for proper WIP limits is massive:
+
+* Your team actually finishes stuff instead of having 15 half-done features
+* Developers don't lose context by task-switching (which can waste up to 40% of productive time)
+* Code reviews happen while the code is fresh in everyone's mind
+* Smaller, frequent merges to main mean fewer nasty merge conflicts
+* Teams naturally collaborate instead of working in silos
+
+Fill out your specific WIP limits in the template we've provided in the Appendix. Put them on display where everyone can see them, and stick to them religiously for at least 3 sprints before making adjustments.
+

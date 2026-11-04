@@ -38,7 +38,7 @@ GitFlow was designed for managing multiple versions of software simultaneously a
 // INSERT
 Figure 20. GitFlow uses the principle of branches matching environments (for dev, QA and production for example)
 
-Sounds organized, right? But here's what actually happens with GitFlow:
+Sounds organised, right? But here's what actually happens with GitFlow:
 
 * Your developers constantly ask "Wait, do I branch from develop or master for this feature?"
 * Merge conflicts become epic battles that waste entire afternoons
@@ -101,7 +101,7 @@ A common source of team friction? Poor git practices. Print this list and stick 
 
 * **Branch names should tell a story** - Name your branches so anyone can understand what they're for at a glance: `fix/login-timeout` or `feature/payment-gateway` beats `johns-stuff` every time.
 
-* **Organize your branches** - Use folders like `feature/` or `bugfix/` to group similar work. Your repo shouldn't look like your teenager's bedroom floor.
+* **Organise your branches** - Use folders like `feature/` or `bugfix/` to group similar work. Your repo shouldn't look like your teenager's bedroom floor.
 
 * **Create release snapshots** - Tag or branch at every release so you can always answer "what exactly was in version 2.4.3?"
 
@@ -133,7 +133,7 @@ A build pipeline is your automated assembly line that takes raw code and transfo
 . **Static analysis** - Check for security issues and code smells
 . **Package everything** - Bundle it all into a deployable artifact
 
-Without a build pipeline, you're back in 2005 - developers muttering "it works on my machine" while production crashes and burns. Your build pipeline is the first line of defense against the chaos of human error.
+Without a build pipeline, you're back in 2005 - developers muttering "it works on my machine" while production crashes and burns. Your build pipeline is the first line of defence against the chaos of human error.
 
 === Release Pipelines: From Code to Customer in One Click
 
@@ -150,7 +150,7 @@ A proper release pipeline should:
 
 Smart teams add automated gates throughout the pipeline: security scans before dev deployment, performance testing before QA, compliance checks before production. This ensures that only code meeting your standards progresses to the next stage.
 
-The final approval process varies by organization. Some use Change Advisory Boards (CABs), others require sign-off from specific stakeholders, and the most advanced teams use data-driven automated approvals based on test coverage and performance metrics. Whatever your process, document it clearly so everyone knows how code flows from commit to customer.
+The final approval process varies by organisation. Some use Change Advisory Boards (CABs), others require sign-off from specific stakeholders, and the most advanced teams use data-driven automated approvals based on test coverage and performance metrics. Whatever your process, document it clearly so everyone knows how code flows from commit to customer.
 
 === From Ideas to Delivery: Your Rocket's Flight Path
 
@@ -158,14 +158,14 @@ Every valuable feature begins as a simple idea. Unlike traditional development w
 
 ==== IDEATION & PLANNING
 
-This is your launchpad - where raw ideas get captured, refined, and organized. Before writing a single line of code, ideas need to be:
+This is your launchpad - where raw ideas get captured, refined, and organised. Before writing a single line of code, ideas need to be:
 
 * Clearly articulated as user stories or requirements
-* Prioritized based on business value and technical dependencies
+* Prioritised based on business value and technical dependencies
 * Broken down into manageable pieces
 * Assigned acceptance criteria so you'll know when they're done
 
-Tools like Azure DevOps or GitHub Projects work well for managing this process, but even a well-organized Trello board can do the job. The key is visibility - everyone should see what's coming next and why.
+Tools like Azure DevOps or GitHub Projects work well for managing this process, but even a well-organised Trello board can do the job. The key is visibility - everyone should see what's coming next and why.
 
 ==== ENGINEERING
 
@@ -190,7 +190,7 @@ Consider this your launch simulation facility. Every feature that passes enginee
 This is where your rocket carries actual passengers. Treat it with appropriate respect:
 
 * **Absolutely no manual changes** - if it's not in your code repo, it doesn't go to production
-* Use deployment slots and traffic shifting (blue/green deployments) to minimize risk
+* Use deployment slots and traffic shifting (blue/green deployments) to minimise risk
 * Implement progressive rollouts - start with 5% of users and gradually increase
 * Maintain robust monitoring and rollback capabilities for when things inevitably go wrong
 
@@ -200,9 +200,9 @@ Nobody reads boring release notes. But great release notes are your marketing ca
 
 Don't waste this opportunity with technical jargon or vague statements like "fixed various bugs." Instead:
 
-* Use clear, benefit-focused language: "Checkout now 30% faster" not "Optimized database queries"
+* Use clear, benefit-focused language: "Checkout now 30% faster" not "Optimised database queries"
 * Include visuals - screenshots or short animations of new features
-* Organize by impact - lead with game-changers, not minor tweaks
+* Organise by impact - lead with game-changers, not minor tweaks
 * Keep it skimmable with bullet points and bold highlights
 * Link to documentation or tutorials for complex features
 
@@ -211,7 +211,7 @@ Table 7. Example release note showing Features deployed to a Tesla Model X.
 
 === The Anti-Dramatic Launch: Boring is Beautiful
 
-Forget the midnight deployments and launch-day panic. Those aren't badges of honor - they're signs of poor planning.
+Forget the midnight deployments and launch-day panic. Those aren't badges of honour - they're signs of poor planning.
 
 The best launches are boring. By the time you officially announce a feature to the entire business, it should have been:
 
