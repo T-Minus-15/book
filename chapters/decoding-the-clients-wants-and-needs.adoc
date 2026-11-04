@@ -32,7 +32,7 @@ The Product Backlog is our single list of requirements for the business. It is a
 .Hierarchical structure of our product backlog. NB Risks and issues are held separately outside the hierarchy, but everything else should have a parent/child relationship.
 image::images/product-backlog.png[float=center,align=center]
 
-These items can be prioritized into an order of delivery where the User Stories and above should only be updated with the consent of the Product Owner. The Scrum team will use the currency of Story Points to estimate the workload for items. We’ll cover Story Points later, but in essence they are a unit of prescribed varying sizes (a modified Fibonacci sequence) to help the team estimate work sizes. These estimates also help the Product Owner prioritize work items.
+These items can be prioritized into an order of delivery where the User Stories and above should only be updated with the consent of the Product Owner. The Scrum team will use the currency of Story Points to estimate the workload for items. We covered Story Points back in PLAN (see <<story-point-estimation>>), but in essence they are a unit of prescribed varying sizes (a modified Fibonacci sequence) to help the team estimate work sizes. These estimates also help the Product Owner prioritize work items.
 
 We also have the concept of “Enablers” for Epics, Features and Stories. Enablers are way of putting architectural, infrastructure, code refactoring, research, prototyping, compliance, and other work that users may regard as “invisible” but are important in delivering HVHQ solutions. To read more about enablers with regards to SAFe® please see:
 
