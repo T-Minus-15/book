@@ -4,6 +4,12 @@ At last count, Amazon listed something like 8,000 books on Agile and another 600
 
 _Picture this_: your project is a rocket on the launchpad. The countdown’s at T-minus-15, and every team member is in position – prepped, caffeinated, and ready to rock. The T-Minus-15 methodology is your mission control checklist for liftoff. It takes the best of Agile and DevOps (the principles, the rituals, all the “let’s work smarter” stuff) and distils them into fifteen concrete steps – the fifteen calls of the countdown, from Target at T-15 to Accept at T-1, before lift-off at T-0. Think of it as your step-by-step sequence to go from idea to orbit without the typical last-minute scrambles or mission aborts. It’s practical, it’s proven, and yeah, it’s a little bit irreverent – because it’s born from real-world lessons, not ivory-tower fantasies.
 
+=== Why "T-Minus-15"?
+
+Rocket launches count down in T-minus, and ours counts down fifteen steps. Three calls for each of the five stages before launch: Plan (Target, Size, Schedule), Prep (Gather, Define, Prioritise), Design (Sketch, Map, Architect), Engineer (Build, Review, Merge) and Test (Verify, Harden, Accept). Then T-0, and the engines light.
+
+Now, a confession for anyone who has been with us a while: the 15 used to mean something else. When we started, it was the length of a sprint – 15 working days, three weeks, our sweet spot at the time. But projects have been getting shorter and shorter. With AI agents in the crew, work that took a squad weeks can land in days, and holding everyone to a three-week calendar just slows the good teams down. So we stopped counting days and started counting steps. A sprint is now as long as your crew needs to run all fifteen calls properly – a fortnight, a week, sometimes less – and the countdown stays the same whatever the calendar says.
+
 === And who is this book for?
 
 If you’re the one in charge of rolling out a new way of working – maybe a CTO, or team lead – this playbook is your treasure map. It’s going to give you the tools to turn a ragtag group of specialists into a tight-knit, *elite delivery crew*. And if you’re one of the crew – a developer, tester, engineer, designer, you name it – this is for you too. T-Minus-15 isn’t a decree from on high; it’s a game plan you’ll actually want to use. No matter your role, you’ll see how all the pieces fit together and how you can contribute to blasting the project forward. In short: this methodology is for anyone on a software team that’s sick of delays, miscommunications, and mediocre results.
