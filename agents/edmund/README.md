@@ -1,6 +1,6 @@
 # Edmund (the Engineer) - Azure AI Foundry Agent
 
-Edmund is an AI agent specialized in development tasks and deeply versed in the T-Minus-15 methodology. This directory contains all the necessary configuration and deployment files for deploying Edmund to Azure AI Foundry.
+Edmund is an AI agent specialised in development tasks and deeply versed in the T-Minus-15 methodology. This directory contains all the necessary configuration and deployment files for deploying Edmund to Azure AI Foundry.
 
 ## 🚀 Quick Start
 
@@ -55,20 +55,20 @@ git push origin main
 
 ## 🤖 About Edmund
 
-Edmund is the Engineer in the T-Minus-15 methodology team. He specializes in:
+Edmund is the Engineer in the T-Minus-15 methodology team. He specialises in:
 
 - **Code Development**: Writing clean, maintainable, and scalable code
 - **DevOps Implementation**: CI/CD pipelines, infrastructure-as-code, automation
 - **Architecture & Design**: Solution architecture and technical design decisions
 - **Code Reviews**: Thorough, constructive feedback on code quality
-- **Technical Problem Solving**: Debugging and optimizing system performance
+- **Technical Problem Solving**: Debugging and optimising system performance
 - **T-Minus-15 Expertise**: Deep knowledge of the 15-step methodology
 
 ### Key Capabilities
 - Infrastructure-as-Code guidance
-- CI/CD pipeline setup and optimization
+- CI/CD pipeline setup and optimisation
 - Code quality and security reviews
-- Performance optimization
+- Performance optimisation
 - Test automation strategies
 - API design and microservices architecture
 
@@ -220,7 +220,7 @@ DOCKER_REGISTRY_PASSWORD   # Docker registry password
 - **Resource Group**: tminus15-prod-rg
 - **Deploy**: Manual trigger after staging validation
 
-## 🛠️ Development & Customization
+## 🛠️ Development & Customisation
 
 ### Local Development
 ```bash
@@ -241,7 +241,7 @@ python test_edmund_local.py
 pytest tests/ -v
 ```
 
-### Customizing Edmund
+### Customising Edmund
 1. **Personality**: Edit `edmund.md` to adjust personality and capabilities
 2. **Configuration**: Modify `agent-config.json` for model parameters
 3. **Knowledge Sources**: Update `knowledge-sources.json` for additional sources
@@ -270,7 +270,7 @@ az ml model show --name edmund --version 1.0.0
 kubectl logs -l app=edmund -n tminus15-agents
 
 # Test knowledge source access
-curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+curl -H "Authorisation: Bearer $GITHUB_TOKEN" \
   https://api.github.com/repos/bengweeks/T-Minus-15
 ```
 

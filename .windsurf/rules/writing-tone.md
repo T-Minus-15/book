@@ -20,5 +20,5 @@ trigger: always_on
 
 *Bad tone examples*:
 
-- Overly formal: "It is of utmost importance that the deployment pipeline is optimized to prevent after-hours interruptions." (Dry and lifeless – not our style.)
+- Overly formal: "It is of utmost importance that the deployment pipeline is optimised to prevent after-hours interruptions." (Dry and lifeless – not our style.)
 - Too flippant/slangy: "Deploying at 3am sucks big time, lol just script it and stop whining." (Too dismissive and unprofessional in tone.)

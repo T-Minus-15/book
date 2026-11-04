@@ -104,7 +104,7 @@ Each epic gets broken down into features and enablers that fit into program incr
 
 Program increments typically run 8-12 weeks with multiple teams working in parallel. At the end, you've delivered real business value – not just a collection of random features that may or may not work together.
 
-The magic happens through something called an Agile Release Train. This is your coordinated team of teams, all working toward the same program objectives. They plan together, integrate together, and demo their results together. No more silos.
+The magic happens through something called an Agile Release Train. This is your coordinated team of teams, all working towards the same program objectives. They plan together, integrate together, and demo their results together. No more silos.
 
 **The Team Level: Your Ground Crews**
 
@@ -120,7 +120,7 @@ Suddenly, your entire innovation pipeline – from idea to delivery – operates
 
 When done right, SAFe® eliminates the traditional friction between business and IT. Business folks aren't writing detailed requirements documents that are obsolete before the ink dries. IT isn't building features that miss the mark because they misunderstood the need.
 
-Instead, you've got business and technical people collaborating daily on the same program increment goals. Everyone's aligned, everyone's accountable, and everyone's working toward the same launch date.
+Instead, you've got business and technical people collaborating daily on the same program increment goals. Everyone's aligned, everyone's accountable, and everyone's working towards the same launch date.
 
 For more details on SAFe®, check out www.scaledagile.com – but remember, like any powerful framework, it's not magic. It requires discipline, commitment, and strong leadership to make it work.
 

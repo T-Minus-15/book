@@ -27,7 +27,7 @@ Stop separating "business people" and "tech people" – they need to be in the s
 
 Meet for 15 minutes every day, standing up (yes, actually standing if you have a physical place of work – it keeps things brief). This isn't a status update for managers; it's team coordination. Each person answers three quick questions: What did I finish yesterday? What am I tackling today? What's blocking me? If someone's stuck, the team jumps in to help after the meeting – not during it.
 
-Your roadmap lives in the product backlog – a prioritized list of Features (what users actually need, not what IT thinks they want). Before each sprint, grab the highest-priority Features your team can realistically finish. And when the sprint ends, sit down for a 30-minute retrospective where you ask: What went well? What didn't? What will we change next time? Then actually make those changes.
+Your roadmap lives in the product backlog – a prioritised list of Features (what users actually need, not what IT thinks they want). Before each sprint, grab the highest-priority Features your team can realistically finish. And when the sprint ends, sit down for a 30-minute retrospective where you ask: What went well? What didn't? What will we change next time? Then actually make those changes.
 
 The Agile Manifesto{empty}footnote:[Manifesto for Agile Software Development, http://agilemanifesto.org/] declares following values: 
 
@@ -54,12 +54,12 @@ The Agile Manifesto Principles{empty}footnote:[Agile Manifesto Principles, http:
 . Agile processes promote sustainable development. 
 . The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
 . Continuous attention to technical excellence and good design enhances agility.
-. Simplicity--the art of maximizing the amount of work not done--is essential.
-. The best architectures, requirements, and designs emerge from self-organizing teams.
+. Simplicity--the art of maximising the amount of work not done--is essential.
+. The best architectures, requirements, and designs emerge from self-organising teams.
 . At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behaviour accordingly.
 --
 
-However, within a larger Enterprise SAFe® believes that “best architectures, requirements, and designs” do not necessarily  emerge from self-organizing teams in contrast to the Agile principles. For an Enterprise, you need to have a common design principle across all teams and that is why this function is therefore proposed to be driven from outside of the team by Enterprise, Solution, and System Architects/Engineers.
+However, within a larger Enterprise SAFe® believes that “best architectures, requirements, and designs” do not necessarily  emerge from self-organising teams in contrast to the Agile principles. For an Enterprise, you need to have a common design principle across all teams and that is why this function is therefore proposed to be driven from outside of the team by Enterprise, Solution, and System Architects/Engineers.
 
 === The Pro's and Con's of Agile
 
@@ -87,7 +87,7 @@ _Having teams operating using an Agile methodology is great, but how does an ent
 
 _This is where the SAFe® is a framework for managing multiple business-focussed streams of work within an enterprise. A kind of backlog of backlogs. It defines these within the context portfolios of epics or major initiatives. An epic might be a new product that you want to launch. It might be a major technology refresh programme you want to undertake. It might be a new market you want to enter. It can be anything._
 
-_SAFe® provides a mechanism to manage and then prioritize these major initiatives and provide a bridge into both the IT and business teams that might enable this epic to be delivered._
+_SAFe® provides a mechanism to manage and then prioritise these major initiatives and provide a bridge into both the IT and business teams that might enable this epic to be delivered._
 
 _Underneath the portfolio (epic) level is the program level. Epics are just that, epic! Each epic is broken down into a series of features and enablers which are grouped into a program increment, which is a time-bound period where you deliver some form of business value. This value is managed by an agile release train. Within each program increment, you have a number of scrum teams who actually deliver the work. Over, you'll see a diagram showing the high-level view of this process._
 
@@ -100,7 +100,7 @@ _This brief description doesn't begin to do justice to the intricacies, or power
 === Scrum
 
 Getting back to the team again. Agile software development methodology covers a range of specific practices such as Kanban, Extreme Programming, Lean software development and Scrum for example.
-Scrum gives some additional practices to our Agile method ideally suited to software development teams of around 5 to 10 team members utilizing practices such as sprints and daily stand-ups (or daily scrums). It uses iterative sprints of 2 to 4-weeks where a team takes a set of requirements (the sprint backlog taken from a larger product backlog).
+Scrum gives some additional practices to our Agile method ideally suited to software development teams of around 5 to 10 team members utilising practices such as sprints and daily stand-ups (or daily scrums). It uses iterative sprints of 2 to 4-weeks where a team takes a set of requirements (the sprint backlog taken from a larger product backlog).
 
 .An overview of Scrum
 image::images/scrum.png[float=center,align=center]
@@ -242,7 +242,7 @@ WIP limits are important to ensure that the team do not undertake hundreds of it
 
 In actual fact, having a WIP limit enables you to deliver things quicker. Think of juggling. I can juggle 1 to 3 balls pretty well and quickly. If I were to try to juggle 4 or 5 balls, I wouldn't be very effective at juggling because I would actually spend most of my time picking the balls up rather than juggling!
 
-So, next time as a team member you get asked “can you start this” you can say “I would love to, but I've hit my WIP limit, so will prioritize that next” (something along those lines!).
+So, next time as a team member you get asked “can you start this” you can say “I would love to, but I've hit my WIP limit, so will prioritise that next” (something along those lines!).
 
 So what WIP limits should you actually use? Start simple: 2 features per engineer. For example, if you have two engineers, cap the "Engineering" column at 4 features max. Tools like Azure DevOps make this dead simple to set up on your Kanban boards.
 

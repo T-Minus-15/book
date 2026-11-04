@@ -18,7 +18,7 @@ Install the following extension:
 
 ==== Epic Pages Overview
 
-The Epic work item type requires multiple pages (tabs) to organize all the required fields. The following pages should be created:
+The Epic work item type requires multiple pages (tabs) to organise all the required fields. The following pages should be created:
 
 	. Details (default page)
 	. Lean Business Case
@@ -188,7 +188,7 @@ For the Epic, we need to populate the "Lean Business Case" page with the followi
 		.. Definition > Name: BusinessOutcomeHypothesis
 		.. Definition > Type: Text (multiple lines)
 		.. Definition > Description: Outline the hypothetical outcome to the business of this Epic
-		.. Options > Default value: <i>Summarize the key measurable results expected from this Epic. Explain how success will be evaluated using clear metrics or outcomes.</i> 
+		.. Options > Default value: <i>Summarise the key measurable results expected from this Epic. Explain how success will be evaluated using clear metrics or outcomes.</i> 
 		.. Layout > Label: Business Outcome Hypothesis
 		.. Layout > Group (new): Business Outcome Hypothesis
 		.. Layout > Column: Left
@@ -856,7 +856,7 @@ For an Epic we need to create the following States (as specified by the SAFe® F
 	. Keep "New" (do not hide)
 	. Create a new state of Name: Funnel, State category: Proposed, Color: 1st from bottom grey (1st column)
 	. Create a new State of Name: Reviewing, State category: Proposed, Color: 2nd from bottom grey (1st column)
-	. Create a new State of Name: Analyzing, State category: Proposed, Color: 3rd from bottom grey (1st column)
+	. Create a new State of Name: Analysing, State category: Proposed, Color: 3rd from bottom grey (1st column)
 	. Create a new State of Name: Pending, State category: Proposed, Color: 4th from bottom grey (1st column)
 	. Create a new State of Name: Portfolio backlog, State category: Proposed, Color: 5th from bottom grey (1st column)
 	. Hide "Active"
@@ -922,7 +922,7 @@ For the Feature, perform the following steps on the Details tab:
 	. Create a new field of "MoSCoW",
 		.. Definition > Name: MoSCoW
 		.. Definition > Type: Picklist (string)
-		.. Definition > Description: Help prioritize this Feature for delivery by the Team.
+		.. Definition > Description: Help prioritise this Feature for delivery by the Team.
 		.. Definition > Picklist items: Wont Have, Could Have, Should Have, Must Have
 		.. Layout > Label: MoSCoW
 		.. Layout > Group: Classification

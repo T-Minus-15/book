@@ -37,7 +37,7 @@ Here's a trap we've all fallen into. The sprint's going well, features are flyin
 
 Microsoft learned this the hard way. Its own teams – including the crew behind Azure DevOps (back then, Visual Studio Online){empty}footnote:[Steve Denning, "Microsoft's 16 Keys To Being Agile At Scale", Forbes, 29 October 2015, https://www.forbes.com/sites/stevedenning/2015/10/29/microsofts-sixteen-keys-to-becoming-agile-at-scale/] – used to let bugs pile up until code complete, then spend weeks digging out. They called it a roller coaster of bugs, and it hammered both morale and productivity. Their fix was beautifully simple: the *bug cap*{empty}footnote:[How Microsoft plans with DevOps, https://learn.microsoft.com/en-us/devops/plan/how-microsoft-plans-devops].
 
-[.text-center]
+[.text-centre]
 *Number of engineers × 5 = bug cap*
 
 So a squad of four engineers has a bug cap of 20. If the bug count is over the cap at the end of a sprint, *new feature work stops*. Everyone fixes bugs until the count is back under the cap. No debate, no "just one more feature" – it's a rule agreed before the countdown, not a judgement call made under pressure.

@@ -54,9 +54,9 @@ To compile  this book, see [book.adoc](https://github.com/BenGWeeks/T-Minus-15/b
 
 This repository will act as the source for the printed version of the book that will be published to Amazon Kindle Publishing.
 
-## License
+## Licence
 
-This book is made available under the [creative commons terms of license](https://github.com/BenGWeeks/T-Minus-15/blob/main/LICENSE.md).
+This book is made available under the [creative commons terms of licence](https://github.com/BenGWeeks/T-Minus-15/blob/main/LICENSE.md).
 
 ## Proceeds
 
