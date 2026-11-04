@@ -26,9 +26,30 @@ A Bug is any defect that causes a User Story to fail its acceptance criteria. Th
 
 An Enhancement is an improvement request that does not block the acceptance of a User Story. Think usability tweaks, minor performance improvements, or visual polish — the stuff that makes good software feel great. If implementing an enhancement takes more than 4 hours, it should be treated as a Feature instead - scoped and planned as such.
 
-A Feature is a new capability — a set of User Stories that introduces fresh functionality or a significant change to existing behaviour. Features are the strategic layer: they expand the product’s scope and value. They are planned during sprint planning and oftenrequire coordinated sedign, development, and QA. Any request that breaks new ground - technically or funcionally - is a feature.
+A Feature is a new capability — a set of User Stories that introduces fresh functionality or a significant change to existing behaviour. Features are the strategic layer: they expand the product’s scope and value. They are planned during sprint planning and often require coordinated design, development, and QA. Any request that breaks new ground - technically or functionally - is a feature.
 
 This classification ensures we’re fixing what’s broken, refining what’s working, and delivering what’s next — all without losing sight of why we're building in the first place.
+
+[[bug-cap]]
+=== The Bug Cap
+
+Here's a trap we've all fallen into. The sprint's going well, features are flying out the door, and the bug list is quietly creeping up in the background. "We'll sort those later," we tell ourselves. Then later arrives, and it's a mountain. The whole crew downs tools for a "stabilisation sprint" (or three), morale nosedives, and stakeholders want to know why the shiny new features have stopped coming.
+
+Microsoft learned this the hard way. The team that builds Azure DevOps (formerly Team Foundation Server) used to let bugs pile up until code complete, then spend weeks digging out. They called it a roller coaster of bugs, and it hammered both morale and productivity. Their fix was beautifully simple: the *bug cap*{empty}footnote:[How Microsoft plans with DevOps, https://learn.microsoft.com/en-us/devops/plan/how-microsoft-plans-devops].
+
+[.text-center]
+*Number of engineers × 5 = bug cap*
+
+So a squad of four engineers has a bug cap of 20. If the bug count is over the cap at the end of a sprint, *new feature work stops*. Everyone fixes bugs until the count is back under the cap. No debate, no "just one more feature" – it's a rule agreed before the countdown, not a judgement call made under pressure.
+
+Why does it work? Because it makes paying down bug debt a little-and-often habit rather than a once-a-quarter crisis. It also puts a number on quality that everyone can see. That's why the stand-up asks "How many bugs are there?" every day (see the <<meetings,meetings appendix>>) – the Test Pilot keeps the crew honest, and nobody gets surprised.
+
+A few tips from the launchpad:
+
+* *Count what matters* – Count open Bugs (things that fail acceptance criteria), not Enhancements. Polish requests shouldn't stop the line.
+* *Agree the multiplier up front* – Five per engineer is Microsoft's number. A brand-new product might start tighter; a legacy system you've just inherited might need a glide path down to it. Pick a number, write it down and stick to it.
+* *Make it visible* – Put the bug count and the cap on the team dashboard. A line on a chart does more than a stern email ever will.
+* *Let agents help* – AI agents are great at triaging, reproducing and drafting fixes for the backlog of small bugs, so hitting the cap doesn't have to mean a lost sprint.
 
 === Static code analysis
 

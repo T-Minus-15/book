@@ -1,3 +1,4 @@
+[[meetings]]
 == Meetings
 
 === General Meeting Guidelines
@@ -50,7 +51,7 @@ We have time for 2 minutes per person and can take a follow-up call for specific
 
 And for testing:
 
-• How many bugs are there (ref: BUGCAP)?
+• How many bugs are there, and are we under the <<bug-cap,Bug Cap>>?
 • How many bugs did we close yesterday?
 
 Please ensure timesheets are up-to-date prior to the stand-up: [link to timesheets]

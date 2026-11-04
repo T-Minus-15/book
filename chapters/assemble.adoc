@@ -212,7 +212,7 @@ OK, we’ve engineered the solution. It’s ready to deploy to production right?
 
 During this stage the solution is deployed to the Test environment (QA) with a release note sent to the Test Pilot. This lets them know the Features, User Stories, Bug fixes and Improvements that are included in this release. As a team you can determine at which point you want to release to Test, but don’t leave it to the last Friday in the Sprint! For example, you may decide the pipeline should release to Test every Tuesday and Thursday (or just “on demand”).
 
-From the deployment to Test, the Test Pilot will identify Bugs and Improvements to improve the stability and quality of the solution being delivered. We’ll talk about the “Bug Cap” later which is a way to ensure that this stage doesn’t become overloaded with an insurmountable quantity of bugs to fix.
+From the deployment to Test, the Test Pilot will identify Bugs and Improvements to improve the stability and quality of the solution being delivered. We’ll talk about the <<bug-cap,Bug Cap>> in the TEST chapter, which is a way to ensure that this stage doesn’t become overloaded with an insurmountable quantity of bugs to fix.
 
 During a project of over 3 or 4 engineering sprints, you may want a dedicated Test sprint to improve the stability of the solution. SAFe® has the concept of IP sprints (Innovation and Planning{empty}footnote:[Innovation and Planning Sprints, https://www.scaledagileframework.com/innovation-and-planning-iteration/]) that follow a similar principle of allow the team to carry out improvements, training, and a general buffer for the project.
 
