@@ -190,7 +190,7 @@ azd down --force --purge
 azd show --output json | jq -r '.services.api.resourceGroupName'
 ```
 
-## Customization
+## Customisation
 
 ### Adding New Dependencies
 
@@ -226,7 +226,7 @@ azd up
 - Application Insights data is encrypted at rest
 - RBAC permissions follow least-privilege principle
 
-## Cost Optimization
+## Cost Optimisation
 
 - Container Apps scales to zero when not in use
 - Basic SKUs are used for development environments
@@ -238,7 +238,7 @@ azd up
 1. Configure OpenAI models in AI Foundry
 2. Set up CI/CD pipelines with GitHub Actions
 3. Implement proper monitoring and alerting
-4. Add authentication and authorization
+4. Add authentication and authorisation
 5. Configure custom domain and SSL certificates
 
 For more advanced configuration, see the individual Bicep templates in the `infra/` directory.

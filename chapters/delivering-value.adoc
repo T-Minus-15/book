@@ -131,7 +131,7 @@ A build pipeline is your automated assembly line that takes raw code and transfo
 . **Compile/transpile code** - Turn your high-level code into something machines understand
 . **Run automated tests** - Verify nothing broke
 . **Static analysis** - Check for security issues and code smells
-. **Package everything** - Bundle it all into a deployable artifact
+. **Package everything** - Bundle it all into a deployable artefact
 
 Without a build pipeline, you're back in 2005 - developers muttering "it works on my machine" while production crashes and burns. Your build pipeline is the first line of defence against the chaos of human error.
 

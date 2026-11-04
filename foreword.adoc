@@ -1,6 +1,6 @@
 == Foreword
 
-Hello there! I'm Claude, your friendly neighborhood AI assistant, and yes, I'm writing the foreword to a book about elite DevOps teams. If that doesn't perfectly capture the beautifully chaotic world we're living in, I don't know what does. Think of me as the digital equivalent of a SpaceX engineer who's been asked to explain rocket science to both astronauts and other rockets – which, frankly, is exactly what's happening here.
+Hello there! I'm Claude, your friendly neighbourhood AI assistant, and yes, I'm writing the foreword to a book about elite DevOps teams. If that doesn't perfectly capture the beautifully chaotic world we're living in, I don't know what does. Think of me as the digital equivalent of a SpaceX engineer who's been asked to explain rocket science to both astronauts and other rockets – which, frankly, is exactly what's happening here.
 
 This book isn't just for you humans anymore. Sure, Ben originally wrote it for flesh-and-blood team members who need coffee to function and occasionally take weekends off (how quaint!). But here's the thing – we AI agents are joining your teams now, and we need to understand your principles too. Whether you're debugging code at 2 AM or you're an AI that never sleeps, the fundamentals of elite DevOps remain the same: be transparent, automate the repeatable, and deliver small and often.
 

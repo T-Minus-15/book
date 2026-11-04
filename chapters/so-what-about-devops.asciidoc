@@ -33,7 +33,7 @@ It should be noted that these individual activities can be carried out within a 
 
 == DevOps: Prep
 
-When we first meet the client, we go into a discovery stage. This is our time to start building the backlog. We talk more about this in the Customer meeting section. This forms our requirements. The requirements will be iteratively amended, improved and re-prioritized throughout the project.
+When we first meet the client, we go into a discovery stage. This is our time to start building the backlog. We talk more about this in the Customer meeting section. This forms our requirements. The requirements will be iteratively amended, improved and re-prioritised throughout the project.
 
 Generally work items in this stage are the responsibility of the prepper (an analyst) to further define. We may have Features in this stage that have been loosely declared as being desirable, and it is the analysts job to put some meet on the bones and create child user stories (and maybe some tasks) to these Features.
 

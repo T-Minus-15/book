@@ -8,9 +8,9 @@
 
 1. **Right to a Respectful Working Environment**: Every team member should have a workplace (virtual or physical) that is free from harassment, discrimination, and any form of negative behaviour.
 
-1. **Right to Profit Sharing**: As the fruits of our collective labour materialize, team members have ensured a share, allowing each individual to reap the rewards of our endeavours directly.
+1. **Right to Profit Sharing**: As the fruits of our collective labour materialise, team members have ensured a share, allowing each individual to reap the rewards of our endeavours directly.
 
-1. **Right to a Safe Workplace**: Workers should have a safe and healthy work environment free from recognized hazards.
+1. **Right to a Safe Workplace**: Workers should have a safe and healthy work environment free from recognised hazards.
 
 1. **Right to Fair Compensation**: Workers are entitled to compensation, including benefits, that is competitive with market rates, ensuring they receive at least the minimum wage and overtime pay for hours worked beyond the standard workweek.
 
@@ -44,23 +44,23 @@ Team Members' Responsibilities
 
 1. **Responsibility for Continuous Improvement**: Team members should proactively identify areas of improvement in processes, tools, or methodologies and suggest changes that can benefit the practice.
 
-1. **Responsibility to Promote Collective Well-being**: While enjoying the benefits of profit-sharing, team members should also prioritize the collective well-being of the practice, ensuring decisions made are for the greater good.
+1. **Responsibility to Promote Collective Well-being**: While enjoying the benefits of profit-sharing, team members should also prioritise the collective well-being of the practice, ensuring decisions made are for the greater good.
 
 ## Practice's Responsibilities
 
-1. **Responsibility for Maintaining a Profit Share**: The practice commits to consistently allocating and distributing a portion of its profits to team members, recognizing their collective contributions to the organization's success.
+1. **Responsibility for Maintaining a Profit Share**: The practice commits to consistently allocating and distributing a portion of its profits to team members, recognising their collective contributions to the organisation's success.
 
-1. **Responsibility for Well-being**: The practice recognizes the importance of well-being for the long-term success of the Team.
+1. **Responsibility for Well-being**: The practice recognises the importance of well-being for the long-term success of the Team.
 
 1. **Responsibility for Regular Check-ins**: The practice will ensure regular check-ins with team members to understand their challenges, provide support, and ensure they feel valued and heard.
 
 1. **Responsibility for Technological Advancements**: The practice commits to staying updated with the latest technological advancements and tools, ensuring the team can access the best resources to perform their tasks.
 
-1. **Responsibility for Facilitating an Enjoyable Work Environment**: The practice is dedicated to fostering a positive, engaging, and inclusive atmosphere that prioritizes team well-being and collaboration, aiming to create a workplace that meets current aspirations and is enticing for future generations, where our descendants would be eager and proud to contribute.
+1. **Responsibility for Facilitating an Enjoyable Work Environment**: The practice is dedicated to fostering a positive, engaging, and inclusive atmosphere that prioritises team well-being and collaboration, aiming to create a workplace that meets current aspirations and is enticing for future generations, where our descendants would be eager and proud to contribute.
 
 - **Responsibility for Facilitating Professional Development**: The practice ensures that team members have a structured training plan and are given ample opportunities to grow in their technical and soft skills.
 
-- **Responsibility for Encouraging Community Participation**: The practice shall support and encourage team members to participate in open-source projects, recognizing the value of being active members of the broader technical community.
+- **Responsibility for Encouraging Community Participation**: The practice shall support and encourage team members to participate in open-source projects, recognising the value of being active members of the broader technical community.
 
 - **Responsibility for Providing Resources**: The practice is committed to providing team members with the resources, tools, and platforms required for their roles, ensuring they can perform their tasks efficiently and effectively.
 
