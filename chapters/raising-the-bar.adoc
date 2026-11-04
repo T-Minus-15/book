@@ -1,4 +1,4 @@
-== TEST: Raising the Bar - The Pursuit of Quality in Agile Projects
+== TEST: Raising the Bar - The Pursuit of Quality
 
 We want to ensure that what we deliver to our customers is something we can be proud of, it's not just good - it's awesome! We therefore need to ensure that each-and-every Story is cross-referenced and checked with 1 or more test cases.
 

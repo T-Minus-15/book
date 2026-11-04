@@ -39,7 +39,7 @@ To compile  this book, see [book.adoc](https://github.com/BenGWeeks/T-Minus-15/b
 + Chapter 4: [PREP: Decoding the client's wants and needs](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/decoding-the-clients-wants-and-needs.adoc)
 + Chapter 5: [DESIGN: Crafting UX That Doesn't Suck](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/crafting-great-user-experiences.adoc)
 + Chapter 6: [ENGINEER: The Art of Engineering](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/the-art-of-engineering.adoc)
-+ Chapter 7: [TEST: Raising the Bar - The Pursuit of Quality in Agile Projects](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/raising-the-bar.adoc)
++ Chapter 7: [TEST: Raising the Bar - The Pursuit of Quality](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/raising-the-bar.adoc)
 + Chapter 8: [OPERATE: Shipping Value, Not Just Code](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/delivering-value.adoc)
 + Chapter 9: [Delighted Customers, Not Just Happy Ones](https://github.com/BenGWeeks/T-Minus-15/blob/main/chapters/happy-customers.adoc)
 + Appendix 1: [Epic metadata](https://github.com/BenGWeeks/T-Minus-15/blob/main/appendices/epic-metadata.adoc)
