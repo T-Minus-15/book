@@ -163,7 +163,7 @@ DevOps has the following 7 key principles{empty}footnote:[7 Key Principles for a
 . Automate (almost) everything
 . Focus on the customers’ needs
 . Embrace failure, and learn from it
-. Embrace failure and learn
+. Unite teams – and expertise
 --
 
 DevOps has the principle of continuous improvement, and as such has a continuous lifecycle as follows:

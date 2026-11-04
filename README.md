@@ -47,7 +47,7 @@ To compile  this book, see [book.adoc](https://github.com/BenGWeeks/T-Minus-15/b
 + Appendix 3: [User Story metadata](https://github.com/BenGWeeks/T-Minus-15/blob/main/appendices/user-story-metadata.adoc)
 + Appendix 4: [Task metadata](https://github.com/BenGWeeks/T-Minus-15/blob/main/appendices/task-metadata.adoc)
 + Appendix 5: [Bugs and Enhancements metadata](https://github.com/BenGWeeks/T-Minus-15/blob/main/appendices/bugs-and-enhancements-metadata.adoc)
-+ Appendix 9: [Meetings](https://github.com/BenGWeeks/T-Minus-15/blob/main/appendices/meetings.adoc)
++ Appendix 6: [Meetings](https://github.com/BenGWeeks/T-Minus-15/blob/main/appendices/meetings.adoc)
 + [Thanks](https://github.com/BenGWeeks/T-Minus-15/blob/main/thanks.adoc)
 
 ## Source
