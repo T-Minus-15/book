@@ -292,7 +292,7 @@ Although unusual in an interview setting - it’s a great way to see how they re
 
 Although some scrum teams aspire to have all team members be able to pick-up and task (whether that be development, testing or operational tasks), we still believe there is value is the team having specialities and experience in particular areas. Having said that, there some benefit in having a team with a T-shaped skill cross-section. That is, where there is depth in an area with the ability to collaborate across disciplines with team members who have deep knowledge in another area other than their own.
 
-To facilitate upskilling the team, it would be good practice to carry out a skills assessment and from this look to implement a training program.
+To facilitate upskilling the team, it would be good practice to carry out a skills assessment and from this look to implement a training programme.
 
 === Remote working
 

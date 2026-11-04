@@ -117,11 +117,11 @@ Products:
 * Advanced propulsion systems.
 * Life support systems and habitats for Mars.
 
-Programs:
+Programmes:
 
-* Mars mission programs for cargo and crew transportation.
-* Research and development programs for Mars technologies and innovations.
-* Collaborative programs with government and private entities for Mars exploration and commercial activities.
+* Mars mission programmes for cargo and crew transportation.
+* Research and development programmes for Mars technologies and innovations.
+* Collaborative programmes with government and private entities for Mars exploration and commercial activities.
 
 Services:
 

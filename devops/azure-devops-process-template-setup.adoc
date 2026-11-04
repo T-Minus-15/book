@@ -856,7 +856,7 @@ For an Epic we need to create the following States (as specified by the SAFe® F
 	. Keep "New" (do not hide)
 	. Create a new state of Name: Funnel, State category: Proposed, Color: 1st from bottom grey (1st column)
 	. Create a new State of Name: Reviewing, State category: Proposed, Color: 2nd from bottom grey (1st column)
-	. Create a new State of Name: Analysing, State category: Proposed, Color: 3rd from bottom grey (1st column)
+	. Create a new State of Name: Analyzing, State category: Proposed, Color: 3rd from bottom grey (1st column)
 	. Create a new State of Name: Pending, State category: Proposed, Color: 4th from bottom grey (1st column)
 	. Create a new State of Name: Portfolio backlog, State category: Proposed, Color: 5th from bottom grey (1st column)
 	. Hide "Active"

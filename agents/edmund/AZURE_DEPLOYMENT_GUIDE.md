@@ -17,7 +17,7 @@
    - Navigate to the **copilot-edmund** workspace
 
 2. **Deploy Models**
-   - Go to **Model catalogue** or **Deployments**
+   - Go to **Model catalog** or **Deployments**
    - Deploy these models:
      - **gpt-4o** (recommended for Edmund)
      - **gpt-4** (fallback option)

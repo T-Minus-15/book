@@ -270,7 +270,7 @@ az ml model show --name edmund --version 1.0.0
 kubectl logs -l app=edmund -n tminus15-agents
 
 # Test knowledge source access
-curl -H "Authorisation: Bearer $GITHUB_TOKEN" \
+curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.github.com/repos/bengweeks/T-Minus-15
 ```
 
@@ -290,9 +290,9 @@ curl -H "Authorisation: Bearer $GITHUB_TOKEN" \
 5. Push to the branch (`git push origin feature/edmund-enhancement`)
 6. Create a Pull Request
 
-## 📄 License
+## 📄 Licence
 
-This project is licensed under the same license as the T-Minus-15 methodology repository.
+This project is licensed under the same licence as the T-Minus-15 methodology repository.
 
 ---
 
