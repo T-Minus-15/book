@@ -49,13 +49,13 @@ a| Current state of the Epic in the workflow. Possible states are:
 | Give relevant background information on the company, their systems, to give context to what this Epic relates to (50-200 Words). This should give good context to the delivery team as well as executive sponsors that will go into the Proposal. It specifically is not to cover the objective.
 | 
 
-SpaceX is a private aerospace manufacturer and space transportation company founded by Elon Musk in 2002. The company is based in Hawthorne, California, and is known for its innovative approach to space exploration and technology development. SpaceX has made significant strides in the aerospace industry, including the development of the Falcon 9 rocket, the first privately developed and operated rocket to reach orbit, and the Dragon spacecraft, the first privately developed and operated spacecraft to deliver cargo to the International Space Station (ISS). The company has also made significant progress in the development of reusable rockets, which have the potential to revolutionize the aerospace industry by reducing the cost of space exploration and making it more accessible to a wider range of organizations and individuals.
+SpaceX is a private aerospace manufacturer and space transportation company founded by Elon Musk in 2002. The company is based in Hawthorne, California, and is known for its innovative approach to space exploration and technology development. SpaceX has made significant strides in the aerospace industry, including the development of the Falcon 9 rocket, the first privately developed and operated rocket to reach orbit, and the Dragon spacecraft, the first privately developed and operated spacecraft to deliver cargo to the International Space Station (ISS). The company has also made significant progress in the development of reusable rockets, which have the potential to revolutionise the aerospace industry by reducing the cost of space exploration and making it more accessible to a wider range of organisations and individuals.
 
 | *Objective*
 | Give a concise statement that captures the primary goal or outcome you want to achieve with this Epic (50-200 words). This should give a clear reason why this solution is needed for both the delivery team and the executive sponsors.
 | 
 
-The primary objective of this Epic is to develop and deploy a viable spacecraft system capable of safely transporting cargo to Mars, establishing the foundation for future human settlement. This mission will demonstrate SpaceX's capability to extend human presence beyond Earth orbit and position the company as the leading provider of interplanetary transportation services. By creating this critical infrastructure, we aim to unlock new scientific discoveries about Mars, enable resource utilization opportunities, and advance technologies needed for sustainable human presence on other planets. Success in this Epic will revolutionize our approach to space exploration, inspire global innovation in aerospace engineering, and create a pathway for humanity to become a multi-planetary species – ensuring our long-term survival and opening unprecedented opportunities for future generations.
+The primary objective of this Epic is to develop and deploy a viable spacecraft system capable of safely transporting cargo to Mars, establishing the foundation for future human settlement. This mission will demonstrate SpaceX's capability to extend human presence beyond Earth orbit and position the company as the leading provider of interplanetary transportation services. By creating this critical infrastructure, we aim to unlock new scientific discoveries about Mars, enable resource utilisation opportunities, and advance technologies needed for sustainable human presence on other planets. Success in this Epic will revolutionise our approach to space exploration, inspire global innovation in aerospace engineering, and create a pathway for humanity to become a multi-planetary species – ensuring our long-term survival and opening unprecedented opportunities for future generations.
 
 3+| *Epic hypothesis*
 
@@ -136,7 +136,7 @@ Services:
 
 Users:
 
-* Astronauts and crew members traveling to and residing on Mars.
+* Astronauts and crew members travelling to and residing on Mars.
 * Mission control teams and ground support personnel.
 * Future Mars settlers and colonists.
 
@@ -155,7 +155,7 @@ Markets:
 
 The return on investment of SpaceX getting a rocket to Mars is difficult to predict with certainty, however, some estimates indicate that the global space industry could be worth more than $1 trillion by 2040. According to recent projections, Mars-related activities, including resource extraction and tourism, could represent a significant portion of this market.
 
-It's worth noting that the return on investment for interplanetary missions is typically longer-term and may take several years or even decades to fully materialize. Therefore, a well-planned and executed Mars mission can provide a significant return on investment for SpaceX in the long term.
+It's worth noting that the return on investment for interplanetary missions is typically longer-term and may take several years or even decades to fully materialise. Therefore, a well-planned and executed Mars mission can provide a significant return on investment for SpaceX in the long term.
 
 | *Anticipated business impact*
 | Description of the expected effects on business operations, revenue, etc. (50-200 words).
@@ -169,7 +169,7 @@ The anticipated business impact of SpaceX getting a rocket to Mars could include
 * Advancements in space technology & infrastructure, driving economic growth & innovation.
 * Increased public interest & investment in space exploration.
 
-Note: Actual impact will depend on success of mission, demand for interplanetary services, and ability to monetize investments.
+Note: Actual impact will depend on success of mission, demand for interplanetary services, and ability to monetise investments.
 
 3+| *Delivery Strategy*
 
@@ -201,8 +201,8 @@ For the successful implementation of the Mars Mission Epic, the following essent
 
 . Access to NASA deep space network infrastructure for communication and telemetry with Mars-distance spacecraft
 . Regulatory approval from the FAA and international authorities for launch operations and Mars payload certification
-. International agreements for Mars landing site selection and resource utilization rights
-. Guaranteed access to specialized materials and components from critical suppliers with contractually binding delivery timelines
+. International agreements for Mars landing site selection and resource utilisation rights
+. Guaranteed access to specialised materials and components from critical suppliers with contractually binding delivery timelines
 | *Incremental implementation strategy*
 | Approach for delivering the Epic in stages (50 to 200 words).
 |
@@ -213,10 +213,10 @@ The incremental implementation strategy for SpaceX getting a rocket to Mars:
 * Prototype and testing to ensure reliability and cost-effectiveness.
 * Launch preparation with regulatory approval, site testing and personnel training.
 * Launch and initial operations, landing and setting up infrastructure.
-* Expansion and commercialization through resource extraction and space tourism.
+* Expansion and commercialisation through resource extraction and space tourism.
 * Continual improvement through feedback and lessons learned.
 
-Fail fast approach: By rapidly prototyping and iteratively improving the rocket design, SpaceX can identify and address potential issues early on and minimize the risk of a costly failure later in the process. This approach allows SpaceX to make adjustments and improvements quickly, reducing the overall cost and time required to achieve a successful mission to Mars.
+Fail fast approach: By rapidly prototyping and iteratively improving the rocket design, SpaceX can identify and address potential issues early on and minimise the risk of a costly failure later in the process. This approach allows SpaceX to make adjustments and improvements quickly, reducing the overall cost and time required to achieve a successful mission to Mars.
 
 | *Sequence and dependencies*
 | Order of implementation steps and their prerequisites (50 to 200 words).
@@ -225,11 +225,11 @@ Fail fast approach: By rapidly prototyping and iteratively improving the rocket 
 The sequence and dependencies of SpaceX's mission to Mars:
 
 . R&D - Design and validate rocket, tech, dependent on funding, personnel and resources.
-. Prototype and Testing - Build prototypes, optimize design, dependent on R&D and access to facilities and personnel.
+. Prototype and Testing - Build prototypes, optimise design, dependent on R&D and access to facilities and personnel.
 . Launch Preparation - Obtain approval, prepare site and train personnel, dependent on prototype testing.
 . Launch and Initial Ops - Launch and land on Mars, set up infrastructure, dependent on launch preparation.
-. Expansion and Commercialization - Explore new opportunities, build and expand on Mars, dependent on initial ops.
-. Continual Improvement - Monitor and optimize performance, continually improve technology and infrastructure, dependent on expansion.
+. Expansion and Commercialisation - Explore new opportunities, build and expand on Mars, dependent on initial ops.
+. Continual Improvement - Monitor and optimise performance, continually improve technology and infrastructure, dependent on expansion.
 
 | *Milestones or checkpoints*
 | Outline what milestones and checkpoints there will be (100 to 300 words). E.g. a kick-off meeting, regular stakeholder checkpoint meetings to update on progress and demo new functionality.
@@ -268,8 +268,8 @@ In addition, the following should be taken into consideration for the mission to
 * Market Demand: The demand for commercial space activities, such as resource extraction or space tourism, is largely untested and may be subject to change.
 * Competition: There may be significant competition from other private and public entities seeking to develop capabilities for deep space missions.
 * Mission Goals: The mission goals and objectives should be clearly defined and aligned with the overall vision and strategy of SpaceX.
-* Risk Management: The project should include a robust risk management plan to address potential challenges and minimize the impact of setbacks.
-* Collaboration and Partnerships: The project may benefit from collaboration and partnerships with other organizations, such as universities, research institutions, and other companies, to leverage their expertise and resources.
+* Risk Management: The project should include a robust risk management plan to address potential challenges and minimise the impact of setbacks.
+* Collaboration and Partnerships: The project may benefit from collaboration and partnerships with other organisations, such as universities, research institutions, and other companies, to leverage their expertise and resources.
 
 3+| *Approval*
 
@@ -280,7 +280,7 @@ In addition, the following should be taken into consideration for the mission to
 The project sponsors/stakeholders in a SpaceX mission to Mars could include:
 
 * SpaceX itself, as the lead company and primary beneficiary of the mission.
-* Government agencies, such as NASA or other international space organizations, which may provide funding, resources, and expertise.
+* Government agencies, such as NASA or other international space organisations, which may provide funding, resources, and expertise.
 * Private companies, such as aerospace and space exploration companies, resource extraction and exploitation companies, and technology companies, which may provide funding or collaborate on specific aspects of the mission.
 * Research institutions and universities, which may contribute scientific knowledge and technology development to the mission.
 * Space tourism companies and individuals, which may provide funding or collaborate on developing tourist-related infrastructure on Mars.
@@ -293,7 +293,7 @@ It's worth noting that the project sponsors/stakeholders for a Mars mission coul
 | Go
 
 | *Approved by*
-| Name of person who authorized the Epic
+| Name of person who authorised the Epic
 | Elon Musk
 
 | *Approved date*

@@ -18,4 +18,4 @@ This methodology is human-centric – it's about getting people to collaborate b
 
 === What's the end goal?
 
-By the end of T-Minus-15, our mission is for you to have a clear roadmap for rolling out this way of working in your organization. Whether you’re a CTO aiming to streamline a large department or a squad lead trying to get a startup’s product out the door, you’ll find actionable advice, a touch of irreverence, and an unwavering focus on what actually works. Let's get started on this journey to elite DevOps performance – with a little help from some AI sidekicks along the way!
+By the end of T-Minus-15, our mission is for you to have a clear roadmap for rolling out this way of working in your organisation. Whether you’re a CTO aiming to streamline a large department or a squad lead trying to get a startup’s product out the door, you’ll find actionable advice, a touch of irreverence, and an unwavering focus on what actually works. Let's get started on this journey to elite DevOps performance – with a little help from some AI sidekicks along the way!

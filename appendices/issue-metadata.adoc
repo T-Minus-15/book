@@ -27,7 +27,7 @@
 | *Description*
 a|
 
-The primary supplier of specialized heat shield ceramic tiles has filed for bankruptcy, halting all production and deliveries. This has created an immediate supply chain disruption affecting the Mars mission spacecraft assembly schedule. The heat shield is a critical safety component required for atmospheric entry.
+The primary supplier of specialised heat shield ceramic tiles has filed for bankruptcy, halting all production and deliveries. This has created an immediate supply chain disruption affecting the Mars mission spacecraft assembly schedule. The heat shield is a critical safety component required for atmospheric entry.
 
 | *Mitigation*
 a|

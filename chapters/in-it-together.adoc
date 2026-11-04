@@ -26,7 +26,7 @@ If team members are afraid to speak up, your best ideas will die in silence. Bui
 
 * **Ban phrases that kill safety** - "That won't work" and "we tried that before" are team killers. Replace them with "I have a concern about X" or "What if we tried Y instead?"
 
-* **Normalize asking for help** - The most effective teams don't measure strength by who needs the least help, but by how freely help is both offered and requested.
+* **Normalise asking for help** - The most effective teams don't measure strength by who needs the least help, but by how freely help is both offered and requested.
 
 I once worked with a team where the lead developer would announce his mistakes at standups - "Yesterday I introduced that bug we found in the payment system. Here's what I learned..." Within weeks, everyone was comfortable discussing errors openly. Bugs got fixed faster because they were found sooner. Magical.
 
@@ -41,7 +41,7 @@ Shared ownership means everyone on the team thinks about the entire product life
 * The tester who thinks about operational monitoring
 * The product owner who understands technical debt
 
-This doesn't mean everyone does everything - specialization still matters. But it does mean everyone *cares* about everything.
+This doesn't mean everyone does everything - specialisation still matters. But it does mean everyone *cares* about everything.
 
 To build this mindset:
 
@@ -114,7 +114,7 @@ This clarity prevents both decision paralysis and rogue actions.
 
 === Start With Trust
 
-Most dysfunctional team behaviors stem from lack of trust. When team members don't trust each other, they:
+Most dysfunctional team behaviours stem from lack of trust. When team members don't trust each other, they:
 
 * Hoard information as power
 * Avoid risks to prevent being blamed

@@ -26,7 +26,7 @@ A Bug is any defect that causes a User Story to fail its acceptance criteria. Th
 
 An Enhancement is an improvement request that does not block the acceptance of a User Story. Think usability tweaks, minor performance improvements, or visual polish — the stuff that makes good software feel great. If implementing an enhancement takes more than 4 hours, it should be treated as a Feature instead - scoped and planned as such.
 
-A Feature is a new capability — a set of User Stories that introduces fresh functionality or a significant change to existing behavior. Features are the strategic layer: they expand the product’s scope and value. They are planned during sprint planning and oftenrequire coordinated sedign, development, and QA. Any request that breaks new ground - technically or funcionally - is a feature.
+A Feature is a new capability — a set of User Stories that introduces fresh functionality or a significant change to existing behaviour. Features are the strategic layer: they expand the product’s scope and value. They are planned during sprint planning and oftenrequire coordinated sedign, development, and QA. Any request that breaks new ground - technically or funcionally - is a feature.
 
 This classification ensures we’re fixing what’s broken, refining what’s working, and delivering what’s next — all without losing sight of why we're building in the first place.
 
@@ -46,9 +46,9 @@ To speed up the repeatable nature of testing to help improve the cadence of rele
 
 Consider security during the security and compliance using automated tools such as Microsoft Security Code Analysis , Secure DevOps Kit for Azure  and SME reviews. Best to find out early with regards to security issues prior to hitting production!
 
-Ensure that you are utilizing all the applicable security options available to you in the cloud hosting environment. For example, ensure you have policies set, firewalls configured, threat protection, encryption, monitoring, auditing and security event management.
+Ensure that you are utilising all the applicable security options available to you in the cloud hosting environment. For example, ensure you have policies set, firewalls configured, threat protection, encryption, monitoring, auditing and security event management.
 
-You can utilize more than a single security step in your release pipeline to ensure better coverage.
+You can utilise more than a single security step in your release pipeline to ensure better coverage.
 
 === Performance testing
 

@@ -5,7 +5,9 @@ endif::[]
 
 == PLAN: Plotting the Course
 
-The crew is assembled and strapped in. Now, before every sprint, Mission Control runs the same three countdown calls. *Target*: agree the sprint goal – the one thing this launch has to achieve. *Size*: estimate the work against the crew's actual capacity (not the capacity you wish you had). *Schedule*: commit to what genuinely fits inside the 15-working-day launch window, and park the rest for the next one. This chapter covers the tools for making those calls – sprints, estimation, boards and WIP limits – and for watching the gauges once the engines are lit: burndowns, risks and issues.
+The crew is assembled and strapped in. Now, before every sprint, Mission Control runs the same three countdown calls. *Target*: agree the sprint goal – the one thing this launch has to achieve. *Size*: estimate the work against the crew's actual capacity (not the capacity you wish you had). *Schedule*: commit to what genuinely fits inside the 15-working-day launch window, and park the rest for the next one. This chapter covers the tools for making those calls – sprints, estimation, boards and WIP limits – and for watching the gauges once the engines are lit: burndowns, risks and issues. Target lives in Sprints, Size in Story point estimation, and Schedule in the roadmap, Kanban boards and WIP limits.
+
+NOTE: This chapter uses the backlog vocabulary – Epics, Features, Stories and Story Points. New to it? Skim <<the-product-backlog>> in PREP and come back.
 
 === Sprints
 
@@ -58,7 +60,7 @@ This filtering process ensures that stakeholder time is respected while still pr
 
 Let's take a closer look at the difference between risks and issues.
 
-=== What is a risk?
+==== What is a risk?
 
 A risk is something that has the potential to occur with negative consequences. Remember, we can't mitigate risks until we identify them first! Keep your ears open in meetings - that's where risks often surface.
 
@@ -68,7 +70,7 @@ An example: _"During our SpaceX launch planning, the team mentioned potential fu
 
 This simple approach - identify then mitigate - saved SpaceX from potential launch delays and millions in repair costs. The key was catching it early in those team discussions!
 
-=== What is an issue?
+==== What is an issue?
 
 An issue is something that has already occurred - it's a project-level problem, not a technical bug in the code. Think of it as a risk that became reality or a significant project obstacle. While bugs affect functionality, issues impact timelines, resources, and overall project delivery.
 
@@ -82,6 +84,8 @@ Project issues need urgency and ownership. Always assign someone responsible for
 === Story point estimation
 
 // This needs updating
+
+Story Points are the team's sizing currency: a modified Fibonacci scale (1, 2, 3, 5, 8, 13) for relative effort. PREP explains how they attach to Stories.
 
 To calculate the total story points that can be carried out in a sprint, we have to appreciate that the engineering time is not the only time required to size a user story! Use the following formula to calculate the total effort for a Story:
 
@@ -139,7 +143,7 @@ WIP limits are important to ensure that the team do not undertake hundreds of it
 
 In actual fact, having a WIP limit enables you to deliver things quicker. Think of juggling. I can juggle 1 to 3 balls pretty well and quickly. If I were to try to juggle 4 or 5 balls, I wouldn't be very effective at juggling because I would actually spend most of my time picking the balls up rather than juggling!
 
-So, next time as a team member you get asked “can you start this” you can say “I would love to, but I've hit my WIP limit, so will prioritize that next” (something along those lines!).
+So, next time as a team member you get asked “can you start this” you can say “I would love to, but I've hit my WIP limit, so will prioritise that next” (something along those lines!).
 
 So what WIP limits should you actually use? Start simple: 2 features per engineer. For example, if you have two engineers, cap the "Engineering" column at 4 features max. Tools like Azure DevOps make this dead simple to set up on your Kanban boards.
 

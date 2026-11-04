@@ -5,7 +5,7 @@ endif::[]
 
 == ASSEMBLE: The Avengers of Agile
 
-Every launch starts with a crew. Before a single line of code gets written, you need to assemble a cross-functional squad – humans and AI agents alike – and hand them a shared flight manual. That manual is built on Agile and DevOps, so this chapter starts with the foundations (why Agile, Scrum, Kanban and DevOps), then turns to the crew itself: the roles, values and skills that make a team elite. In T-Minus-15 we bolt two stages onto the front of the familiar Prep > Design > Engineer > Test > Operate loop: ASSEMBLE (this chapter) and PLAN (the next one).
+Every launch starts with a crew. Before a single line of code gets written, you need to assemble a cross-functional squad – humans and AI agents alike – and hand them a shared flight manual. That manual is built on Agile and DevOps, so this chapter starts with the foundations (why Agile, Scrum, Kanban and DevOps), then turns to the crew itself: the roles, values and skills that make a team elite. In T-Minus-15 we put two stages in front of the familiar Prep > Design > Engineer > Test > Operate loop: ASSEMBLE (once, when the crew forms – this chapter) and PLAN (before every sprint – the next one).
 
 === Why do we need to be Agile?
 
@@ -34,7 +34,7 @@ Stop separating "business people" and "tech people" – they need to be in the s
 
 Meet for 15 minutes every day, standing up (yes, actually standing if you have a physical place of work – it keeps things brief). This isn't a status update for managers; it's team coordination. Each person answers three quick questions: What did I finish yesterday? What am I tackling today? What's blocking me? If someone's stuck, the team jumps in to help after the meeting – not during it.
 
-Your roadmap lives in the product backlog – a prioritized list of Features (what users actually need, not what IT thinks they want). Before each sprint, grab the highest-priority Features your team can realistically finish. And when the sprint ends, sit down for a 30-minute retrospective where you ask: What went well? What didn't? What will we change next time? Then actually make those changes.
+Your roadmap lives in the product backlog – a prioritised list of Features (what users actually need, not what IT thinks they want). Before each sprint, grab the highest-priority Features your team can realistically finish. And when the sprint ends, sit down for a 30-minute retrospective where you ask: What went well? What didn't? What will we change next time? Then actually make those changes.
 
 The Agile Manifesto{empty}footnote:[Manifesto for Agile Software Development, http://agilemanifesto.org/] declares following values: 
 
@@ -61,12 +61,12 @@ The Agile Manifesto Principles{empty}footnote:[Agile Manifesto Principles, http:
 . Agile processes promote sustainable development. 
 . The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
 . Continuous attention to technical excellence and good design enhances agility.
-. Simplicity--the art of maximizing the amount of work not done--is essential.
-. The best architectures, requirements, and designs emerge from self-organizing teams.
+. Simplicity--the art of maximising the amount of work not done--is essential.
+. The best architectures, requirements, and designs emerge from self-organising teams.
 . At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behaviour accordingly.
 --
 
-However, within a larger Enterprise SAFe® believes that “best architectures, requirements, and designs” do not necessarily  emerge from self-organizing teams in contrast to the Agile principles. For an Enterprise, you need to have a common design principle across all teams and that is why this function is therefore proposed to be driven from outside of the team by Enterprise, Solution, and System Architects/Engineers.
+However, within a larger Enterprise SAFe® believes that “best architectures, requirements, and designs” do not necessarily  emerge from self-organising teams in contrast to the Agile principles. For an Enterprise, you need to have a common design principle across all teams and that is why this function is therefore proposed to be driven from outside of the team by Enterprise, Solution, and System Architects/Engineers.
 
 === The Pro's and Con's of Agile
 
@@ -96,11 +96,11 @@ This is where SAFe® (Scaled Agile Framework) comes to the rescue. Think of it a
 
 At the top, you've got your portfolio of epics. These are your big, ambitious missions – like "land humans on Mars" or "launch a satellite constellation." In business terms, this might be "enter the Chinese market" or "build our next-generation platform."
 
-Each epic is massive enough that it needs multiple teams working together over several months. You can't just hand this to one scrum team and say "go for it." It's too big, too complex, and touches too many parts of the organization.
+Each epic is massive enough that it needs multiple teams working together over several months. You can't just hand this to one scrum team and say "go for it." It's too big, too complex, and touches too many parts of the organisation.
 
 **The Program Level: Your Launch Sequences**
 
-Each epic gets broken down into features and enablers that fit into program increments – think of these as your coordinated launch sequences. Just like SpaceX doesn't launch 20 rockets randomly, you don't release features randomly. Everything is synchronized for maximum impact.
+Each epic gets broken down into features and enablers that fit into program increments – think of these as your coordinated launch sequences. Just like SpaceX doesn't launch 20 rockets randomly, you don't release features randomly. Everything is synchronised for maximum impact.
 
 Program increments typically run 8-12 weeks with multiple teams working in parallel. At the end, you've delivered real business value – not just a collection of random features that may or may not work together.
 
@@ -127,7 +127,7 @@ For more details on SAFe®, check out www.scaledagile.com – but remember, like
 === Scrum
 
 Getting back to the team again. Agile software development methodology covers a range of specific practices such as Kanban, Extreme Programming, Lean software development and Scrum for example.
-Scrum gives some additional practices to our Agile method ideally suited to software development teams of around 5 to 10 team members utilizing practices such as sprints and daily stand-ups (or daily scrums). It uses iterative sprints of 2 to 4-weeks where a team takes a set of requirements (the sprint backlog taken from a larger product backlog).
+Scrum gives some additional practices to our Agile method ideally suited to software development teams of around 5 to 10 team members utilising practices such as sprints and daily stand-ups (or daily scrums). It uses iterative sprints of 2 to 4-weeks where a team takes a set of requirements (the sprint backlog taken from a larger product backlog).
 
 .An overview of Scrum
 image::images/scrum.png[float=center,align=center]
@@ -168,14 +168,14 @@ DevOps has the following 7 key principles{empty}footnote:[7 Key Principles for a
 
 DevOps has the principle of continuous improvement, and as such has a continuous lifecycle as follows:
 
-.The familiar DevOps lifecycle of Prep > Design > Engineer > Test > Operate.
+.The DevOps loop at the heart of the countdown: Prep > Design > Engineer > Test > Operate (ASSEMBLE and PLAN sit in front of it).
 image::images/infinity-lifecycle-book.png[float=center,align=center]
 
 It should be noted that these individual activities can be carried out within a sprint focused on that activity, as well as during other sprints. The naming convention of these activities has an associated role (see the A-Team). In addition, we have lifecycles for all our work items, whether they are the Epic itself, or its’ Capabilities, Features, Tasks, Improvements or Bugs.
 
 === DevOps: Prep
 
-When we first meet the client, we go into a discovery stage. This is our time to start building the backlog. We talk more about this in the Customer meeting section. This forms our requirements. The requirements will be iteratively amended, improved and re-prioritized throughout the project.
+When we first meet the client, we go into a discovery stage. This is our time to start building the backlog. We talk more about this in the Customer meeting section. This forms our requirements. The requirements will be iteratively amended, improved and re-prioritised throughout the project.
 
 Generally work items in this stage are the responsibility of the prepper (an analyst) to further define. We may have Features in this stage that have been loosely declared as being desirable, and it is the analysts job to put some meet on the bones and create child user stories (and maybe some tasks) to these Features.
 
@@ -227,17 +227,17 @@ Whilst making deployments is great, think about the adoption of the value you ar
 
 Principles are all well and good, but principles don't ship software – people (and their AI sidekicks) do. Time to assemble the crew.
 
-In general, we need to ensure we have coverage of the 5 main stages in delivery (Prep > Design > Engineer > Test > Operate), therefore, the project team should look like the following:
-
-*	**Prepper**: This is the analyst who will liaise with the customer, populate the initial product backlog, and ideally be able be able to put together wireframes, information architecture, formulate the backlog in a typical project. They will also be hands on during the project delivery and help ensure the quality of the solution delivered that it matches the requirements.
-*	**Designer**: Dependent on the stage of the project, and type of project, you may need Solution Designers (Architects), UX/UI Designers, Data Designers (Architects/Scientists). It’s quite possible that in a smaller team the Solution Designer also has the skillset to act as the Prepper as well.
-*	**Engineer**: This person will be responsible for implementing and building the solution according to the product backlog. You will have Dev Engineers (or software engineers) as well as Op Engineers (operations) and Release Engineers, the latter may or may not be fulltime on the project. You could also categorize your engineers as Junior and Senior/Lead. The release engineer is responsible for maintenance of the branches, ensuring successful build and releases and creating release notes.
-*	**Test pilot**: They should be involved throughout the delivery of the project. They put together the test plans from the product backlog and carry out testing (manual and automated if possible) of features as they are delivered. On average you should have at least 1 test pilot full time for every 4 Dev Engineers.
-
-In addition, we should also have the following roles that interact with the team:
+In general, we need to ensure we have coverage of every stage of the countdown (Plan > Prep > Design > Engineer > Test > Operate), therefore, the project team should look like the following:
 
 *	**Planner**: The planner will quite possibly work across a number of different sprint teams. The scrum master should be tracking budgets, timescales and unblock impediments. They also liaise with the product owner.
-*	**Product owner**: This is normally the project stakeholder (client side). They are responsible for prioritizing the work and adding clarity when needed. For more information on this role, see: https://www.scrum.org/resources/what-is-a-product-owner
+*	**Prepper**: This is the analyst who will liaise with the customer, populate the initial product backlog, and ideally be able be able to put together wireframes, information architecture, formulate the backlog in a typical project. They will also be hands on during the project delivery and help ensure the quality of the solution delivered that it matches the requirements.
+*	**Designer**: Dependent on the stage of the project, and type of project, you may need Solution Designers (Architects), UX/UI Designers, Data Designers (Architects/Scientists). It’s quite possible that in a smaller team the Solution Designer also has the skillset to act as the Prepper as well.
+*	**Engineer**: This person will be responsible for implementing and building the solution according to the product backlog. You will have Dev Engineers (or software engineers) as well as Op Engineers (operations) and Release Engineers, the latter may or may not be fulltime on the project. You could also categorise your engineers as Junior and Senior/Lead. The release engineer is responsible for maintenance of the branches, ensuring successful build and releases and creating release notes.
+*	**Test pilot**: They should be involved throughout the delivery of the project. They put together the test plans from the product backlog and carry out testing (manual and automated if possible) of features as they are delivered. On average you should have at least 1 test pilot full time for every 4 Dev Engineers.
+
+In addition, we should also have the following role that interacts with the team:
+
+*	**Product owner**: This is normally the project stakeholder (client side). They are responsible for prioritising the work and adding clarity when needed. For more information on this role, see: https://www.scrum.org/resources/what-is-a-product-owner
 
 For small teams, you may have to have one person covering multiple roles. Just ensure that everyone has clarity of what their role is and areas of responsibility. One of the first roles to go is often the Test pilot. However, if we want to ensure you are delivering quality value to the business, don’t underestimate the importance of thorough testing – engineers are not known for making great testers! If I can’t convince you otherwise, at very least, ensure that you are peer reviewing/testing and not getting engineers to test their own deliverables. Engineers will instinctively only think to test the routines they know they have written the code to handle. Don’t blame them … it’s human nature – just ensure someone else is testing their code!
 
@@ -259,10 +259,11 @@ The T-Minus-15 methodology encourages the following values within a team:
 - *We are strong*: We have the strength of character to overcome adversity for ourselves and our team. 
 
 
-Engineers, don’t just “throw” functionality over the fence to the Test Pilot(s). Test Pilots, don’t just feedback “it’s broken” without giving clarity to what exactly went wrong with clear steps to reproduce and perhaps even doing some research into what might have caused the failure. Preppers, make sure you have a nicely organised backlog with clear requirements and acceptance criteria. Scrum masters, don’t just play the “management” role with a pointy stick to make your team work faster - get involved into resolving blocking points and reducing unnecessary workload for the team. Product owners, turn-up to meetings, help clarify your needs, help prioritize workload and don’t just say “I MUST HAVE everything”.
+Engineers, don’t just “throw” functionality over the fence to the Test Pilot(s). Test Pilots, don’t just feedback “it’s broken” without giving clarity to what exactly went wrong with clear steps to reproduce and perhaps even doing some research into what might have caused the failure. Preppers, make sure you have a nicely organised backlog with clear requirements and acceptance criteria. Scrum masters, don’t just play the “management” role with a pointy stick to make your team work faster - get involved into resolving blocking points and reducing unnecessary workload for the team. Product owners, turn-up to meetings, help clarify your needs, help prioritise workload and don’t just say “I MUST HAVE everything”.
 
 As a manager, try to think creatively about how to instil these values in your team. Lead by example and demonstrate these values personally: Be transparent with your team and the customer, be accountable, recognise success in your team and award accordingly (Amazon vouchers, words of recognition and encouragement, bonuses, whatever works for your team), get stuck in and be part of solving problems, and ultimately, ensure the team are delivering high quality value to the business!
 
+[[recruit-the-best]]
 === Recruit the best
 
 When recruiting for this A-Team with shared values, remember there is a tide of technology and best practices, so look for place an importance of aptitude to learn rather over skills that can be learnt. But know where your team has a skills deficit and recruit to improve this where possible. You will need to determine:
@@ -280,7 +281,7 @@ When recruiting for this A-Team with shared values, remember there is a tide of 
 
 > Aptitude over knowledge
 
-During the interview process, utilize strategies that look for aptitude over skills. For example, you can implement online aptitude tests or play 20 questions during the interview process.
+During the interview process, utilise strategies that look for aptitude over skills. For example, you can implement online aptitude tests or play 20 questions during the interview process.
 
 To play “20 questions”, let them know you will be choosing an object on a your phone that they will hold up to their head and they will need to guess the object. They can ask you any question that you can answer “yes”, “no” or “maybe” to try and work out what it is. Rather than 20 questions, they actually get 5-minutes. Let them know even the interviewers will be having a go (it’s only fair if you make them sit there with a phone to their forehead!).
 
@@ -325,7 +326,7 @@ If you still think you need a collaboration group (team) with the client not inv
 
 Positive karma is a concept that refers to the idea that good deeds and positive actions will bring about good things in return. In the context of team building, positive karma can be thought of as a way to build trust and respect among team members.
 
-In our team, we recognize others’ help and success by awarding karma points to each other. These points can be redeemed for hardware (screens, headsets, etc.) or days off, innovation days working on open source projects, or meals out with colleagues.
+In our team, we recognise others’ help and success by awarding karma points to each other. These points can be redeemed for hardware (screens, headsets, etc.) or days off, innovation days working on open source projects, or meals out with colleagues.
 
-We review these karma points every week in our team meeting to celebrate successes and recognize contributions. This system has helped us build a culture of collaboration and support that has made us more productive and effective.
+We review these karma points every week in our team meeting to celebrate successes and recognise contributions. This system has helped us build a culture of collaboration and support that has made us more productive and effective.
 

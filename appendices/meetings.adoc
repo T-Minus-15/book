@@ -194,7 +194,7 @@ Internal team meeting - no customers
 | **Agenda** | • "Top of mind" items
 • Good news
 • Quiz
-• Zapp.ie (recognise success, incentivize and reward)
+• Zapp.ie (recognise success, incentivise and reward)
 • Delivery Plan
 
 And ... wish everyone a great weekend!
@@ -220,7 +220,7 @@ And ... wish everyone a great weekend!
 
 • Support ticket metrics and trends
 • Response time performance
-• Budget utilization review
+• Budget utilisation review
 • Feature requests and enhancement opportunities
 • Upcoming maintenance windows
 • Customer satisfaction feedback
