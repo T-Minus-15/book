@@ -101,7 +101,7 @@ The three most critical leading indicators for Mars mission success are:
 * Availability: Ensure the system is accessible and functional for its intended purpose at all times.
 * Maintainability: Ensure the ability to quickly and easily repair or replace parts as needed.
 * Scalability: Ensure the system can accommodate future growth and expansion.
-* Performance: Ensure the spacecraft can meet the required speed and maneuvering needs for a successful Mars mission.
+* Performance: Ensure the spacecraft can meet the required speed and manoeuvring needs for a successful Mars mission.
 * Interoperability: Ensure compatibility and integration with other systems and technologies.
 * Cost-effectiveness: Ensure the project is completed within budget and generates a return on investment.
 

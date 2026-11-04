@@ -13,7 +13,7 @@ NOTE: This chapter uses the backlog vocabulary – Epics, Features, Stories and 
 
 Sprints are your rhythm. They create focus, urgency, and most importantly, a finish line. Every sprint tracks measurable progress through Stories, Tasks, Improvements, and Bugs.
 
-We group sprints into four distinct flavors. Don't get too rigid about these categories – they're guidelines, not handcuffs:
+We group sprints into four distinct flavours. Don't get too rigid about these categories – they're guidelines, not handcuffs:
 
 **Prep & Design Sprint** (aka Sprint 0) – This is where you build your launchpad. Capture requirements, sketch wireframes, draft technical designs, and nail down your visual identity. Don't skip this! Teams that dive straight into coding without this foundation end up rebuilding everything twice.
 
