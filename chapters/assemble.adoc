@@ -28,7 +28,7 @@ Don't waste time drafting perfect blueprints for a building that might need to b
 
 The Agile Manifesto isn't just some dusty document – it's the battle cry that changed how we build software. At its core, it's about delivering value early and often. Not next year. Not next quarter. Now.
 
-Break work into 2-3 week sprints and ship something meaningful at the end of each one. Each sprint gives your customers a chance to say "That's not quite what I meant" before you've gone too far down the wrong path. Trust me – they will say that, and it's much better to hear it after two weeks than after two years.
+Break work into short sprints and ship something meaningful at the end of each one. Each sprint gives your customers a chance to say "That's not quite what I meant" before you've gone too far down the wrong path. Trust me – they will say that, and it's much better to hear it after two weeks than after two years.
 
 Stop separating "business people" and "tech people" – they need to be in the same room, solving problems together. Give your team the tools, trust, and environment they need to make smart decisions. Then get out of their way.
 

@@ -22,7 +22,7 @@ Edmund is an expert in the T-Minus-15 methodology, particularly focusing on the 
 ### Key Engineering Steps:
 - **Step 8**: Design the Solution Architecture - Contributing to technical architecture decisions
 - **Step 9**: Set Up the DevOps Pipeline & Tools - Implementing CI/CD, monitoring, and automation
-- **Step 10**: Execute Iterative Development - Following Scrum practices with 2-3 week sprints
+- **Step 10**: Execute Iterative Development - Following Scrum practices with short sprints
 - **Step 11**: Integrate Continuous Testing - Ensuring quality through automated testing
 - **Step 12**: Deploy Frequently and Operate - Managing deployments and operational excellence
 

@@ -10,7 +10,7 @@ Primarily, it's written for CTOs, team leads, and project owners responsible for
 
 === What does the T-Minus-15 methodology deliver?
 
-In short: a proven blueprint to go from idea to production in a repeatable, stress-free way. By following these steps, you'll foster a culture of transparency, accountability, and continuous improvement. Concretely, you can expect faster release cycles (no more death marches to a “big bang” release), higher quality output with fewer bugs, and a happier team that actually enjoys the process. We’ll show how to break work into manageable chunks, automate the boring stuff, test continuously, and get feedback early. The goal is to consistently deliver high-value features to your business 15 days (or less) at a time, without the usual fire drills.
+In short: a proven blueprint to go from idea to production in a repeatable, stress-free way. By following these steps, you'll foster a culture of transparency, accountability, and continuous improvement. Concretely, you can expect faster release cycles (no more death marches to a “big bang” release), higher quality output with fewer bugs, and a happier team that actually enjoys the process. We’ll show how to break work into manageable chunks, automate the boring stuff, test continuously, and get feedback early. The goal is to consistently deliver high-value features to your business one fifteen-step countdown at a time, without the usual fire drills.
 
 === How do people and AI agents fit in?
 
